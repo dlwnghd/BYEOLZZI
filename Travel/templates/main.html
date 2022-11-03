@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    sdf
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/static/css/main.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="Full_container">
+            <div class="header">
+                aaaaa
+            </div>
+            <!-- 전체화면 -->
+            <div class="container">
+                <!-- 왼쪽 결과 창 -->
+                <div class="result_container">
+                    <iframe class="iframe_area" src="" id='iframe'></iframe>
+                </div>
+                <!-- 오른쪽 챗봇 대화 창 -->
+                <div class='chat_bot_container'>
+                    <div class="chatbot_big_area">
+                        <div class="chatheader">
+                            <img class="chatbot_img" src="/static/images/byeolzzi_character_img.png"/>
+                            <h5 class="chat_bot_titlename">BYEOLZZI BOT</h5>
+                        </div>
+                        <div id="chatbody">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+                        <!-- 대화 입력 창 -->
+                        <div class="chatfooter">
+                            <div class="chat_input">
+                                <textarea id="chattext" placeholder="별찌봇을 사용해보세용"></textarea>
+                            </div>
+                            <div class="chat_input">
+                                <img
+                                    class="send_button"
+                                    type="text"
+                                    src="/static/images/byeolzzi_character_img.png"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
