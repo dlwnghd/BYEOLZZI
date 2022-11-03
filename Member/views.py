@@ -109,3 +109,19 @@ def checkLogin(request:HttpRequest):
 def logout(request:HttpRequest):
     request.session.pop('login')
     return redirect('/')
+
+
+def mypage_sellProducts (request:HttpRequest):
+    user_idx = request.session['login']
+
+    member = Members.objects.get(members_idx=user_idx)
+    memberLocation = MemberLocation.objects.get(m_idx=user_idx)
+    m_list = memberLocation.location_list
+
+    print("m_list:", m_list)
+
+    context = {
+        'member' : member,
+        'm_list' : m_list
+    }
+    return render(request,'mypage/mypage.html', context);
