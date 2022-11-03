@@ -34,11 +34,17 @@ def createMember(request:HttpRequest):
     name = request.POST.get("name")
     addr = request.POST.get('addr')
 
+    print("=" * 30)
+    print("id:", id)
+    print("pw:", pw)
+    print("name:", name)
+    print("addr:", addr)
+
     try:
         Members.objects.create(
             id = id,
             pw = pw,
-            name = name,
+            m_name = name,
             addr = addr
         )
     except Exception as e:

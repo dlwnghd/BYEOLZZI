@@ -48,8 +48,8 @@
             <div class="join-culrum">주소</div>
             <div class="join-box postNum">
                 <input type="text" id="sample6_postcode" class="join-box inputbox" style="display: none;">
-                <input type="text" id="sample6_address" class="join-box inputbox"><br>
-                <input type="button" class="btn btn-primary userCheck" name="addr" id="postbtn" onclick="sample6_execDaumPostcode()" value="주소 찾기"><br>
+                <input type="text" id="sample6_address" name="addr" class="join-box inputbox"><br>
+                <input type="button" class="btn btn-primary userCheck" id="postbtn" onclick="sample6_execDaumPostcode()" value="주소 찾기"><br>
                 <input type="text" id="sample6_detailAddress" class="join-box inputbox" style="display: none;">
                 <input type="text" id="sample6_extraAddress" class="join-box inputbox" style="display: none;">
             </div>
@@ -224,7 +224,7 @@
                 } else { // 사용자가 지번 주소를 선택했을 경우(J)
                     addr = data.jibunAddress;
                 }
-
+                console.log("addr1: " + addr)
                 // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
                 if(data.userSelectedType === 'R'){
                     // 법정동명이 있을 경우 추가한다. (법정리는 제외)
@@ -250,6 +250,7 @@
                 // 우편번호와 주소 정보를 해당 필드에 넣는다.
                 document.getElementById('sample6_postcode').value = data.zonecode;
                 document.getElementById("sample6_address").value = addr;
+                console.log("addr2: " + addr)
                 // 커서를 상세주소 필드로 이동한다.
                 document.getElementById("sample6_detailAddress").focus();
             }
@@ -265,7 +266,7 @@
         printBlank('post_msg')
     });
     $address.on('blur', function() {
-        console.log("address: " + $address)
+        console.log("address: " + $address.val())
         if($address.val()==''){
             postCheck = false;
             printAlert('post_msg')

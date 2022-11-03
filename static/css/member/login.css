@@ -57,8 +57,9 @@
 
 .loginform form input.input_id:focus,
 .loginform form input.input_pw:focus{
-    border: 1px solid #031027;
-    outline: 1px solid  #031027;
+    border: 0;
+    outline: 0;
+    border-bottom: 2px solid #031027;
 }
 
 #keep_check {
