@@ -1,0 +1,306 @@
+{% extends 'layout/join_layout.html' %}
+
+{% block title %}
+별찌 | 회원가입
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/css/member/join.css">
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="join">
+    <div class="title">
+        <div class="title byeol">별</div>
+        <div class="title zzi">찌</div>
+    </div>
+
+    <form action="/member/join/create" method="post" name ="join">
+        {% csrf_token %}
+        <!-- ID -->
+        <div class="join-box">
+            <div class="join-culrum">아이디</div>
+            <input class="join-box inputbox" name="id" id="user_id">
+            <label class="msg" id="id_msg">&nbsp;</label>
+        </div>
+        <!-- PW -->
+        <div class="join-box">
+            <div class="join-culrum">비밀번호</div>
+            <input class="join-box inputbox" type="password" name="pw" id="user_pw">
+            <label class="msg" id="pw_msg">&nbsp;</label>
+        </div>
+        <!-- PW Check -->
+        <div class="join-box">
+            <div class="join-culrum">비밀번호 확인</div>
+            <input class="join-box inputbox" type="password" id="pw_check">
+            <label class="msg alrt" id="pwCheck_msg">&nbsp;</label>
+        </div>
+        <!-- Name -->
+        <div class="join-box">
+            <div class="join-culrum">이름</div>
+            <input class="join-box inputbox" name="name" id="user_name">
+            <label class="msg alrt" id="name_msg">&nbsp;</label>
+        </div>
+ 
+
+        <div class="join-box">
+            <div class="join-culrum">주소</div>
+            <div class="join-box postNum">
+                <input type="text" id="sample6_postcode" class="join-box inputbox" style="display: none;">
+                <input type="text" id="sample6_address" name="addr" class="join-box inputbox"><br>
+                <input type="button" class="btn btn-primary userCheck" id="postbtn" onclick="sample6_execDaumPostcode()" value="주소 찾기"><br>
+                <input type="text" id="sample6_detailAddress" class="join-box inputbox" style="display: none;">
+                <input type="text" id="sample6_extraAddress" class="join-box inputbox" style="display: none;">
+            </div>
+            <label class="msg" id="post_msg">&nbsp;</label>
+        </div>
+
+        
+        <input class="btn btn-primary" type="button" value="가입하기" onclick="joinformSubmit()">
+    </form>
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript">
+
+    function printAlert(tagid, comment){
+        document.getElementById(tagid).className = "msg alrt";
+        document.getElementById(tagid).innerText = "필수 정보입니다.";
+    }
+
+    function printAlertWith (tagid, comment){
+        document.getElementById(tagid).className = "msg alrt";
+        document.getElementById(tagid).innerText = comment;
+    }
+
+    function printPasswith (tagid, comment){
+        document.getElementById(tagid).className = "msg pass";
+        document.getElementById(tagid).innerText = comment;
+    }
+
+    function printBlank(tagid){
+        document.getElementById(tagid).className = "msg";
+        document.getElementById(tagid).innerText = "　";
+    }
+
+    /** ID 유효성 검사 */
+    let $id = $("#user_id");
+    const idValueCheck = RegExp(/^[a-z0-9_\-]{5,20}$/);
+    var idCheck = false;
+    
+    $id.on('click', function(){
+        printBlank('id_msg')
+    });
+    $id.on('blur', function() {
+        //id 입력 값 없음
+        if($id.val() == '') {
+            idCheck = false;
+            printAlert('id_msg')
+        }
+        //5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용
+        else if (!idValueCheck.test($id.val())) {
+            idCheck = false;
+            printAlertWith('id_msg',"5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용 가능합니다.");
+        }
+        else{
+            //중복 확인
+            $.ajax({
+                url:'idduplicate',
+                type:'get',
+                data: {
+                    'userid' : $id.val()
+                },
+                dataType: 'json',
+                success: function(data){
+                    console.log('data : ' + data['checkresult'])
+                    if(data['checkresult'] == 'fail'){
+                        idCheck = false;
+                        printAlertWith('id_msg', "이미 사용중인 아이디입니다.");
+                    }
+                    else {
+                        idCheck = true;
+                        printPasswith('id_msg', "멋진 아이디네요!");
+                    }
+                }
+            });
+        }
+    });
+
+
+    /** PW 유효성 검사 */
+    let $pw = $("#user_pw");
+    var pwEmpty = false;
+    const pwValueCheck = RegExp(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^*()\-_=+\\\|\[\]{};:\'",.<>\/?]).{8,16}$/);
+    $pw.on('click', function(){
+        printBlank('pw_msg')
+    });
+    $pw.on('blur', function() {
+        if($pw.val()==''){
+            pwEmpty = false;
+            printAlert('pw_msg')
+        }
+    });
+    $pw.on('keyup', function() {
+        console.log('pw : ' + $pw.val())
+        if(!pwValueCheck.test($pw.val())){
+            pwEmpty = false;
+            printAlertWith('pw_msg', "8~16자 영문 대·소문자, 숫자, 특수문자를 사용하세요.");
+        }
+        else {
+            pwEmpty = true;
+            printPasswith('pw_msg', "사용 가능한 비밀번호 입니다.");
+        }
+    });
+
+
+    /** PW 일치 확인 */
+    let $pwCheck = $("#pw_check");
+    var pwRightCheck = false;
+    $pwCheck.on('click', function(){
+        printBlank('pwCheck_msg')
+    });
+    $pwCheck.on('blur', function() {
+        if (!pwEmpty){
+            pwRightCheck = false;
+            printAlertWith('pwCheck_msg', "비밀번호를 먼저 입력하세요.")
+        }
+        else if($pwCheck.val()==''){
+            pwRightCheck = false;
+            printAlert('pwCheck_msg')
+        }
+    });
+    $pwCheck.on('keyup', function() {
+        console.log('pwCheck : ' + $pwCheck.val())
+        if (!pwEmpty){
+            pwRightCheck = false;
+            printAlertWith('pwCheck_msg', "비밀번호를 먼저 입력하세요.")
+        }
+        else if($pwCheck.val() != $pw.val()){
+            pwRightCheck = false;
+            printAlertWith('pwCheck_msg', "비밀번호가 일치하지 않습니다.");
+        }
+        else{
+            pwRightCheck = true;
+            printPasswith('pwCheck_msg', "비밀번호가 정확히 일치합니다!");
+        }
+    });
+
+
+    /** 이름 유효성 검사 */
+    let $name = $("#user_name");
+    var nameCheck = false;
+
+    $name.on('click', function(){
+        printBlank('name_msg')
+    });
+    $name.on('blur', function() {
+        console.log('name : ' + $name.val())
+        if($name.val()==''){
+            nameCheck = false;
+            printAlert('name_msg')
+        }
+        else{
+            nameCheck = true;
+            printBlank('name_msg')
+        }
+    });
+
+
+    function sample6_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+                console.log("addr1: " + addr)
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("sample6_extraAddress").value = extraAddr;
+                
+                } else {
+                    document.getElementById("sample6_extraAddress").value = '';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('sample6_postcode').value = data.zonecode;
+                document.getElementById("sample6_address").value = addr;
+                console.log("addr2: " + addr)
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("sample6_detailAddress").focus();
+            }
+        }).open();
+    }
+
+    /** 주소 유효성 검사 */
+    let $address = $("#sample6_address")
+    let $postbtn = $("#postbtn")
+    var postCheck = false;
+
+    $postbtn.on('click', function(){
+        printBlank('post_msg')
+    });
+    $address.on('blur', function() {
+        console.log("address: " + $address.val())
+        if($address.val()==''){
+            postCheck = false;
+            printAlert('post_msg')
+        }
+        else{
+            postCheck = true;
+            printBlank('post_msg')
+        }
+        console.log("postCheck: " + postCheck)
+
+    });
+
+    function joinformSubmit(){
+        if (!idCheck){
+            $id.focus()
+        }
+        else if (!pwEmpty){
+            $pw.focus()
+        }
+        else if (!pwRightCheck){
+            console.log('pwRightCheck : ' + pwRightCheck)
+            $pwCheck.focus()
+        }
+        else if (!nameCheck){
+            $name.focus()
+        }
+        else if (!postCheck){
+            console.log('postCheck : ' + postCheck)
+            $address.focus()
+        }
+        else{
+            console.log('서브밋까지 들어옴')
+            document.join.submit()
+        }
+    }
+</script>
+{% endblock %}
