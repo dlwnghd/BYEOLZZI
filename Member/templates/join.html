@@ -47,13 +47,11 @@
         <div class="join-box">
             <div class="join-culrum">주소</div>
             <div class="join-box postNum">
-                <input type="text" id="sample6_postcode" class="join-box inputbox">
-                <input type="button" class="btn btn-primary userCheck" id="postbtn" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-            </div>
-            <input type="text" id="sample6_address" class="join-box inputbox"><br>
-            <div class="join-box postDesc">
-                <input type="text" id="sample6_detailAddress" class="join-box inputbox">
-                <input type="text" id="sample6_extraAddress" class="join-box inputbox">
+                <input type="text" id="sample6_postcode" class="join-box inputbox" style="display: none;">
+                <input type="text" id="sample6_address" class="join-box inputbox"><br>
+                <input type="button" class="btn btn-primary userCheck" name="addr" id="postbtn" onclick="sample6_execDaumPostcode()" value="주소 찾기"><br>
+                <input type="text" id="sample6_detailAddress" class="join-box inputbox" style="display: none;">
+                <input type="text" id="sample6_extraAddress" class="join-box inputbox" style="display: none;">
             </div>
             <label class="msg" id="post_msg">&nbsp;</label>
         </div>
@@ -119,7 +117,7 @@
                     console.log('data : ' + data['checkresult'])
                     if(data['checkresult'] == 'fail'){
                         idCheck = false;
-                        printAlertWith('id_msg', "이미 사용중이거나 탈퇴한 아이디입니다.");
+                        printAlertWith('id_msg', "이미 사용중인 아이디입니다.");
                     }
                     else {
                         idCheck = true;
@@ -259,26 +257,25 @@
     }
 
     /** 주소 유효성 검사 */
-    let $postcode = $("#sample6_postcode")
     let $address = $("#sample6_address")
-    let $detailaddr = $("#sample6_detailAddress")
-    let $extraaddr = $("#sample6_extraAddress")
     let $postbtn = $("#postbtn")
     var postCheck = false;
 
     $postbtn.on('click', function(){
         printBlank('post_msg')
     });
-    $detailaddr.on('blur', function() {
-        console.log("detailaddr: " + $detailaddr)
-        if (!$detailaddr){
-            postCheck = false;
-            printAlertWith('post_msg', "주소를 입력해주세요")
-        }
-        else if($detailaddr.val()==''){
+    $address.on('blur', function() {
+        console.log("address: " + $address)
+        if($address.val()==''){
             postCheck = false;
             printAlert('post_msg')
         }
+        else{
+            postCheck = true;
+            printBlank('post_msg')
+        }
+        console.log("postCheck: " + postCheck)
+
     });
 
     function joinformSubmit(){
@@ -296,9 +293,11 @@
             $name.focus()
         }
         else if (!postCheck){
-            $pwCheck.focus()
+            console.log('postCheck : ' + postCheck)
+            $address.focus()
         }
         else{
+            console.log('서브밋까지 들어옴')
             document.join.submit()
         }
     }

@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'BYEOLZZI', 'Member',
+    'BYEOLZZI', 'Member', 'Travel',
 ]
 
 MIDDLEWARE = [

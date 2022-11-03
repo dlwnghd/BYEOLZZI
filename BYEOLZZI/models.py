@@ -9,7 +9,7 @@ class Answer(models.Model):
     answer_contents = models.TextField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'answer'
 
 
@@ -22,9 +22,8 @@ class Location(models.Model):
     q = models.CharField(max_length=20, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'location'
-
 
 class Members(models.Model):
     members_idx = models.AutoField(primary_key=True)
@@ -35,9 +34,8 @@ class Members(models.Model):
     m_location = models.CharField(max_length=10, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'members'
-
 
 class MemberLocation(models.Model):
     ml_idx = models.AutoField(primary_key=True)
@@ -45,5 +43,5 @@ class MemberLocation(models.Model):
     location_list = models.CharField(max_length=300, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'member_location'
