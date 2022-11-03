@@ -1,0 +1,84 @@
+{% extends 'layout/member_layout.html' %}
+
+{% block title %}
+별찌 | 로그인
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/css/member/login.css">
+{% endblock %}
+
+{% block content %}
+    <div class="title">
+        <div class="title byeol">별</div>
+        <div class="title zzi">찌</div>
+    </div>
+    <div class="loginform">
+        <form action="/member/login/result" method="post" name="login" onsubmit="return login_check(this)">
+            {% csrf_token %}
+            {% if id == None %}
+                <input class="input_id" name="id" placeholder="아이디">
+            {% else %}
+                <input class="input_id" name="id" value="{{ id }}" placeholder="아이디">
+            {% endif %}
+            <input class="input_pw" type="password" name="pw"  placeholder="비밀번호">
+            <div class="form-check">
+                <label class="form-check-label" for="flexCheckChecked">
+                    아이디 기억하기
+                </label>
+                {% if check %}
+                    <input class="form-check-input" type="checkbox" name="checkedid" value="true" id="flexCheckChecked" checked>
+                {% else %}
+                    <input class="form-check-input" type="checkbox" name="checkedid" value="true" id="flexCheckChecked">
+                {% endif %}
+                <br>
+            </div>
+            <div></div>
+            <div class="msg alrt" id="login_msg">&nbsp;</div>
+            <button type="submit" class="button">
+                <span class="btn_text">로그인</span>
+            </button>
+        </form>
+    <ul class="find_wrap">
+        <li id="li_1"><a href="#">아이디 찾기</a></li>
+        <li>│</li>
+        <li><a href="#">비밀번호 찾기</a></li>
+        <li>│</li>
+        <li><a href="/member/agreements">회원가입</a></li>
+    </ul>
+    </div>
+{% endblock %}
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+
+    // JavaScript Code
+    $.urlParam = function(name){
+        var results = new RegExp('[\?&amp;]' + name + '=([^&amp;#]*)').exec(window.location.href);
+        if (results==null){
+             return null;
+        }else{
+            return results[1] || 0;
+        }
+    }
+
+    function login_check (formdata){
+        const id = formdata.id.value;
+        const pw = formdata.pw.value;
+        const checkedid = formdata.checkedid.value;
+        var result = false;
+
+        if(id == ''){
+            document.getElementById("login_msg").innerText = '아이디를 입력해주세요';
+        }
+        else if(pw == ''){
+            document.getElementById("login_msg").innerText = '비밀번호를 입력해주세요';
+        }
+        else{
+            result = true;
+        }
+
+        return result
+    }
+</script>
+{% endblock %}
