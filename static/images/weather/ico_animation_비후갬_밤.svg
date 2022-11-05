@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_비후갬_밤</title>
+    <defs>
+        <linearGradient x1="32023.2479%" y1="-4705.52813%" x2="32023.2479%" y2="-4877.88746%" id="linearGradient-1">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="27.1755698%" y1="106.723285%" x2="72.8135457%" y2="-6.72207097%" id="linearGradient-2">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="6395.889%" y1="-879.256476%" x2="6395.889%" y2="-1006.11034%" id="linearGradient-3">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="7826.48172%" y1="-1088.98058%" x2="7826.48172%" y2="-1218.4466%" id="linearGradient-4">
+            <stop stop-color="#61ADFF" stop-opacity="0.7" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="25.1862806%" y1="41.4201398%" x2="68.0097565%" y2="67.9016942%" id="linearGradient-5">
+            <stop stop-color="#888A91" offset="0%"></stop>
+            <stop stop-color="#8B8B92" offset="100%"></stop>
+        </linearGradient>
+        <path d="M102.000303,42.1859225 C101.986794,36.8152835 99.8406054,31.6698751 96.0336134,27.8816367 C92.2266213,24.0933983 87.0706773,21.9726452 81.7000384,21.9859225 L78.9000384,21.9859225 C74.6359535,8.56007429 61.9834425,-0.408408029 47.9030621,0.0143285649 C33.8226817,0.437065159 21.730998,10.1484448 18.2800384,23.8059225 C7.96830571,24.5315067 -0.02019995,33.1187133 -7.63024194e-05,43.4559225 C0.0276201608,54.3115525 8.84438594,63.0925142 19.7000384,63.0759927 L42.1200384,63.0759927 L81.7900384,62.9759225 C87.1623133,62.9706349 92.3118632,60.8286884 96.1031259,57.0224182 C99.8943886,53.2161481 102.015975,48.0581763 102.000303,42.6859225 L102.000303,42.1859225 Z" id="path-6"></path>
+        <linearGradient x1="87.4521992%" y1="87.451987%" x2="54.6156506%" y2="54.6243518%" id="linearGradient-8">
+            <stop stop-color="#7FAAFF" offset="0%"></stop>
+            <stop stop-color="#7ABEF5" offset="100%"></stop>
+        </linearGradient>
+        <path d="M43.1100384,76.9959225 C59.2579277,76.9895231 74.5363464,69.6791465 84.6728067,57.1090811 C94.809267,44.5390157 98.7158233,28.0584059 95.3000384,12.2759225 C121.271983,17.8986592 139.159885,41.759717 137.274345,68.2663541 C135.388806,94.7729911 114.303419,115.861699 87.7970789,117.751412 C61.2907391,119.641126 37.4268648,101.756981 31.8000384,75.7859225 C35.5168212,76.5869587 39.3079176,76.992549 43.1100384,76.9959225 Z" id="path-9"></path>
+        <filter x="-14.2%" y="-14.2%" width="128.4%" height="128.4%" filterUnits="objectBoundingBox" id="filter-10">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="12.4365482%" y1="12.4206853%" x2="50%" y2="50%" id="linearGradient-11">
+            <stop stop-color="#FFFFFF" stop-opacity="0.14" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-12" points="0 0.0002 24.9288 0.0002 24.9288 24.929 0 24.929"></polygon>
+    </defs>
+    <style type="text/css">
+        <![CDATA[
+        #moon {
+        -webkit-transform-origin: 50.5% 39.5%; -webkit-animation: moon-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        transform-origin: 50.5% 39.5%; animation: moon-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes moon-anim {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(6deg); }
+        }
+        @keyframes moon-anim {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(6deg); }
+        }
+
+        #twinkle {
+        -webkit-transform-origin: 16.5% 17%; -webkit-animation: twinkle-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+        transform-origin: 8% 8%; animation: twinkle-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+        }
+        @-webkit-keyframes twinkle-anim {
+        0% { -webkit-transform: scale(1); }
+        40% { -webkit-transform: scale(0.6); }
+        100% { -webkit-transform: scale(1); }
+        }
+        @keyframes twinkle-anim {
+        0% { transform: scale(1); }
+        40% { transform: scale(0.6); }
+        100% { transform: scale(1); }
+        }
+
+        #moon-inner {
+        -webkit-transform-origin: 50.5% 39.5%; -webkit-animation: moon-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        transform-origin: 50.5% 39.5%; animation: moon-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes moon-inner-anim {
+        0% { -webkit-transform: rotate(0deg) translate(0px, 0px); }
+        100% { -webkit-transform: rotate(6deg) translate(2px, 10px); }
+        }
+        @keyframes moon-inner-anim {
+        0% { transform: rotate(0deg) translate(0px, 0px); }
+        100% { transform: rotate(6deg) translate(2px, 10px); }
+        }
+
+        #cloud {
+        -webkit-animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes cloud-anim {
+        0% { -webkit-transform: translate(0, 0px); }
+        100% { -webkit-transform: translate(0, -10px); }
+        }
+        @keyframes cloud-anim {
+        0% { transform: translate(0, 0px); }
+        100% { transform: translate(0, -10px); }
+        }
+        #rain-line-0 {
+        -webkit-animation: rain-line-anim-0 2s linear infinite;
+        animation: rain-line-anim-0 2s linear infinite;
+        }
+        @-webkit-keyframes rain-line-anim-0 {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        30% { opacity: 1; }
+        50.9% { -webkit-transform: translate(-4px, 8px); opacity: 0; }
+        51% { -webkit-transform: translate(4px, -8px); opacity: 0; }
+        100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes rain-line-anim-0 {
+        0% { transform: translate(0px, 0px); opacity: 1; }
+        30% { opacity: 1; }
+        50.9% { transform: translate(-4px, 8px); opacity: 0; }
+        51% { transform: translate(4px, -8px); opacity: 0; }
+        100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        #rain-line-1 {
+        -webkit-animation: rain-line-anim-1 2s linear infinite;
+        animation: rain-line-anim-1 2s linear infinite;
+        }
+        @-webkit-keyframes rain-line-anim-1 {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        20% { opacity: 1; }
+        39.9% { -webkit-transform: translate(-4px, 8px); opacity: 0; }
+        40% { -webkit-transform: translate(4px, -8px); opacity: 0; }
+        60% { opacity: 1; }
+        100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes rain-line-anim-1 {
+        0% { transform: translate(0px, 0px); opacity: 1; }
+        20% { opacity: 1; }
+        39.9% { transform: translate(-4px, 8px); opacity: 0; }
+        40% { transform: translate(4px, -8px); opacity: 0; }
+        60% { opacity: 1; }
+        100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        #rain-line-2 {
+        -webkit-animation: rain-line-anim-2 1.5s linear infinite;
+        animation: rain-line-anim-2 1.5s linear infinite;
+        }
+        @-webkit-keyframes rain-line-anim-2 {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        40% { opacity: 1; }
+        50.9% { -webkit-transform: translate(-3px, 6px); opacity: 0; }
+        51% { -webkit-transform: translate(3px, -6px); opacity: 0; }
+        85% { opacity: 1; }
+        100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes rain-line-anim-2 {
+        0% { transform: translate(0px, 0px); opacity: 1; }
+        40% { opacity: 1; }
+        50.9% { transform: translate(-3px, 6px); opacity: 0; }
+        51% { transform: translate(3px, -6px); opacity: 0; }
+        85% { opacity: 1; }
+        100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        ]]>
+    </style>
+    <g id="날씨아이콘_비후갬_밤" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(11.000000, 22.000000)">
+            <g id="cloud">
+              <g id="rain-line-1">
+                <path d="M13.5060006,102.819734 C14.3014376,101.442336 16.0628684,100.970563 17.4402662,101.766001 C18.7646872,102.530844 19.2518066,104.188803 18.5801775,105.539708 L18.4939994,105.700266 L12.6439994,115.830266 C11.8485624,117.207664 10.0871316,117.679437 8.70973379,116.883999 C7.38531277,116.119156 6.89819336,114.461197 7.56982249,113.110292 L7.65600056,112.949734 L13.5060006,102.819734 Z" id="Path" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+                <path d="M42.8859299,51.9298561 C43.6812994,50.5524193 45.442707,50.0805604 46.8201439,50.8759299 C48.1446024,51.6407083 48.6318031,53.2986432 47.9602403,54.6495816 L47.8740701,54.8101439 L24.0840701,96.0101439 C23.2887006,97.3875807 21.527293,97.8594396 20.1498561,97.0640701 C18.8253976,96.2992917 18.3381969,94.6413568 19.0097597,93.2904184 L19.0959299,93.1298561 L42.8859299,51.9298561 Z" id="Path" fill="url(#linearGradient-4)" fill-rule="nonzero"></path>
+              </g>
+              <path id="rain-line-0" d="M33.586069,44.1896153 C34.3815715,42.8122552 36.1430247,42.3405665 37.5203847,43.136069 C38.8447694,43.9009753 39.33181,45.5589572 38.6601167,46.9098308 L38.573931,47.0703847 L17.163931,84.1403847 C16.3684285,85.5177448 14.6069753,85.9894335 13.2296153,85.193931 C11.9052306,84.4290247 11.41819,82.7710428 12.0898833,81.4201692 L12.176069,81.2596153 L33.586069,44.1896153 Z" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
+              <path id="rain-line-2" d="M55.7257058,54.6402443 C56.520861,53.2626836 58.2821951,52.7905507 59.6597557,53.5857058 C60.9843333,54.3502781 61.471792,56.0081371 60.8004394,57.3591801 L60.7142942,57.5197557 L31.5242942,108.089756 C30.729139,109.467316 28.9678049,109.939449 27.5902443,109.144294 C26.2656667,108.379722 25.778208,106.721863 26.4495606,105.37082 L26.5357058,105.210244 L55.7257058,54.6402443 Z" fill="url(#linearGradient-3)" fill-rule="nonzero"></path>
+            </g>
+            <g id="Group">
+                <g>
+                  <g id="cloud">
+                    <g id="Path" transform="translate(0.299962, 0.924078)">
+
+                      <mask id="mask-7" fill="white">
+                        <use xlink:href="#path-6"></use>
+                      </mask>
+                      <use id="Mask" fill="url(#linearGradient-5)" fill-rule="nonzero" xlink:href="#path-6"></use>
+                      <g fill-rule="nonzero" mask="url(#mask-7)">
+                        <g id="moon-inner">
+                          <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
+                          <use fill="url(#linearGradient-8)" xlink:href="#path-9"></use>
+                        </g>
+                      </g>
+                    </g>
+
+                    <circle id="Oval" fill="url(#linearGradient-11)" fill-rule="nonzero" cx="49.15" cy="32.45" r="31.52"></circle>
+                  </g>
+                    <path id="moon" d="M43.41,76.92 C59.5578893,76.9136006 74.836308,69.603224 84.9727683,57.0331587 C95.1092286,44.4630933 99.0157849,27.9824835 95.6,12.2 C121.571944,17.8227367 139.459847,41.6837946 137.574307,68.1904316 C135.688767,94.6970686 114.60338,115.785776 88.0970405,117.67549 C61.5907007,119.565203 37.7268264,101.681059 32.1,75.71 C35.8167829,76.5110363 39.6078792,76.9166266 43.41,76.92 Z" fill="url(#linearGradient-8)" fill-rule="nonzero"></path>
+                    <g id="Group-3" transform="translate(125.000000, 101.000000)">
+                        <mask id="mask-13" fill="white">
+                            <use xlink:href="#path-12"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path class="twinkle" d="M12.4648,0 C9.5138,7.122 7.1228,9.515 -0.0002,12.465 C7.1228,15.415 9.5138,17.807 12.4648,24.929 C15.4148,17.807 17.8068,15.415 24.9288,12.465 C17.8068,9.515 15.4148,7.122 12.4648,0" id="Fill-1" fill="#FFDD1C" mask="url(#mask-13)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

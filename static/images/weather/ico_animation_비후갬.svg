@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_비후갬</title>
+    <defs>
+        <linearGradient x1="27.1986679%" y1="106.738425%" x2="72.8173405%" y2="-6.70596959%" id="linearGradient-1">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="6758.55721%" y1="-922.314762%" x2="6758.55721%" y2="-1055.02585%" id="linearGradient-2">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="5453.43019%" y1="-717.590867%" x2="5453.43019%" y2="-847.041007%" id="linearGradient-3">
+            <stop stop-color="#61ADFF" stop-opacity="0.8" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="22385.5501%" y1="-3192.80303%" x2="22385.5501%" y2="-3364.96212%" id="linearGradient-4">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="12.3318553%" y1="31.6891058%" x2="87.7677588%" y2="82.3899359%" id="linearGradient-5">
+            <stop stop-color="#E9E9ED" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <path d="M80.2801784,38.1968206 C80.262215,31.3147761 75.6430034,25.2950588 69.0000227,23.4968206 C67.3442449,10.8458618 57.0588238,1.08076033 44.339014,0.0833649515 C31.6192042,-0.914030424 19.9374326,7.12856287 16.3300227,19.3668206 C7.15469555,19.8871014 -0.0147165633,27.486766 -4.51616797e-05,36.6768206 C0.0275678608,46.2244817 7.77232338,53.951351 17.3200227,53.9568206 L35.1000227,53.9568206 L65.0000227,53.8868206 C69.0594706,53.8868345 72.9520726,52.2714923 75.8187811,49.3972794 C78.6854895,46.5230664 80.2906495,42.6262546 80.2801784,38.5668206 L80.2801784,38.1968206 Z" id="path-6"></path>
+        <linearGradient x1="-6.95626361%" y1="-6.95626361%" x2="85.8895706%" y2="85.8796754%" id="linearGradient-8">
+            <stop stop-color="#FFCC14" offset="0%"></stop>
+            <stop stop-color="#FFB90A" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-9" cx="89.4900227" cy="67.4668206" r="50.53"></circle>
+        <filter x="-20.8%" y="-20.8%" width="141.6%" height="141.6%" filterUnits="objectBoundingBox" id="filter-10">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="12.4305298%" y1="12.4305298%" x2="36.7728788%" y2="36.7728788%" id="linearGradient-11">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.72" offset="25%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.34" offset="62%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.09" offset="88%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="35.8219843%" y1="35.6158699%" x2="65.8314286%" y2="65.7370518%" id="linearGradient-12">
+            <stop stop-color="#FFD800" stop-opacity="0" offset="1%"></stop>
+            <stop stop-color="#FFD800" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #sun-core {
+      -webkit-transform-origin: 55% 55%; -webkit-animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 55% 55%; animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-core-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.98); }
+      }
+      @keyframes sun-core-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.98); }
+      }
+      #sun-shine {
+      -webkit-transform-origin: 49.5% 42.5%; -webkit-animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 49.5% 42.5%; animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-shine-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.94); }
+      }
+      @keyframes sun-shine-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.94); }
+      }
+      #sun-core-inner {
+      -webkit-transform-origin: 30% 30%; -webkit-animation: sun-core-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 30% 30%; animation: sun-core-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-core-inner-anim {
+      0% { -webkit-transform: scale(1) translate(0, 0px); }
+      100% { -webkit-transform: scale(0.98) translate(0, 10px); }
+      }
+      @keyframes sun-core-inner-anim {
+      0% { transform: scale(1) translate(0, 0px); }
+      100% { transform: scale(0.98) translate(0, 10px); }
+      }
+
+      #cloud {
+      -webkit-animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes cloud-anim {
+      0% { -webkit-transform: translate(0, 0px); }
+      100% { -webkit-transform: translate(0, -10px); }
+      }
+      @keyframes cloud-anim {
+      0% { transform: translate(0, 0px); }
+      100% { transform: translate(0, -10px); }
+      }
+      #rain-line-0 {
+      -webkit-animation: rain-line-anim-0 2s linear infinite;
+      animation: rain-line-anim-0 2s linear infinite;
+      }
+      @-webkit-keyframes rain-line-anim-0 {
+      0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      30% { opacity: 1; }
+      50.9% { -webkit-transform: translate(-4px, 8px); opacity: 0; }
+      51% { -webkit-transform: translate(4px, -8px); opacity: 0; }
+      100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      }
+      @keyframes rain-line-anim-0 {
+      0% { transform: translate(0px, 0px); opacity: 1; }
+      30% { opacity: 1; }
+      50.9% { transform: translate(-4px, 8px); opacity: 0; }
+      51% { transform: translate(4px, -8px); opacity: 0; }
+      100% { transform: translate(0px, 0px); opacity: 1; }
+      }
+      #rain-line-1 {
+      -webkit-animation: rain-line-anim-1 2s linear infinite;
+      animation: rain-line-anim-1 2s linear infinite;
+      }
+      @-webkit-keyframes rain-line-anim-1 {
+      0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      20% { opacity: 1; }
+      39.9% { -webkit-transform: translate(-4px, 8px); opacity: 0; }
+      40% { -webkit-transform: translate(4px, -8px); opacity: 0; }
+      60% { opacity: 1; }
+      100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      }
+      @keyframes rain-line-anim-1 {
+      0% { transform: translate(0px, 0px); opacity: 1; }
+      20% { opacity: 1; }
+      39.9% { transform: translate(-4px, 8px); opacity: 0; }
+      40% { transform: translate(4px, -8px); opacity: 0; }
+      60% { opacity: 1; }
+      100% { transform: translate(0px, 0px); opacity: 1; }
+      }
+      #rain-line-2 {
+      -webkit-animation: rain-line-anim-2 1.5s linear infinite;
+      animation: rain-line-anim-2 1.5s linear infinite;
+      }
+      @-webkit-keyframes rain-line-anim-2 {
+      0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      40% { opacity: 1; }
+      50.9% { -webkit-transform: translate(-3px, 6px); opacity: 0; }
+      51% { -webkit-transform: translate(3px, -6px); opacity: 0; }
+      85% { opacity: 1; }
+      100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      }
+      @keyframes rain-line-anim-2 {
+      0% { transform: translate(0px, 0px); opacity: 1; }
+      40% { opacity: 1; }
+      50.9% { transform: translate(-3px, 6px); opacity: 0; }
+      51% { transform: translate(3px, -6px); opacity: 0; }
+      85% { opacity: 1; }
+      100% { transform: translate(0px, 0px); opacity: 1; }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_비후갬" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘">
+            <g transform="translate(10.000000, 22.000000)">
+              <g id="cloud">
+                <path id="rain-line-0" d="M31.7817121,33.9503667 C32.6099367,32.5153719 34.4446385,32.0234875 35.8796333,32.8517121 C37.2614801,33.6492617 37.7687829,35.3801153 37.0648995,36.788616 L36.9782879,36.9496333 L14.6882879,75.5696333 C13.8600633,77.0046281 12.0253615,77.4965125 10.5903667,76.6682879 C9.20851989,75.8707383 8.70121709,74.1398847 9.40510054,72.731384 L9.4917121,72.5703667 L31.7817121,33.9503667 Z" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+                <path id="rain-line-2" d="M42.681816,65.9201867 C43.51014,64.4852493 45.3448759,63.993492 46.7798133,64.821816 C48.1616049,65.6194613 48.6687877,67.3503501 47.9648067,68.758802 L47.878184,68.9198133 L27.778184,103.739813 C26.94986,105.174751 25.1151241,105.666508 23.6801867,104.838184 C22.2983951,104.040539 21.7912123,102.30965 22.4951933,100.901198 L22.581816,100.740187 L42.681816,65.9201867 Z" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
+                <g id="rain-line-1">
+                  <path d="M41.4719271,42.0099943 C42.3003574,40.5751182 44.1351297,40.0834968 45.5700057,40.9119271 C46.9517382,41.7096748 47.4587929,43.4406011 46.7547075,44.8490009 L46.6680729,45.0100057 L21.8880729,87.9300057 C21.0596426,89.3648818 19.2248703,89.8565032 17.7899943,89.0280729 C16.4082618,88.2303252 15.9012071,86.4993989 16.6052925,85.0909991 L16.6919271,84.9299943 L41.4719271,42.0099943 Z" id="Path" fill="url(#linearGradient-3)" fill-rule="nonzero"></path>
+                  <g id="Group" transform="translate(7.000000, 96.000000)" fill="url(#linearGradient-4)" fill-rule="nonzero">
+                    <path d="M3.86119745,-0.978741243 C4.68892938,-2.41402026 6.52346223,-2.90653448 7.95874124,-2.07880255 C9.34086178,-1.28172735 9.84875872,0.448951977 9.14535883,1.85769421 L9.05880255,2.01874124 L2.96880255,12.5787412 C2.14107062,14.0140203 0.306537773,14.5065345 -1.12874124,13.6788025 C-2.51086178,12.8817274 -3.01875872,11.151048 -2.31535883,9.74230579 L-2.22880255,9.58125876 L3.86119745,-0.978741243 Z" id="Path"></path>
+                  </g>
+                </g>
+              </g>
+                <g id="Oval" transform="translate(-0.000023, 5.043179)">
+                    <g id="cloud">
+                      <mask id="mask-7" fill="white">
+                          <use xlink:href="#path-6"></use>
+                      </mask>
+                      <use id="Mask" fill="url(#linearGradient-5)" fill-rule="nonzero" xlink:href="#path-6"></use>
+                      <g fill-rule="nonzero" mask="url(#mask-7)">
+                          <g id="sun-core-inner">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
+                            <use fill="url(#linearGradient-8)" xlink:href="#path-9"></use>
+                          </g>
+                      </g>
+                    </g>
+                </g>
+                <circle id="Oval" fill="url(#linearGradient-11)" fill-rule="nonzero" opacity="0.15" cx="42.21" cy="26.99" r="26.99"></circle>
+                <path id="sun-shine" d="M149.61,70.08 L149.61,70.56 C149.51,36.88 122.69,10.08 89.61,10.08 C56.53,10.08 29.71,36.88 29.61,70.56 C29.61,103.697085 56.472915,130.56 89.61,130.56 C122.747085,130.56 149.61,103.697085 149.61,70.56 L149.61,70.08 Z"  fill="url(#linearGradient-12)" fill-rule="nonzero" opacity="0.3"></path>
+            </g>
+            <circle id="sun-core" fill="url(#linearGradient-8)" fill-rule="nonzero" cx="99.49" cy="91.51" r="50.53"></circle>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_눈후갬_밤</title>
+    <defs>
+        <linearGradient x1="18.6760418%" y1="15.6750572%" x2="81.3307656%" y2="84.2677346%" id="linearGradient-1">
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="87.4521992%" y1="87.451987%" x2="54.6156506%" y2="54.6243518%" id="linearGradient-2">
+            <stop stop-color="#7FAAFF" offset="0%"></stop>
+            <stop stop-color="#7ABEF5" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-3" points="0 0.0002 24.9288 0.0002 24.9288 24.929 0 24.929"></polygon>
+        <linearGradient x1="7.77335263%" y1="14.5818351%" x2="78.6173424%" y2="71.9823178%" id="linearGradient-5">
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="104.245091%" y1="252.305599%" x2="169.387245%" y2="315.068716%" id="linearGradient-6">
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="11.4623048%" y1="8.05600809%" x2="74.3938095%" y2="76.4111171%" id="linearGradient-7">
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #moon-wrap {
+      -webkit-animation: moon-wrap-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      animation: moon-wrap-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes moon-wrap-anim {
+      0% { -webkit-transform: translate(0, 0px); }
+      100% { -webkit-transform: translate(0, 3px); }
+      }
+      @keyframes moon-wrap-anim {
+      0% { transform: translate(0, 0px); }
+      100% { transform: translate(0, 3px); }
+      }
+      #moon {
+      -webkit-transform-origin: 30.5% 30.5%; -webkit-animation: moon-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 30.5% 30.5%; animation: moon-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes moon-anim {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(6deg); }
+      }
+      @keyframes moon-anim {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(6deg); }
+      }
+      #twinkle {
+      -webkit-transform-origin: 8.5% 10%; -webkit-animation: twinkle-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+      transform-origin: 8.5% 10%; animation: twinkle-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+      }
+      @-webkit-keyframes twinkle-anim {
+      0% { -webkit-transform: scale(1); }
+      40% { -webkit-transform: scale(0.6); }
+      100% { -webkit-transform: scale(1); }
+      }
+      @keyframes twinkle-anim {
+      0% { transform: scale(1); }
+      40% { transform: scale(0.6); }
+      100% { transform: scale(1); }
+      }
+
+      #snow-header-0 {
+      -webkit-transform-origin: 23% 14%; -webkit-animation: snow-header-anim-0 20s linear infinite;
+      transform-origin: 23% 14%; animation: snow-header-anim-0 20s linear infinite;
+      }
+      @-webkit-keyframes snow-header-anim-0 {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+      }
+      @keyframes snow-header-anim-0 {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+      }
+      #snow-contain-1 {
+      -webkit-animation: snow-contain-anim-1 3s linear infinite;
+      animation: snow-contain-anim-1 3s linear infinite;
+      }
+      @-webkit-keyframes snow-contain-anim-1 {
+      0% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      30% { opacity: 1; }
+      50% { opacity: 0; -webkit-transform: translate(-5px, 10px); }
+      50.01% { opacity: 0; -webkit-transform: translate(7px, -14px); }
+      70% { opacity: 1; }
+      100% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      }
+      @keyframes snow-contain-anim-1 {
+      0% { opacity: 1; transform: translate(0px, 0px); }
+      30% { opacity: 1; }
+      50% { opacity: 0; transform: translate(-5px, 10px); }
+      50.01% { opacity: 0; transform: translate(7px, -14px); }
+      70% { opacity: 1; }
+      100% { opacity: 1; transform: translate(0px, 0px); }
+      }
+      #snow-header-1 {
+      -webkit-transform-origin: 6% 39.5%; -webkit-animation: snow-header-anim-1 3s linear infinite;
+      transform-origin: 6% 39.5%; animation: snow-header-anim-1 3s linear infinite;
+      }
+      @-webkit-keyframes snow-header-anim-1 {
+      0% { -webkit-transform: rotate(0deg); }
+      50% { -webkit-transform: rotate(45deg); }
+      50.01% { -webkit-transform: rotate(-45deg); }
+      100% { -webkit-transform: rotate(0deg); }
+      }
+      @keyframes snow-header-anim-1 {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(45deg); }
+      50.01% { transform: rotate(-45deg); }
+      100% { transform: rotate(0deg); }
+      }
+      #snow-contain-2 {
+      -webkit-animation: snow-contain-anim-2 3s linear infinite;
+      animation: snow-contain-anim-2 3s linear infinite;
+      }
+      @-webkit-keyframes snow-contain-anim-2 {
+      0% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      10% { opacity: 1; }
+      30% { opacity: 0; -webkit-transform: translate(2px, 4px); }
+      30.01% { opacity: 0; -webkit-transform: translate(-5px, -10px); }
+      50% { opacity: 1; }
+      100% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      }
+      @keyframes snow-contain-anim-2 {
+      0% { opacity: 1; transform: translate(0px, 0px); }
+      10% { opacity: 1; }
+      30% { opacity: 0; transform: translate(2px, 4px); }
+      30.01% { opacity: 0; transform: translate(-5px, -10px); }
+      50% { opacity: 1; }
+      100% { opacity: 1; transform: translate(0px, 0px); }
+      }
+      #snow-header-2 {
+      -webkit-transform-origin: 17% 51%; -webkit-animation: snow-header-anim-2 3s linear infinite;
+      transform-origin: 17% 51%; animation: snow-header-anim-2 3s linear infinite;
+      }
+      @-webkit-keyframes snow-header-anim-2 {
+      0% { -webkit-transform: rotate(0deg); }
+      30% { -webkit-transform: rotate(25deg); }
+      30.01% { -webkit-transform: rotate(-45deg); }
+      100% { -webkit-transform: rotate(0deg); }
+      }
+      @keyframes snow-header-anim-2 {
+      0% { transform: rotate(0deg); }
+      30% { transform: rotate(25deg); }
+      30.01% { transform: rotate(-45deg); }
+      100% { transform: rotate(0deg); }
+      }
+      #snow-contain-3 {
+      -webkit-animation: snow-contain-anim-3 3s linear infinite;
+      animation: snow-contain-anim-3 3s linear infinite;
+      }
+      @-webkit-keyframes snow-contain-anim-3 {
+      0% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      30% { opacity: 1; }
+      50% { opacity: 0; -webkit-transform: translate(-5px, 10px); }
+      50.01% { opacity: 0; -webkit-transform: translate(2.5px, -5px); }
+      70% { opacity: 1; }
+      100% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      }
+      @keyframes snow-contain-anim-3 {
+      0% { opacity: 1; transform: translate(0px, 0px); }
+      50% { opacity: 1; }
+      70% { opacity: 0; transform: translate(-5px, 10px); }
+      70.01% { opacity: 0; transform: translate(2.5px, -5px); }
+      90% { opacity: 1; }
+      100% { opacity: 1; transform: translate(0px, 0px); }
+      }
+      #snow-header-3 {
+      -webkit-transform-origin: 11% 61%; -webkit-animation: snow-header-anim-3 3s linear infinite;
+      transform-origin: 11% 61%; animation: snow-header-anim-3 3s linear infinite;
+      }
+      @-webkit-keyframes snow-header-anim-3 {
+      0% { -webkit-transform: rotate(0deg); }
+      70% { -webkit-transform: rotate(45deg); }
+      70.01% { -webkit-transform: rotate(-45deg); }
+      100% { -webkit-transform: rotate(0deg); }
+      }
+      @keyframes snow-header-anim-3 {
+      0% { transform: rotate(0deg); }
+      70% { transform: rotate(45deg); }
+      70.01% { transform: rotate(-45deg); }
+      100% { transform: rotate(0deg); }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_눈후갬_밤" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(7.000000, 31.000000)">
+            <path id="snow-header-0" d="M60.3,28.51 L51.68,30.82 L50.54,30.17 L47.25,26.77 L51.08,22.93 L51.68,22.59 L60.3,24.9 C61.6337677,25.258985 63.0060148,24.4687676 63.3649999,23.135 C63.723985,21.8012323 62.9337676,20.4289851 61.6,20.07 L57.79,19.07 L61.37,17 C62.1997768,16.583309 62.7302575,15.7410589 62.7476465,14.8126955 C62.7650355,13.8843321 62.2664678,13.0228072 61.4528774,12.5753346 C60.6392871,12.127862 59.6447165,12.1681648 58.87,12.68 L55.3,14.73 L56.3,10.93 C56.6299582,9.60609603 55.8374932,8.2621433 54.5192959,7.91007817 C53.2010985,7.55801304 51.8440735,8.32787838 51.47,9.64 L49.16,18.26 L48,18.92 L43.33,20.09 L42.01,15.45 L42.01,14.14 L48.32,7.83 C49.2039767,6.84111261 49.1617984,5.3340017 48.2238984,4.39610165 C47.2859983,3.4582016 45.7788874,3.41602334 44.79,4.3 L42.01,7.08 L42.01,3 C42.01,1.61928813 40.8907119,0.5 39.51,0.5 C38.1292881,0.5 37.01,1.61928813 37.01,3 L37.01,7.12 L34.27,4.3 C33.64322,3.64928227 32.7141105,3.38737464 31.8397519,3.61493484 C30.9653932,3.84249505 30.2818451,4.52411223 30.0518124,5.39782366 C29.8217797,6.2715351 30.0810579,7.20138174 30.73,7.83 L37.05,14.14 L37.05,14.83 L35.64,20.07 L31.05,18.92 L29.92,18.26 L27.61,9.64 C27.3915916,8.7636715 26.7175177,8.07326889 25.8466668,7.83395197 C24.9758159,7.59463506 24.0435923,7.84361404 23.4080308,8.48526468 C22.7724694,9.12691532 22.5323904,10.0614706 22.78,10.93 L23.78,14.73 L20.21,12.67 C19.0260447,12.0883701 17.5939079,12.5266981 16.9383091,13.6713525 C16.2827102,14.816007 16.6292618,16.2730756 17.73,17 L21.3,19.07 L17.5,20.07 C16.1878784,20.4440735 15.418013,21.8010985 15.7700782,23.1192959 C16.1221433,24.4374932 17.466096,25.2299582 18.79,24.9 L27.42,22.59 L28.01,22.93 L31.84,26.77 L28.55,30.17 L27.42,30.82 L18.79,28.51 C17.9214706,28.2623904 16.9869153,28.5024694 16.3452647,29.1380308 C15.703614,29.7735923 15.4546351,30.7058159 15.693952,31.5766668 C15.9332689,32.4475177 16.6236715,33.1215916 17.5,33.34 L21.3,34.34 L17.73,36.4 C16.6259587,37.1294116 16.2815114,38.59279 16.9442906,39.7380726 C17.6070699,40.8833551 19.0474928,41.3138225 20.23,40.72 L23.8,38.66 L22.8,42.46 C22.4410149,43.7937677 23.2312323,45.1660149 24.565,45.525 C25.8987677,45.8839851 27.2710149,45.0937677 27.63,43.76 L29.94,35.13 L30.53,34.79 L35.68,33.42 L37.07,38.56 L37.07,39.25 L30.75,45.56 C29.7724561,46.537544 29.7724561,48.122456 30.7500001,49.0999999 C31.727544,50.0775439 33.312456,50.0775439 34.29,49.1 L37.07,46.31 L37.07,50.44 C37.07,51.8207119 38.1892881,52.94 39.57,52.94 C40.9507119,52.94 42.07,51.8207119 42.07,50.44 L42.07,46.33 L44.85,49.12 C45.8322722,50.0661376 47.3915945,50.0504267 48.3546037,49.0846895 C49.3176128,48.1189523 49.3289125,46.5595917 48.38,45.58 L42.07,39.27 L42.07,38 L43.36,33.45 L48.6,34.85 L49.2,35.19 L51.51,43.82 C51.8708186,45.1495934 53.239293,45.9366898 54.57,45.58 C55.2088986,45.4070496 55.7545783,44.9906098 56.09,44.42 C56.4141805,43.8422528 56.5036952,43.1619413 56.34,42.52 L55.34,38.72 L58.91,40.78 C59.6847165,41.2918352 60.6792871,41.332138 61.4928774,40.8846654 C62.3064678,40.4371928 62.8050355,39.5756679 62.7876465,38.6473045 C62.7702575,37.7189411 62.2397768,36.876691 61.41,36.46 L57.83,34.4 L61.64,33.4 C62.9737677,33.0410149 63.7639851,31.6687677 63.405,30.335 C63.0460149,29.0012323 61.6737677,28.2110149 60.34,28.57 L60.3,28.51 Z M41.69,28.84 C41.1259422,29.4141252 40.3548484,29.7375253 39.55,29.7375253 C38.7451516,29.7375253 37.9740578,29.4141252 37.41,28.84 L37.41,28.84 C36.8389749,28.2763161 36.5175519,27.5073772 36.5175519,26.705 C36.5175519,25.9026228 36.8389749,25.1336839 37.41,24.57 L37.41,24.57 C38.172762,23.8054516 39.2854649,23.5059085 40.3289642,23.7842056 C41.3724636,24.0625028 42.188227,24.8763602 42.4689642,25.9192056 C42.7497015,26.9620511 42.452762,28.0754516 41.69,28.84 L41.69,28.84 Z" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+            <g transform="translate(36.000000, 3.000000)">
+                <g id="moon-wrap">
+                    <g id="moon">
+                        <path d="M11.41,64.92 C27.5578893,64.9136006 42.836308,57.603224 52.9727683,45.0331587 C63.1092286,32.4630933 67.0157849,15.9824835 63.6,0.2 C89.5719444,5.82273673 107.459847,29.6837946 105.574307,56.1904316 C103.688767,82.6970686 82.6033803,103.785776 56.0970405,105.67549 C29.5907007,107.565203 5.72682641,89.6810587 0.1,63.71 C3.81678286,64.5110363 7.60787921,64.9166266 11.41,64.92 Z" id="Path" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+                <g id="moon-wrap">
+                    <g id="Group-3" transform="translate(93.000000, 88.000000)">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M12.4648,0 C9.5138,7.122 7.1228,9.515 -0.0002,12.465 C7.1228,15.415 9.5138,17.807 12.4648,24.929 C15.4148,17.807 17.8068,15.415 24.9288,12.465 C17.8068,9.515 15.4148,7.122 12.4648,0" id="twinkle" fill="#FFDD1C" mask="url(#mask-4)"></path>
+                    </g>
+                </g>
+            </g>
+            <g id="snow-contain-2">
+                <path d="M30.79,85.12 L30.23,86.12 L29.67,85.12 C29.1868759,84.2894869 28.1245071,84.0038079 27.29,84.48 L27.29,84.48 C26.8906707,84.7118992 26.5999009,85.0930242 26.4817347,85.5394298 C26.3635685,85.9858353 26.4276987,86.4609045 26.66,86.86 L27.22,87.86 L26.1,87.86 C25.4487011,87.8105185 24.8245505,88.1299617 24.4837706,88.687194 C24.1429908,89.2444262 24.1429908,89.9455738 24.4837706,90.502806 C24.8245505,91.0600383 25.4487011,91.3794815 26.1,91.33 L27.22,91.33 L26.66,92.33    C26.4276987,92.7290955 26.3635685,93.2041647 26.4817347,93.6505702 C26.5999009,94.0969758 26.8906707,94.4781008 27.29,94.71 L27.29,94.71 C28.1252425,95.1804101 29.1833396,94.8958798 29.67,94.07 L30.23,93.07 L30.79,94.07 C31.0711122,94.6628026 31.661767,95.0470863 32.3176303,95.0638858 C32.9734937,95.0806853 33.5830474,94.7271442 33.8941395,94.1495105 C34.2052316,93.5718768 34.1649663,92.8683672 33.79,92.33 L33.23,91.33 L34.35,91.33 C35.2572303,91.2610744 35.9581857,90.5048448 35.9581857,89.595 C35.9581857,88.6851552 35.2572303,87.9289256 34.35,87.86 L33.24,87.86 L33.8,86.86 C34.1749663,86.3216328 34.2152316,85.6181232 33.9041395,85.0404895 C33.5930474,84.4628558 32.9834937,84.1093147 32.3276303,84.1261142 C31.671767,84.1429137 31.0811122,84.5271974 30.8,85.12 L30.79,85.12 Z" id="snow-header-2" fill="url(#linearGradient-5)" fill-rule="nonzero" opacity="0.8"></path>
+            </g>
+            <g id="snow-contain-3">
+                <path d="M22.36,104.4 L21.58,104.84 L21.58,104 C21.5800196,103.23069 20.9592906,102.605495 20.19,102.6 L20.19,102.6 C19.4168014,102.6 18.79,103.226801 18.79,104 L18.79,104.89 L18,104.4 C17.3344969,104.016162 16.4838379,104.244497 16.1,104.91 C15.7161621,105.575503 15.9444969,106.426162 16.61,106.81 L17.39,107.26 L16.61,107.71 C16.2881437,107.892199 16.0528923,108.195967 15.9570112,108.553171 C15.8611301,108.910376 15.9126445,109.291118 16.1,109.61 L16.1,109.61 C16.2821991,109.931856 16.5859673,110.167108 16.9431714,110.262989 C17.3003756,110.35887 17.6811177,110.307356 18,110.12 L18.78,109.68 L18.78,110.57 C18.735376,111.096583 18.9910739,111.603421 19.4411158,111.880447 C19.8911577,112.157472 20.4588423,112.157472 20.9088842,111.880447 C21.3589261,111.603421 21.614624,111.096583 21.57,110.57 L21.57,109.68 L22.35,110.12 C23.0155031,110.503838 23.8661621,110.275503 24.25,109.61 C24.6338379,108.944497 24.4055031,108.093838 23.74,107.71 L22.97,107.26 L23.74,106.81 C24.1705051,106.5617 24.4358419,106.10259 24.4360607,105.605612 C24.4362936,105.108634 24.171347,104.649291 23.7410607,104.400612 C23.3107744,104.151934 22.780505,104.1517 22.35,104.4 L22.36,104.4 Z" id="snow-header-3" fill="url(#linearGradient-6)" fill-rule="nonzero" opacity="0.7"></path>
+            </g>
+            <g id="snow-contain-1">
+                <path d="M2.34,67.21 L3.94,68.14 L2.34,69.06 C1.67592887,69.4409498 1.19086323,70.0706275 0.99196724,70.8099201 C0.793071249,71.5492128 0.89671472,72.3372741 1.28,73 L1.28,73 C2.09353587,74.35543 3.847564,74.8017475 5.21,74 L6.82,73.08 L6.82,75 C6.90980443,76.5220466 8.17030636,77.710368 9.695,77.710368 C11.2196936,77.710368 12.4801956,76.5220466 12.57,75 L12.57,73.15 L14.17,74.07 C14.8330359,74.4492831 15.6195889,74.5496301 16.3566137,74.3489643 C17.0936385,74.1482986 17.7207569,73.6630588 18.1,73 L18.1,73 C18.8872999,71.6237627 18.4187864,69.8701837 17.05,69.07 L15.44,68.15 L17.05,67.22 C18.4307119,66.42471 18.90529,64.6607119 18.11,63.28 C17.31471,61.8992881 15.5507119,61.42471 14.17,62.22 L12.57,63.15 L12.57,61.3 C12.4801956,59.7779534 11.2196936,58.589632 9.695,58.589632 C8.17030636,58.589632 6.90980443,59.7779534 6.82,61.3 L6.82,63.16 L5.21,62.23 C3.82928813,61.4374714 2.06752862,61.9142881 1.275,63.295 C0.482471384,64.6757119 0.959288125,66.4374714 2.34,67.23 L2.34,67.21 Z" id="snow-header-1" fill="url(#linearGradient-7)" fill-rule="nonzero" opacity="0.9"></path>
+            </g>
+        </g>
+    </g>
+</svg>
