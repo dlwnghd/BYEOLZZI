@@ -12,7 +12,7 @@ import json
 
 from config.DatabaseConfig import *   # 임포트는 함수 변수 클래스
 from utils.Database import Database
-from utils.Botserver import Botserver
+from utils.Botserver import BotServer
 from utils.Preprocess import Preprocess
 from models.intent.IntentModel import IntentModel
 from models.ner.NerModel import NerModel
@@ -119,7 +119,7 @@ if __name__ == '__main__':
     listen = 100    # 최대 클라이언트 연결수
 
     # 봇 서버 동작
-    bot = Botserver(port, listen)
+    bot = BotServer(port, listen)
     bot.create_sock()
     print('bot start')
 
