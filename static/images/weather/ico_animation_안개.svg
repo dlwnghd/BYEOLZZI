@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_안개</title>
+    <defs>
+        <linearGradient x1="50%" y1="3.22521532%" x2="50%" y2="63.1024372%" id="linearGradient-1">
+            <stop stop-color="#FFCC14" offset="0%"></stop>
+            <stop stop-color="#FFCC14" stop-opacity="0.98" offset="1%"></stop>
+            <stop stop-color="#FFC711" stop-opacity="0.72" offset="9%"></stop>
+            <stop stop-color="#FFC30F" stop-opacity="0.5" offset="18%"></stop>
+            <stop stop-color="#FFBF0D" stop-opacity="0.32" offset="26%"></stop>
+            <stop stop-color="#FFBC0C" stop-opacity="0.18" offset="34%"></stop>
+            <stop stop-color="#FFBB0B" stop-opacity="0.08" offset="41%"></stop>
+            <stop stop-color="#FFB90A" stop-opacity="0.02" offset="47%"></stop>
+            <stop stop-color="#FFB90A" stop-opacity="0" offset="53%"></stop>
+            <stop stop-color="#FFB90A" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="0.875656743%" x2="50%" y2="54.4658494%" id="linearGradient-2">
+            <stop stop-color="#FFCC14" offset="0%"></stop>
+            <stop stop-color="#FFCC14" stop-opacity="0.98" offset="1%"></stop>
+            <stop stop-color="#FFC711" stop-opacity="0.72" offset="18%"></stop>
+            <stop stop-color="#FFC30F" stop-opacity="0.5" offset="34%"></stop>
+            <stop stop-color="#FFBF0D" stop-opacity="0.32" offset="49%"></stop>
+            <stop stop-color="#FFBC0C" stop-opacity="0.18" offset="64%"></stop>
+            <stop stop-color="#FFBB0B" stop-opacity="0.08" offset="78%"></stop>
+            <stop stop-color="#FFB90A" stop-opacity="0.02" offset="90%"></stop>
+            <stop stop-color="#FFB90A" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="124.31576%" y1="58.0375543%" x2="38.8936573%" y2="48.7983763%" id="linearGradient-3">
+            <stop stop-color="#DEDFE3" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="211.116883%" y1="73.7226991%" x2="26.6623377%" y2="46.5754403%" id="linearGradient-4">
+            <stop stop-color="#DEDFE3" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="540.74928%" y1="213.695898%" x2="131.440922%" y2="77.1868177%" id="linearGradient-5">
+            <stop stop-color="#DEDFE3" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="164.756356%" y1="63.6940453%" x2="14.3114407%" y2="45.7442405%" id="linearGradient-6">
+            <stop stop-color="#DEDFE3" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #sun-core {
+      -webkit-transform-origin: 26% 20%; -webkit-animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 26% 20%; animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-core-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.98); }
+      }
+      @keyframes sun-core-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.98); }
+      }
+      #sun-shine {
+      -webkit-transform-origin: 30% 20%; -webkit-animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 30% 20%; animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-shine-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.94); }
+      }
+      @keyframes sun-shine-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.94); }
+      }
+      #line-0 {
+      -webkit-animation: line-0-anim 1.5s linear alternate infinite;
+      animation: line-0-anim 1.5s linear alternate infinite;
+      }
+      @-webkit-keyframes line-0-anim {
+      0% { -webkit-transform: translateX(0px); }
+      100% { -webkit-transform: translateX(-8px); }
+      }
+      @keyframes line-0-anim {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(-8px); }
+      }
+      #line-1 {
+      -webkit-animation: line-1-anim 3s linear alternate infinite;
+      animation: line-1-anim 3s linear alternate infinite;
+      }
+      @-webkit-keyframes line-1-anim {
+      0% { -webkit-transform: translateX(0px); }
+      100% { -webkit-transform: translateX(10px); }
+      }
+      @keyframes line-1-anim {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(10px); }
+      }
+      #line-2 {
+      -webkit-animation: line-2-anim 2s linear alternate infinite;
+      animation: line-2-anim 2s linear alternate infinite;
+      }
+      @-webkit-keyframes line-2-anim {
+      0% { -webkit-transform: translateX(0px); }
+      100% { -webkit-transform: translateX(-16px); }
+      }
+      @keyframes line-2-anim {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(-16px); }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_안개" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(9.000000, 24.000000)" fill-rule="nonzero">
+            <g id="Group" opacity="0.2" transform="translate(26.000000, 0.000000)" fill="url(#linearGradient-1)">
+                <g id="sun-shine">
+                    <circle id="Oval" cx="53" cy="53.1445455" r="52.5856364"></circle>
+                </g>
+            </g>
+            <g id="Group" opacity="0.7" transform="translate(34.000000, 9.000000)" fill="url(#linearGradient-2)">
+                <g id="sun-core">
+                    <circle id="Oval" cx="44.9225806" cy="45.0677419" r="44.2064516"></circle>
+                </g>
+            </g>
+            <path id="line-1" d="M12.9431891,68 L144.056811,68 C151.223693,68.0186142 157.018536,73.853992 157,81.0336813 C156.981375,88.2133706 151.156406,94.0185692 143.989524,94 L13.0104762,94 C5.84359401,94.0185694 0.0186253646,88.2133707 0,81.0336813 C-0.0185362466,73.8539919 5.77630697,68.018614 12.9431891,68 L12.9431891,68 Z" fill="url(#linearGradient-3)" opacity="0.9"></path>
+            <g id="line-0">
+                <path d="M28.5115274,42 L44.4409222,42 C49.1679703,42 53,45.8055796 53,50.5 C53,55.1944204 49.1679703,59 44.4409222,59 L28.5590778,59 C23.8320297,59 20,55.1944204 20,50.5 C20,45.8055796 23.8320297,42 28.5590778,42 L28.5115274,42 Z" id="Path" fill="url(#linearGradient-5)"></path>
+                <path d="M70.5436364,42 L127.350649,42 C132.127554,42 136,45.8055796 136,50.5 C136,55.1944204 132.127554,59 127.350649,59 L70.6493506,59 C65.8724462,59 62,55.1944204 62,50.5 C62,45.8055796 65.8724462,42 70.6493506,42 L70.5436364,42 Z" id="Path" fill="url(#linearGradient-4)"></path>
+            </g>
+            <path id="line-2" d="M42.6372881,104 L116.324153,104 C121.115691,104 125,107.80558 125,112.5 C125,117.19442 121.115691,121 116.324153,121 L42.6758475,121 C37.8843092,121 34,117.19442 34,112.5 C34,107.80558 37.8843092,104 42.6758475,104 L42.6372881,104 Z"  fill="url(#linearGradient-6)" opacity="0.8"></path>
+        </g>
+    </g>
+</svg>

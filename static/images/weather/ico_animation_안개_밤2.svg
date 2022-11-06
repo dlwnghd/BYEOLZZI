@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_안개_밤</title>
+    <defs>
+        <linearGradient x1="50.0011598%" y1="18.2657298%" x2="50.0011598%" y2="81.1686175%" id="linearGradient-1">
+            <stop stop-color="#7ABEF5" offset="0%"></stop>
+            <stop stop-color="#7FAAFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="124.347487%" y1="58.3617054%" x2="38.8909618%" y2="48.7507682%" id="linearGradient-2">
+            <stop stop-color="#C9C2A3" stop-opacity="0.4" offset="0%"></stop>
+            <stop stop-color="#CCB57E" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="212.35903%" y1="78.6193202%" x2="26.5410165%" y2="45.8691612%" id="linearGradient-3">
+            <stop stop-color="#C9C2A3" stop-opacity="0.4" offset="0%"></stop>
+            <stop stop-color="#CCB57E" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="548.545332%" y1="246.782951%" x2="132.746955%" y2="82.6845238%" id="linearGradient-4">
+            <stop stop-color="#C9C2A3" stop-opacity="0.4" offset="0%"></stop>
+            <stop stop-color="#CCB57E" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="164.756357%" y1="64.000048%" x2="14.3114407%" y2="45.6491427%" id="linearGradient-5">
+            <stop stop-color="#C9C2A3" stop-opacity="0.4" offset="0%"></stop>
+            <stop stop-color="#CCB57E" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #moon-wrap {
+      -webkit-animation: moon-wrap-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      animation: moon-wrap-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes moon-wrap-anim {
+      0% { -webkit-transform: translate(0, 0px); }
+      100% { -webkit-transform: translate(0, -6px); }
+      }
+      @keyframes moon-wrap-anim {
+      0% { transform: translate(0, 0px); }
+      100% { transform: translate(0, -6px); }
+      }
+      #moon {
+      -webkit-transform-origin: 30.5% 30%; -webkit-animation: moon-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 30.5% 30%; animation: moon-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes moon-anim {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(6deg); }
+      }
+      @keyframes moon-anim {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(6deg); }
+      }
+
+      #line-0 {
+      -webkit-animation: line-0-anim 1.5s linear alternate infinite;
+      animation: line-0-anim 1.5s linear alternate infinite;
+      }
+      @-webkit-keyframes line-0-anim {
+      0% { -webkit-transform: translateX(0px); }
+      100% { -webkit-transform: translateX(-8px); }
+      }
+      @keyframes line-0-anim {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(-8px); }
+      }
+      #line-1 {
+      -webkit-animation: line-1-anim 3s linear alternate infinite;
+      animation: line-1-anim 3s linear alternate infinite;
+      }
+      @-webkit-keyframes line-1-anim {
+      0% { -webkit-transform: translateX(0px); }
+      100% { -webkit-transform: translateX(10px); }
+      }
+      @keyframes line-1-anim {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(10px); }
+      }
+      #line-2 {
+      -webkit-animation: line-2-anim 2s linear alternate infinite;
+      animation: line-2-anim 2s linear alternate infinite;
+      }
+      @-webkit-keyframes line-2-anim {
+      0% { -webkit-transform: translateX(0px); }
+      100% { -webkit-transform: translateX(-16px); }
+      }
+      @keyframes line-2-anim {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(-16px); }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_안개_밤" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(11.000000, 16.000000)" fill-rule="nonzero">
+            <g id="moon-wrap">
+              <path id="moon" d="M9.98780488,57.6686861 C24.2458848,57.6744336 37.7398872,51.1904842 46.6898184,40.0331475 C55.6397497,28.8758109 59.0831226,14.2449615 56.0553659,0.239051095 C78.9779842,5.2312447 94.7634456,26.4037134 93.0968361,49.9214363 C91.4302267,73.4391593 72.8185027,92.1484181 49.4233819,93.8237613 C26.0282612,95.4991046 4.96616839,79.6309196 0,56.5881752 C3.28161085,57.3041154 6.62979886,57.6663325 9.98780488,57.6686861 Z" fill="url(#linearGradient-1)"></path>
+            </g>
+            <path id="line-1" d="M14.7713776,78 L142.228623,78 C146.803241,78.0120411 151.024036,80.5009493 153.301074,84.529177 C155.578111,88.5574047 155.565457,93.5129683 153.267877,97.5291548 C150.970296,101.545341 146.736847,104.011997 142.162229,104 L14.8377714,104 C7.76602449,104.018569 2.01837813,98.2133707 2,91.0336813 C1.98170981,83.8539919 7.69963063,78.018614 14.7713776,78 L14.7713776,78 Z" fill="url(#linearGradient-2)" opacity="0.9"></path>
+            <g id="line-0">
+              <path d="M85.5821103,52 L130.379577,52 C135.140505,52 139,55.8055796 139,60.5 C139,65.1944204 135.140505,69 130.379577,69 L85.6204233,69 C80.859495,69 77,65.1944204 77,60.5 C77,55.8055796 80.859495,52 85.6204233,52 L85.5821103,52 Z" id="Path" fill="url(#linearGradient-3)"></path>
+              <path d="M51.4776725,52 L62.4749662,52 C67.1832123,52 71,55.8055796 71,60.5 C71,65.1944204 67.1832123,69 62.4749662,69 L51.5250338,69 C46.8167877,69 43,65.1944204 43,60.5 C43,55.8055796 46.8167877,52 51.5250338,52 L51.4776725,52 Z" id="Path" fill="url(#linearGradient-4)"></path>
+            </g>
+            <path id="line-2" d="M40.5423729,114 L113.419492,114 C118.158376,114 122,117.80558 122,122.5 C122,127.19442 118.158376,131 113.419492,131 L40.5805085,131 C35.8416245,131 32,127.19442 32,122.5 C32,117.80558 35.8416245,114 40.5805085,114 L40.5423729,114 Z" fill="url(#linearGradient-5)" opacity="0.8"></path>
+        </g>
+    </g>
+</svg>

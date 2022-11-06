@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_비또는눈</title>
+    <defs>
+        <linearGradient x1="50%" y1="105.46875%" x2="50%" y2="-5.46875%" id="linearGradient-1">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="138.888889%" x2="50%" y2="-38.8888889%" id="linearGradient-2">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="104.216867%" x2="50%" y2="-4.21686747%" id="linearGradient-3">
+            <stop stop-color="#61ADFF" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#5EABFF" stop-opacity="0.6" offset="7%"></stop>
+            <stop stop-color="#5BA8FF" stop-opacity="0.72" offset="17%"></stop>
+            <stop stop-color="#59A5FF" stop-opacity="0.83" offset="28%"></stop>
+            <stop stop-color="#57A3FF" stop-opacity="0.9" offset="40%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="54%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="71%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="109.210526%" x2="50%" y2="-9.21052632%" id="linearGradient-4">
+            <stop stop-color="#61ADFF" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#5EABFF" stop-opacity="0.6" offset="7%"></stop>
+            <stop stop-color="#5BA8FF" stop-opacity="0.72" offset="17%"></stop>
+            <stop stop-color="#59A5FF" stop-opacity="0.83" offset="28%"></stop>
+            <stop stop-color="#57A3FF" stop-opacity="0.9" offset="40%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="54%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="71%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="13.420435%" y1="9.3991667%" x2="72.8852592%" y2="75.7102902%" id="linearGradient-5">
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="8.13326618%" y1="10.9901703%" x2="76.3878358%" y2="74.5787124%" id="linearGradient-6">
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="10.9762408%" y1="29.0833509%" x2="74.4209713%" y2="98.0743173%" id="linearGradient-7">
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #snow-header-0 {
+      -webkit-transform-origin: 48% 20%; -webkit-animation: snow-header-anim-0 20s linear infinite;
+      transform-origin: 48% 20%; animation: snow-header-anim-0 20s linear infinite;
+      }
+      @-webkit-keyframes snow-header-anim-0 {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+      }
+      @keyframes snow-header-anim-0 {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+      }
+      #snow-contain-1 {
+      -webkit-animation: snow-contain-anim-1 3s linear infinite;
+      animation: snow-contain-anim-1 3s linear infinite;
+      }
+      @-webkit-keyframes snow-contain-anim-1 {
+      0% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      30% { opacity: 1; }
+      50% { opacity: 0; -webkit-transform: translate(-10px, 10px); }
+      50.01% { opacity: 0; -webkit-transform: translate(5px, -10px); }
+      70% { opacity: 1; }
+      100% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      }
+      @keyframes snow-contain-anim-1 {
+      0% { opacity: 1; transform: translate(0px, 0px); }
+      30% { opacity: 1; }
+      50% { opacity: 0; transform: translate(-10px, 10px); }
+      50.01% { opacity: 0; transform: translate(5px, -10px); }
+      70% { opacity: 1; }
+      100% { opacity: 1; transform: translate(0px, 0px); }
+      }
+      #snow-header-1 {
+      -webkit-transform-origin: 55% 55%; -webkit-animation: snow-header-anim-1 3s linear infinite;
+      transform-origin: 55% 55%; animation: snow-header-anim-1 3s linear infinite;
+      }
+      @-webkit-keyframes snow-header-anim-1 {
+      0% { -webkit-transform: rotate(0deg); }
+      50% { -webkit-transform: rotate(45deg); }
+      50.01% { -webkit-transform: rotate(-45deg); }
+      100% { -webkit-transform: rotate(0deg); }
+      }
+      @keyframes snow-header-anim-1 {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(45deg); }
+      50.01% { transform: rotate(-45deg); }
+      100% { transform: rotate(0deg); }
+      }
+      #snow-contain-2 {
+      -webkit-animation: snow-contain-anim-2 3s linear infinite;
+      animation: snow-contain-anim-2 3s linear infinite;
+      }
+      @-webkit-keyframes snow-contain-anim-2 {
+      0% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      10% { opacity: 1; }
+      30% { opacity: 0; -webkit-transform: translate(4px, 8px); }
+      30.01% { opacity: 0; -webkit-transform: translate(-1px, -2px); }
+      50% { opacity: 1; }
+      100% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      }
+      @keyframes snow-contain-anim-2 {
+      0% { opacity: 1; transform: translate(0px, 0px); }
+      10% { opacity: 1; }
+      30% { opacity: 0; transform: translate(4px, 8px); }
+      30.01% { opacity: 0; transform: translate(-1px, -2px); }
+      50% { opacity: 1; }
+      100% { opacity: 1; transform: translate(0px, 0px); }
+      }
+      #snow-header-2 {
+      -webkit-transform-origin: 35% 37%; -webkit-animation: snow-header-anim-2 3s linear infinite;
+      transform-origin: 35% 37%; animation: snow-header-anim-2 3s linear infinite;
+      }
+      @-webkit-keyframes snow-header-anim-2 {
+      0% { -webkit-transform: rotate(0deg); }
+      30% { -webkit-transform: rotate(25deg); }
+      30.01% { -webkit-transform: rotate(-45deg); }
+      100% { -webkit-transform: rotate(0deg); }
+      }
+      @keyframes snow-header-anim-2 {
+      0% { transform: rotate(0deg); }
+      30% { transform: rotate(25deg); }
+      30.01% { transform: rotate(-45deg); }
+      100% { transform: rotate(0deg); }
+      }
+
+      #rain-line-0 {
+      -webkit-animation: rain-line-anim-0 1s linear infinite;
+      animation: rain-line-anim-0 1s linear infinite;
+      }
+      @-webkit-keyframes rain-line-anim-0 {
+      0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      50% { opacity: 1; }
+      70.9% { -webkit-transform: translate(0px, 10px); opacity: 0; }
+      71% { -webkit-transform: translate(0px, -5px); opacity: 0; }
+      100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      }
+      @keyframes rain-line-anim-0 {
+      0% { transform: translate(0px, 0px); opacity: 1; }
+      50% { opacity: 1; }
+      70.9% { transform: translate(0px, 10px); opacity: 0; }
+      71% { transform: translate(0px, -5px); opacity: 0; }
+      100% { transform: translate(0px, 0px); opacity: 1; }
+      }
+      #rain-line-1 {
+      -webkit-animation: rain-line-anim-1 1.4s linear infinite;
+      animation: rain-line-anim-1 1.4s linear infinite;
+      }
+      @-webkit-keyframes rain-line-anim-1 {
+      0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      20% { opacity: 1; }
+      39.9% { -webkit-transform: translate(0px, 8px); opacity: 0; }
+      40% { -webkit-transform: translate(0px, -8px); opacity: 0; }
+      60% { opacity: 1; }
+      100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      }
+      @keyframes rain-line-anim-1 {
+      0% { transform: translate(0px, 0px); opacity: 1; }
+      20% { opacity: 1; }
+      39.9% { transform: translate(0px, 8px); opacity: 0; }
+      40% { transform: translate(0px, -8px); opacity: 0; }
+      60% { opacity: 1; }
+      100% { transform: translate(0px, 0px); opacity: 1; }
+      }
+      #rain-line-2 {
+      -webkit-animation: rain-line-anim-2 1.8s linear infinite;
+      animation: rain-line-anim-2 1.8s linear infinite;
+      }
+      @-webkit-keyframes rain-line-anim-2 {
+      0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      50% { opacity: 1; }
+      70.9% { -webkit-transform: translate(0px, 10px); opacity: 0; }
+      71% { -webkit-transform: translate(0px, -5px); opacity: 0; }
+      85% { opacity: 1; }
+      100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      }
+      @keyframes rain-line-anim-2 {
+      0% { transform: translate(0px, 0px); opacity: 1; }
+      50% { opacity: 1; }
+      70.9% { transform: translate(0px, 10px); opacity: 0; }
+      71% { transform: translate(0px, -5px); opacity: 0; }
+      85% { opacity: 1; }
+      100% { transform: translate(0px, 0px); opacity: 1; }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_비또는눈" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(31.000000, 30.000000)" fill-rule="nonzero">
+            <g id="rain-line-1">
+                <path d="M20,0 C21.8685634,0 23.3951264,1.4642776 23.4948211,3.3079648 L23.5,3.5 L23.5,67.5 C23.5,69.4329966 21.9329966,71 20,71 C18.1314366,71 16.6048736,69.5357224 16.5051789,67.6920352 L16.5,67.5 L16.5,3.5 C16.5,1.56700338 18.0670034,0 20,0 Z" id="Path" fill="url(#linearGradient-1)"></path>
+                <g id="Group" opacity="0.7" transform="translate(16.000000, 79.000000)" fill="url(#linearGradient-2)">
+                    <path d="M4,0 C5.8685634,0 7.39512645,1.4642776 7.49482114,3.3079648 L7.5,3.5 L7.5,12.5 C7.5,14.4329966 5.93299662,16 4,16 C2.1314366,16 0.604873551,14.5357224 0.505178863,12.6920352 L0.5,12.5 L0.5,3.5 C0.5,1.56700338 2.06700338,0 4,0 Z" id="Path"></path>
+                </g>
+            </g>
+            <g id="Group" opacity="0.9" transform="translate(32.000000, 19.000000)" fill="url(#linearGradient-3)">
+                <path d="M4,0 C5.8685634,0 7.39512645,1.4642776 7.49482114,3.3079648 L7.5,3.5 L7.5,86.5 C7.5,88.4329966 5.93299662,90 4,90 C2.1314366,90 0.604873551,88.5357224 0.505178863,86.6920352 L0.5,86.5 L0.5,3.5 C0.5,1.56700338 2.06700338,0 4,0 Z" id="rain-line-2"></path>
+            </g>
+            <path d="M4,42 C5.8685634,42 7.39512645,43.4642776 7.49482114,45.3079648 L7.5,45.5 L7.5,83.5 C7.5,85.4329966 5.93299662,87 4,87 C2.1314366,87 0.604873551,85.5357224 0.505178863,83.6920352 L0.5,83.5 L0.5,45.5 C0.5,43.5670034 2.06700338,42 4,42 Z" id="rain-line-0" fill="url(#linearGradient-4)"></path>
+            <g id="snow-contain-1">
+                <path d="M84.89,97.06 L87.17,98.38 L84.89,99.7 C83.9516659,100.241629 83.2672916,101.134233 82.9877803,102.180993 C82.7082691,103.227753 82.8565762,104.342704 83.4,105.28 L83.4,105.28 C83.9416295,106.218334 84.8342332,106.902708 85.8809933,107.18222 C86.9277535,107.461731 88.042704,107.313424 88.98,106.77 L91.26,105.46 L91.26,108.09 C91.185383,109.597652 91.9472489,111.023836 93.2418936,111.80003 C94.5365383,112.576224 96.1534617,112.576224 97.4481064,111.80003 C98.7427511,111.023836 99.504617,109.597652 99.43,108.09 L99.43,105.46 L101.71,106.77 C103.665812,107.896715 106.164466,107.230705 107.3,105.28 L107.3,105.28 C108.424135,103.324582 107.753068,100.828213 105.8,99.7 L103.52,98.38 L105.8,97.06 C107.111482,96.3529933 107.934753,94.9887506 107.949179,93.4989047 C107.96323,92.0090589 107.166184,90.6293306 105.868454,89.8973874 C104.570724,89.1654442 102.977635,89.1970928 101.71,89.98 L99.43,91.3 L99.43,88.67 C99.504617,87.1623481 98.7427511,85.7361638 97.4481064,84.9599698 C96.1534617,84.1837758 94.5365383,84.1837758 93.2418936,84.9599698 C91.9472489,85.7361638 91.185383,87.1623481 91.26,88.67 L91.26,91.3 L89,90 C87.0529133,88.9503453 84.624122,89.6389295 83.5176457,91.5542967 C82.4111694,93.469664 83.0280099,95.9176598 84.91,97.08 L84.89,97.06 Z" id="snow-header-1" fill="url(#linearGradient-5)" opacity="0.9"></path>
+            </g>
+            <g id="snow-contain-2">
+                <path d="M60.5,70.92 L59.5,72.63 L58.5,70.92 C57.6552785,69.4624481 55.7913218,68.961817 54.33,69.8 L54.33,69.8 C53.6247418,70.2089523 53.1125588,70.8832291 52.9077665,71.672337 C52.7029742,72.4614449 52.8226201,73.2996964 53.24,74 L54.24,75.7 L52.24,75.7 C50.6205847,75.7926894 49.3548571,77.1329343 49.3548571,78.755 C49.3548571,80.3770657 50.6205847,81.7173106 52.24,81.81 L54.24,81.81 L53.24,83.51 C52.8315097,84.2121976 52.7200313,85.0483432 52.9302834,85.8330341 C53.1405355,86.617725 53.6551433,87.2861155 54.36,87.69 L54.36,87.69 C55.8213218,88.528183 57.6852785,88.0275519 58.53,86.57 L59.53,84.86 L60.53,86.57 C61.0438115,87.5789488 62.0727541,88.2217157 63.2048365,88.2409352 C64.3369188,88.2601547 65.3870868,87.6526851 65.9348505,86.6617589 C66.4826141,85.6708326 66.438434,84.4584299 65.82,83.51 L64.82,81.81 L66.82,81.81 C68.4394153,81.7173106 69.7051429,80.3770657 69.7051429,78.755 C69.7051429,77.1329343 68.4394153,75.7926894 66.82,75.7 L64.82,75.7 L65.82,74 C66.438434,73.0515701 66.4826141,71.8391674 65.9348505,70.8482411 C65.3870868,69.8573149 64.3369188,69.2498453 63.2048365,69.2690648 C62.0727541,69.2882843 61.0438115,69.9310512 60.53,70.94 L60.5,70.92 Z" id="snow-header-2" fill="url(#linearGradient-6)" opacity="0.8"></path>
+            </g>
+            <path d="M96.76,12.2 L93.92,22.83 L92.52,23.64 L86.87,25.06 L85.13,18.6 L85.13,17.76 L92.91,10 C94.0755933,8.79236057 94.0597008,6.87380939 92.8742616,5.685645 C91.6888223,4.4974806 89.7703127,4.47718272 88.56,5.64 L85.13,9.07 L85.13,4 C84.9739146,2.42425369 83.648458,1.22360336 82.065,1.22360336 C80.481542,1.22360336 79.1560854,2.42425369 79,4 L79,9.08 L75.57,5.65 C74.3687807,4.4404964 72.4145036,4.43378067 71.205,5.635 C69.9954964,6.83621933 69.9887807,8.7904964 71.19,10 L79,17.76 L79,19.37 L77.37,25.09 L71.61,23.64 L70.21,22.83 L67.33,12.2 C67.0912777,11.0867905 66.2579259,10.1960684 65.1630488,9.88386975 C64.0681718,9.57167109 62.8903722,9.88892352 62.1004356,10.7088161 C61.3104989,11.5287087 61.0372843,12.7174958 61.39,13.8 L62.64,18.48 L58.24,15.94 C56.7757285,15.1635484 54.9595738,15.6850535 54.130325,17.1200846 C53.3010763,18.5551158 53.756112,20.3890536 55.16,21.27 L59.56,23.81 L54.88,25.06 C53.3332739,25.5742572 52.4550168,27.2045542 52.8764854,28.7790973 C53.2979541,30.3536405 54.8732008,31.3271915 56.47,31 L67.1,28.16 L67.83,28.58 L72.56,33.32 L68.5,37.5 L67.1,38.31 L56.47,35.46 C55.3982032,35.1759739 54.256296,35.4853196 53.4744238,36.2715098 C52.6925515,37.0577 52.3894993,38.2012935 52.6794238,39.2715098 C52.9693483,40.3417261 53.8082032,41.1759739 54.88,41.46 L59.56,42.71 L55.16,45.25 C53.6853998,46.1005186 53.1794817,47.9853997 54.0300002,49.4599999 C54.8805186,50.9346001 56.7653997,51.4405184 58.24,50.59 L62.64,48 L61.39,52.68 C61.1059738,53.7410788 61.4096016,54.8730822 62.1865098,55.6495955 C62.9634179,56.4261088 64.0955755,56.7291611 65.1565098,56.4445955 C66.2174441,56.16003 67.0459739,55.3310788 67.33,54.27 L70.18,43.64 L70.91,43.22 L77.38,41.5 L79,47.1 L79,48.72 L71.22,56.5 C70.1219932,57.7173834 70.1700166,59.5815178 71.3292494,60.7407506 C72.4884822,61.8999834 74.3526166,61.9480068 75.57,60.85 L79,57.42 L79,62.5 C79,64.201037 80.378963,65.58 82.08,65.58 C83.781037,65.58 85.16,64.201037 85.16,62.5 L85.16,57.42 L88.59,60.85 C89.8073834,61.9480068 91.6715178,61.8999834 92.8307506,60.7407506 C93.9899834,59.5815178 94.0380068,57.7173834 92.94,56.5 L85.16,48.72 L85.16,47.87 L86.87,41.53 L93.22,43.22 L93.95,43.64 L96.79,54.27 C97.2293552,55.9128258 98.9170006,56.8887057 100.56,56.45 C102.199209,56.0059342 103.172819,54.3222149 102.74,52.68 L101.46,48 L105.86,50.54 C107.332275,51.3638591 109.193351,50.8499309 110.034223,49.3873064 C110.875096,47.9246819 110.382778,46.0577722 108.93,45.2 L104.53,42.66 L109.22,41.41 C110.876854,40.9681722 111.861828,39.2668542 111.42,37.61 C110.978172,35.9531458 109.276854,34.9681722 107.62,35.41 L97,38.31 L95.61,37.5 L91.55,33.32 L96.27,28.58 L97,28.16 L107.62,31 C108.82266,31.3235685 110.101826,30.8910084 110.861281,29.9039349 C111.620737,28.9168614 111.711,27.569558 111.09,26.49 C110.680094,25.7829332 110.008331,25.2656402 109.22,25.05 L104.53,23.8 L108.93,21.26 C109.947562,20.7453293 110.597497,19.7105701 110.619307,18.5704641 C110.641116,17.4303581 110.031229,16.3714995 109.034095,15.8182895 C108.036961,15.2650794 106.815775,15.3080584 105.86,15.93 L101.46,18.47 L102.71,13.79 C103.151828,12.1331458 102.166854,10.4318278 100.51,9.99 C98.8531458,9.5481722 97.1518278,10.5331458 96.71,12.19 L96.76,12.2 Z M84.71,30.58 L84.71,30.58 C85.4159192,31.2852405 85.8125576,32.2421593 85.8125576,33.24 C85.8125576,34.2378407 85.4159192,35.1947595 84.71,35.9 L84.71,35.9 C84.0047595,36.6059192 83.0478407,37.0025576 82.05,37.0025576 C81.0521593,37.0025576 80.0952405,36.6059192 79.39,35.9 L79.39,35.9 C78.6840808,35.1947595 78.2874424,34.2378407 78.2874424,33.24 C78.2874424,32.2421593 78.6840808,31.2852405 79.39,30.58 L79.39,30.58 C80.0952405,29.8740808 81.0521593,29.4774424 82.05,29.4774424 C83.0478407,29.4774424 84.0047595,29.8740808 84.71,30.58 L84.71,30.58 Z" id="snow-header-0" fill="url(#linearGradient-7)"></path>
+        </g>
+    </g>
+</svg>

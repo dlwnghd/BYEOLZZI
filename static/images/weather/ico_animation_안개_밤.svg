@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_안개_밤</title>
+    <defs>
+        <linearGradient x1="50.0011598%" y1="18.2657298%" x2="50.0011598%" y2="81.1686175%" id="linearGradient-1">
+            <stop stop-color="#7ABEF5" offset="0%"></stop>
+            <stop stop-color="#7FAAFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="124.347487%" y1="58.1974151%" x2="38.8909618%" y2="48.775313%" id="linearGradient-2">
+            <stop stop-color="#DEDFE3" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="212.35903%" y1="79.745317%" x2="26.5410165%" y2="45.7066377%" id="linearGradient-3">
+            <stop stop-color="#DEDFE3" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="548.545332%" y1="250.023856%" x2="132.746955%" y2="83.2228197%" id="linearGradient-4">
+            <stop stop-color="#DEDFE3" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="164.756357%" y1="64.4164285%" x2="14.3114407%" y2="45.5197422%" id="linearGradient-5">
+            <stop stop-color="#DEDFE3" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #moon-wrap {
+      -webkit-animation: moon-wrap-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      animation: moon-wrap-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes moon-wrap-anim {
+      0% { -webkit-transform: translate(0, 0px); }
+      100% { -webkit-transform: translate(0, -6px); }
+      }
+      @keyframes moon-wrap-anim {
+      0% { transform: translate(0, 0px); }
+      100% { transform: translate(0, -6px); }
+      }
+      #moon {
+      -webkit-transform-origin: 30.5% 30.5%; -webkit-animation: moon-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 30.5% 30.5%; animation: moon-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes moon-anim {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(6deg); }
+      }
+      @keyframes moon-anim {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(6deg); }
+      }
+
+      #line-0 {
+      -webkit-animation: line-0-anim 1.5s linear alternate infinite;
+      animation: line-0-anim 1.5s linear alternate infinite;
+      }
+      @-webkit-keyframes line-0-anim {
+      0% { -webkit-transform: translateX(0px); }
+      100% { -webkit-transform: translateX(-8px); }
+      }
+      @keyframes line-0-anim {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(-8px); }
+      }
+      #line-1 {
+      -webkit-animation: line-1-anim 3s linear alternate infinite;
+      animation: line-1-anim 3s linear alternate infinite;
+      }
+      @-webkit-keyframes line-1-anim {
+      0% { -webkit-transform: translateX(0px); }
+      100% { -webkit-transform: translateX(10px); }
+      }
+      @keyframes line-1-anim {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(10px); }
+      }
+      #line-2 {
+      -webkit-animation: line-2-anim 2s linear alternate infinite;
+      animation: line-2-anim 2s linear alternate infinite;
+      }
+      @-webkit-keyframes line-2-anim {
+      0% { -webkit-transform: translateX(0px); }
+      100% { -webkit-transform: translateX(-16px); }
+      }
+      @keyframes line-2-anim {
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(-16px); }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_안개_밤" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.8">
+        <g id="아이콘" transform="translate(11.000000, 16.000000)" fill-rule="nonzero">
+            <g id="Group">
+                <g id="moon-wrap">
+                  <path id="moon" d="M9.98780488,57.6686861 C24.2458848,57.6744336 37.7398872,51.1904842 46.6898184,40.0331475 C55.6397497,28.8758109 59.0831226,14.2449615 56.0553659,0.239051095 C78.9779842,5.2312447 94.7634456,26.4037134 93.0968361,49.9214363 C91.4302267,73.4391593 72.8185027,92.1484181 49.4233819,93.8237613 C26.0282612,95.4991046 4.96616839,79.6309196 -3.37941057e-15,56.5881752 C3.28161085,57.3041154 6.62979886,57.6663325 9.98780488,57.6686861 Z" fill="url(#linearGradient-1)"></path>
+                </g>
+                <path id="line-1" d="M14.5631707,78.4087591 L142.388049,78.4087591 C146.975862,78.4207157 151.20883,80.8921597 153.492436,84.892122 C155.776042,88.8920844 155.763351,93.8128756 153.459144,97.8008813 C151.154936,101.788887 146.909276,104.238234 142.321463,104.226322 L14.6297561,104.226322 C7.53761169,104.244761 1.77338704,98.4802962 1.75495591,91.3509854 C1.73661296,84.2216746 7.47102632,78.4272425 14.5631707,78.4087591 L14.5631707,78.4087591 Z" fill="url(#linearGradient-2)" opacity="0.9"></path>
+                <g id="line-0">
+                    <path d="M86.0187805,51.6350365 L130.507317,51.6350365 C135.235413,51.6350365 139.068293,55.488002 139.068293,60.2408759 C139.068293,64.9937498 135.235413,68.8467153 130.507317,68.8467153 L86.0568293,68.8467153 C81.328733,68.8467153 77.4958537,64.9937498 77.4958537,60.2408759 C77.4958537,55.488002 81.328733,51.6350365 86.0568293,51.6350365 L86.0187805,51.6350365 Z" id="Path" fill="url(#linearGradient-3)"></path>
+                    <path d="M51.8034146,51.6350365 L62.8470732,51.6350365 C67.5751694,51.6350365 71.4080488,55.488002 71.4080488,60.2408759 C71.4080488,64.9937498 67.5751694,68.8467153 62.8470732,68.8467153 L51.8509756,68.8467153 C47.1228793,68.8467153 43.29,64.9937498 43.29,60.2408759 C43.29,55.488002 47.1228793,51.6350365 51.8509756,51.6350365 L51.8034146,51.6350365 Z" id="Path" fill="url(#linearGradient-4)"></path>
+                </g>
+                <path id="line-2" d="M40.217561,113.788321 L112.92878,113.788321 C117.656877,113.788321 121.489756,117.641287 121.489756,122.394161 C121.489756,127.147034 117.656877,131 112.92878,131 L40.2556098,131 C35.5275135,131 31.6946341,127.147034 31.6946341,122.394161 C31.6946341,117.641287 35.5275135,113.788321 40.2556098,113.788321 L40.217561,113.788321 Z" fill="url(#linearGradient-5)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
