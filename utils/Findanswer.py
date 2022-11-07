@@ -1,9 +1,31 @@
+from utils.Database import Database
+
 class FindAnswer:
     
     # Database 인스턴스 객체로 생성
     def __init__(self, db):
         self.db = db
-        
+
+
+    def select_state(self, user_id):
+        sql = 'SELECT * FROM members WHERE id=%s' % user_id
+        print("sql:",  sql)
+        return self.db.select_one(sql)
+
+
+    def update_state(self, user_id, state):
+        # SQL
+        sql='''
+            UPDATE members set m_state=%d WHERE id=%s
+        ''' % (state, user_id)
+        print("sql:", sql)
+
+        # 쿼리 실행
+        with self.db.cursor() as cursor:
+            result = cursor.execute(sql)
+            # DML의 execute() return값은 몇 개의 행을 변경했는지에 대한 총 count (정수)임
+        print(result, '개 row update 성공!')
+
     # 답변 검색
     def search(self, intent_name, ner_tags):
         # 의도명, 개체명으로 답변 검색
@@ -19,27 +41,72 @@ class FindAnswer:
             answer = self.db.select_one(sql)
 
         return (answer['answer'], answer['answer_image'])
+
+    # 답변 검색
+    def reco_search(self, intent_1=None, intent_2=None, ner_tags=None):
+        # 1번 문제
+        if intent_1 == '추천':
+            sql = self._make_query(intent_1, intent_2)
+            answer = self.db.select_one(sql)
+
+        # 추천 2번문제 ~ 4번 문제
+        if intent_1 == None:
+            sql = self._make_query(intent_1=None, intent_2=intent_2)
+            answer = self.db.select_one(sql)
+    
+        # 의도명, 개체명으로 답변 검색
+        # sql = self._make_query(intent_1, intent_2, ner_tags)
+        # answer = self.db.select_one(sql)
+
+        print("sql:", sql)
+        print("answer:", answer)
+
+        # 검색되는 답변이 없으면 의도명만 검색
+        # if answer is None:
+        #     sql = self._make_query(intent_1, intent_2, None)
+        #     answer = self.db.select_one(sql)
+
+        # return (answer['answer'], answer['answer_image'])
+        return answer
         
     
     # 검색 쿼리 생성
-    def _make_query(self, intent_name, ner_tags):
-        sql = "select * from chatbot_train_data"
+    def _make_query(self, intent_1=None, intent_2=None, ner_tags=None):
+        sql = "select * from answer"
         
-        # intent_name 만 주어진 경우
-        if intent_name != None and ner_tags == None:
-            sql = sql + " where intent='{}' ".format(intent_name)
-
+        # 추천 1번 문제
+        if intent_1 != None and intent_2 != None and ner_tags == None:
+            sql = sql + " where intent_1 ='{}' and intent_2='{}' ".format(intent_1, intent_2)
             print("sql:", sql)
 
+        # 추천 2번 문제 ~ 4번 문제
+        elif intent_1 == None and intent_2 != None and ner_tags == None:
+            sql = sql + " where intent_2='{}' ".format(intent_2)
+            print("sql:", sql)
+
+        # # 추천 2번 문제 ~ 4번 문제
+        # elif intent_1 == None and intent_2 != None and ner_tags == None:
+        #     sql = sql + " where intent_2='{}' ".format(intent_2)
+        #     print("sql:", sql)
+
+        # # intent_name 만 주어진 경우
+        # elif intent_1 != None and intent_2 != None and ner_tags == None:
+        #     pass
+
+        # # 도움말, 리스트뽑기, 리스트 삭제
+        # elif intent_1 != None and intent_2 == None and ner_tags == None:
+        #     sql = sql + " where intent_1='{}' ".format(intent_1)
+        #     print("sql:", sql)
+
         # intent_name 과 개체명도 주어진 경우
-        elif intent_name != None and ner_tags != None:
-            where = ' where intent="%s" ' % intent_name
-            if (len(ner_tags) > 0):
-                where += 'and ('
-                for ne in ner_tags:
-                    where += " ner like '%{}%' or ".format(ne)
-                where = where[:-3] + ')'
-            sql = sql + where
+        # elif intent_1 != None and ner_tags != None:
+        #     where = ' where intent="%s" ' % intent_1
+        #     if (len(ner_tags) > 0):
+        #         where += 'and ('
+        #         for ne in ner_tags:
+        #             where += " ner like '%{}%' or ".format(ne)
+        #         where = where[:-3] + ')'
+        #     sql = sql + where
 
         # 동일한 답변이 2개 이상인 경우, 랜덤으로 선택
         sql = sql + " order by rand() limit 1"

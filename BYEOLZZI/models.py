@@ -32,6 +32,8 @@ class Members(models.Model):
     m_name = models.CharField(max_length=30, blank=True, null=True)
     addr = models.CharField(max_length=200, blank=True, null=True)
     m_location = models.CharField(max_length=10, default="NULL", blank=True, null=True)
+    m_state = models.IntegerField(default="NULL", blank=True, null=True)
+    m_answer = models.CharField(max_length=10, default="NULL", blank=True, null=True)
 
     class Meta:
         managed = True
