@@ -12,69 +12,155 @@
 
 # 프로젝트 활용 장비 및 재료(개발환경)
 -------
+
 ## Front-End
-
-![HTML5](https://img.shields.io/badge/-HTML5-F05032?style=for-the-badge&logo=html5&logoColor=ffffff)
-![CSS3](https://img.shields.io/badge/-CSS3-007ACC?style=for-the-badge&logo=css3)
-![JavaScript](https://img.shields.io/badge/-JavaScript-f7df1c?style=for-the-badge&logo=javascript&logoColor=000000)
-
-
-
+<table>
+  <tr>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\html.svg" width="48" height="48" alt="HTML"/>
+      </a>
+      <br>HTML
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\css3.svg" width="48" height="48" alt="CSS3" />
+      </a>
+      <br>CSS3
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\javascript.svg" width="48" height="48" alt="JavaScript" />
+      </a>
+      <br>JavaScript
+    </td>
+  </tr>
+</table>
 
 -------
-
-
-
-
 ## Back-End
-
-![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=000000)
-![Flask](https://img.shields.io/badge/-Flask-ffffff?style=for-the-badge&logo=Flask&logoColor=000000)
-![TensorFlow](https://img.shields.io/badge/-TensorFlow-FF6F00?style=for-the-badge&logo=TensorFlow&logoColor=000000)
-![Numpy](https://img.shields.io/badge/-Numpy-013243?style=for-the-badge&logo=Numpy&logoColor=ffffff)
-![Django](https://img.shields.io/badge/-Django-092E20?style=for-the-badge&logo=Django&logoColor=ffffff)
-![JSON](https://img.shields.io/badge/-JSON-000000?style=for-the-badge&logo=JSON&logoColor=ffffff)
-![Pandas](https://img.shields.io/badge/-Pandas-150458?style=for-the-badge&logo=Pandas&logoColor=ffffff)
-![Python](https://img.shields.io/badge/-Python-3776AB?style=for-the-badge&logo=Python&logoColor=ffffff)
+<table>
+  <tr>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\mysql.svg" width="48" height="48" alt="MySQL" style="background-color:white;"/>
+      </a>
+      <br>MySQL
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\flask.svg" width="48" height="48" alt="Flask" style="background-color:white;"/>
+      </a>
+      <br>Flask
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\tensorflow.svg" width="48" height="48" alt="TensorFlow" />
+      </a>
+      <br>TensorFlow
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\numpy.svg" width="48" height="48" alt="Numpy" style="background-color:white;"/>
+      </a>
+      <br>Numpy
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\django.svg" width="48" height="48" alt="Django" style="background-color:white;"/>
+      </a>
+      <br>Django
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\json.svg" width="48" height="48" alt="Json" style="background-color:white;"/>
+      </a>
+      <br>Json
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\pandas.svg" width="48" height="48" alt="Pandas" style="background-color:white;"/>
+      </a>
+      <br>Pandas
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\Python.svg" width="48" height="48" alt="Python" style="background-color:white;"/>
+      </a>
+      <br>Python
+    </td>
+    
+  </tr>
+</table>
 
 -------
-
 ## Data Source
-
-![네이버카페](https://img.shields.io/badge/-네이버카페-03C75A?style=for-the-badge&logo=Naver&logoColor=ffffff)
-![네이버날씨](https://img.shields.io/badge/-네이버날씨-03C75A?style=for-the-badge&logo=Naver&logoColor=ffffff)
+<table>
+  <tr>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\naver.svg" width="48" height="48" alt="Naver"/>
+      </a>
+      <br>Naver
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src="https://play-lh.googleusercontent.com/Zt1Ac3OOTTTaSrro-Ji6ttmVHx3qrzUklYeCC3RxTScjWGEyZjlJkqJ8t58z0zWENJb_=w240-h480-rw" width="48" height="48" alt="naver_cafe" />
+      </a>
+      <br>naver_cafe
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src="https://ssl.pstatic.net/static/weather/web_icon/web_iOS_iPhone_3x_180X180.png" width="48" height="48" alt="naver_weather" />
+      </a>
+      <br>naver_weather
+    </td>
+  </tr>
+</table>
 
 -------
-
 ## Tool
-
-![GitHub](https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=GitHub&logoColor=ffffff)
-![Jupyter](https://img.shields.io/badge/-Jupyter-F37626?style=for-the-badge&logo=Jupyter&logoColor=ffffff)
-![Google Colab](https://img.shields.io/badge/-GoogleColab-F9AB00?style=for-the-badge&logo=GoogleColab&logoColor=ffffff)
-![VisualStudioCode](https://img.shields.io/badge/-VS_Code-007ACC?style=for-the-badge&logo=VisualStudioCode&logoColor=ffffff)
+<table>
+  <tr>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\github.svg" width="48" height="48" alt="Github" style="background-color:white;"/>
+      </a>
+      <br>Github
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\jupyter.svg" width="48" height="48" alt="Jupyter" style="background-color:white;"/>
+      </a>
+      <br>Jupyter
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\googlecolab.svg" width="48" height="48" alt="GoogleColab" style="background-color:white;"/>
+      </a>
+      <br>GoogleColab
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\vscode.svg" width="48" height="48" alt="VisualStudioCode" style="background-color:white;"/>
+      </a>
+      <br>VisualStudioCode
+    </td>
+  </tr>
+</table>
 
 -------
-
 ## API
 
-| API Name                                                | Parameter | Type     |
-| :-----------------------------------------------------  | :-------- | :------- |
-| [T map API](https://tmapapi.sktelecom.com/index.html)   | `api_key` | `string` |
+| API Name                                                | API Name                                                | Parameter | Type     |
+| :-----------------------------------------------------  | :-----------------------------------------------------  | :-------- | :------- |
+| <img src="https://play-lh.googleusercontent.com/WcrqQ9atNdC7dp4vG4fWue0kRdMxiDSTKu9E1Zj7EmGcgdQ8j3u9_2Tt8vw-zPvKCkg=w240-h480-rw" width="48" height="48" alt="Tmap" style="background-color:white;"/>                                               | [T map API](https://tmapapi.sktelecom.com/index.html)   | `api_key` | `string` |
 
 -------
 
 ## Feedback
 
-피드백이 있다면 aaaaaaaaaaaa@naver.com 으로 메일을 보내주세요.
+피드백이 있다면 alion0513@naver.com 으로 메일을 보내주세요.
 
-
-
-# ❗나중에 수정하기
-
-| *Purpose* | High | Medium | Low |
-| --------------- | --------------- | --------------- | ------------- |
-| **Front-End** | Python | JS, C, C++ | Swift, Java, Go |
-| **Back-End** | Tensorflow, PyTorch | Node.js, GCP, Git | Vue.js, AWS, Docker |
-| **DataSource** | Speech Processing(AI), Computer Vision(AI) | Natural Language(AI) | Parallel Computing, Internet of Things |
-| **Tool** | Hindi, English | Spanish, Portuguese | Latin  |
-| **API** | Monetary Economics, Languages | Behavioural Economics, Neuroscience | Digital Privacy |
