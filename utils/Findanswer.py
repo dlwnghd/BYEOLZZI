@@ -1,4 +1,6 @@
 from utils.Database import Database
+from config.State import State
+
 
 class FindAnswer:
     
@@ -44,15 +46,23 @@ class FindAnswer:
 
     # 답변 검색
     def reco_search(self, intent_1=None, intent_2=None, ner_tags=None):
-        # 1번 문제
-        if intent_1 == '추천':
-            sql = self._make_query(intent_1, intent_2)
-            answer = self.db.select_one(sql)
 
         # 추천 2번문제 ~ 4번 문제
         if intent_1 == None:
             sql = self._make_query(intent_1=None, intent_2=intent_2)
             answer = self.db.select_one(sql)
+
+            if intent_2 == 4:
+                sql_table = self._make_location(State.q)
+                answer = self.db.select_all(sql_table)
+                print(type(answer))
+                print(answer)
+
+            return answer
+
+        # 1번 문제
+        sql = self._make_query(intent_1, intent_2)
+        answer = self.db.select_one(sql)
     
         # 의도명, 개체명으로 답변 검색
         # sql = self._make_query(intent_1, intent_2, ner_tags)
@@ -112,6 +122,12 @@ class FindAnswer:
         sql = sql + " order by rand() limit 1"
         return sql        
     
+    def _make_location(self, q):
+        sql = "select * from location"
+        sql += " where q = {} ".format(q)
+        sql += " order by rand() limit 3"
+        return sql
+
     # NER 태그를 실제 입력된 단어로 변환
     def tag_to_word(self, ner_predicts, answer):
         for word, tag in ner_predicts:

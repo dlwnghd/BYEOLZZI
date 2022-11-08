@@ -27,6 +27,8 @@ $(document).ready(function(){               // html 화면이 로딩되면 함�
 
 function send_message(){
     const chattext = $("#chattext").val().trim();
+    console.log("여기까지 왔소")
+    console.log("chattext" + chattext)
 
     // 입력한 메세지가 없으면 리턴
     if(chattext == ""){
@@ -36,7 +38,9 @@ function send_message(){
     
     // 입력한 채팅 출력
     addtext = "<div style='margin:15px 0;text-align:right;'> <span style='padding:3px 10px;background-color:#3388cc;border-radius:3px;'>" + chattext + "</span></div>";
-    $("#chatbox").append(addtext);
+    $("#chatbody").append(addtext);
+    console.log("addtext" + addtext)
+    console.log("여기까지 왔소22")
 
     // API 서버에 보낼 데이터 준비
     const jsonData = {

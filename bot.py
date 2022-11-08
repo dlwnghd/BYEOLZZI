@@ -20,7 +20,7 @@ from models.intent.IntentModel_season import IntentModel_Season
 from models.intent.IntentModel_car_walk import IntentModel_Car_Walk
 from models.intent.IntentModel_city import IntentModel_City
 from models.intent.IntentModel_activity import IntentModel_Activity
-from models.ner.NerModel import NerModel
+# from models.ner.NerModel import NerModel
 from utils.Findanswer import FindAnswer
 
 # 전처리 객체 생성
@@ -51,7 +51,7 @@ intent_city = IntentModel_City(model_name='models/intent/intent_model_city.h5', 
 intent_activity = IntentModel_Activity(model_name='models/intent/intent_model_activity.h5', preprocess=p_activity)
 
 # 개체명 인식 모델
-ner = NerModel(model_name='models/ner/ner_model.h5', preprocess=p_full)
+# ner = NerModel(model_name='models/ner/ner_model.h5', preprocess=p_full)
 
 # 클라이언트 요청을 수행하는 쓰레드(에 담을) 함수
 def to_client(conn, addr, params):
@@ -106,18 +106,22 @@ def to_client(conn, addr, params):
         elif State.state == 1:
             intent_reco = intent_car_walk.predict_class(query)
             intent_reco_name = intent_car_walk.labels[intent_reco]
+            State.q = str(intent_reco)
 
         elif State.state == 2:
             intent_reco = intent_season.predict_class(query)
             intent_reco_name = intent_season.labels[intent_reco]
+            State.q += str(intent_reco)
 
         elif State.state == 3:
             intent_reco = intent_city.predict_class(query)
             intent_reco_name = intent_city.labels[intent_reco]
+            State.q += str(intent_reco)
 
         elif State.state == 4:
             intent_reco = intent_activity.predict_class(query)
             intent_reco_name = intent_activity.labels[intent_reco]
+            State.q += str(intent_reco)
 
 
         # 개체명 파악
@@ -142,6 +146,7 @@ def to_client(conn, addr, params):
                 State.state += 1
             elif State.state == 4:
                 State.state = None
+                State.q = None
         except:
             answer = "죄송해요 무슨 말인지 모르겠어요. 조금 더 공부 할게요."
             answer_image = None
