@@ -1,5 +1,6 @@
 class State:
     state = None
+    q = None
     flag = False
 
     # state_dict = {
