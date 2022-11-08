@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_구름조금_밤</title>
+    <defs>
+        <linearGradient x1="89.1517833%" y1="89.1429241%" x2="43.0966338%" y2="43.0892906%" id="linearGradient-1">
+            <stop stop-color="#7FAAFF" offset="0%"></stop>
+            <stop stop-color="#7ABEF5" offset="100%"></stop>
+        </linearGradient>
+        <path d="M11.62,66.48 C28.2083676,66.4732196 43.9038854,58.9649735 54.3192865,46.0539934 C64.7346875,33.1430133 68.7526284,16.2143634 65.25,-5.68434189e-14 C91.9310042,5.78208994 110.302821,30.299729 108.359604,57.5308226 C106.416387,84.7619162 84.7492922,106.42237 57.5176042,108.357238 C30.2859161,110.292107 5.77391033,91.9127755 2.13162821e-14,65.23 C3.81787284,66.0586282 7.71324019,66.4776651 11.62,66.48 Z" id="path-2"></path>
+        <filter x="-24.1%" y="-32.8%" width="148.2%" height="165.6%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="94.8506895%" y1="85.4404446%" x2="53.3622703%" y2="55.0412696%" id="linearGradient-5">
+            <stop stop-color="#BEBFC4" stop-opacity="0.3" offset="0%"></stop>
+            <stop stop-color="#BEBFC4" stop-opacity="0.57" offset="31%"></stop>
+            <stop stop-color="#BEBFC4" stop-opacity="0.8" offset="62%"></stop>
+            <stop stop-color="#BEBFC4" stop-opacity="0.95" offset="86%"></stop>
+            <stop stop-color="#BEBFC4" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="23.8908368%" y1="36.0227451%" x2="83.7212711%" y2="76.9688032%" id="linearGradient-6">
+            <stop stop-color="#D4D6DD" offset="0%"></stop>
+            <stop stop-color="#D1D1D1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="10.5929678%" y1="11.8955892%" x2="50%" y2="60.93611%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+        <![CDATA[
+        #cloud {
+        -webkit-animation: cloud-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: cloud-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes cloud-anim {
+        0% { -webkit-transform: translate(0px, 0); }
+        100% { -webkit-transform: translate(10.5px, 0); }
+        }
+        @keyframes cloud-anim {
+        0% { transform: translate(0px, 0); }
+        100% { transform: translate(10.5px, 0); }
+        }
+        #moon-wrap {
+        -webkit-animation: moon-wrap-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: moon-wrap-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes moon-wrap-anim {
+        0% { -webkit-transform: translate(0, 0px); }
+        100% { -webkit-transform: translate(0, -6px); }
+        }
+        @keyframes moon-wrap-anim {
+        0% { transform: translate(0, 0px); }
+        100% { transform: translate(0, -6px); }
+        }
+        #moon {
+        -webkit-transform-origin: 30.5% 30.5%; -webkit-animation: moon-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        transform-origin: 30.5% 30.5%; animation: moon-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes moon-anim {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(6deg); }
+        }
+        @keyframes moon-anim {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(6deg); }
+        }
+        #moon-inner {
+        -webkit-transform-origin: 30.5% 30.5%; -webkit-animation: moon-inner-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        transform-origin: 30.5% 30.5%; animation: moon-inner-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes moon-inner-anim {
+        0% { -webkit-transform: translate(0, 0px); }
+        100% { -webkit-transform: translate(0, 6px); }
+        }
+        @keyframes moon-inner-anim {
+        0% { transform: translate(0, 0px); }
+        100% { transform: translate(0, 6px); }
+        }
+        #twinkle {
+        -webkit-transform-origin: 16% 17%; -webkit-animation: twinkle-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+        transform-origin: 16% 17%; animation: twinkle-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+        }
+        @-webkit-keyframes twinkle-anim {
+        0% { -webkit-transform: scale(1); }
+        40% { -webkit-transform: scale(0.6); }
+        100% { -webkit-transform: scale(1); }
+        }
+        @keyframes twinkle-anim {
+        0% { transform: scale(1); }
+        40% { transform: scale(0.6); }
+        100% { transform: scale(1); }
+        }
+        ]]>
+    </style>
+    <g id="날씨아이콘_구름조금_밤" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(18.000000, 26.000000)">
+            <g id="moon-wrap">
+                <g id="구름" transform="translate(0.640000, 0.000000)">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="moon" fill="url(#linearGradient-1)" fill-rule="nonzero" opacity="0.9" xlink:href="#path-2"></use>
+                    <g filter="url(#filter-4)" mask="url(#mask-3)" fill="url(#linearGradient-5)" fill-rule="nonzero" id="Path">
+                        <g id="cloud">
+                            <g transform="translate(57.360000, 68.000000)">
+                                <g id="moon-inner">
+                                    <path d="M52.3382048,0.12 C40.2156365,0.126868427 29.2919799,7.44873746 24.6647433,18.6688677 L20.4958703,18.6688677 C9.23062884,18.9428411 0.253375497,28.1892695 0.29695853,39.473262 C0.34085991,50.7572546 9.38952887,59.9336132 20.6565549,60.12 L52.3382048,60.12 C68.8839676,60.12 82.2969585,46.6885425 82.2969585,30.12 C82.2969585,13.5514575 68.8839676,0.12 52.3382048,0.12 Z"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <path id="twinkle" d="M26.4648,14 C23.5138,21.122 21.1228,23.515 13.9998,26.465 C21.1228,29.415 23.5138,31.807 26.4648,38.929 C29.4148,31.807 31.8068,29.415 38.9288,26.465 C31.8068,23.515 29.4148,21.122 26.4648,14" fill="#FFDD1C"></path>
+            </g>
+            <g id="구름" transform="translate(58.000000, 68.000000)" fill-rule="nonzero">
+              <g id="cloud">
+                <path d="M52.3382048,0.12 C40.2156365,0.126753953 29.2919799,7.32659184 24.6647433,18.3597199 L20.4958703,18.3597199 C9.23062884,18.6291271 0.253375497,27.7214483 0.29695853,38.8173743 C0.34085991,49.9133003 9.38952887,58.9367196 20.6565549,59.12 L52.3382048,59.12 C68.8839676,59.12 82.2969585,45.9124001 82.2969585,29.62 C82.2969585,13.3275999 68.8839676,0.12 52.3382048,0.12 Z" id="Path" fill="url(#linearGradient-6)"></path>
+                <ellipse id="Oval" fill="url(#linearGradient-7)" opacity="0.5" cx="52.2969585" cy="29.62" rx="30" ry="29.5"></ellipse>
+              </g>
+            </g>
+        </g>
+    </g>
+</svg>

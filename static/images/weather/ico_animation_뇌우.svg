@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_뇌우</title>
+    <defs>
+        <linearGradient x1="49.9915423%" y1="5.42698659%" x2="49.9915423%" y2="86.7025063%" id="linearGradient-1">
+            <stop stop-color="#33ABE6" offset="0%"></stop>
+            <stop stop-color="#32ACE6" stop-opacity="0.99" offset="26%"></stop>
+            <stop stop-color="#2EAEE6" stop-opacity="0.95" offset="46%"></stop>
+            <stop stop-color="#28B1E6" stop-opacity="0.88" offset="60.2690562%"></stop>
+            <stop stop-color="#20B6E6" stop-opacity="0.78" offset="74.5381123%"></stop>
+            <stop stop-color="#15BCE6" stop-opacity="0.65" offset="89.0281883%"></stop>
+            <stop stop-color="#10BFE6" stop-opacity="0.5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="22.0549833%" y1="38.2051013%" x2="71.0165598%" y2="70.4937207%" id="linearGradient-2">
+            <stop stop-color="#888A8F" offset="0%"></stop>
+            <stop stop-color="#68686B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="29.206934%" y1="1.59075297%" x2="59.1759555%" y2="71.3275754%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="7.17318775%" y1="7.17318775%" x2="39.4297847%" y2="39.4297847%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <path d="M102.55,24.6100324 L102.19,24.6100324 C95.553396,8.83952473 79.4760227,-0.824907595 62.4352066,0.712626825 C45.3943905,2.25016125 31.3065643,14.6362961 27.6,31.3400324 C11.7772046,32.7065485 -0.16136687,46.2941237 0.519302575,62.1612252 C1.19997202,78.0283267 14.2583068,90.5435806 30.14,90.5500324 L101.6,90.5500324 L101.6,90.5500324 L102.6,90.5500324 C114.714557,91.0669514 126.136786,84.8984075 132.348225,74.4845846 C138.559665,64.0707616 138.559665,51.0893033 132.348225,40.6754803 C126.136786,30.2616573 114.714557,24.0931135 102.6,24.6100324 L102.55,24.6100324 Z" id="path-5"></path>
+        <linearGradient x1="41.9647025%" y1="37.4728156%" x2="66.7820955%" y2="71.9670152%" id="linearGradient-7">
+            <stop stop-color="#2CE1F4" offset="15%"></stop>
+            <stop stop-color="#10BFE6" offset="100%"></stop>
+        </linearGradient>
+        <path d="M125.32,-1.87996757 L92.48,30.9300324 C92.3825601,31.0364814 92.3554738,31.1900775 92.4113559,31.3233348 C92.467238,31.4565921 92.5955831,31.5451242 92.74,31.5500324 L111.44,31.5500324 L100.73,53.5500324 C100.654114,53.706174 100.700472,53.8942325 100.840234,53.9972152 C100.979996,54.1001978 101.173346,54.0887664 101.3,53.9700324 L132.61,24.1800324 C132.71508,24.0794874 132.749342,23.9255923 132.696841,23.7899649 C132.64434,23.6543375 132.51539,23.5636212 132.37,23.5600324 L117.3,23.5600324 L125.92,-1.49996757 C125.988451,-1.66210115 125.929645,-1.84995799 125.780965,-1.94412226 C125.632284,-2.03828654 125.437318,-2.01115207 125.32,-1.87996757 Z" id="path-8"></path>
+        <filter x="-39.7%" y="-25.0%" width="179.3%" height="157.1%" filterUnits="objectBoundingBox" id="filter-9">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #spark-shake-contain-0 {
+      -webkit-animation: spark-shake-contain-anim-0 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+      animation: spark-shake-contain-anim-0 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+      }
+      @-webkit-keyframes spark-shake-contain-anim-0 {
+      0% { -webkit-transform: translate(0px, 0px); opacity: 0; }
+      5% { opacity: 0; }
+      6% { opacity: 1; }
+      20% { -webkit-transform: translate(-40px, 80px); opacity: 1; }
+      80% { opacity: 1; }
+      100% { -webkit-transform: translate(0px, 0px); opacity: 0; }
+      }
+      @keyframes spark-shake-contain-anim-0 {
+      0% { transform: translate(0px, 0px); opacity: 0; }
+      5% { opacity: 0; }
+      6% { opacity: 1; }
+      20% { transform: translate(-40px, 80px); opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translate(0px, 0px); opacity: 0; }
+      }
+      #spark-shake-0 {
+      -webkit-animation: spark-shake-anim-0 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      animation: spark-shake-anim-0 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      }
+      @-webkit-keyframes spark-shake-anim-0 {
+      0% { -webkit-transform: translate(0px, 0px); }
+      10% { -webkit-transform: translate(-2px, 4px); }
+      12% { -webkit-transform: translate(0px, 0px); }
+      14% { -webkit-transform: translate(-2px, 4px); }
+      16% { -webkit-transform: translate(0px, 0px); }
+      18% { -webkit-transform: translate(-1.5px, 3px); }
+      20% { -webkit-transform: translate(0px, 0px); }
+      22% { -webkit-transform: translate(-1.5px, 3px); }
+      24% { -webkit-transform: translate(0px, 0px); }
+      26% { -webkit-transform: translate(-1.5px, 3px); }
+      28% { -webkit-transform: translate(0px, 0px); }
+      30% { -webkit-transform: translate(-1px, 2px); }
+      32% { -webkit-transform: translate(0px, 0px); }
+      34% { -webkit-transform: translate(-1px, 2px); }
+      36% { -webkit-transform: translate(0px, 0px); }
+      38% { -webkit-transform: translate(-1px, 2px); }
+      40% { -webkit-transform: translate(0px, 0px); }
+      42% { -webkit-transform: translate(-1px, 1px); }
+      44% { -webkit-transform: translate(0px, 0px); }
+      46% { -webkit-transform: translate(-1px, 1px); }
+      48% { -webkit-transform: translate(0px, 0px); }
+      50% { -webkit-transform: translate(-1px, 1px); }
+      52% { -webkit-transform: translate(0px, 0px); }
+      55% { -webkit-transform: translate(-0.5px, 0.5px); }
+      58% { -webkit-transform: translate(0px, 0px); }
+      61% { -webkit-transform: translate(-0.5px, 0.5px); }
+      64% { -webkit-transform: translate(0px, 0px); }
+      67% { -webkit-transform: translate(-0.5px, 0.5px); }
+      70% { -webkit-transform: translate(0px, 0px); }
+      100% { -webkit-transform: translate(0px, 0px); }
+      }
+      @keyframes spark-shake-anim-0 {
+      0% { transform: translate(0px, 0px); }
+      10% { transform: translate(-2px, 4px); }
+      12% { transform: translate(0px, 0px); }
+      14% { transform: translate(-2px, 4px); }
+      16% { transform: translate(0px, 0px); }
+      18% { transform: translate(-1.5px, 3px); }
+      20% { transform: translate(0px, 0px); }
+      22% { transform: translate(-1.5px, 3px); }
+      24% { transform: translate(0px, 0px); }
+      26% { transform: translate(-1.5px, 3px); }
+      28% { transform: translate(0px, 0px); }
+      30% { transform: translate(-1px, 2px); }
+      32% { transform: translate(0px, 0px); }
+      34% { transform: translate(-1px, 2px); }
+      36% { transform: translate(0px, 0px); }
+      38% { transform: translate(-1px, 2px); }
+      40% { transform: translate(0px, 0px); }
+      42% { transform: translate(-1px, 1px); }
+      44% { transform: translate(0px, 0px); }
+      46% { transform: translate(-1px, 1px); }
+      48% { transform: translate(0px, 0px); }
+      50% { transform: translate(-1px, 1px); }
+      52% { transform: translate(0px, 0px); }
+      55% { transform: translate(-0.5px, 0.5px); }
+      58% { transform: translate(0px, 0px); }
+      61% { transform: translate(-0.5px, 0.5px); }
+      64% { transform: translate(0px, 0px); }
+      67% { transform: translate(-0.5px, 0.5px); }
+      70% { transform: translate(0px, 0px); }
+      100% { transform: translate(0px, 0px); }
+      }
+      #spark-shake-1 {
+      -webkit-animation: spark-shake-anim-1 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      animation: spark-shake-anim-1 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      }
+      @-webkit-keyframes spark-shake-anim-1 {
+      0% { -webkit-transform: translate(0px, 0px); }
+      10% { -webkit-transform: translate(-0.5px, 0.5px); }
+      12% { -webkit-transform: translate(0px, 0px); }
+      14% { -webkit-transform: translate(-0.5px, 0.5px); }
+      16% { -webkit-transform: translate(0px, 0px); }
+      18% { -webkit-transform: translate(-1.5px, 3px); }
+      20% { -webkit-transform: translate(0px, 0px); }
+      22% { -webkit-transform: translate(-1.5px, 3px); }
+      24% { -webkit-transform: translate(0px, 0px); }
+      26% { -webkit-transform: translate(-1.5px, 3px); }
+      28% { -webkit-transform: translate(0px, 0px); }
+      30% { -webkit-transform: translate(-1px, 2px); }
+      32% { -webkit-transform: translate(0px, 0px); }
+      34% { -webkit-transform: translate(-1px, 2px); }
+      36% { -webkit-transform: translate(0px, 0px); }
+      38% { -webkit-transform: translate(-1px, 2px); }
+      40% { -webkit-transform: translate(0px, 0px); }
+      42% { -webkit-transform: translate(-1px, 1px); }
+      44% { -webkit-transform: translate(0px, 0px); }
+      46% { -webkit-transform: translate(-1px, 1px); }
+      48% { -webkit-transform: translate(0px, 0px); }
+      50% { -webkit-transform: translate(-1px, 1px); }
+      52% { -webkit-transform: translate(0px, 0px); }
+      55% { -webkit-transform: translate(-0.5px, 0.5px); }
+      58% { -webkit-transform: translate(0px, 0px); }
+      61% { -webkit-transform: translate(-0.5px, 0.5px); }
+      64% { -webkit-transform: translate(0px, 0px); }
+      67% { -webkit-transform: translate(-0.5px, 0.5px); }
+      70% { -webkit-transform: translate(0px, 0px); }
+      100% { -webkit-transform: translate(0px, 0px); }
+      }
+      @keyframes spark-shake-anim-1 {
+      0% { transform: translate(0px, 0px); }
+      10% { transform: translate(-0.5px, 0.5px); }
+      12% { transform: translate(0px, 0px); }
+      14% { transform: translate(-0.5px, 0.5px); }
+      16% { transform: translate(0px, 0px); }
+      18% { transform: translate(-1.5px, 3px); }
+      20% { transform: translate(0px, 0px); }
+      22% { transform: translate(-1.5px, 3px); }
+      24% { transform: translate(0px, 0px); }
+      26% { transform: translate(-1.5px, 3px); }
+      28% { transform: translate(0px, 0px); }
+      30% { transform: translate(-1px, 2px); }
+      32% { transform: translate(0px, 0px); }
+      34% { transform: translate(-1px, 2px); }
+      36% { transform: translate(0px, 0px); }
+      38% { transform: translate(-1px, 2px); }
+      40% { transform: translate(0px, 0px); }
+      42% { transform: translate(-1px, 1px); }
+      44% { transform: translate(0px, 0px); }
+      46% { transform: translate(-1px, 1px); }
+      48% { transform: translate(0px, 0px); }
+      50% { transform: translate(-1px, 1px); }
+      52% { transform: translate(0px, 0px); }
+      55% { transform: translate(-0.5px, 0.5px); }
+      58% { transform: translate(0px, 0px); }
+      61% { transform: translate(-0.5px, 0.5px); }
+      64% { transform: translate(0px, 0px); }
+      67% { transform: translate(-0.5px, 0.5px); }
+      70% { transform: translate(0px, 0px); }
+      100% { transform: translate(0px, 0px); }
+      }
+      #cloud {
+      -webkit-animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes cloud-anim {
+      0% { -webkit-transform: translate(0, 0px); }
+      100% { -webkit-transform: translate(0, -5px); }
+      }
+      @keyframes cloud-anim {
+      0% { transform: translate(0, 0px); }
+      100% { transform: translate(0, -5px); }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_뇌우" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(20.000000, 14.449968)">
+            <g id="Group" transform="translate(0.000000, 2.000000)">
+                <g id="아이콘" transform="translate(0.000000, 0.550032)"></g>
+                <path id="spark-shake-0" d="M86.15,59.3100324 L36.75,108.680032 C36.6046661,108.825869 36.5612758,109.044789 36.6399977,109.235033 C36.7187197,109.425278 36.9041118,109.549529 37.11,109.550032 L65.23,109.550032 L49.09,142.690032 C48.9852323,142.911481 49.0527208,143.176136 49.25074,143.320372 C49.4487592,143.464609 49.7213583,143.447671 49.9,143.280032 L97.05,98.4300324 C97.2012957,98.2865073 97.2499669,98.0653291 97.172896,97.8715511 C97.0958252,97.677773 96.9085418,97.5504403 96.7,97.5500324 L74,97.5500324 L87,59.8400324 C87.0879474,59.6118115 87.0014951,59.353287 86.7939543,59.2238793 C86.5864136,59.0944715 86.3162243,59.1306195 86.15,59.3100324 L86.15,59.3100324 Z" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+                <g id="cloud">
+                    <path d="M102.55,24.6100324 L102.19,24.6100324 C95.553396,8.83952473 79.4760227,-0.824907595 62.4352066,0.712626825 C45.3943905,2.25016125 31.3065643,14.6362961 27.6,31.3400324 C11.7772046,32.7065485 -0.16136687,46.2941237 0.519302575,62.1612252 C1.19997202,78.0283267 14.2583068,90.5435806 30.14,90.5500324 L101.6,90.5500324 L101.6,90.5500324 L102.6,90.5500324 C114.714557,91.0669514 126.136786,84.8984075 132.348225,74.4845846 C138.559665,64.0707616 138.559665,51.0893033 132.348225,40.6754803 C126.136786,30.2616573 114.714557,24.0931135 102.6,24.6100324 L102.55,24.6100324 Z" id="Path" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
+                    <path d="M105.240001,39.8400324 C105.240001,55.7359013 95.6618669,70.0656141 80.9740608,76.1440183 C66.2862546,82.2224225 49.3830091,78.8517625 38.1500913,67.6045315 C26.9171734,56.3573005 23.5680407,39.4497766 29.6651434,24.7697226 C35.7622461,10.0896685 50.104144,0.529803533 66,0.550000391 C87.6820274,0.572111196 105.245531,18.1579945 105.240001,39.8400324 Z" id="Path" fill="url(#linearGradient-3)" fill-rule="nonzero" opacity="0.1"></path>
+                    <circle id="Oval" fill="url(#linearGradient-4)" fill-rule="nonzero" opacity="0.06" cx="102.55" cy="57.5800324" r="32.97"></circle>
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <use id="Path" fill-opacity="0" fill="url(#linearGradient-2)" fill-rule="nonzero" xlink:href="#path-5"></use>
+                    <g id="Path" fill-rule="nonzero" mask="url(#mask-6)">
+                        <g id="spark-shake-1">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-9)" xlink:href="#path-8"></use>
+                            <use fill="url(#linearGradient-7)" xlink:href="#path-8"></use>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="cloud">
+                <path id="spark-shake-1" d="M125.32,0.120032432 L92.48,32.9300324 C92.3825601,33.0364814 92.3554738,33.1900775 92.4113559,33.3233348 C92.467238,33.4565921 92.5955831,33.5451242 92.74,33.5500324 L111.44,33.5500324 L100.73,55.5500324 C100.654114,55.706174 100.700472,55.8942325 100.840234,55.9972152 C100.979996,56.1001978 101.173346,56.0887664 101.3,55.9700324 L132.61,26.1800324 C132.71508,26.0794874 132.749342,25.9255923 132.696841,25.7899649 C132.64434,25.6543375 132.51539,25.5636212 132.37,25.5600324 L117.3,25.5600324 L125.92,0.500032432 C125.988451,0.337898853 125.929645,0.150042006 125.780965,0.0558777355 C125.632284,-0.038286535 125.437318,-0.0111520723 125.32,0.120032432 Z" fill="url(#linearGradient-7)" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_흐려져눈</title>
+    <defs>
+        <linearGradient x1="8.56983873%" y1="12.4963644%" x2="75.7929893%" y2="73.6363064%" id="linearGradient-1">
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="18.8093397%" y1="15.8044884%" x2="81.225687%" y2="84.3286421%" id="linearGradient-2">
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#C7DFFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="18.8611111%" y1="18.8611111%" x2="54.7361111%" y2="54.75%" id="linearGradient-3">
+            <stop stop-color="#FFD800" offset="0%"></stop>
+            <stop stop-color="#FFD800" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="22.5333333%" y1="22.5333333%" x2="85.1333333%" y2="85.1333333%" id="linearGradient-4">
+            <stop stop-color="#FFCC14" offset="0%"></stop>
+            <stop stop-color="#FFB90A" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-5" cx="30.0753694" cy="30.37" r="30"></circle>
+        <filter x="-15.9%" y="-23.8%" width="131.7%" height="147.6%" filterUnits="objectBoundingBox" id="filter-7">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.619607843   0 0 0 0 0.215686275   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="-24.8889602%" y1="9.69013299%" x2="63.3983994%" y2="64.8559368%" id="linearGradient-8">
+            <stop stop-color="#E9E9ED" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="8.53564286%" y1="7.18052109%" x2="39.7615164%" y2="39.4385856%" id="linearGradient-9">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="29.1981255%" y1="1.58812809%" x2="59.1772976%" y2="71.3486071%" id="linearGradient-10">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #sun-core {
+      -webkit-transform-origin: 17% 17%; -webkit-animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 17% 17%; animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-core-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.98); }
+      }
+      @keyframes sun-core-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.98); }
+      }
+      #sun-shine {
+      -webkit-transform-origin: 20.6% 20.6%; -webkit-animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 20.6% 20.6%; animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-shine-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.94); }
+      }
+      @keyframes sun-shine-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.94); }
+      }
+      #cloud {
+      -webkit-animation: cloud-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      animation: cloud-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes cloud-anim {
+      0% { -webkit-transform: translate(0px, 0); }
+      100% { -webkit-transform: translate(-10px, 0); }
+      }
+      @keyframes cloud-anim {
+      0% { transform: translate(0px, 0); }
+      100% { transform: translate(-10px, 0); }
+      }
+      #snow-contain-0 {
+      -webkit-animation: snow-contain-anim-0 2.3s linear infinite;
+      animation: snow-contain-anim-0 2.3s linear infinite;
+      }
+      @-webkit-keyframes snow-contain-anim-0 {
+      0% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      60% { opacity: 1; }
+      80% { opacity: 0; -webkit-transform: translate(-5px, 20px); }
+      80.01% { opacity: 0; -webkit-transform: translate(2px, -6px); }
+      100% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      }
+      @keyframes snow-contain-anim-0 {
+      0% { opacity: 1; transform: translate(0px, 0px); }
+      60% { opacity: 1; }
+      80% { opacity: 0; transform: translate(-5px, 20px); }
+      80.01% { opacity: 0; transform: translate(2px, -6px); }
+      100% { opacity: 1; transform: translate(0px, 0px); }
+      }
+      #snow-header-0 {
+      -webkit-transform-origin: 5.2% 6.5%; -webkit-animation: snow-header-anim-0 2.3s linear infinite;
+      transform-origin: 5.2% 6.5%; animation: snow-header-anim-0 2.3s linear infinite;
+      }
+      @-webkit-keyframes snow-header-anim-0 {
+      0% { -webkit-transform: rotate(0deg); }
+      80% { -webkit-transform: rotate(90deg); }
+      80.01% { -webkit-transform: rotate(-30deg); }
+      100% { -webkit-transform: rotate(0deg); }
+      }
+      @keyframes snow-header-anim-0 {
+      0% { transform: rotate(0deg); }
+      80% { transform: rotate(90deg); }
+      80.01% { transform: rotate(-30deg); }
+      100% { transform: rotate(0deg); }
+      }
+
+      #snow-contain-1 {
+      -webkit-animation: snow-contain-anim-1 3s linear infinite;
+      animation: snow-contain-anim-1 3s linear infinite;
+      }
+      @-webkit-keyframes snow-contain-anim-1 {
+      0% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      60% { opacity: 1; }
+      85% { opacity: 0; -webkit-transform: translate(10px, 15px); }
+      85.01% { opacity: 0; -webkit-transform: translate(-2px, -4px); }
+      100% { opacity: 1; -webkit-transform: translate(0px, 0px); }
+      }
+      @keyframes snow-contain-anim-1 {
+      0% { opacity: 1; transform: translate(0px, 0px); }
+      60% { opacity: 1; }
+      85% { opacity: 0; transform: translate(10px, 15px); }
+      85.01% { opacity: 0; transform: translate(-2px, -4px); }
+      100% { opacity: 1; transform: translate(0px, 0px); }
+      }
+      #snow-header-1 {
+      -webkit-transform-origin: 28.5% 15.5%; -webkit-animation: snow-header-anim-1 3s linear infinite;
+      transform-origin: 28.5% 15.5%; animation: snow-header-anim-1 3s linear infinite;
+      }
+      @-webkit-keyframes snow-header-anim-1 {
+      0% { -webkit-transform: rotate(0deg); }
+      85% { -webkit-transform: rotate(-45deg); }
+      85.01% { -webkit-transform: rotate(15deg); }
+      100% { -webkit-transform: rotate(0deg); }
+      }
+      @keyframes snow-header-anim-1 {
+      0% { transform: rotate(0deg); }
+      85% { transform: rotate(-45deg); }
+      85.01% { transform: rotate(15deg); }
+      100% { transform: rotate(0deg); }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_흐려져눈" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(20.000000, 15.000000)">
+            <g id="21_흐려져눈" transform="translate(45.000000, 92.000000)" fill-rule="nonzero">
+              <g id="cloud">
+                <g id="아이콘">
+                  <g id="snow-contain-0">
+                    <path id="snow-header-0" d="M10.13,4.26 L9.27,5.75 L8.42,4.26 C8.07362733,3.64350324 7.49522436,3.19101246 6.81348346,3.00320505 C6.13174255,2.81539763 5.40321671,2.90785293 4.79,3.26 L4.79,3.26 C4.17350324,3.60637267 3.72101246,4.18477564 3.53320505,4.86651654 C3.34539763,5.54825745 3.43785293,6.27678329 3.79,6.89 L4.65,8.37 L3,8.37 C1.53092257,8.37 0.34,9.56092257 0.34,11.03 C0.34,12.4990774 1.53092257,13.69 3,13.69 L4.71,13.69 L3.85,15.17 C3.12143938,16.4513576 3.56906162,18.0807026 4.85,18.81 L4.85,18.81 C6.12909348,19.5317772 7.75097668,19.0849775 8.48,17.81 L9.33,16.33 L10.19,17.81 C10.6393273,18.6822557 11.5323477,19.2363256 12.5134151,19.2515508 C13.4944825,19.2667759 14.4042659,18.7406837 14.8804434,17.8827909 C15.3566208,17.0248981 15.3218582,15.9745313 14.79,15.15 L13.94,13.67 L15.65,13.67 C17.1190773,13.6699999 18.3099998,12.4790773 18.3099998,11.01 C18.3099998,9.54092265 17.1190773,8.35000012 15.65,8.35 L13.88,8.35 L14.73,6.87 C15.3797487,5.60867663 14.9251495,4.05941115 13.6968817,3.34915194 C12.4686139,2.63889273 10.8990924,3.01768845 10.13,4.21 L10.13,4.26 Z" fill="url(#linearGradient-1)"></path>
+                  </g>
+                  <g id="snow-contain-1">
+                    <path id="snow-header-1" d="M71.31,28.63 L62.67,31 L61.54,30.34 L58.24,26.94 L62.08,23.09 L62.67,22.75 L71.31,25.06 C72.6437677,25.4189851 74.0160149,24.6287677 74.375,23.295 C74.7339851,21.9612323 73.9437677,20.5889851 72.61,20.23 L68.8,19.23 L72.38,17.17 C73.5784579,16.479644 73.9903559,14.9484579 73.3,13.75 C72.609644,12.5515421 71.0784579,12.1396441 69.88,12.83 L66.3,14.9 L67.3,11.09 C67.6299582,9.76609603 66.8374932,8.4221433 65.5192959,8.07007817 C64.2010985,7.71801304 62.8440735,8.48787838 62.47,9.8 L60.15,18.44 L59,19 L54.31,20.18 L53,15.55 L53,14.24 L59.32,7.92 C59.9523601,7.28763991 60.1993248,6.36595499 59.967865,5.50213504 C59.7364051,4.63831508 59.0616849,3.96359489 58.197865,3.73213504 C57.334045,3.50067518 56.4123601,3.74763991 55.78,4.38 L53,7.17 L53,3 C53,1.61928813 51.8807119,0.5 50.5,0.5 C49.1192881,0.5 48,1.61928813 48,3 L48,7.13 L45.21,4.34 C44.5776399,3.70763991 43.655955,3.46067518 42.792135,3.69213504 C41.9283151,3.92359489 41.2535949,4.59831508 41.022135,5.46213504 C40.7906752,6.32595499 41.0376399,7.24763991 41.67,7.88 L48,14.2 L48,14.89 L46.58,20.14 L42,19 L40.86,18.35 L38.55,9.71 C38.1279518,8.4611257 36.8086902,7.75456644 35.535248,8.09538397 C34.2618058,8.43620149 33.4718256,9.70726737 33.73,11 L34.73,14.81 L31.16,12.74 C30.3847337,12.293418 29.4301094,12.2943589 28.6557248,12.7424682 C27.8813403,13.1905776 27.404843,14.0177769 27.4057248,14.9124682 C27.4066067,15.8071596 27.8847336,16.633418 28.66,17.08 L32.23,19.14 L28.43,20.14 C27.5618446,20.374009 26.8844783,21.0533975 26.6530583,21.9222466 C26.4216383,22.7910957 26.6713229,23.7174065 27.3080583,24.3522466 C27.9447937,24.9870868 28.8718446,25.234009 29.74,25 L38.38,22.69 L38.97,23.03 L42.81,26.88 L39.52,30.28 L38.38,30.94 L29.74,28.62 C28.416096,28.2900418 27.0721433,29.0825068 26.7200782,30.4007041 C26.368013,31.7189015 27.1378784,33.0759265 28.45,33.45 L32.25,34.45 L28.68,36.52 C27.900123,36.963404 27.417617,37.790683 27.4156447,38.6877958 C27.4136725,39.5849085 27.8925366,40.414301 28.6704565,40.8611297 C29.4483763,41.3079583 30.406074,41.3037109 31.18,40.85 L34.75,38.79 L33.75,42.59 C33.456581,43.4741079 33.6769229,44.4480007 34.3223408,45.119698 C34.9677587,45.7913954 35.9320872,46.0504092 36.8271956,45.7924896 C37.722304,45.53457 38.4009551,44.8021423 38.59,43.89 L40.9,35.25 L41.5,34.91 L46.66,33.53 L48.05,38.69 L48.05,39.37 L41.72,45.7 C41.2497915,46.1690213 40.9855311,46.8058637 40.9855311,47.47 C40.9855311,48.1341363 41.2497915,48.7709787 41.72,49.24 C42.6990989,50.2137828 44.2809011,50.2137828 45.26,49.24 L48.05,46.45 L48.05,50.58 C48.05,51.9607119 49.1692881,53.08 50.55,53.08 C51.9307119,53.08 53.05,51.9607119 53.05,50.58 L53.05,46.45 L55.83,49.24 C56.4623601,49.8723601 57.384045,50.1193248 58.247865,49.887865 C59.1116849,49.6564051 59.7864051,48.9816849 60.017865,48.117865 C60.2493248,47.254045 60.0023601,46.3323601 59.37,45.7 L53,39.4 L53,38.09 L54.3,33.54 L59.55,34.94 L60.14,35.28 L62.46,43.92 C62.8189851,45.2537677 64.1912323,46.0439851 65.525,45.685 C66.8587677,45.3260149 67.6489851,43.9537677 67.29,42.62 L66.29,38.82 L69.87,40.88 C71.0646499,41.5592257 72.5835511,41.1468539 73.2706863,39.9567358 C73.9578215,38.7666176 73.555534,37.2450144 72.37,36.55 L68.79,34.48 L72.6,33.48 C73.9337677,33.1210149 74.7239851,31.7487677 74.365,30.415 C74.0060149,29.0812323 72.6337677,28.2910149 71.3,28.65 L71.31,28.63 Z M48.39,28.96 L48.39,28.96 C47.8189749,28.3963161 47.4975519,27.6273772 47.4975519,26.825 C47.4975519,26.0226228 47.8189749,25.2536839 48.39,24.69 L48.39,24.69 C48.9536839,24.1189749 49.7226228,23.7975519 50.525,23.7975519 C51.3273772,23.7975519 52.0963161,24.1189749 52.66,24.69 L52.66,24.69 C53.2310251,25.2536839 53.5524481,26.0226228 53.5524481,26.825 C53.5524481,27.6273772 53.2310251,28.3963161 52.66,28.96 L52.66,28.96 C52.1016832,29.5363383 51.335749,29.8649873 50.5333607,29.8725038 C49.7309724,29.8800204 48.9590158,29.5657778 48.39,29 L48.39,28.96 Z" fill="url(#linearGradient-2)"></path>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g>
+                <g id="Group" opacity="0.3" fill="url(#linearGradient-3)" fill-rule="nonzero">
+                    <circle id="sun-shine" cx="36.48" cy="36.37" r="36"></circle>
+                </g>
+                <g id="구름" transform="translate(6.404631, 6.000000)">
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <use id="sun-core" fill="url(#linearGradient-4)" fill-rule="nonzero" xlink:href="#path-5"></use>
+                    <g filter="url(#filter-7)" id="sun-core" mask="url(#mask-6)" fill-rule="nonzero">
+                        <g transform="translate(4.500000, -1.000000)">
+                          <g id="cloud">
+                            <path d="M94.5845749,22.4500195 L94.2439892,22.4500195 C88.1058557,7.73308309 73.2359044,-1.28565665 57.4749358,0.149305895 C41.7139672,1.58426844 28.6843456,13.1431339 25.2564811,28.7310097 C10.5838749,29.9630241 -0.509132092,42.660639 0.120926678,57.5024321 C0.750985447,72.3442251 12.8794595,84.0382843 27.6027375,84 L93.7141894,84 L93.7141894,84 L94.5940356,84 C111.439457,84 125.095369,70.2214944 125.095369,53.2249626 C125.095369,36.2284308 111.439457,22.4500195 94.5940356,22.4500195 L94.5845749,22.4500195 Z" id="Path" fill="url(#linearGradient-8)"></path>
+                            <ellipse id="Oval" fill="url(#linearGradient-9)" opacity="0.25" cx="94.5953694" cy="53" rx="30.5" ry="31"></ellipse>
+                          </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="구름" transform="translate(10.904631, 5.000000)" fill-rule="nonzero">
+              <g id="cloud">
+                <path d="M94.5845749,22.4500195 L94.2439892,22.4500195 C88.1058557,7.73308309 73.2359044,-1.28565665 57.4749358,0.149305895 C41.7139672,1.58426844 28.6843456,13.1431339 25.2564811,28.7310097 C10.5838749,29.9630241 -0.509132092,42.660639 0.120926678,57.5024321 C0.750985447,72.3442251 12.8794595,84.0382843 27.6027375,84 L93.7141894,84 L93.7141894,84 L94.5940356,84 C111.439457,84 125.095369,70.2214944 125.095369,53.2249626 C125.095369,36.2284308 111.439457,22.4500195 94.5940356,22.4500195 L94.5845749,22.4500195 Z" id="Path" fill="url(#linearGradient-8)"></path>
+                <path d="M97.0953694,36.5 C97.0953694,56.6583934 80.7537628,73 60.5953694,73 C40.436976,73 24.0953694,56.6583934 24.0953694,36.5 C24.0953694,16.3416066 40.436976,0 60.5953694,0 C80.7537628,0 97.0953694,16.3416066 97.0953694,36.5 Z" id="Path" fill="url(#linearGradient-10)" opacity="0.5"></path>
+                <ellipse id="Oval" fill="url(#linearGradient-9)" opacity="0.25" cx="94.5953694" cy="53" rx="30.5" ry="31"></ellipse>
+              </g>
+            </g>
+        </g>
+    </g>
+</svg>

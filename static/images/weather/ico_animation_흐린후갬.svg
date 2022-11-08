@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_흐린후갬</title>
+    <defs>
+        <linearGradient x1="12.328786%" y1="31.6944948%" x2="87.7625112%" y2="82.4206212%" id="linearGradient-1">
+            <stop stop-color="#ACAEB3" offset="0%"></stop>
+            <stop stop-color="#96989C" offset="100%"></stop>
+        </linearGradient>
+        <path d="M87.6000752,41.7175042 C87.5762239,34.2003307 82.5271154,27.6278903 75.2700258,25.6675042 C73.4799486,11.848637 62.2499129,1.17562754 48.3579194,0.0902777778 C34.4659259,-0.995071985 21.7145555,7.80432491 17.8000258,21.1775042 C7.7968893,21.7506426 -0.0163799872,30.0379754 5.96855898e-13,40.0575042 L5.96855898e-13,40.0575042 C0.0275884513,50.4761544 8.48133909,58.9075042 18.9000258,58.9075042 L38.3000258,58.9075042 L38.3000258,58.9075042 L71.0000258,58.8275042 C80.1948942,58.7889198 87.6221702,51.3124269 87.6000752,42.1175042 L87.6000752,41.7175042 Z" id="path-2"></path>
+        <linearGradient x1="-6.95626361%" y1="-6.95626361%" x2="85.8796754%" y2="85.8796754%" id="linearGradient-4">
+            <stop stop-color="#FFCC14" offset="0%"></stop>
+            <stop stop-color="#FFB90A" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-5" cx="84.6100258" cy="68.9575042" r="50.53"></circle>
+        <filter x="-20.8%" y="-20.8%" width="141.6%" height="141.6%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="12.4448217%" y1="12.4448217%" x2="36.7741935%" y2="36.7741935%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.72" offset="25%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.34" offset="62%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.09" offset="88%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="35.7487405%" y1="35.7160689%" x2="65.913214%" y2="65.9232754%" id="linearGradient-8">
+            <stop stop-color="#FFD800" stop-opacity="0" offset="1%"></stop>
+            <stop stop-color="#FFD800" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #sun-core {
+      -webkit-transform-origin: 50% 40%; -webkit-animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 50% 40%; animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-core-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.98); }
+      }
+      @keyframes sun-core-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.98); }
+      }
+      #sun-shine {
+      -webkit-transform-origin: 50% 40%; -webkit-animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 50% 40%; animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-shine-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.94); }
+      }
+      @keyframes sun-shine-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.94); }
+      }
+
+      #cloud {
+      -webkit-animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes cloud-anim {
+      0% { -webkit-transform: translate(0px, 0); }
+      100% { -webkit-transform: translate(-6px, 0); }
+      }
+      @keyframes cloud-anim {
+      0% { transform: translate(0px, 0); }
+      100% { transform: translate(-6px, 0); }
+      }
+
+      #sun-core-inner {
+      -webkit-transform-origin: 50% 40%; -webkit-animation: sun-core-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 50% 40%; animation: sun-core-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-core-inner-anim {
+      0% { -webkit-transform: scale(1) translate(0px, 0); }
+      100% { -webkit-transform: scale(0.98) translate(6px, 0); }
+      }
+      @keyframes sun-core-inner-anim {
+      0% { transform: scale(1) translate(0px, 0); }
+      100% { transform: scale(0.98) translate(6px, 0); }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_흐린후갬" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(15.000000, 22.000000)">
+            <g id="cloud">
+              <g id="Oval" transform="translate(-0.000026, 5.552496)">
+                  <mask id="mask-3" fill="white">
+                      <use xlink:href="#path-2"></use>
+                  </mask>
+                  <use id="Mask" fill="url(#linearGradient-1)" fill-rule="nonzero" xlink:href="#path-2"></use>
+                  <g fill-rule="nonzero" mask="url(#mask-3)">
+                    <g id="sun-core-inner">
+                      <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                      <use fill="url(#linearGradient-4)" xlink:href="#path-5"></use>
+                      </g>
+                  </g>
+              </g>
+              <circle id="Oval" fill="url(#linearGradient-7)" fill-rule="nonzero" opacity="0.15" cx="46.06" cy="29.99" r="29.45"></circle>
+            </g>
+            <path id="sun-shine" d="M144.61,70.08 L144.61,70 C144.61,36.862915 117.747085,10 84.61,10 C51.472915,10 24.61,36.862915 24.61,70 L24.61,70.17 C24.61,103.307085 51.472915,130.17 84.61,130.17 C117.747085,130.17 144.61,103.307085 144.61,70.17 L144.61,70.08 Z"  fill="url(#linearGradient-8)" fill-rule="nonzero" opacity="0.3"></path>
+            <circle id="sun-core"  fill="url(#linearGradient-4)" fill-rule="nonzero" cx="84.61" cy="69.51" r="50.53"></circle>
+        </g>
+    </g>
+</svg>

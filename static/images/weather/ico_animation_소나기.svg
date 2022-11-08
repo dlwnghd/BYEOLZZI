@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_소나기</title>
+    <defs>
+        <linearGradient x1="50%" y1="107.5%" x2="50%" y2="-7.5%" id="linearGradient-1">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="105.555556%" x2="50%" y2="-5.55555556%" id="linearGradient-2">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="125%" x2="50%" y2="-25%" id="linearGradient-3">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="106%" x2="50%" y2="-6%" id="linearGradient-4">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="22.0549833%" y1="38.2051013%" x2="71.0165598%" y2="70.4937207%" id="linearGradient-5">
+            <stop stop-color="#888A8F" offset="0%"></stop>
+            <stop stop-color="#68686B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="29.206934%" y1="1.59075297%" x2="59.1759555%" y2="71.3275754%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="7.17318775%" y1="7.17318775%" x2="39.4297847%" y2="39.4297847%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="104.411765%" x2="50%" y2="-4.41176471%" id="linearGradient-8">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="110.344828%" x2="50%" y2="-10.3448276%" id="linearGradient-9">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="137.5%" x2="50%" y2="-37.5%" id="linearGradient-10">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <path d="M102.55,24.06 L102.19,24.06 C95.553396,8.2894923 79.4760227,-1.37494003 62.4352066,0.162594393 C45.3943905,1.70012881 31.3065643,14.0862637 27.6,30.79 C11.7772046,32.1565161 -0.16136687,45.7440912 0.519302575,61.6111927 C1.19997202,77.4782942 14.2583068,89.9935481 30.14,90 L101.6,90 L101.6,90 L102.6,90 C114.714557,90.5169189 126.136786,84.3483751 132.348225,73.9345521 C138.559665,63.5207292 138.559665,50.5392708 132.348225,40.1254479 C126.136786,29.7116249 114.714557,23.5430811 102.6,24.06 L102.55,24.06 Z" id="path-11"></path>
+        <linearGradient x1="41.9647025%" y1="37.4728156%" x2="66.7820955%" y2="71.9670152%" id="linearGradient-13">
+            <stop stop-color="#2CE1F4" offset="15%"></stop>
+            <stop stop-color="#10BFE6" offset="100%"></stop>
+        </linearGradient>
+        <path d="M125.32,-2.43 L92.48,30.38 C92.3825601,30.486449 92.3554738,30.640045 92.4113559,30.7733024 C92.467238,30.9065597 92.5955831,30.9950918 92.74,31 L111.44,31 L100.73,53 C100.654114,53.1561415 100.700472,53.3442001 100.840234,53.4471827 C100.979996,53.5501654 101.173346,53.5387339 101.3,53.42 L132.61,23.63 C132.71508,23.529455 132.749342,23.3755599 132.696841,23.2399325 C132.64434,23.1043051 132.51539,23.0135888 132.37,23.01 L117.3,23.01 L125.92,-2.05 C125.988451,-2.21213358 125.929645,-2.39999043 125.780965,-2.4941547 C125.632284,-2.58831897 125.437318,-2.5611845 125.32,-2.43 Z" id="path-14"></path>
+        <filter x="-39.7%" y="-25.0%" width="179.3%" height="157.1%" filterUnits="objectBoundingBox" id="filter-15">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #spark-shake {
+      -webkit-animation: spark-shake-anim 2s cubic-bezier(0.215, 0.61, 0.355, 1) 000ms infinite;
+      animation: spark-shake-anim 2s cubic-bezier(0.215, 0.61, 0.355, 1) 000ms infinite;
+      }
+      @-webkit-keyframes spark-shake-anim {
+      0% { -webkit-transform: translate(0px, 0px); }
+      10% { -webkit-transform: translate(-0.5px, 0.5px); }
+      12% { -webkit-transform: translate(0px, 0px); }
+      14% { -webkit-transform: translate(-0.5px, 0.5px); }
+      16% { -webkit-transform: translate(0px, 0px); }
+      18% { -webkit-transform: translate(-1.5px, 3px); }
+      20% { -webkit-transform: translate(0px, 0px); }
+      22% { -webkit-transform: translate(-1.5px, 3px); }
+      24% { -webkit-transform: translate(0px, 0px); }
+      26% { -webkit-transform: translate(-1.5px, 3px); }
+      28% { -webkit-transform: translate(0px, 0px); }
+      30% { -webkit-transform: translate(-1px, 2px); }
+      32% { -webkit-transform: translate(0px, 0px); }
+      34% { -webkit-transform: translate(-1px, 2px); }
+      36% { -webkit-transform: translate(0px, 0px); }
+      38% { -webkit-transform: translate(-1px, 2px); }
+      40% { -webkit-transform: translate(0px, 0px); }
+      42% { -webkit-transform: translate(-1px, 1px); }
+      44% { -webkit-transform: translate(0px, 0px); }
+      46% { -webkit-transform: translate(-1px, 1px); }
+      48% { -webkit-transform: translate(0px, 0px); }
+      50% { -webkit-transform: translate(-1px, 1px); }
+      52% { -webkit-transform: translate(0px, 0px); }
+      55% { -webkit-transform: translate(-0.5px, 0.5px); }
+      58% { -webkit-transform: translate(0px, 0px); }
+      61% { -webkit-transform: translate(-0.5px, 0.5px); }
+      64% { -webkit-transform: translate(0px, 0px); }
+      67% { -webkit-transform: translate(-0.5px, 0.5px); }
+      70% { -webkit-transform: translate(0px, 0px); }
+      100% { -webkit-transform: translate(0px, 0px); }
+      }
+      @keyframes spark-shake-anim {
+      0% { transform: translate(0px, 0px); }
+      10% { transform: translate(-0.5px, 0.5px); }
+      12% { transform: translate(0px, 0px); }
+      14% { transform: translate(-0.5px, 0.5px); }
+      16% { transform: translate(0px, 0px); }
+      18% { transform: translate(-1.5px, 3px); }
+      20% { transform: translate(0px, 0px); }
+      22% { transform: translate(-1.5px, 3px); }
+      24% { transform: translate(0px, 0px); }
+      26% { transform: translate(-1.5px, 3px); }
+      28% { transform: translate(0px, 0px); }
+      30% { transform: translate(-1px, 2px); }
+      32% { transform: translate(0px, 0px); }
+      34% { transform: translate(-1px, 2px); }
+      36% { transform: translate(0px, 0px); }
+      38% { transform: translate(-1px, 2px); }
+      40% { transform: translate(0px, 0px); }
+      42% { transform: translate(-1px, 1px); }
+      44% { transform: translate(0px, 0px); }
+      46% { transform: translate(-1px, 1px); }
+      48% { transform: translate(0px, 0px); }
+      50% { transform: translate(-1px, 1px); }
+      52% { transform: translate(0px, 0px); }
+      55% { transform: translate(-0.5px, 0.5px); }
+      58% { transform: translate(0px, 0px); }
+      61% { transform: translate(-0.5px, 0.5px); }
+      64% { transform: translate(0px, 0px); }
+      67% { transform: translate(-0.5px, 0.5px); }
+      70% { transform: translate(0px, 0px); }
+      100% { transform: translate(0px, 0px); }
+      }
+      #cloud {
+      -webkit-animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes cloud-anim {
+      0% { -webkit-transform: translate(0, 0px); }
+      100% { -webkit-transform: translate(0, -5px); }
+      }
+      @keyframes cloud-anim {
+      0% { transform: translate(0, 0px); }
+      100% { transform: translate(0, -5px); }
+      }
+      #rain-line-0 {
+      -webkit-animation: rain-line-anim-0 1s linear infinite;
+      animation: rain-line-anim-0 1s linear infinite;
+      }
+      @-webkit-keyframes rain-line-anim-0 {
+      0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      30% { opacity: 1; }
+      60.9% { -webkit-transform: translate(0px, 5px); opacity: 0; }
+      61% { -webkit-transform: translate(0px, -2px); opacity: 0; }
+      100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      }
+      @keyframes rain-line-anim-0 {
+      0% { transform: translate(0px, 0px); opacity: 1; }
+      30% { opacity: 1; }
+      60.9% { transform: translate(0px, 5px); opacity: 0; }
+      61% { transform: translate(0px, -2px); opacity: 0; }
+      100% { transform: translate(0px, 0px); opacity: 1; }
+      }
+      #rain-line-1 {
+      -webkit-animation: rain-line-anim-1 1.4s linear infinite;
+      animation: rain-line-anim-1 1.4s linear infinite;
+      }
+      @-webkit-keyframes rain-line-anim-1 {
+      0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      20% { opacity: 1; }
+      49.9% { -webkit-transform: translate(0px, 10px); opacity: 0; }
+      50% { -webkit-transform: translate(0px, -5px); opacity: 0; }
+      70% { opacity: 1; }
+      100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      }
+      @keyframes rain-line-anim-1 {
+      0% { transform: translate(0px, 0px); opacity: 1; }
+      20% { opacity: 1; }
+      49.9% { transform: translate(0px, 10px); opacity: 0; }
+      50% { transform: translate(0px, -5px); opacity: 0; }
+      70% { opacity: 1; }
+      100% { transform: translate(0px, 0px); opacity: 1; }
+      }
+      #rain-line-2 {
+      -webkit-animation: rain-line-anim-2 1.2s linear infinite;
+      animation: rain-line-anim-2 1.2s linear infinite;
+      }
+      @-webkit-keyframes rain-line-anim-2 {
+      0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      50% { opacity: 1; }
+      70.9% { -webkit-transform: translate(0px, 10px); opacity: 0; }
+      71% { -webkit-transform: translate(0px, -5px); opacity: 0; }
+      85% { opacity: 1; }
+      100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      }
+      @keyframes rain-line-anim-2 {
+      0% { transform: translate(0px, 0px); opacity: 1; }
+      50% { opacity: 1; }
+      70.9% { transform: translate(0px, 10px); opacity: 0; }
+      71% { transform: translate(0px, -5px); opacity: 0; }
+      85% { opacity: 1; }
+      100% { transform: translate(0px, 0px); opacity: 1; }
+      }
+      #rain-line-3 {
+      -webkit-animation: rain-line-anim-3 1.4s linear infinite;
+      animation: rain-line-anim-3 1.4s linear infinite;
+      }
+      @-webkit-keyframes rain-line-anim-3 {
+      0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      20% { opacity: 1; }
+      69.9% { -webkit-transform: translate(0px, 15px); opacity: 0; }
+      70% { -webkit-transform: translate(0px, -5px); opacity: 0; }
+      85% { opacity: 1; }
+      100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      }
+      @keyframes rain-line-anim-3 {
+      0% { transform: translate(0px, 0px); opacity: 1; }
+      20% { opacity: 1; }
+      69.9% { transform: translate(0px, 15px); opacity: 0; }
+      70% { transform: translate(0px, -5px); opacity: 0; }
+      85% { opacity: 1; }
+      100% { transform: translate(0px, 0px); opacity: 1; }
+      }
+      #rain-line-4 {
+      -webkit-animation: rain-line-anim-4 2s linear infinite;
+      animation: rain-line-anim-4 2s linear infinite;
+      }
+      @-webkit-keyframes rain-line-anim-4 {
+      0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      50% { opacity: 1; }
+      70.9% { -webkit-transform: translate(0px, 10px); opacity: 0; }
+      71% { -webkit-transform: translate(0px, -5px); opacity: 0; }
+      100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+      }
+      @keyframes rain-line-anim-4 {
+      0% { transform: translate(0px, 0px); opacity: 1; }
+      50% { opacity: 1; }
+      70.9% { transform: translate(0px, 10px); opacity: 0; }
+      71% { transform: translate(0px, -5px); opacity: 0; }
+      100% { transform: translate(0px, 0px); opacity: 1; }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_소나기" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(20.000000, 14.449968)">
+            <g id="-" transform="translate(0.000000, 2.550032)">
+                <path id="rain-line-4" d="M95.5,65.53 C97.0976809,65.53 98.4036609,66.77892 98.4949073,68.3537272 L98.5,68.53 L98.5,108.53 C98.5,110.186854 97.1568542,111.53 95.5,111.53 C93.9023191,111.53 92.5963391,110.28108 92.5050927,108.706273 L92.5,108.53 L92.5,68.53 C92.5,66.8731458 93.8431458,65.53 95.5,65.53 Z" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+                <g id="rain-line-3">
+                    <path d="M81.5,59.53 C83.0976809,59.53 84.4036609,60.77892 84.4949073,62.3537272 L84.5,62.53 L84.5,116.53 C84.5,118.186854 83.1568542,119.53 81.5,119.53 C79.9023191,119.53 78.5963391,118.28108 78.5050927,116.706273 L78.5,116.53 L78.5,62.53 C78.5,60.8731458 79.8431458,59.53 81.5,59.53 Z" id="Path" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
+                    <g id="Group" opacity="0.6" transform="translate(78.000000, 123.000000)" fill="url(#linearGradient-3)" fill-rule="nonzero">
+                        <path d="M3.5,0.53 C5.09768088,0.53 6.40366088,1.77891996 6.49490731,3.35372721 L6.5,3.53 L6.5,15.53 C6.5,17.1868542 5.15685425,18.53 3.5,18.53 C1.90231912,18.53 0.596339121,17.28108 0.505092693,15.7062728 L0.5,15.53 L0.5,3.53 C0.5,1.87314575 1.84314575,0.53 3.5,0.53 Z" id="Path"></path>
+                    </g>
+                </g>
+                <path id="rain-line-1" d="M53.5,77.53 C55.0976809,77.53 56.4036609,78.77892 56.4949073,80.3537272 L56.5,80.53 L56.5,130.53 C56.5,132.186854 55.1568542,133.53 53.5,133.53 C51.9023191,133.53 50.5963391,132.28108 50.5050927,130.706273 L50.5,130.53 L50.5,80.53 C50.5,78.8731458 51.8431458,77.53 53.5,77.53 Z" fill="url(#linearGradient-4)" fill-rule="nonzero"></path>
+                <g id="cloud">
+                    <path d="M102.55,24.06 L102.19,24.06 C95.553396,8.2894923 79.4760227,-1.37494003 62.4352066,0.162594393 C45.3943905,1.70012881 31.3065643,14.0862637 27.6,30.79 C11.7772046,32.1565161 -0.16136687,45.7440912 0.519302575,61.6111927 C1.19997202,77.4782942 14.2583068,89.9935481 30.14,90 L101.6,90 L101.6,90 L102.6,90 C114.714557,90.5169189 126.136786,84.3483751 132.348225,73.9345521 C138.559665,63.5207292 138.559665,50.5392708 132.348225,40.1254479 C126.136786,29.7116249 114.714557,23.5430811 102.6,24.06 L102.55,24.06 Z" id="Path" fill="url(#linearGradient-5)" fill-rule="nonzero"></path>
+                    <path d="M105.240001,39.29 C105.240001,55.1858689 95.6618669,69.5155817 80.9740608,75.5939858 C66.2862546,81.67239 49.3830091,78.30173 38.1500913,67.0544991 C26.9171734,55.8072681 23.5680407,38.8997442 29.6651434,24.2196901 C35.7622461,9.53963609 50.104144,-0.0202288991 66,-3.20410815e-05 C87.6820274,0.0220787636 105.245531,17.6079621 105.240001,39.29 Z" id="Path" fill="url(#linearGradient-6)" fill-rule="nonzero" opacity="0.1"></path>
+                    <circle id="Oval" fill="url(#linearGradient-7)" fill-rule="nonzero" opacity="0.06" cx="102.55" cy="57.03" r="32.97"></circle>
+                </g>
+                <path id="rain-line-2" d="M67.5,55.53 C69.0976809,55.53 70.4036609,56.77892 70.4949073,58.3537272 L70.5,58.53 L70.5,126.53 C70.5,128.186854 69.1568542,129.53 67.5,129.53 C65.9023191,129.53 64.5963391,128.28108 64.5050927,126.706273 L64.5,126.53 L64.5,58.53 C64.5,56.8731458 65.8431458,55.53 67.5,55.53 Z" fill="url(#linearGradient-8)" fill-rule="nonzero"></path>
+                <g id="rain-line-0">
+                    <path d="M39.5,65.53 C41.0976809,65.53 42.4036609,66.77892 42.4949073,68.3537272 L42.5,68.53 L42.5,97.53 C42.5,99.1868542 41.1568542,100.53 39.5,100.53 C37.9023191,100.53 36.5963391,99.28108 36.5050927,97.7062728 L36.5,97.53 L36.5,68.53 C36.5,66.8731458 37.8431458,65.53 39.5,65.53 Z" id="Path" fill="url(#linearGradient-9)" fill-rule="nonzero"></path>
+                    <path d="M39.5,104.53 C41.0976809,104.53 42.4036609,105.77892 42.4949073,107.353727 L42.5,107.53 L42.5,115.53 C42.5,117.186854 41.1568542,118.53 39.5,118.53 C37.9023191,118.53 36.5963391,117.28108 36.5050927,115.706273 L36.5,115.53 L36.5,107.53 C36.5,105.873146 37.8431458,104.53 39.5,104.53 Z" id="Path" fill="url(#linearGradient-10)" fill-rule="nonzero" opacity="0.6"></path>
+                </g>
+                <mask id="mask-12" fill="white">
+                    <use xlink:href="#path-11"></use>
+                </mask>
+                <use id="Path" fill-opacity="0" fill="url(#linearGradient-5)" fill-rule="nonzero" xlink:href="#path-11"></use>
+                <g id="cloud">
+                    <g id="spark-shake" fill-rule="nonzero" mask="url(#mask-12)">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-15)" xlink:href="#path-14"></use>
+                        <use fill="url(#linearGradient-13)" xlink:href="#path-14"></use>
+                    </g>
+                </g>
+            </g>
+            <g id="cloud">
+                <path id="spark-shake" d="M125.32,0.120032432 L92.48,32.9300324 C92.3825601,33.0364814 92.3554738,33.1900775 92.4113559,33.3233348 C92.467238,33.4565921 92.5955831,33.5451242 92.74,33.5500324 L111.44,33.5500324 L100.73,55.5500324 C100.654114,55.706174 100.700472,55.8942325 100.840234,55.9972152 C100.979996,56.1001978 101.173346,56.0887664 101.3,55.9700324 L132.61,26.1800324 C132.71508,26.0794874 132.749342,25.9255923 132.696841,25.7899649 C132.64434,25.6543375 132.51539,25.5636212 132.37,25.5600324 L117.3,25.5600324 L125.92,0.500032432 C125.988451,0.337898853 125.929645,0.150042006 125.780965,0.0558777355 C125.632284,-0.038286535 125.437318,-0.0111520723 125.32,0.120032432 Z" fill="url(#linearGradient-13)" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>
