@@ -87,7 +87,7 @@
     </td>
     <td align="center" width="96">
       <a href="#macropower-tech">
-        <img src=".\READEME\image\Python.svg" width="48" height="48" alt="Python" style="background-color:white;"/>
+        <img src=".\READEME\image\python.svg" width="48" height="48" alt="Python" style="background-color:white;"/>
       </a>
       <br>Python
     </td>
