@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_흐려져비_밤</title>
+    <defs>
+        <linearGradient x1="89.982372%" y1="89.9527926%" x2="45.0444802%" y2="45.0173192%" id="linearGradient-1">
+            <stop stop-color="#5686E6" offset="0%"></stop>
+            <stop stop-color="#7ABEF5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="110.344828%" x2="50%" y2="-10.3448276%" id="linearGradient-2">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="108.221431%" x2="50%" y2="-8.22143053%" id="linearGradient-3">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="131.152648%" x2="50%" y2="-31.152648%" id="linearGradient-4">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="18.2949026%" y1="30.0520222%" x2="84.1423948%" y2="76.0227652%" id="linearGradient-5">
+            <stop stop-color="#DBDBDB" offset="0%"></stop>
+            <stop stop-color="#D4D6DD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="29.1981255%" y1="1.58812809%" x2="59.6003645%" y2="34.9386146%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" stop-opacity="0.55" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="7.16501241%" y1="7.18052109%" x2="39.4230769%" y2="39.4385856%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="107.142857%" x2="50%" y2="-7.14285714%" id="linearGradient-8">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="104.170142%" x2="50%" y2="-4.17014178%" id="linearGradient-9">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+        <![CDATA[
+        #moon-wrap {
+        -webkit-animation: moon-wrap-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: moon-wrap-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes moon-wrap-anim {
+        0% { -webkit-transform: translate(0, 0px); }
+        100% { -webkit-transform: translate(0, -6px); }
+        }
+        @keyframes moon-wrap-anim {
+        0% { transform: translate(0, 0px); }
+        100% { transform: translate(0, -6px); }
+        }
+        #moon {
+        -webkit-transform-origin: 30.5% 30.5%; -webkit-animation: moon-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        transform-origin: 30.5% 30.5%; animation: moon-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes moon-anim {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(6deg); }
+        }
+        @keyframes moon-anim {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(6deg); }
+        }
+        #cloud {
+        -webkit-animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes cloud-anim {
+        0% { -webkit-transform: translate(0, 0px); }
+        100% { -webkit-transform: translate(0, -5px); }
+        }
+        @keyframes cloud-anim {
+        0% { transform: translate(0, 0px); }
+        100% { transform: translate(0, -5px); }
+        }
+        #rain-line-0 {
+        -webkit-animation: rain-line-anim-0 2s linear infinite;
+        animation: rain-line-anim-0 2s linear infinite;
+        }
+        @-webkit-keyframes rain-line-anim-0 {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        60% { opacity: 1; }
+        80.9% { -webkit-transform: translate(0px, 20px); opacity: 0; }
+        81% { -webkit-transform: translate(0px, -10px); opacity: 0; }
+        100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes rain-line-anim-0 {
+        0% { transform: translate(0px, 0px); opacity: 1; }
+        60% { opacity: 1; }
+        80.9% { transform: translate(0px, 20px); opacity: 0; }
+        81% { transform: translate(0px, -10px); opacity: 0; }
+        100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        #rain-line-1 {
+        -webkit-animation: rain-line-anim-1 2.4s linear infinite;
+        animation: rain-line-anim-1 2.4s linear infinite;
+        }
+        @-webkit-keyframes rain-line-anim-1 {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        20% { opacity: 1; }
+        39.9% { -webkit-transform: translate(0px, 15px); opacity: 0; }
+        40% { -webkit-transform: translate(0px, -15px); opacity: 0; }
+        60% { opacity: 1; }
+        100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes rain-line-anim-1 {
+        0% { transform: translate(0px, 0px); opacity: 1; }
+        20% { opacity: 1; }
+        39.9% { transform: translate(0px, 15px); opacity: 0; }
+        40% { transform: translate(0px, -15px); opacity: 0; }
+        60% { opacity: 1; }
+        100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        #rain-line-2 {
+        -webkit-animation: rain-line-anim-2 1.8s linear infinite;
+        animation: rain-line-anim-2 1.8s linear infinite;
+        }
+        @-webkit-keyframes rain-line-anim-2 {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        50% { opacity: 1; }
+        70.9% { -webkit-transform: translate(0px, 6px); opacity: 0; }
+        71% { -webkit-transform: translate(0px, -2px); opacity: 0; }
+        85% { opacity: 1; }
+        100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes rain-line-anim-2 {
+        0% { transform: translate(0px, 0px); opacity: 1; }
+        50% { opacity: 1; }
+        70.9% { transform: translate(0px, 6px); opacity: 0; }
+        71% { transform: translate(0px, -2px); opacity: 0; }
+        85% { opacity: 1; }
+        100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        #rain-line-3 {
+        -webkit-animation: rain-line-anim-3 2.2s linear infinite;
+        animation: rain-line-anim-3 2.2s linear infinite;
+        }
+        @-webkit-keyframes rain-line-anim-3 {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        20% { opacity: 1; }
+        39.9% { -webkit-transform: translate(0px, 5px); opacity: 0; }
+        40% { -webkit-transform: translate(0px, -10px); opacity: 0; }
+        60% { opacity: 1; }
+        100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes rain-line-anim-3 {
+        0% { transform: translate(0px, 0px); opacity: 1; }
+        20% { opacity: 1; }
+        39.9% { transform: translate(0px, 5px); opacity: 0; }
+        40% { transform: translate(0px, -10px); opacity: 0; }
+        60% { opacity: 1; }
+        100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        ]]>
+    </style>
+    <g id="날씨아이콘_흐려져비_밤" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(10.000000, 8.000000)" fill-rule="nonzero">
+            <g id="moon-wrap">
+              <path id="moon" d="M7.76,41.11 C26.3073402,41.1100008 41.3444783,26.0773394 41.35,7.53 C41.3472797,5.13987484 41.092538,2.7566988 40.59,0.42 C56.9165373,3.96223789 68.1561001,18.9677017 66.9645465,35.6315388 C65.7729929,52.295376 52.5127559,65.5489729 35.848324,66.7321798 C19.1838921,67.9153867 4.18405987,56.6683094 0.65,40.34 C2.98634126,40.8458994 5.36952126,41.1039935 7.76,41.11 Z" fill="url(#linearGradient-1)"></path>
+            </g>
+            <path id="rain-line-0" d="M81,91.66 C82.5976809,91.66 83.9036609,92.90892 83.9949073,94.4837272 L84,94.66 L84,123.66 C84,125.316854 82.6568542,126.66 81,126.66 C79.4023191,126.66 78.0963391,125.41108 78.0050927,123.836273 L78,123.66 L78,94.66 C78,93.0031458 79.3431458,91.66 81,91.66 Z" fill="url(#linearGradient-2)"></path>
+            <g id="rain-line-2">
+              <path d="M107,91.29 C108.597681,91.29 109.903661,92.53892 109.994907,94.1137272 L110,94.29 L110,130.78 C110,132.436854 108.656854,133.78 107,133.78 C105.402319,133.78 104.096339,132.53108 104.005093,130.956273 L104,130.78 L104,94.29 C104,92.6331458 105.343146,91.29 107,91.29 Z" id="Path" fill="url(#linearGradient-3)"></path>
+              <path d="M107.2,138.12 C108.797681,138.12 110.103661,139.36892 110.194907,140.943727 L110.2,141.12 L110.2,150.75 C110.2,152.406854 108.856854,153.75 107.2,153.75 C105.602319,153.75 104.296339,152.50108 104.205093,150.926273 L104.2,150.75 L104.2,141.12 C104.2,139.463146 105.543146,138.12 107.2,138.12 Z" id="Path" fill-opacity="0.7" fill="url(#linearGradient-4)"></path>
+            </g>
+            <g id="cloud">
+              <path d="M81,13 C96.9341099,13 110.602062,22.702577 116.418069,36.521945 L116.78,36.52 C134.58566,36.52 149.02,50.9543397 149.02,68.76 C149.02,86.5656603 134.58566,101 116.78,101 C116.476868,101 116.174713,100.995816 115.87359,100.987504 L115.88,101 L46.0000004,101 C29.9837424,101 17.0000004,88.0162576 17.0000004,72 C17.0000004,56.8291964 28.6491699,44.3792018 43.4904525,43.1070735 C47.284038,25.8857271 62.6372076,13 81,13 Z" id="Combined-Shape" fill="url(#linearGradient-5)"></path>
+              <path d="M119.41,51.41 C119.41,72.6232572 102.213257,89.82 81,89.82 C59.7867428,89.82 42.59,72.6232572 42.59,51.41 C42.59,30.1967428 59.7867428,13 81,13 C102.213257,13 119.41,30.1967428 119.41,51.41 Z" id="Path" fill="url(#linearGradient-6)" opacity="0.6"></path>
+              <circle id="Oval" fill="url(#linearGradient-7)" opacity="0.4" cx="116.78" cy="68.76" r="32.24"></circle>
+            </g>
+            <path id="rain-line-3" d="M120,76.27 C121.597681,76.27 122.903661,77.51892 122.994907,79.0937272 L123,79.27 L123,121.27 C123,122.926854 121.656854,124.27 120,124.27 C118.402319,124.27 117.096339,123.02108 117.005093,121.446273 L117,121.27 L117,79.27 C117,77.6131458 118.343146,76.27 120,76.27 Z" fill="url(#linearGradient-8)"></path>
+            <path id="rain-line-1" d="M94,64.66 C95.5976809,64.66 96.9036609,65.90892 96.9949073,67.4837272 L97,67.66 L97,139.6 C97,141.256854 95.6568542,142.6 94,142.6 C92.4023191,142.6 91.0963391,141.35108 91.0050927,139.776273 L91,139.6 L91,67.66 C91,66.0031458 92.3431458,64.66 94,64.66 Z" fill="url(#linearGradient-9)"></path>
+        </g>
+    </g>
+</svg>

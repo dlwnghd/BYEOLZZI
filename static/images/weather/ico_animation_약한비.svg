@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_약한비</title>
+    <defs>
+        <linearGradient x1="50%" y1="107.317073%" x2="50%" y2="-7.31707317%" id="linearGradient-1">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#60ACFF" stop-opacity="0.62" offset="1%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.74" offset="11%"></stop>
+            <stop stop-color="#59A6FF" stop-opacity="0.83" offset="22%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.91" offset="34%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="48%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="66%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-24.6618646%" y1="11.1418349%" x2="62.7510879%" y2="64.2793885%" id="linearGradient-2">
+            <stop stop-color="#E9E9ED" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="7.43326279%" y1="7.40639674%" x2="50.3952231%" y2="50.3810773%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="7.17318775%" y1="7.17318775%" x2="39.4297847%" y2="39.4297847%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="105.357143%" x2="50%" y2="-5.35714286%" id="linearGradient-5">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.994124382" offset="81.1980217%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="133.333333%" x2="50%" y2="-33.3333333%" id="linearGradient-6">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="113.043478%" x2="50%" y2="-13.0434783%" id="linearGradient-7">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="110%" x2="50%" y2="-10%" id="linearGradient-8">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="150%" x2="50%" y2="-50%" id="linearGradient-9">
+            <stop stop-color="#61ADFF" offset="0%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+        <![CDATA[
+        #cloud {
+        -webkit-animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes cloud-anim {
+        0% { -webkit-transform: translate(0, 0px); }
+        100% { -webkit-transform: translate(0, -6px); }
+        }
+        @keyframes cloud-anim {
+        0% { -webkit-transform: translate(0, 0px); }
+        100% { -webkit-transform: translate(0, -6px); }
+        }
+        #rain-line-0 {
+        -webkit-animation: rain-line-anim-0 2s linear infinite;
+        animation: rain-line-anim-0 2s linear infinite;
+        }
+        @-webkit-keyframes rain-line-anim-0 {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        50% { opacity: 1; }
+        70.9% { -webkit-transform: translate(0px, 8px); opacity: 0; }
+        71% { -webkit-transform: translate(0px, -4px); opacity: 0; }
+        100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes rain-line-anim-0 {
+        0% { transform: translate(0px, 0px); opacity: 1; }
+        50% { opacity: 1; }
+        70.9% { transform: translate(0px, 8px); opacity: 0; }
+        71% { transform: translate(0px, -4px); opacity: 0; }
+        100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        #rain-line-1 {
+        -webkit-animation: rain-line-anim-1 2s linear infinite;
+        animation: rain-line-anim-1 2s linear infinite;
+        }
+        @-webkit-keyframes rain-line-anim-1 {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        20% { opacity: 1; }
+        39.9% { -webkit-transform: translate(0px, 6px); opacity: 0; }
+        40% { -webkit-transform: translate(0px, -12px); opacity: 0; }
+        60% { opacity: 1; }
+        100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes rain-line-anim-1 {
+        0% { transform: translate(0px, 0px); opacity: 1; }
+        20% { opacity: 1; }
+        39.9% { transform: translate(0px, 6px); opacity: 0; }
+        40% { transform: translate(0px, -12px); opacity: 0; }
+        60% { opacity: 1; }
+        100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        #rain-line-2 {
+        -webkit-animation: rain-line-anim-2 1.5s linear infinite;
+        animation: rain-line-anim-2 1.5s linear infinite;
+        }
+        @-webkit-keyframes rain-line-anim-2 {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        50% { opacity: 1; }
+        70.9% { -webkit-transform: translate(0px, 6px); opacity: 0; }
+        71% { -webkit-transform: translate(0px, -6px); opacity: 0; }
+        40% { opacity: 1; }
+        100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes rain-line-anim-2 {
+        0% { transform: translate(0px, 0px); opacity: 1; }
+        50% { opacity: 1; }
+        70.9% { transform: translate(0px, 6px); opacity: 0; }
+        71% { transform: translate(0px, -6px); opacity: 0; }
+        40% { opacity: 1; }
+        100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        #rain-line-3 {
+        -webkit-animation: rain-line-anim-3 1.5s linear infinite;
+        animation: rain-line-anim-3 1.5s linear infinite;
+        }
+        @-webkit-keyframes rain-line-anim-3 {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        20% { opacity: 1; }
+        39.9% { -webkit-transform: translate(0px, 6px); opacity: 0; }
+        40% { -webkit-transform: translate(0px, -6px); opacity: 0; }
+        60% { opacity: 1; }
+        100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes rain-line-anim-3 {
+        0% { transform: translate(0px, 0px); opacity: 1; }
+        20% { opacity: 1; }
+        39.9% { transform: translate(0px, 6px); opacity: 0; }
+        40% { transform: translate(0px, -6px); opacity: 0; }
+        60% { opacity: 1; }
+        100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        ]]>
+    </style>
+    <g id="날씨아이콘_약한비" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(20.000000, 17.000000)" fill-rule="nonzero">
+            <path id="rain-line-1" d="M61,75 C62.5976809,75 63.9036609,76.24892 63.9949073,77.8237272 L64,78 L64,119 C64,120.656854 62.6568542,122 61,122 C59.4023191,122 58.0963391,120.75108 58.0050927,119.176273 L58,119 L58,78 C58,76.3431458 59.3431458,75 61,75 Z" fill="url(#linearGradient-1)"></path>
+            <g id="cloud">
+                <path d="M102.55,24.06 L102.19,24.06 C95.553396,8.2894923 79.4760227,-1.37494003 62.4352066,0.162594393 C45.3943905,1.70012881 31.3065643,14.0862637 27.6,30.79 C11.5921589,32.1603926 -0.411796083,46.0312353 0.53,62.07 C1.43,77.86 14.91,90 30.73,90 L102.55,90 C114.664557,90.5169189 126.086786,84.3483751 132.298225,73.9345521 C138.509665,63.5207292 138.509665,50.5392708 132.298225,40.1254479 C126.086786,29.7116249 114.664557,23.5430811 102.55,24.06 Z" id="Path" fill="url(#linearGradient-2)"></path>
+                <path d="M105.240001,39.29 C105.240001,55.1858689 95.6618669,69.5155817 80.9740608,75.5939858 C66.2862546,81.67239 49.3830091,78.30173 38.1500913,67.0544991 C26.9171734,55.8072681 23.5680407,38.8997442 29.6651434,24.2196901 C35.7622461,9.53963609 50.104144,-0.0202288991 66,-3.20410815e-05 C87.6820274,0.0220787636 105.245531,17.6079621 105.240001,39.29 Z" id="Path" fill="url(#linearGradient-3)" opacity="0.5"></path>
+                <circle id="Oval" fill="url(#linearGradient-4)" opacity="0.25" cx="102.55" cy="57.03" r="32.97"></circle>
+            </g>
+            <g id="rain-line-2">
+                <path d="M76,53 C77.5976809,53 78.9036609,54.24892 78.9949073,55.8237272 L79,56 L79,112 C79,113.656854 77.6568542,115 76,115 C74.4023191,115 73.0963391,113.75108 73.0050927,112.176273 L73,112 L73,56 C73,54.3431458 74.3431458,53 76,53 Z" id="Path" fill="url(#linearGradient-5)"></path>
+                <g id="Group" opacity="0.6" transform="translate(73.000000, 120.000000)" fill="url(#linearGradient-6)">
+                    <path d="M3,0 C4.59768088,0 5.90366088,1.24891996 5.99490731,2.82372721 L6,3 L6,12 C6,13.6568542 4.65685425,15 3,15 C1.40231912,15 0.0963391206,13.75108 0.00509269341,12.1762728 L0,12 L0,3 C0,1.34314575 1.34314575,0 3,0 Z" id="Path"></path>
+                </g>
+            </g>
+            <path id="rain-line-3" d="M91,77 C92.5976809,77 93.9036609,78.24892 93.9949073,79.8237272 L94,80 L94,110 C94,111.656854 92.6568542,113 91,113 C89.4023191,113 88.0963391,111.75108 88.0050927,110.176273 L88,110 L88,80 C88,78.3431458 89.3431458,77 91,77 Z"  fill="url(#linearGradient-8)"></path>
+            <g id="rain-line-0">
+                <path d="M46,67 C47.5976809,67 48.9036609,68.24892 48.9949073,69.8237272 L49,70 L49,93 C49,94.6568542 47.6568542,96 46,96 C44.4023191,96 43.0963391,94.75108 43.0050927,93.1762728 L43,93 L43,70 C43,68.3431458 44.3431458,67 46,67 Z" id="Path" fill="url(#linearGradient-7)"></path>
+                <g id="Group" opacity="0.8" transform="translate(43.000000, 101.000000)" fill="url(#linearGradient-9)">
+                    <path d="M3,0 C4.59768088,0 5.90366088,1.24891996 5.99490731,2.82372721 L6,3 L6,9 C6,10.6568542 4.65685425,12 3,12 C1.40231912,12 0.0963391206,10.75108 0.00509269341,9.17627279 L0,9 L0,3 C0,1.34314575 1.34314575,0 3,0 Z" id="Path"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

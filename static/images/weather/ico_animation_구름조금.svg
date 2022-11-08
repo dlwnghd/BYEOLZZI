@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_구름조금</title>
+    <defs>
+        <linearGradient x1="24.7504583%" y1="24.7504583%" x2="70.543899%" y2="70.543899%" id="linearGradient-1">
+            <stop stop-color="#FFCC14" offset="0%"></stop>
+            <stop stop-color="#FFBA0C" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="53.5527273" cy="53.5527273" r="53.5527273"></circle>
+        <filter x="-27.7%" y="-38.3%" width="155.5%" height="176.7%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.619607843   0 0 0 0 0.215686275   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="0.107036946%" y1="49.9998725%" x2="99.9465764%" y2="49.9998725%" id="linearGradient-5">
+            <stop stop-color="#F3F4FA" offset="0%"></stop>
+            <stop stop-color="#EEEFF5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="11.8088235%" y1="11.8235294%" x2="41.6911765%" y2="41.7058824%" id="linearGradient-6">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+        <![CDATA[
+        #sun-core {
+        -webkit-transform-origin: 32% 32%; -webkit-animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        transform-origin: 32% 32%; animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes sun-core-anim {
+        0% { -webkit-transform: scale(1); }
+        100% { -webkit-transform: scale(0.98); }
+        }
+        @keyframes sun-core-anim {
+        0% { transform: scale(1); }
+        100% { transform: scale(0.98); }
+        }
+        #sun-shine {
+        -webkit-transform-origin: 50% 50%; -webkit-animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        transform-origin: 50% 50%; animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes sun-shine-anim {
+        0% { -webkit-transform: scale(1); }
+        100% { -webkit-transform: scale(0.94); }
+        }
+        @keyframes sun-shine-anim {
+        0% { transform: scale(1); }
+        100% { transform: scale(0.94); }
+        }
+        #cloud {
+        -webkit-animation: cloud-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: cloud-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes cloud-anim {
+        0% { -webkit-transform: translate(0px, 0); }
+        100% { -webkit-transform: translate(12px, 0); }
+        }
+        @keyframes cloud-anim {
+        0% { transform: translate(0px, 0); }
+        100% { transform: translate(12px, 0); }
+        }
+        ]]>
+    </style>
+    <g id="날씨아이콘_구름조금" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘">
+            <path id="sun-shine" d="M154,87.0054922 L154,86.9066323 L154,86.9066323 C154,50.5074044 124.450793,21 88,21 C51.5492065,21 22,50.5074044 22,86.9066323 L22,86.9066323 L22,87.0933677 L22,87.0933677 C22,123.492596 51.5492065,153 88,153 C124.450793,153 154,123.492596 154,87.0933677 L154,87.0933677 L154,87.0054922 Z" fill="#FFD800" fill-rule="nonzero" opacity="0.15"></path>
+            <g id="구름" transform="translate(34.000000, 32.500000)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="sun-core" fill="url(#linearGradient-1)" fill-rule="nonzero" xlink:href="#path-2"></use>
+                <g filter="url(#filter-4)" mask="url(#mask-3)" fill-rule="nonzero">
+                    <g id="cloud">
+                        <g transform="translate(42.000000, 61.500000)">
+                            <g id="sun-core">
+                            <path d="M52.5354495,0 C40.393358,-0.00479832016 29.4456603,7.30992174 24.8030965,18.5294141 L20.6560377,18.5294141 C9.20425098,18.573272 -0.0437025543,27.8923333 -1.25389895e-14,39.34412 C0.0440132589,50.7959067 9.36307451,60.0438603 20.8148612,60.0001577 L52.5795671,60.0001577 C69.1481094,60.0001577 82.5795665,46.5685446 82.5795665,30 C82.5795665,13.4314601 69.1481094,0 52.5795671,0 L52.5354495,0 Z" id="Path" fill="url(#linearGradient-5)"></path>
+                            <circle id="Oval" fill="url(#linearGradient-6)" cx="52.5354495" cy="30.0000024" r="30"></circle>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <g id="구름" transform="translate(76.000000, 94.000000)" fill-rule="nonzero">
+                <g id="cloud">
+                    <path d="M52.5354495,0 C40.393358,-0.00479832016 29.4456603,7.30992174 24.8030965,18.5294141 L20.6560377,18.5294141 C9.20425098,18.573272 -0.0437025543,27.8923333 -1.25389895e-14,39.34412 C0.0440132589,50.7959067 9.36307451,60.0438603 20.8148612,60.0001577 L52.5795671,60.0001577 C69.1481094,60.0001577 82.5795665,46.5685446 82.5795665,30 C82.5795665,13.4314601 69.1481094,0 52.5795671,0 L52.5354495,0 Z" id="Path" fill="url(#linearGradient-5)"></path>
+                    <circle id="Oval" fill="url(#linearGradient-6)" cx="52.5354495" cy="30.0000024" r="30"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

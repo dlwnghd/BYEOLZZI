@@ -11,22 +11,47 @@ import threading
 import json
 
 from config.DatabaseConfig import *   # 임포트는 함수 변수 클래스
+from config.State import State
 from utils.Database import Database
-from utils.Botserver import Botserver
+from utils.Botserver import BotServer
 from utils.Preprocess import Preprocess
 from models.intent.IntentModel import IntentModel
-from models.ner.NerModel import NerModel
-from utils.Findanswer import Findanswer
+from models.intent.IntentModel_season import IntentModel_Season
+from models.intent.IntentModel_car_walk import IntentModel_Car_Walk
+from models.intent.IntentModel_city import IntentModel_City
+from models.intent.IntentModel_activity import IntentModel_Activity
+# from models.ner.NerModel import NerModel
+from utils.Findanswer import FindAnswer
 
 # 전처리 객체 생성
-p = Preprocess(word2index_dic='train_tools/dict/chatbot_dict.bin',
+p_full = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_full.bin',
+               userdic='utils/user_dic.tsv')
+p_car_walk = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_car_walk.bin',
+               userdic='utils/user_dic.tsv')
+p_season = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_season.bin',
+               userdic='utils/user_dic.tsv')
+p_city = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_city.bin',
+               userdic='utils/user_dic.tsv')
+p_activity = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_activity.bin',
                userdic='utils/user_dic.tsv')
 
-# 의도 파악 모델
-intent = IntentModel(model_name='models/intent/intent_model.h5', preprocess=p)
+# 의도 파악 모델 (1)
+intent = IntentModel(model_name='models/intent/intent_model_test_full.h5', preprocess=p_full)
+
+# 의도 파악 모델 (2) : car/walk
+intent_car_walk = IntentModel_Car_Walk(model_name='models/intent/intent_model_car_walk.h5', preprocess=p_car_walk)
+
+# 의도 파악 모델 (2) : season
+intent_season = IntentModel_Season(model_name='models/intent/intent_model_season.h5', preprocess=p_season)
+
+# 의도 파악 모델 (2) : city/nature
+intent_city = IntentModel_City(model_name='models/intent/intent_model_city.h5', preprocess=p_city)
+
+# 의도 파악 모델 (2) : activity
+intent_activity = IntentModel_Activity(model_name='models/intent/intent_model_activity.h5', preprocess=p_activity)
 
 # 개체명 인식 모델
-ner = NerModel(model_name='models/ner/ner_model.h5', preprocess=p)
+# ner = NerModel(model_name='models/ner/ner_model.h5', preprocess=p_full)
 
 # 클라이언트 요청을 수행하는 쓰레드(에 담을) 함수
 def to_client(conn, addr, params):
@@ -34,6 +59,10 @@ def to_client(conn, addr, params):
 
     try:
         db.connect()
+        intent_name = None
+        intent_reco = None
+        intent_reco_name = None
+        print("Start_State.state:", State.state)
 
         # 데이터 수신
         read = conn.recv(2048)   # 수신 데이터가 있을 때까지 블로킹(대기) / 최대 2048 버퍼에 담음
@@ -63,29 +92,72 @@ def to_client(conn, addr, params):
         # 파이썬으로 지금 클라이언트의 질의어를 받앗다? 그러면~
 
         # 의도 파악
-        intent_predict = intent.predict_class(query)
-        intent_name = intent.labels[intent_predict]
+        if State.state == None:
+            intent_predict = intent.predict_class(query)
+            intent_name = intent.labels[intent_predict]
+
+            if intent_name == '추천':
+                print("추천 의도 들어옴")
+                State.state = 0
+
+        if State.state == 0:
+            pass
+
+        elif State.state == 1:
+            intent_reco = intent_car_walk.predict_class(query)
+            intent_reco_name = intent_car_walk.labels[intent_reco]
+            State.q = str(intent_reco)
+
+        elif State.state == 2:
+            intent_reco = intent_season.predict_class(query)
+            intent_reco_name = intent_season.labels[intent_reco]
+            State.q += str(intent_reco)
+
+        elif State.state == 3:
+            intent_reco = intent_city.predict_class(query)
+            intent_reco_name = intent_city.labels[intent_reco]
+            State.q += str(intent_reco)
+
+        elif State.state == 4:
+            intent_reco = intent_activity.predict_class(query)
+            intent_reco_name = intent_activity.labels[intent_reco]
+            State.q += str(intent_reco)
+
 
         # 개체명 파악
-        ner_predicts = ner.predict(query)
-        ner_tags = ner.predict_tags(query)
+        # if State.state == None:
+        #     ner_predicts = ner.predict(query)
+        #     ner_tags = ner.predict_tags(query)
+
 
         # 답변 검색
         try:
-            f = Findanswer(db)
-            answer_text, answer_image = f.search(intent_name, ner_tags)
-            answer = f.tag_to_word(ner_predicts, answer_text)
+            print("FindAnswer 시작")
+            print("intent_name:", intent_name)
+            print("intent_reco:", intent_reco)
+            print("intent_reco_name:", intent_reco_name)
+            print("State.state:", State.state)
+            f = FindAnswer(db)
+            answer = f.reco_search(intent_name, State.state)
+            print("END_Answer:", answer)
+            # answer = f.tag_to_word(ner_predicts, answer_text)
 
+            if State.state != None and State.state != 4:
+                State.state += 1
+            elif State.state == 4:
+                State.state = None
+                State.q = None
         except:
             answer = "죄송해요 무슨 말인지 모르겠어요. 조금 더 공부 할게요."
             answer_image = None
 
+
         sent_json_data_str = {    # response 할 JSON 데이터를 준비할 겁니다~
             "Query" : query,
             "Answer": answer,
-            "AnswerImageUrl" : answer_image,
-            "Intent": intent_name,
-            "NER": str(ner_predicts)
+            # "AnswerImageUrl" : answer_image,
+            # "Intent": intent_name,
+            # "NER": str(ner_predicts)
         }
 
         message = json.dumps(sent_json_data_str)
@@ -119,7 +191,7 @@ if __name__ == '__main__':
     listen = 100    # 최대 클라이언트 연결수
 
     # 봇 서버 동작
-    bot = Botserver(port, listen)
+    bot = BotServer(port, listen)
     bot.create_sock()
     print('bot start')
 

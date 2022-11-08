@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_우박</title>
+    <defs>
+        <linearGradient x1="50%" y1="-11.1111111%" x2="50%" y2="111.111111%" id="linearGradient-1">
+            <stop stop-color="#A6CDFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" stop-opacity="0.8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-42.8571429%" x2="50%" y2="142.857143%" id="linearGradient-2">
+            <stop stop-color="#A6CDFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" stop-opacity="0.8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-10%" x2="50%" y2="110%" id="linearGradient-3">
+            <stop stop-color="#A6CDFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" stop-opacity="0.8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-5.94360757%" y1="229.774086%" x2="46.3688683%" y2="279.94672%" id="linearGradient-4">
+            <stop stop-color="#85BEFF" offset="0%"></stop>
+            <stop stop-color="#7FBAFF" offset="7%"></stop>
+            <stop stop-color="#71B2FF" offset="28%"></stop>
+            <stop stop-color="#68ADFF" offset="54%"></stop>
+            <stop stop-color="#66ABFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-30%" x2="50%" y2="130%" id="linearGradient-5">
+            <stop stop-color="#A6CDFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" stop-opacity="0.8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-8.57142857%" x2="50%" y2="108.571429%" id="linearGradient-6">
+            <stop stop-color="#A6CDFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" stop-opacity="0.8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="34.1739239%" y1="33.6147657%" x2="86.5787036%" y2="91.1943285%" id="linearGradient-7">
+            <stop stop-color="#85BEFF" offset="0%"></stop>
+            <stop stop-color="#7FBAFF" offset="7%"></stop>
+            <stop stop-color="#71B2FF" offset="28%"></stop>
+            <stop stop-color="#68ADFF" offset="54%"></stop>
+            <stop stop-color="#66ABFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="37.5390847%" y1="37.7552925%" x2="110.385067%" y2="72.9701281%" id="linearGradient-8">
+            <stop stop-color="#85BEFF" offset="0%"></stop>
+            <stop stop-color="#7FBAFF" offset="7%"></stop>
+            <stop stop-color="#71B2FF" offset="28%"></stop>
+            <stop stop-color="#68ADFF" offset="54%"></stop>
+            <stop stop-color="#66ABFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-5.66037736%" x2="50%" y2="105.660377%" id="linearGradient-9">
+            <stop stop-color="#A6CDFF" offset="0%"></stop>
+            <stop stop-color="#A6CDFF" stop-opacity="0.8" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="130.683304%" y1="58.5521534%" x2="149.013107%" y2="141.290713%" id="linearGradient-10">
+            <stop stop-color="#85BEFF" offset="0%"></stop>
+            <stop stop-color="#7FBAFF" offset="7%"></stop>
+            <stop stop-color="#71B2FF" offset="28%"></stop>
+            <stop stop-color="#68ADFF" offset="54%"></stop>
+            <stop stop-color="#66ABFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="48.6906839%" y1="56.2599348%" x2="313.154003%" y2="363.604594%" id="linearGradient-11">
+            <stop stop-color="#85BEFF" offset="0%"></stop>
+            <stop stop-color="#7FBAFF" offset="7%"></stop>
+            <stop stop-color="#71B2FF" offset="28%"></stop>
+            <stop stop-color="#68ADFF" offset="54%"></stop>
+            <stop stop-color="#66ABFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="26.3400781%" y1="32.3312212%" x2="50.0887469%" y2="53.2580727%" id="linearGradient-12">
+            <stop stop-color="#85BEFF" offset="0%"></stop>
+            <stop stop-color="#7FBAFF" offset="7%"></stop>
+            <stop stop-color="#71B2FF" offset="28%"></stop>
+            <stop stop-color="#68ADFF" offset="54%"></stop>
+            <stop stop-color="#66ABFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #ice-contain-0 {
+      -webkit-animation: ice-contain-anim-0 2s linear infinite;
+      animation: ice-contain-anim-0 2s linear infinite;
+      }
+      @-webkit-keyframes ice-contain-anim-0 {
+      0% { opacity: 1; -webkit-transform: translateY(0px); }
+      60% { opacity: 1; }
+      80% { opacity: 0; -webkit-transform: translateY(12px); }
+      80.01% { opacity: 0; -webkit-transform: translateY(-2px); }
+      100% { opacity: 1; -webkit-transform: translateY(0px); }
+      }
+      @keyframes ice-contain-anim-0 {
+      0% { opacity: 1; transform: translateY(0px); }
+      60% { opacity: 1; }
+      80% { opacity: 0; transform: translateY(12px); }
+      80.01% { opacity: 0; transform: translateY(-2px); }
+      100% { opacity: 1; transform: translateY(0px); }
+      }
+      #ice-header-0 {
+      -webkit-transform-origin: 5% 50%; -webkit-animation: ice-header-anim-0 2s linear infinite;
+      transform-origin: 5% 50%; animation: ice-header-anim-0 2s linear infinite;
+      }
+      @-webkit-keyframes ice-header-anim-0 {
+      0% { -webkit-transform: rotate(0deg); }
+      80% { -webkit-transform: rotate(-180deg); }
+      80.01% { -webkit-transform: rotate(40deg); }
+      100% { -webkit-transform: rotate(0deg); }
+      }
+      @keyframes ice-header-anim-0 {
+      0% { transform: rotate(0deg); }
+      80% { transform: rotate(-180deg); }
+      80.01% { transform: rotate(40deg); }
+      100% { transform: rotate(0deg); }
+      }
+      #ice-contain-1 {
+      -webkit-animation: ice-contain-anim-1 3s linear infinite;
+      animation: ice-contain-anim-1 3s linear infinite;
+      }
+      @-webkit-keyframes ice-contain-anim-1 {
+      0% { opacity: 1; -webkit-transform: translateY(0px); }
+      50% { opacity: 1; }
+      70% { opacity: 0; -webkit-transform: translateY(10px); }
+      70.01% { opacity: 0; -webkit-transform: translateY(-5px); }
+      100% { opacity: 1; -webkit-transform: translateY(0px); }
+      }
+      @keyframes ice-contain-anim-1 {
+      0% { opacity: 1; transform: translateY(0px); }
+      50% { opacity: 1; }
+      70% { opacity: 0; transform: translateY(10px); }
+      70.01% { opacity: 0; transform: translateY(-5px); }
+      100% { opacity: 1; transform: translateY(0px); }
+      }
+      #ice-header-1 {
+      -webkit-transform-origin: 13% 32%; -webkit-animation: ice-header-anim-1 3s linear infinite;
+      transform-origin: 13% 32%; animation: ice-header-anim-1 3s linear infinite;
+      }
+      @-webkit-keyframes ice-header-anim-1 {
+      0% { -webkit-transform: rotate(0deg); }
+      70% { -webkit-transform: rotate(-90deg); }
+      70.01% { -webkit-transform: rotate(30deg); }
+      100% { -webkit-transform: rotate(0deg); }
+      }
+      @keyframes ice-header-anim-1 {
+      0% { transform: rotate(0deg); }
+      70% { transform: rotate(-90deg); }
+      70.01% { transform: rotate(30deg); }
+      100% { transform: rotate(0deg); }
+      }
+      #ice-header-1 {
+      -webkit-transform-origin: 13% 32%; -webkit-animation: ice-header-anim-1 3s linear infinite;
+      transform-origin: 13% 32%; animation: ice-header-anim-1 3s linear infinite;
+      }
+
+      #ice-contain-2 {
+      -webkit-animation: ice-contain-anim-2 3.5s linear infinite;
+      animation: ice-contain-anim-2 3.5s linear infinite;
+      }
+      @-webkit-keyframes ice-contain-anim-2 {
+      0% { opacity: 1; -webkit-transform: translateY(0px); }
+      60% { opacity: 1; }
+      80% { opacity: 0; -webkit-transform: translateY(16px); }
+      80.01% { opacity: 0; -webkit-transform: translateY(-4px); }
+      100% { opacity: 1; -webkit-transform: translateY(0px); }
+      }
+      @keyframes ice-contain-anim-2 {
+      0% { opacity: 1; transform: translateY(0px); }
+      60% { opacity: 1; }
+      80% { opacity: 0; transform: translateY(16px); }
+      80.01% { opacity: 0; transform: translateY(-4px); }
+      100% { opacity: 1; transform: translateY(0px); }
+      }
+      #ice-header-2 {
+      -webkit-transform-origin: 29% 64%; -webkit-animation: ice-header-anim-2 3.5s linear infinite;
+      transform-origin: 29% 64%; animation: ice-header-anim-2 3.5s linear infinite;
+      }
+      @-webkit-keyframes ice-header-anim-2 {
+      0% { -webkit-transform: rotate(0deg);}
+      80% { -webkit-transform: rotate(120deg); }
+      80.01% { -webkit-transform: rotate(-30deg); }
+      100% { -webkit-transform: rotate(0deg); }
+      }
+      @keyframes ice-header-anim-2 {
+      0% { transform: rotate(0deg);}
+      80% { transform: rotate(120deg); }
+      80.01% { transform: rotate(-30deg); }
+      100% { transform: rotate(0deg); }
+      }
+      #ice-contain-3 {
+      -webkit-animation: ice-contain-anim-3 2.5s linear infinite;
+      animation: ice-contain-anim-3 2.5s linear infinite;
+      }
+      @-webkit-keyframes ice-contain-anim-3 {
+      0% { opacity: 1; -webkit-transform: translateY(0px); }
+      40% { opacity: 1; }
+      60% { opacity: 0; -webkit-transform: translateY(12px); }
+      60.01% { opacity: 0; -webkit-transform: translateY(-8px); }
+      100% { opacity: 1; -webkit-transform: translateY(0px); }
+      }
+      @keyframes ice-contain-anim-3 {
+      0% { opacity: 1; transform: translateY(0px); }
+      40% { opacity: 1; }
+      60% { opacity: 0; transform: translateY(12px); }
+      60.01% { opacity: 0; transform: translateY(-8px); }
+      100% { opacity: 1; transform: translateY(0px); }
+      }
+      #ice-header-3 {
+      -webkit-transform-origin: 56% 48%; -webkit-animation: ice-header-anim-3 2.5s linear infinite;
+      transform-origin: 56% 48%; animation: ice-header-anim-3 2.5s linear infinite;
+      }
+      @-webkit-keyframes ice-header-anim-3 {
+      0% { -webkit-transform: rotate(0deg); }
+      60% { -webkit-transform: rotate(60deg); }
+      60.01% { -webkit-transform: rotate(-30deg); }
+      100% { -webkit-transform: rotate(0deg); }
+      }
+      @keyframes ice-header-anim-3 {
+      0% { transform: rotate(0deg); }
+      60% { transform: rotate(60deg); }
+      60.01% { transform: rotate(-30deg); }
+      100% { transform: rotate(0deg); }
+      }
+
+      #ice-contain-4 {
+      -webkit-animation: ice-contain-anim-4 1.5s linear infinite;
+      animation: ice-contain-anim-4 1.5s linear infinite;
+      }
+      @-webkit-keyframes ice-contain-anim-4 {
+      0% { opacity: 1; -webkit-transform: translateY(0px); }
+      50% { opacity: 1; }
+      70% { opacity: 0; -webkit-transform: translateY(8px); }
+      70.01% { opacity: 0; -webkit-transform: translateY(-4px); }
+      100% { opacity: 1; -webkit-transform: translateY(0px); }
+      }
+      @keyframes ice-contain-anim-4 {
+      0% { opacity: 1; transform: translateY(0px); }
+      50% { opacity: 1; }
+      70% { opacity: 0; transform: translateY(8px); }
+      70.01% { opacity: 0; transform: translateY(-4px); }
+      100% { opacity: 1; transform: translateY(0px); }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_우박" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(33.000000, 16.000000)" fill-rule="nonzero">
+            <g id="ice-contain-1">
+              <path id="ice-line-0" d="M29.5,6 C31.0976809,6 32.4036609,7.24891996 32.4949073,8.82372721 L32.5,9 L32.5,36 C32.5,37.6568542 31.1568542,39 29.5,39 C27.9023191,39 26.5963391,37.75108 26.5050927,36.1762728 L26.5,36 L26.5,9 C26.5,7.34314575 27.8431458,6 29.5,6 Z" fill="url(#linearGradient-1)"></path>
+              <polygon id="ice-header-1" fill="url(#linearGradient-4)" opacity="0.95" points="19.35 42.97 7.46 53.26 17.26 67.9 31.08 60.53 33.35 48.72"></polygon>
+            </g>
+            <g id="ice-contain-3">
+              <path d="M94.5,48 C96.0976809,48 97.4036609,49.24892 97.4949073,50.8237272 L97.5,51 L97.5,61 C97.5,62.6568542 96.1568542,64 94.5,64 C92.9023191,64 91.5963391,62.75108 91.5050927,61.1762728 L91.5,61 L91.5,51 C91.5,49.3431458 92.8431458,48 94.5,48 Z" id="Path" fill="url(#linearGradient-5)"></path>
+              <path d="M94.5,0 C96.0976809,0 97.4036609,1.24891996 97.4949073,2.82372721 L97.5,3 L97.5,38 C97.5,39.6568542 96.1568542,41 94.5,41 C92.9023191,41 91.5963391,39.75108 91.5050927,38.1762728 L91.5,38 L91.5,3 C91.5,1.34314575 92.8431458,0 94.5,0 Z" id="Path" fill="url(#linearGradient-6)"></path>
+              <polygon id="ice-header-3" fill="url(#linearGradient-7)" opacity="0.9" points="101.87 71.09 87.66 75.61 87.06 88.72 100.51 96.81 110.46 84.06"></polygon>
+            </g>
+            <g id="ice-contain-0">
+              <polygon id="ice-header-0" fill="url(#linearGradient-8)" opacity="0.95" points="14.28 83.31 3.96 81.81 0.44 91.52 7.84 97.69 15.69 92.83"></polygon>
+            </g>
+            <path id="ice-contain-4" d="M71.5,13 C73.0976809,13 74.4036609,14.24892 74.4949073,15.8237272 L74.5,16 L74.5,69 C74.5,70.6568542 73.1568542,72 71.5,72 C69.9023191,72 68.5963391,70.75108 68.5050927,69.1762728 L68.5,69 L68.5,16 C68.5,14.3431458 69.8431458,13 71.5,13 Z" fill="url(#linearGradient-9)"></path>
+            <g id="ice-contain-2">
+              <path d="M50.5,74 C52.0976809,74 53.4036609,75.24892 53.4949073,76.8237272 L53.5,77 L53.5,84 C53.5,85.6568542 52.1568542,87 50.5,87 C48.9023191,87 47.5963391,85.75108 47.5050927,84.1762728 L47.5,84 L47.5,77 C47.5,75.3431458 48.8431458,74 50.5,74 Z" id="Path" fill="url(#linearGradient-2)"></path>
+              <path d="M50.5,31 C52.0976809,31 53.4036609,32.24892 53.4949073,33.8237272 L53.5,34 L53.5,64 C53.5,65.6568542 52.1568542,67 50.5,67 C48.9023191,67 47.5963391,65.75108 47.5050927,64.1762728 L47.5,64 L47.5,34 C47.5,32.3431458 48.8431458,31 50.5,31 Z" id="Path" fill="url(#linearGradient-3)"></path>
+              <g id="ice-header-2">
+                <polygon id="Path" fill="url(#linearGradient-10)" points="56.06 127.28 38.46 121.99 38.06 103.62 55.41 97.56 66.53 112.19"></polygon>
+                <polygon id="Path" fill="url(#linearGradient-11)" points="55.41 97.56 38.06 103.62 38.36 117.35 48.35 117.34 59.1 102.42"></polygon>
+                <polygon id="Path" fill="url(#linearGradient-12)" points="59.1 102.42 48.35 117.34 38.36 117.35 38.46 121.99 43.84 123.61 56.06 127.28 62.97 117.32 66.53 112.19"></polygon>
+              </g>
+            </g>
+        </g>
+    </g>
+</svg>

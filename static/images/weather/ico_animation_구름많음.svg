@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>날씨아이콘_구름많음</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="11.9664852%" y1="39.5569085%" x2="76.7187052%" y2="57.3385519%" id="linearGradient-1">
+            <stop stop-color="#E9E9ED" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-2.52400549%" y1="7.24279835%" x2="132.290809%" y2="116.982167%" id="linearGradient-2">
+            <stop stop-color="#E9E9ED" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-3.66255144%" y1="5.40466392%" x2="42.6200274%" y2="43.8683128%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="10%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-53.240361%" y1="-34.02379%" x2="121.103363%" y2="107.875308%" id="linearGradient-4">
+            <stop stop-color="#E9E9ED" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-7.34208368%" y1="-27.4610336%" x2="48.2157506%" y2="47.6004922%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" offset="10%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="23.0232558%" y1="5.56976744%" x2="45.8139535%" y2="43.1046512%" id="linearGradient-6">
+            <stop stop-color="#FFD800" offset="0%"></stop>
+            <stop stop-color="#FFD800" stop-opacity="0.3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="11.5135135%" y1="16.6874703%" x2="74.9189189%" y2="71.5615079%" id="linearGradient-7">
+            <stop stop-color="#FFCF21" offset="0%"></stop>
+            <stop stop-color="#F7B91E" offset="100%"></stop>
+        </linearGradient>
+        <ellipse id="path-8" cx="33.7317482" cy="33.5" rx="33.5466667" ry="33.5"></ellipse>
+        <filter x="-18.5%" y="-25.6%" width="137.1%" height="151.1%" filterUnits="objectBoundingBox" id="filter-10">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.619607843   0 0 0 0 0.215686275   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="42.556735%" y1="21.0549975%" x2="51.2679334%" y2="59.3107414%" id="linearGradient-11">
+            <stop stop-color="#F3F4FA" offset="0%"></stop>
+            <stop stop-color="#EEEFF5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="6.43464185%" y1="6.55576482%" x2="44.0307568%" y2="44.0473528%" id="linearGradient-12">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="42.556735%" y1="20.6731818%" x2="51.2679334%" y2="59.4335601%" id="linearGradient-13">
+            <stop stop-color="#F3F4FA" offset="0%"></stop>
+            <stop stop-color="#EEEFF5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="6.88195462%" y1="6.43464185%" x2="44.0920467%" y2="44.0307568%" id="linearGradient-14">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #sun-core {
+      -webkit-transform-origin: 19.5% 19%; -webkit-animation: sun-core-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 19.5% 19%; animation: sun-core-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-core-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.98); }
+      }
+      @keyframes sun-core-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.98); }
+      }
+      #sun-shine {
+      -webkit-transform-origin: 25% 33%; -webkit-animation: sun-shine-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 25% 33%; animation: sun-shine-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-shine-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.94); }
+      }
+      @keyframes sun-shine-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.94); }
+      }
+      #cloud-front {
+      -webkit-animation: cloud-front-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      animation: cloud-front-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes cloud-front-anim {
+      0% { -webkit-transform: translate(0px, 0); }
+      100% { -webkit-transform: translate(8px, 0); }
+      }
+      @keyframes cloud-front-anim {
+      0% { transform: translate(0px, 0); }
+      100% { transform: translate(8px, 0); }
+      }
+      #cloud-back {
+      -webkit-animation: cloud-back-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      animation: cloud-back-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes cloud-back-anim {
+      0% { -webkit-transform: translate(0px, 0); }
+      100% { -webkit-transform: translate(-8px, 0); }
+      }
+      @keyframes cloud-back-anim {
+      0% { transform: translate(0px, 0); }
+      100% { transform: translate(-8px, 0); }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_구름많음" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(16.000000, 29.000000)">
+            <g id="cloud-back">
+                <rect id="Rectangle" fill="url(#linearGradient-1)" fill-rule="nonzero" x="0" y="41" width="126" height="42" rx="21"></rect>
+                <circle id="Oval" fill="url(#linearGradient-2)" fill-rule="nonzero" cx="50" cy="49" r="33"></circle>
+                <circle id="Oval" fill="url(#linearGradient-3)" fill-rule="nonzero" opacity="0.3" cx="50" cy="49" r="33"></circle>
+                <circle id="Oval" fill="url(#linearGradient-4)" fill-rule="nonzero" cx="85" cy="46" r="22"></circle>
+                <circle id="Oval" fill="url(#linearGradient-5)" fill-rule="nonzero" opacity="0.36" cx="85" cy="46" r="22"></circle>
+            </g>
+            <g id="Group" opacity="0.33" transform="translate(34.000000, 0.000000)" fill="url(#linearGradient-6)" fill-rule="nonzero">
+                <g id="sun-shine">
+                <circle id="Oval" cx="39.7633333" cy="39.9449425" r="39.045977"></circle>
+                </g>
+            </g>
+            <g id="구름" transform="translate(40.000000, 7.000000)">
+                <g class="">
+                <mask id="mask-9" fill="white">
+                    <use xlink:href="#path-8"></use>
+                </mask>
+                <g id="sun-core">
+                    <use id="Mask" fill="url(#linearGradient-7)" fill-rule="nonzero" xlink:href="#path-8"></use>
+                </g>
+                <g filter="url(#filter-10)" mask="url(#mask-9)" fill-rule="nonzero">
+                    <g transform="translate(-11.973333, 22.137640)">
+                        <g id="cloud-front">
+                            <path d="M80.0170815,0.0347928925 C61.2694741,-0.701821391 44.0512213,10.3152541 36.8869482,27.6315496 L30.6944149,27.6315496 C14.4444517,27.7482994 1.05848439,40.4075203 0.0581481924,56.6045226 C-1.03891847,74.6220902 13.5312149,89.4254702 31.6010815,89.4254702 L78.2490815,89.4254702 C102.621707,89.4319196 122.520121,69.9649176 123.013892,45.6311917 C123.507664,21.2974658 104.415295,1.04147614 80.0624149,0.0619550546 L80.0170815,0.0347928925 Z" id="Path" fill="url(#linearGradient-11)"></path>
+                            <ellipse id="Oval" fill="url(#linearGradient-12)" cx="78.1946815" cy="44.7527659" rx="44.8074667" ry="44.7451351"></ellipse>
+                        </g>
+                    </g>
+                </g>
+                </g>
+            </g>
+            <g id="구름" transform="translate(28.000000, 29.000000)" fill-rule="nonzero">
+                <g id="cloud-front">
+                    <path d="M79.8180771,0.0349345189 C61.1170954,-0.704678195 43.9416649,10.3572429 36.7952095,27.7440254 L30.6180771,27.7440254 C14.408528,27.8612504 1.05585192,40.5720014 0.0580035765,56.8349345 C-1.03633466,74.9258436 13.4975624,89.7894816 31.5224889,89.7894816 L78.0544742,89.7894816 C102.366484,89.7959572 122.21541,70.2497138 122.707954,45.816936 C123.200497,21.3841583 104.155611,1.04571553 79.8632977,0.0622072462 L79.8180771,0.0349345189 Z" id="Path" fill="url(#linearGradient-13)"></path>
+                    <ellipse id="Oval" fill="url(#linearGradient-14)" cx="78.0002095" cy="44.9349345" rx="44.6960294" ry="44.9272727"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
