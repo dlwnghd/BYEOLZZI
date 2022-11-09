@@ -32,6 +32,7 @@ def get_answer_from_engine(bottype, query):
     # 챗봇 엔진 답변 출력
     data = mySocket.recv(2048).decode()
     ret_data = json.loads(data)
+    print("ret_data :", ret_data)
  
     # 챗봇 엔진 서버 연결 소켓 닫기
     mySocket.close()
