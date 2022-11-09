@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_맑음</title>
+    <defs>
+        <linearGradient x1="-6.96296296%" y1="-6.9537037%" x2="85.8796296%" y2="85.8888889%" id="linearGradient-1">
+            <stop stop-color="#FFCC14" offset="0%"></stop>
+            <stop stop-color="#FFB90A" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #sun-core {
+      -webkit-transform-origin: 38% 38%; -webkit-animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 38% 38%; animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-core-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.98); }
+      }
+      @keyframes sun-core-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.98); }
+      }
+      #sun-shine {
+      -webkit-transform-origin: 38% 38%; -webkit-animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 38% 38%; animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-shine-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.94); }
+      }
+      @keyframes sun-shine-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.94); }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_맑음" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sun" transform="translate(22.000000, 21.000000)" fill-rule="nonzero">
+            <circle id="sun-shine" fill="#FFD800" opacity="0.2" cx="66" cy="66" r="66"></circle>
+            <circle id="sun-core" fill="url(#linearGradient-1)" cx="66" cy="65.5" r="54"></circle>
+        </g>
+    </g>
+</svg>

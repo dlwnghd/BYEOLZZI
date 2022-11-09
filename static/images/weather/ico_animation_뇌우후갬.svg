@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="176px" viewBox="0 0 176 176" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>날씨아이콘_뇌우후갬</title>
+    <defs>
+        <linearGradient x1="12.3318553%" y1="31.6891058%" x2="87.7677588%" y2="82.3899359%" id="linearGradient-1">
+            <stop stop-color="#888A8F" offset="0%"></stop>
+            <stop stop-color="#68686B" offset="100%"></stop>
+        </linearGradient>
+        <path d="M80.2801784,38.1968206 C80.262215,31.3147761 75.6430034,25.2950588 69.0000227,23.4968206 C67.3442449,10.8458618 57.0588238,1.08076033 44.339014,0.0833649515 C31.6192042,-0.914030424 19.9374326,7.12856287 16.3300227,19.3668206 C7.15469555,19.8871014 -0.0147165633,27.486766 -4.51616797e-05,36.6768206 C0.0275678608,46.2244817 7.77232338,53.951351 17.3200227,53.9568206 L35.1000227,53.9568206 L65.0000227,53.8868206 C69.0594706,53.8868345 72.9520726,52.2714923 75.8187811,49.3972794 C78.6854895,46.5230664 80.2906495,42.6262546 80.2801784,38.5668206 L80.2801784,38.1968206 Z" id="path-2"></path>
+        <linearGradient x1="-6.95626361%" y1="-6.95626361%" x2="85.8796754%" y2="85.8796754%" id="linearGradient-4">
+            <stop stop-color="#FFCC14" offset="0%"></stop>
+            <stop stop-color="#FFB90A" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-5" cx="89.6100227" cy="67.4668206" r="50.53"></circle>
+        <filter x="-20.8%" y="-20.8%" width="141.6%" height="141.6%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="12.4305298%" y1="12.4305298%" x2="36.7728788%" y2="36.7728788%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.72" offset="25%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.34" offset="62%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.09" offset="88%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="42.1372138%" y1="37.3206096%" x2="62.1540576%" y2="64.8944032%" id="linearGradient-8">
+            <stop stop-color="#2CE1F4" offset="15%"></stop>
+            <stop stop-color="#10BFE6" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="35.7487405%" y1="35.7160689%" x2="65.913214%" y2="65.9232754%" id="linearGradient-9">
+            <stop stop-color="#FFD800" stop-opacity="0" offset="1%"></stop>
+            <stop stop-color="#FFD800" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+      <![CDATA[
+      #cloud {
+      -webkit-animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes cloud-anim {
+      0% { -webkit-transform: translate(0, 0px); }
+      100% { -webkit-transform: translate(0, -5px); }
+      }
+      @keyframes cloud-anim {
+      0% { transform: translate(0, 0px); }
+      100% { transform: translate(0, -5px); }
+      }
+      #spark-shake {
+      -webkit-animation: spark-shake-anim 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      animation: spark-shake-anim 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      }
+      @-webkit-keyframes spark-shake-anim {
+      0% { -webkit-transform: translate(0px, 0px); }
+      10% { -webkit-transform: translate(-2px, 4px); }
+      12% { -webkit-transform: translate(0px, 0px); }
+      14% { -webkit-transform: translate(-2px, 4px); }
+      16% { -webkit-transform: translate(0px, 0px); }
+      18% { -webkit-transform: translate(-1.5px, 3px); }
+      20% { -webkit-transform: translate(0px, 0px); }
+      22% { -webkit-transform: translate(-1.5px, 3px); }
+      24% { -webkit-transform: translate(0px, 0px); }
+      26% { -webkit-transform: translate(-1.5px, 3px); }
+      28% { -webkit-transform: translate(0px, 0px); }
+      30% { -webkit-transform: translate(-1px, 2px); }
+      32% { -webkit-transform: translate(0px, 0px); }
+      34% { -webkit-transform: translate(-1px, 2px); }
+      36% { -webkit-transform: translate(0px, 0px); }
+      38% { -webkit-transform: translate(-1px, 2px); }
+      40% { -webkit-transform: translate(0px, 0px); }
+      42% { -webkit-transform: translate(-1px, 1px); }
+      44% { -webkit-transform: translate(0px, 0px); }
+      46% { -webkit-transform: translate(-1px, 1px); }
+      48% { -webkit-transform: translate(0px, 0px); }
+      50% { -webkit-transform: translate(-1px, 1px); }
+      52% { -webkit-transform: translate(0px, 0px); }
+      55% { -webkit-transform: translate(-0.5px, 0.5px); }
+      58% { -webkit-transform: translate(0px, 0px); }
+      61% { -webkit-transform: translate(-0.5px, 0.5px); }
+      64% { -webkit-transform: translate(0px, 0px); }
+      67% { -webkit-transform: translate(-0.5px, 0.5px); }
+      70% { -webkit-transform: translate(0px, 0px); }
+      100% { -webkit-transform: translate(0px, 0px); }
+      }
+      @keyframes spark-shake-anim {
+      0% { transform: translate(0px, 0px); }
+      10% { transform: translate(-2px, 4px); }
+      12% { transform: translate(0px, 0px); }
+      14% { transform: translate(-2px, 4px); }
+      16% { transform: translate(0px, 0px); }
+      18% { transform: translate(-1.5px, 3px); }
+      20% { transform: translate(0px, 0px); }
+      22% { transform: translate(-1.5px, 3px); }
+      24% { transform: translate(0px, 0px); }
+      26% { transform: translate(-1.5px, 3px); }
+      28% { transform: translate(0px, 0px); }
+      30% { transform: translate(-1px, 2px); }
+      32% { transform: translate(0px, 0px); }
+      34% { transform: translate(-1px, 2px); }
+      36% { transform: translate(0px, 0px); }
+      38% { transform: translate(-1px, 2px); }
+      40% { transform: translate(0px, 0px); }
+      42% { transform: translate(-1px, 1px); }
+      44% { transform: translate(0px, 0px); }
+      46% { transform: translate(-1px, 1px); }
+      48% { transform: translate(0px, 0px); }
+      50% { transform: translate(-1px, 1px); }
+      52% { transform: translate(0px, 0px); }
+      55% { transform: translate(-0.5px, 0.5px); }
+      58% { transform: translate(0px, 0px); }
+      61% { transform: translate(-0.5px, 0.5px); }
+      64% { transform: translate(0px, 0px); }
+      67% { transform: translate(-0.5px, 0.5px); }
+      70% { transform: translate(0px, 0px); }
+      100% { transform: translate(0px, 0px); }
+      }
+
+      #sun-core {
+      -webkit-transform-origin: 54% 42%; -webkit-animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 54% 42%; animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-core-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.98); }
+      }
+      @keyframes sun-core-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.98); }
+      }
+      #sun-shine {
+      -webkit-transform-origin: 53% 40%; -webkit-animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 53% 40%; animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-shine-anim {
+      0% { -webkit-transform: scale(1); }
+      100% { -webkit-transform: scale(0.94); }
+      }
+      @keyframes sun-shine-anim {
+      0% { transform: scale(1); }
+      100% { transform: scale(0.94); }
+      }
+      #sun-core-inner {
+      -webkit-transform-origin: 54% 42%; -webkit-animation: sun-core-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      transform-origin: 54% 42%; animation: sun-core-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+      }
+      @-webkit-keyframes sun-core-inner-anim {
+      0% { -webkit-transform: scale(1) translate(0px, 5px); }
+      100% { -webkit-transform: scale(0.98) translate(0px, 5px); }
+      }
+      @keyframes sun-core-inner-anim {
+      0% { transform: scale(1) translate(0px, 5px); }
+      100% { transform: scale(0.98) translate(0px, 5px); }
+      }
+      ]]>
+    </style>
+    <g id="날씨아이콘_뇌우후갬" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="아이콘" transform="translate(7.000000, 22.000000)">
+            <g id="cloud">
+              <g id="Oval" transform="translate(2.999977, 5.043179)">
+                  <mask id="mask-3" fill="white">
+                      <use xlink:href="#path-2"></use>
+                  </mask>
+                  <use id="Mask" fill="url(#linearGradient-1)" fill-rule="nonzero" xlink:href="#path-2"></use>
+                  <g>
+                    <g fill-rule="nonzero" mask="url(#mask-3)">
+                      <g id="sun-core-inner">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                        <use fill="url(#linearGradient-4)" xlink:href="#path-5"></use>
+                      </g>
+                    </g>
+                  </g>
+              </g>
+              <circle id="Oval" fill="url(#linearGradient-7)" fill-rule="nonzero" opacity="0.15" cx="45.21" cy="26.99" r="26.99"></circle>
+              <path id="spark-shake" d="M41.24,22.94 L0.62,63.54 C0.370527807,63.7820571 0.293578676,64.1516219 0.425706989,64.4731341 C0.557835302,64.7946463 0.872412531,65.0033099 1.22,65 L23.62,65 L11.21,90.47 C11.0343854,90.8420097 11.1468168,91.2862922 11.4782437,91.5299885 C11.8096707,91.7736848 12.2672683,91.7485413 12.57,91.47 L50.25,55.63 C50.3533357,55.5255552 50.3850819,55.3698635 50.3308892,55.2332979 C50.2766966,55.0967324 50.1468341,55.0051711 50,55 L30.94,55 L41.84,23.31 C41.8980854,23.14963 41.8356581,22.9705093 41.690478,22.8809816 C41.545298,22.7914539 41.3572176,22.8160948 41.24,22.94 L41.24,22.94 Z" fill="url(#linearGradient-8)" fill-rule="nonzero"></path>
+            </g>
+            <path id="sun-shine" d="M152.61,70.08 L152.61,70 L152.61,70 C152.61,36.862915 125.747085,10 92.61,10 C59.472915,10 32.61,36.862915 32.61,70 L32.61,70 L32.61,70.17 L32.61,70.17 C32.61,103.307085 59.472915,130.17 92.61,130.17 C125.747085,130.17 152.61,103.307085 152.61,70.17 L152.61,70.17 L152.61,70.08 Z" fill="url(#linearGradient-9)" fill-rule="nonzero" opacity="0.3"></path>
+            <circle id="sun-core" fill="url(#linearGradient-4)" fill-rule="nonzero" cx="92.61" cy="69.51" r="50.53"></circle>
+        </g>
+    </g>
+</svg>
