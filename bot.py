@@ -138,9 +138,16 @@ def to_client(conn, addr, params):
             print("intent_reco_name:", intent_reco_name)
             print("State.state:", State.state)
             f = FindAnswer(db)
-            answer = f.reco_search(intent_name, State.state)
-            print("END_Answer:", answer)
+            if State.state != None:
+                answer_text, answer_contents = f.reco_search(intent_name, State.state)
+            # else:
+            #     answer_text, answer_contents = f.search(intent_name)
+
+            print("END_Answer_text :", answer_text)
+            print("END_Answer_contents :", answer_contents)
             # answer = f.tag_to_word(ner_predicts, answer_text)
+            answer = answer_text
+            print(type(answer))
 
             if State.state != None and State.state != 4:
                 State.state += 1
@@ -149,13 +156,13 @@ def to_client(conn, addr, params):
                 State.q = None
         except:
             answer = "죄송해요 무슨 말인지 모르겠어요. 조금 더 공부 할게요."
-            answer_image = None
+            answer_contents = None
 
 
         sent_json_data_str = {    # response 할 JSON 데이터를 준비할 겁니다~
             "Query" : query,
             "Answer": answer,
-            # "AnswerImageUrl" : answer_image,
+            "AnswerContents" : answer_contents,
             # "Intent": intent_name,
             # "NER": str(ner_predicts)
         }

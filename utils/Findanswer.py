@@ -49,16 +49,22 @@ class FindAnswer:
 
         # 추천 2번문제 ~ 4번 문제
         if intent_1 == None:
+            # locations 담을 리스트 변수 선언
+            location_li = []
             sql = self._make_query(intent_1=None, intent_2=intent_2)
             answer = self.db.select_one(sql)
 
+            # 추천 답변
             if intent_2 == 4:
+                # location DB 검색 SQL
                 sql_table = self._make_location(State.q)
-                answer = self.db.select_all(sql_table)
-                print(type(answer))
-                print(answer)
+                answer_locations = self.db.select_all(sql_table)
 
-            return answer
+                # answer_locations type : dict in list
+                for loca in answer_locations:
+                    location_li.append([loca['metro'], loca['location']])
+
+            return (answer['answer'], location_li)
 
         # 1번 문제
         sql = self._make_query(intent_1, intent_2)
@@ -68,8 +74,8 @@ class FindAnswer:
         # sql = self._make_query(intent_1, intent_2, ner_tags)
         # answer = self.db.select_one(sql)
 
-        print("sql:", sql)
-        print("answer:", answer)
+        print("FindAnswer sql:", sql)
+        print("FindAnswer answer:", answer)
 
         # 검색되는 답변이 없으면 의도명만 검색
         # if answer is None:
@@ -77,7 +83,7 @@ class FindAnswer:
         #     answer = self.db.select_one(sql)
 
         # return (answer['answer'], answer['answer_image'])
-        return answer
+        return (answer['answer'], answer['answer_contents'])
         
     
     # 검색 쿼리 생성
@@ -92,7 +98,7 @@ class FindAnswer:
         # 추천 2번 문제 ~ 4번 문제
         elif intent_1 == None and intent_2 != None and ner_tags == None:
             sql = sql + " where intent_2='{}' ".format(intent_2)
-            print("sql:", sql)
+            print("_make_query sql:", sql)
 
         # # 추천 2번 문제 ~ 4번 문제
         # elif intent_1 == None and intent_2 != None and ner_tags == None:
