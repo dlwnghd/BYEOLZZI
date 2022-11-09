@@ -20,7 +20,7 @@ from models.intent.IntentModel_season import IntentModel_Season
 from models.intent.IntentModel_car_walk import IntentModel_Car_Walk
 from models.intent.IntentModel_city import IntentModel_City
 from models.intent.IntentModel_activity import IntentModel_Activity
-# from models.ner.NerModel import NerModel
+from models.ner.NerModel import NerModel
 from utils.Findanswer import FindAnswer
 
 # 전처리 객체 생성
@@ -51,7 +51,7 @@ intent_city = IntentModel_City(model_name='models/intent/intent_model_city.h5', 
 intent_activity = IntentModel_Activity(model_name='models/intent/intent_model_activity.h5', preprocess=p_activity)
 
 # 개체명 인식 모델
-# ner = NerModel(model_name='models/ner/ner_model.h5', preprocess=p_full)
+ner = NerModel(model_name='models/ner/ner_model.h5', preprocess=p_full)
 
 # 클라이언트 요청을 수행하는 쓰레드(에 담을) 함수
 def to_client(conn, addr, params):
@@ -62,6 +62,7 @@ def to_client(conn, addr, params):
         intent_name = None
         intent_reco = None
         intent_reco_name = None
+        ner_predicts = None
         print("Start_State.state:", State.state)
 
         # 데이터 수신
@@ -125,9 +126,13 @@ def to_client(conn, addr, params):
 
 
         # 개체명 파악
-        # if State.state == None:
-        #     ner_predicts = ner.predict(query)
-        #     ner_tags = ner.predict_tags(query)
+        if State.state == None:
+            ner_list = []
+            ner_predicts = ner.predict(query)
+            ner_tags = ner.predict_tags(query)
+            for ne in ner_predicts:
+                if ne[1] != 'O':
+                    ner_list.append(ne[0])
 
 
         # 답변 검색
@@ -140,13 +145,15 @@ def to_client(conn, addr, params):
             f = FindAnswer(db)
             if State.state != None:
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
-            # else:
-            #     answer_text, answer_contents = f.search(intent_name)
+            else:
+                answer_text, answer_contents = f.search(intent_name, ner_tags)
 
             print("END_Answer_text :", answer_text)
             print("END_Answer_contents :", answer_contents)
-            # answer = f.tag_to_word(ner_predicts, answer_text)
-            answer = answer_text
+            if ner_predicts != None:
+                answer = f.tag_to_word(ner_predicts, answer_text)
+            else:
+                answer = answer_text
             print(type(answer))
 
             if State.state != None and State.state != 4:
@@ -154,7 +161,8 @@ def to_client(conn, addr, params):
             elif State.state == 4:
                 State.state = None
                 State.q = None
-        except:
+        except Exception as e:
+            print(e)
             answer = "죄송해요 무슨 말인지 모르겠어요. 조금 더 공부 할게요."
             answer_contents = None
 
@@ -163,8 +171,10 @@ def to_client(conn, addr, params):
             "Query" : query,
             "Answer": answer,
             "AnswerContents" : answer_contents,
-            # "Intent": intent_name,
-            # "NER": str(ner_predicts)
+            "Intent": intent_name,
+            "IntentReco" : intent_reco_name,
+            "NER": str(ner_predicts),
+            "NerList" : ner_list
         }
 
         message = json.dumps(sent_json_data_str)
