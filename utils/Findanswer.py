@@ -57,7 +57,9 @@ class FindAnswer:
             # 추천 답변
             if intent_2 == 4:
                 # location DB 검색 SQL
+                print("State.q:", State.q)
                 sql_table = self._make_location(State.q)
+                print("sql_table:", sql_table)
                 answer_locations = self.db.select_all(sql_table)
 
                 # answer_locations type : dict in list
@@ -93,36 +95,32 @@ class FindAnswer:
         # 추천 1번 문제
         if intent_1 != None and intent_2 != None and ner_tags == None:
             sql = sql + " where intent_1 ='{}' and intent_2='{}' ".format(intent_1, intent_2)
-            print("sql:", sql)
+            print("_make_query sql:", sql)
 
         # 추천 2번 문제 ~ 4번 문제
         elif intent_1 == None and intent_2 != None and ner_tags == None:
             sql = sql + " where intent_2='{}' ".format(intent_2)
             print("_make_query sql:", sql)
 
-        # # 추천 2번 문제 ~ 4번 문제
-        # elif intent_1 == None and intent_2 != None and ner_tags == None:
-        #     sql = sql + " where intent_2='{}' ".format(intent_2)
-        #     print("sql:", sql)
+        # intent_name 만 주어진 경우
+        elif intent_1 != None and intent_2 != None and ner_tags == None:
+            pass
 
-        # # intent_name 만 주어진 경우
-        # elif intent_1 != None and intent_2 != None and ner_tags == None:
-        #     pass
-
-        # # 도움말, 리스트뽑기, 리스트 삭제
-        # elif intent_1 != None and intent_2 == None and ner_tags == None:
-        #     sql = sql + " where intent_1='{}' ".format(intent_1)
-        #     print("sql:", sql)
+        # 도움말, 리스트뽑기, 리스트 삭제
+        elif intent_1 != None and intent_2 == None and ner_tags == None:
+            sql = sql + " where intent_1='{}' ".format(intent_1)
+            print("_make_query sql:", sql)
 
         # intent_name 과 개체명도 주어진 경우
-        # elif intent_1 != None and ner_tags != None:
-        #     where = ' where intent="%s" ' % intent_1
-        #     if (len(ner_tags) > 0):
-        #         where += 'and ('
-        #         for ne in ner_tags:
-        #             where += " ner like '%{}%' or ".format(ne)
-        #         where = where[:-3] + ')'
-        #     sql = sql + where
+        elif intent_1 != None and ner_tags != None:
+            where = ' where intent_1="%s" ' % intent_1
+            if (len(ner_tags) > 0):
+                where += 'and ('
+                for ne in ner_tags:
+                    where += " ner like '%{}%' or ".format(ne)
+                where = where[:-3] + ')'
+            sql = sql + where
+            print("_make_query sql:", sql)
 
         # 동일한 답변이 2개 이상인 경우, 랜덤으로 선택
         sql = sql + " order by rand() limit 1"
@@ -130,7 +128,7 @@ class FindAnswer:
     
     def _make_location(self, q):
         sql = "select * from location"
-        sql += " where q = {} ".format(q)
+        sql += " where q = '{}' ".format(q)
         sql += " order by rand() limit 3"
         return sql
 
@@ -139,12 +137,10 @@ class FindAnswer:
         for word, tag in ner_predicts:
             
             # 변환해야하는 태그가 있는 경우 추가
-            if tag == 'B_FOOD' or tag == 'B_DT' or tag == 'B_TI':
+            if tag == 'B_location' or tag == 'B_highway':
                 answer = answer.replace(tag, word)  # 태그를 입력된 단어로 변환
-                # {짜장면} 주문 처리 완료되었습니다.
                 
         answer = answer.replace('{', '')
         answer = answer.replace('}', '')
-        # 짜장면 주문 처리 완료되었습니다.
 
         return answer
