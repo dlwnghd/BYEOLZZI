@@ -37,8 +37,8 @@ function send_message(){
     }
     
     // 입력한 채팅 출력
-    addtext = "<div style='margin:15px 0;text-align:right;'> <span style='padding:3px 10px;background-color:#3388cc;border-radius:3px;'>" + chattext + "</span></div>";
-    $("#chatbody").append(addtext);
+    let addtext = "<div style='margin:15px 0;text-align:right;'> <span style='padding:3px 10px;background-color:#3388cc;border-radius:3px;font-size:12px;'>" + chattext + "</span></div>";
+    $("#chatbody").append(addtext); 
     console.log("addtext" + addtext)
     console.log("여기까지 왔소22")
 
@@ -61,12 +61,16 @@ function send_message(){
             let answercontents = response.AnswerContents
 
             // 답변 출력
-            bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + response.Answer + "</span></div>";
+            bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + response.Answer + "</span></div>";
             $chatbody.append(bottext);
-            for (var i = 0; i > answercontents.length(); i++){
-                botcontents += "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents[i] + "</span></div>";
-            } 
-            console.log("bottext" + bottext)
+            console.log("answercontents:" + answercontents)
+            console.log("NER:" + response.NER)
+            console.log("NerList[0]:" + response.NerList[0])
+            console.log("NerList[1]:" + response.NerList[1])
+            // for (var i = 0; i > answercontents.length(); i++){
+            //     botcontents += "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents[i] + "</span></div>";
+            // } 
+            // console.log("bottext" + bottext)
             console.log("여기까지 왔소33")
 
 
