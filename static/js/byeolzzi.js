@@ -57,14 +57,21 @@ function send_message(){
         crossDomain: true,
         success: function(response){
             // response.Answer 에 챗봇 응답메세지가 담겨 있음
-            $chatbox = $("#chatbox");
+            $chatbody = $("#chatbody");
+            let answercontents = response.AnswerContents
 
             // 답변 출력
             bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + response.Answer + "</span></div>";
-            $chatbox.append(bottext);
+            $chatbody.append(bottext);
+            for (var i = 0; i > answercontents.length(); i++){
+                botcontents += "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents[i] + "</span></div>";
+            } 
+            console.log("bottext" + bottext)
+            console.log("여기까지 왔소33")
+
 
             // 스크롤 조정하기
-            $chatbox.animate({scrollTop: $chatbox.prop('scrollHeight')});
+            $chatbody.animate({scrollTop: $chatbody.prop('scrollHeight')});
 
             // 먼저 입력했던 내용은 지워줘야 함
             $("#chattext").val("");
