@@ -1,13 +1,31 @@
 # 모듈 불러오기
 from django.shortcuts import render
-from django.http import JsonResponse
-from django.http import HttpRequest
+from django.http import HttpRequest, JsonResponse
 from config.weather_crawling_LJH import weather_crawl
 from BYEOLZZI.models import Answer
 
 # Create your views here.
 def index(request):
     return render(request, 'daemon.html')
+
+def aroundShow(request:HttpRequest):
+    localname = request.GET.get("localname")
+    areachoice = request.GET.get("areachoice")
+    addr = request.GET.get("addr")
+    mapx = request.GET.get("mapx")
+    mapy = request.GET.get("mapy")
+
+    print("localname :", localname)
+
+    context = {
+        "LocalName" : localname,
+        "AreaChoice" : areachoice,
+        "Addr" : addr,
+        "MapX" : mapx,
+        "MapY" : mapy,
+    }
+
+    return render(request, 'aroundshow.html', {'data' : context})
 
 def weather(request):
     weather_loc =  request.GET.get('Ner')
@@ -18,9 +36,6 @@ def weather(request):
     }
 
     return JsonResponse(context)
-
-
-
 
 def weathers(request):
     weather =  request.GET.get('data')
@@ -35,4 +50,3 @@ def weathers(request):
     }
     
     return render(request, 'weather.html', context)
-    

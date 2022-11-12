@@ -54,39 +54,60 @@ function send_message(){
         contentType: "application/json; charset=utf-8", //postman 에서 header 지정해준 그것
         crossDomain: true,
         success: function(response){
+            console.log("Intent:" + response.Intent)
             // response.Answer 에 챗봇 응답메세지가 담겨 있음
             $chatbody = $("#chatbody");
             let answercontents = response.AnswerContents
+            let intentname = response.Intent
 
             // 답변 출력
             bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + response.Answer + "</span></div>";
             $chatbody.append(bottext);
-            console.log("answercontents:" + answercontents)
-            console.log("NER:" + response.NER)
-            console.log("NerList[0]:" + response.NerList[0])
-            
-            // for (var i = 0; i > answercontents.length(); i++){
-            //     botcontents += "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents[i] + "</span></div>";
-            // } 
-            // console.log("bottext" + bottext)
 
-            botcontents = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" +answercontents +"</span></div>";
-            $chatbody.append(botcontents);
-            console.log("여기까지 왔소33")
+            if (intentname == '날씨'){
+                $.ajax({
+                    url: "weather", // url 수정
+                    type: "GET",
+                    data: {"Ner":response.NerList[0]},
+                    dataType: "JSON", // 응답받을 데이터 타입
+                    contentType: "application/json; charset=utf-8", //postman 에서 header 지정해준 그것
+                    crossDomain: true,
+                    success: function(response){
+                        console.log(response.weather); // 가져온 지역 정보
+                        let $iframe = $("#iframe"); // iframe 지정
+                        $iframe.attr("src", "/weathers?data=" + response.weather); // iframe의 src를 변경
+                    }
+                });
+            }
 
-            $.ajax({
-                url: "weather", // url 수정
-                type: "GET",
-                data: {"Ner":response.NerList[0]},
-                dataType: "JSON", // 응답받을 데이터 타입
-                contentType: "application/json; charset=utf-8", //postman 에서 header 지정해준 그것
-                crossDomain: true,
-                success: function(response){
-                    console.log(response.weather); // 가져온 지역 정보
-                    let $iframe = $("#iframe"); // iframe 지정
-                    $iframe.attr("src", "/weathers?data=" + response.weather); // iframe의 src를 변경
+            else if (intentname == '주변검색'){
+                let choicecontents = null
+                let botcontents = null
+
+                for (var i = 0; i < answercontents.length; i++){
+                    botcontents = "<div style='margin:15px 0;text-align:left;'><span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents[i].title + "</span></div>";
+                    $chatbody.append(botcontents);
                 }
-            });
+                
+                $(".around_contents").click(function(){
+                    let area_choice = $(this).text();
+                    for (var i = 0; i < answercontents.length; i++){
+                        if (answercontents[i].title == area_choice){
+                            choicecontents = answercontents[i];
+                        }
+                    }
+
+                    let localname = response.NerList[0];
+                    let areachoice = choicecontents.title;
+                    let addr = choicecontents.addr;
+                    let mapx = choicecontents.mapx;
+                    let mapy = choicecontents.mapy;
+
+                    console.log("localname:", localname)
+
+                    $("#iframe").attr("src", "aroundshow?localname=" + localname + "&areachoice=" + areachoice + "&addr=" + addr + "&mapx=" + mapx + "&mapy=" + mapy);
+
+                })
 
             // 스크롤 조정하기
             $chatbody.animate({scrollTop: $chatbody.prop('scrollHeight')});
@@ -94,8 +115,7 @@ function send_message(){
             $("#chattext").val("");
             $("#chattext").focus();
 
-        },
-
+            }
+        }
     })
-
-} // end 
+} // end

@@ -31,7 +31,7 @@ class FindAnswer:
     # 답변 검색
     def search(self, intent_name=None, ner_tags=None):
         # 의도명, 개체명으로 답변 검색
-        sql = self._make_query(intent_1 = intent_name, ner_tags=ner_tags)
+        sql = self._make_query(intent_1=intent_name, ner_tags=ner_tags)
         answer = self.db.select_one(sql)
 
         print("✅intent_name:", intent_name)
