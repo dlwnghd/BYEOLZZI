@@ -2,8 +2,12 @@ import requests
 from bs4 import BeautifulSoup
 
 
-class Weather_crawl:
-    def weather(location):
+class weather_crawl:
+
+    def __init__(self) -> None:
+        pass
+
+    def weather(self, location):
 
         # url 지정
         url = f"https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query={location}+날씨&oquery=%EB%82%A0%EC%94%A8&tqi=h2bHZlp0J1sssTGpvh4ssssss8C-147890"
@@ -20,7 +24,7 @@ class Weather_crawl:
 
         return location_weather
 
-    def weather_info(location):
+    def weather_info(self, location):
         weather_info = {}
 
         # url 지정

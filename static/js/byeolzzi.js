@@ -54,6 +54,9 @@ function send_message(){
         contentType: "application/json; charset=utf-8", //postman 에서 header 지정해준 그것
         crossDomain: true,
         success: function(response){
+            let answercontents = response.AnswerContents
+            let intentname = response.Intent
+
             console.log("answercontents:" + answercontents)
             console.log("NER:" + response.NER)
             console.log("NerList : ", response.NerList)
@@ -61,8 +64,6 @@ function send_message(){
 
             // response.Answer 에 챗봇 응답메세지가 담겨 있음
             $chatbody = $("#chatbody");
-            let answercontents = response.AnswerContents
-            let intentname = response.Intent
 
             // 답변 출력
             bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + response.Answer + "</span></div>";
@@ -113,7 +114,7 @@ function send_message(){
                 })
 
             }
-            else if (response.Intent == '길찾기'){
+            else if (intentname == '길찾기'){
                 let findway_list = JSON.stringify(response.NerList)
                 console.log("findway_list : ", findway_list)
                 

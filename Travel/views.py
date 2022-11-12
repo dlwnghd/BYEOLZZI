@@ -32,7 +32,7 @@ def aroundShow(request:HttpRequest):
 
     return render(request, 'aroundshow.html', {'data' : context})
 
-def weather(request):
+def weather(request:HttpRequest):
     weather_loc =  request.GET.get('Ner')
     print("weather:",weather_loc)
 
@@ -84,7 +84,7 @@ def showNavi(request):
     
 
 
-def movenavi(request):
+def movenavi(request:HttpRequest):
     startlat = request.GET.get('startlat')
     startlong = request.GET.get('startlong')
     endlat = request.GET.get('endlat')
@@ -103,7 +103,7 @@ def movenavi(request):
     # return render(request, 'tmapnavi.html')
 
 
-def applynavi(request):
+def applynavi(request:HttpRequest):
     startlat = request.GET.get('startlat')
     startlong = request.GET.get('startlong')
     endlat = request.GET.get('endlat')

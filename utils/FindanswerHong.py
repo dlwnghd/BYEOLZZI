@@ -153,9 +153,8 @@ class FindAnswerHong:
             if tag == 'B_location' or tag == 'B_highway':
                 if "길 안내" not in answer:
                     answer = answer.replace(tag, word)  # 태그를 입력된 단어로 변환
-        if "길 안내" in answer:
-            answer = answer.replace("B_location", loc_list[1])
-        print("loc_list : ", loc_list)
+
+        
 
         answer = answer.replace('{', '')
         answer = answer.replace('}', '')
