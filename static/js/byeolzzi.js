@@ -72,8 +72,63 @@ function send_message(){
             // } 
             // console.log("bottext" + bottext)
             console.log("여기까지 왔소33")
+            
+            // 지울 내용
+            console.log("NerList : ", response.NerList)
+            
+            
+            if (response.Intent == '길찾기'){
+                let findway_list = JSON.stringify(response.NerList)
+                console.log("findway_list : ", findway_list)
+                
+                // 좌표값을 requests 를 통해서 받아오기
+                $.ajax({
+                    url: 'navi',
+                    type: 'get',
+                    data: {
+                        'findway_list': findway_list
+                    },
+                    dataType: 'json',
+                    success: function(data){
+                        
+                        // 이건 B_location이 2개 잡힐 때,
+                        if(data.endlong){
+
+                            //받아온 데이터
+                            let startlat = data.startlat
+                            let startlong = data.startlong
+                            let endlat = data.endlat
+                            let endlong = data.endlong
+                            console.log("받아온 startlat : ", startlat)
+                            // test = {
+                            //     "a": {"b": "받아옴"}
+                            // }
+                            // test = JSON.stringify(test,)
+                            //src를 통해서 urls -> views 를 거쳐 데이터 전송하는 메소드
+                            goToIframe(startlat, startlong, endlat, endlong)
+                            // $.ajax({
+                            //     url: "movenavi?startlat="+startlat+"&startlong="+startlong+"&endlat="+endlat+"&endlong="+endlong,
+                            //     type: 'get',
+                            //     dataType: 'json',
+                            //     // data: {
+                            //     //     "startlat" : startlat,
+                            //     //     "startlong" : startlong,
+                            //     //     "endlat" : endlat,
+                            //     //     "endlong" : endlong
+                            //     // },
+                            //     success: function(response,data){
+                            //         console.log(data.startlat)
+                            //         console.log(response.startlat)
+                            //         goToIframe(startlat, startlong, endlat, endlong)
+                            //     }
+                            // });
 
 
+                        }
+                    }
+                });
+            };
+            
             // 스크롤 조정하기
             $chatbody.animate({scrollTop: $chatbody.prop('scrollHeight')});
 
@@ -86,3 +141,8 @@ function send_message(){
     })
 
 } // end 
+
+function goToIframe(startlat, startlong, endlat, endlong){
+    // document.getElementById("iframe").src = "movenavi?startlat=",startlat,"&startlong=",startlong,"&endlat=", endlat, "&endlong=", endlong;
+    $("#iframe").attr("src", "applynavi?startlat="+startlat+"&startlong="+startlong+"&endlat="+endlat+"&endlong="+endlong);
+}

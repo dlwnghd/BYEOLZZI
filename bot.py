@@ -22,18 +22,29 @@ from models.intent.IntentModel_city import IntentModel_City
 from models.intent.IntentModel_activity import IntentModel_Activity
 from models.ner.NerModel import NerModel
 from utils.Findanswer import FindAnswer
+from utils.FindanswerHong import FindAnswerHong
 
 # 전처리 객체 생성
-p_full = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_full.bin',
-               userdic='utils/user_dic.tsv')
-p_car_walk = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_car_walk.bin',
-               userdic='utils/user_dic.tsv')
-p_season = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_season.bin',
-               userdic='utils/user_dic.tsv')
-p_city = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_city.bin',
-               userdic='utils/user_dic.tsv')
-p_activity = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_activity.bin',
-               userdic='utils/user_dic.tsv')
+p_full = Preprocess(
+    word2index_dic = 'train_tools/dict/chatbot_dict_full.bin',
+    userdic = 'utils/user_dic.tsv'
+)
+p_car_walk = Preprocess(
+    word2index_dic = 'train_tools/dict/chatbot_dict_car_walk.bin',
+    userdic = 'utils/user_dic.tsv'
+)
+p_season = Preprocess(
+    word2index_dic = 'train_tools/dict/chatbot_dict_season.bin',
+    userdic = 'utils/user_dic.tsv'
+)
+p_city = Preprocess(
+    word2index_dic = 'train_tools/dict/chatbot_dict_city.bin',
+    userdic = 'utils/user_dic.tsv'
+)
+p_activity = Preprocess(
+    word2index_dic = 'train_tools/dict/chatbot_dict_activity.bin',
+    userdic = 'utils/user_dic.tsv'
+)
 
 # 의도 파악 모델 (1)
 intent = IntentModel(model_name='models/intent/intent_model_test_full.h5', preprocess=p_full)
@@ -142,7 +153,7 @@ def to_client(conn, addr, params):
             print("intent_reco:", intent_reco)
             print("intent_reco_name:", intent_reco_name)
             print("State.state:", State.state)
-            f = FindAnswer(db)
+            f = FindAnswerHong(db)
             if State.state != None:
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
             else:
