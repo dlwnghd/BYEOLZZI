@@ -22,7 +22,6 @@ from models.intent.IntentModel_city import IntentModel_City
 from models.intent.IntentModel_activity import IntentModel_Activity
 from models.ner.NerModel import NerModel
 from utils.Findanswer import FindAnswer
-from config.weather_crawling_LJH import weather_crawl
 
 # 전처리 객체 생성
 p_full = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_full.bin',
@@ -140,23 +139,15 @@ def to_client(conn, addr, params):
         try:
             print("FindAnswer 시작")
             print("intent_name:", intent_name)
-            print("intent_name:", ner_tags)
             print("intent_reco:", intent_reco)
             print("intent_reco_name:", intent_reco_name)
             print("State.state:", State.state)
-            print("ner_list:",ner_list)
             f = FindAnswer(db)
             if State.state != None:
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
-            elif intent_name == "날씨" or intent_name == "주변검색":
-                answer_text, answer_contents = f.search(intent_name)
             else:
                 answer_text, answer_contents = f.search(intent_name, ner_tags)
-                
 
-            if intent_name == "날씨":
-                answer_contents = weather_crawl.weather(ner_list[0])
-                print("answer_contents:",answer_contents)
             print("END_Answer_text :", answer_text)
             print("END_Answer_contents :", answer_contents)
             if ner_predicts != None:

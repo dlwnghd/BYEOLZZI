@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>날씨</title>
+    </head>
+    <body style="background-color: skyblue;color: white;margin-top: 15vh;">
+        <div>
+            <h1 style="text-align: center;">{{etc.location_weather}}</h1>
+            <div style="display: flex;">
+                <div style="width: 62vh;height: fit-content;text-align: center;">
+                    <img id="weather_img" src="/static/images/weather/ico_animation_{{data}}.svg" style="width: 30vh;" alt="">
+                    <div style="text-align: center;">
+                        <p style="font-size: 10vh; margin: 0;">{{etc.temp_num}}°C</p>
+                        <p>어제보다 {{etc.yester_temp}}</p>
+                    </div>
+                </div>
+                <div style="width: 25vh;height: fit-content;">
+                    <div style="margin-top: 4vh;">
+                        <div style="margin: 5vh 0;">
+                            <p>체감</p>
+                            <h3 style="margin: 0;">{{etc.bodytemp_num}}°</h3>
+                        </div>
+                    </div>
+                    <div style="margin-top: 4vh;">
+                        <div style="margin: 5vh 0;">
+                            <p>습도</p>
+                            <h3 style="margin: 0;">{{etc.moisture_num}}%</h3>
+                        </div>
+                    </div>
+                    <div style="margin-top: 4vh">
+                        <div style="margin: 5vh 0;">
+                            <p>{{etc.wind}}</p>
+                            <h3 style="margin: 0;">{{etc.wind_num}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 34vh;height: fit-content;text-align: center;">
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="width: 15vh;background-color: rgb(86 226 121);border-radius: 10%;border: 0.2rem solid white;">
+                            <div style="margin: 5vh 0;">
+                                <img id="weather_img" src="/static/images/weather/미세먼지.png" style="width: 5vh;" alt="">
+                                <p>미세먼지</p>
+                                <p>{{etc.dust_stat}}</p>
+                            </div>
+                        </div>
+                        <div style="width: 15vh;background-color: rgb(228 219 86);border-radius: 10%;border: 0.2rem solid white;">
+                            <div style="margin: 5vh 0;">
+                                <img id="weather_img" src="/static/images/weather/초미세먼지.png" style="width: 5vh;" alt="">
+                                <p>초미세먼지</p>
+                                <p>{{etc.micro_dust_stat}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <div style="margin-top: 4vh;width: 15vh;height: fit-content;background-color: rgb(219,74,74);border-radius: 10%;border: 0.2rem solid white;">
+                            <div style="margin: 5vh 0;">
+                                <img id="weather_img" src="/static/images/weather/자외선.png" style="width: 5vh;" alt="">
+                                <p>자외선</p>
+                                <p>{{etc.sun_stat}}</p>
+                            </div>
+                        </div>
+                        <div style="margin-top: 4vh;width: 15vh;background-color: rgb(228 184 86);border-radius: 10%;border: 0.2rem solid white;">
+                            <div style="margin: 5vh 0;">
+                                <img id="weather_img" src="/static/images/weather/일몰.png" style="width: 5vh;" alt="">
+                                <p>일출</p>
+                                <p>{{etc.sunrise_time}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript"></script>
+    <style>
+        p {
+            margin: 0;
+        }
+    </style>
+</html>

@@ -29,13 +29,11 @@ class FindAnswer:
         print(result, '개 row update 성공!')
 
     # 답변 검색
-    def search(self, intent_name=None, ner_tags=None):
+    def search(self, intent_name, ner_tags):
         # 의도명, 개체명으로 답변 검색
-        sql = self._make_query(intent_1 = intent_name, ner_tags=ner_tags)
+        sql = self._make_query(intent_name, ner_tags)
         answer = self.db.select_one(sql)
 
-        print("✅intent_name:", intent_name)
-        print("✅ner_tags:", ner_tags)
         print("sql:", sql)
         print("answer:", answer)
 
@@ -44,7 +42,7 @@ class FindAnswer:
             sql = self._make_query(intent_name, None)
             answer = self.db.select_one(sql)
 
-        return (answer['answer'], answer['answer_contents'])
+        return (answer['answer'], answer['answer_image'])
 
     # 답변 검색
     def reco_search(self, intent_1=None, intent_2=None, ner_tags=None):
@@ -96,27 +94,17 @@ class FindAnswer:
         
         # 추천 1번 문제
         if intent_1 != None and intent_2 != None and ner_tags == None:
-            sql = sql + " where intent_1 ='{}'".format(intent_1)
-            print("❤️intent_1:",intent_1)
-            print("🧡intent_2:",intent_2)
-            print("🧡ner_tags:",ner_tags)
+            sql = sql + " where intent_1 ='{}' and intent_2='{}' ".format(intent_1, intent_2)
             print("_make_query sql:", sql)
 
         # 추천 2번 문제 ~ 4번 문제
         elif intent_1 == None and intent_2 != None and ner_tags == None:
-            print("💛intent_1:",intent_1)
-            print("💚intent_2:",intent_2)
             sql = sql + " where intent_2='{}' ".format(intent_2)
             print("_make_query sql:", sql)
 
         # intent_name 만 주어진 경우
         elif intent_1 != None and intent_2 != None and ner_tags == None:
-            if intent_1 == "날씨":
-                print("💙intent_1:",intent_1)
-                print("💜intent_2:",intent_2)
-                sql = sql + " where intent_1='{}' ".format(intent_2)
-                print("_make_query sql:", sql)
-                print("ner_tags:", ner_tags)
+            pass
 
         # 도움말, 리스트뽑기, 리스트 삭제
         elif intent_1 != None and intent_2 == None and ner_tags == None:
