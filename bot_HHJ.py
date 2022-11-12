@@ -23,6 +23,12 @@ from models.intent.IntentModel_activity import IntentModel_Activity
 from models.ner.NerModel import NerModel
 from utils.Findanswer import FindAnswer
 
+
+# 희지
+from config.highway_heeji import Highway
+
+
+
 # 전처리 객체 생성
 p_full = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_full.bin',
                userdic='utils/user_dic.tsv')
@@ -64,7 +70,6 @@ def to_client(conn, addr, params):
         intent_reco_name = None
         ner_predicts = None
         print("Start_State.state:", State.state)
-        ner_list = []
 
         # 데이터 수신
         read = conn.recv(2048)   # 수신 데이터가 있을 때까지 블로킹(대기) / 최대 2048 버퍼에 담음
@@ -126,13 +131,25 @@ def to_client(conn, addr, params):
             State.q += str(intent_reco)
 
 
+        # # 희지 의도파악
+        # if intent =='교통현황':
+        #     intent_predict = intent.predict_class(query)
+        #     intent_name = intent.labels[intent_predict]
+            
+        
+
+
         # 개체명 파악
-        if State.state == None:            
+        if State.state == None:
+            ner_list = []
             ner_predicts = ner.predict(query)
             ner_tags = ner.predict_tags(query)
+            print(ner_predicts)
             for ne in ner_predicts:
                 if ne[1] != 'O':
                     ner_list.append(ne[0])
+
+       
 
 
         # 답변 검색
@@ -146,7 +163,24 @@ def to_client(conn, addr, params):
             if State.state != None:
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
             else:
-                answer_text, answer_contents = f.search(intent_name, ner_tags)
+                if intent_name =='교통현황':
+                    answer_text, answer_contents = f.search(intent_name)
+                if intent_name =='인사':
+                    answer_text, answer_contents = f.search(intent_name)
+
+                else:
+                    answer_text, answer_contents = f.search(intent_name, ner_tags)
+
+             # 희지 채팅에 띄워줄 데이터
+            if intent_name == '교통현황':
+                if len(ner_list) ==1:
+                    way = Highway(ner_list[0])
+                    print('희지 교통현황 들어옴')
+                    print('ner_list: ',ner_list)
+                    answer_contents = way.bot_sum()
+                    print('answer_contents: ',answer_contents)
+                else:
+                    print('두 개 이상 들어와버렸어~')
 
             print("END_Answer_text :", answer_text)
             print("END_Answer_contents :", answer_contents)
@@ -174,7 +208,8 @@ def to_client(conn, addr, params):
             "Intent": intent_name,
             "IntentReco" : intent_reco_name,
             "NER": str(ner_predicts),
-            "NerList" : ner_list
+            "NerList" : ner_list,
+            # 'HeeJiDATA' : str(heeji_data)
         }
 
         message = json.dumps(sent_json_data_str)
@@ -223,7 +258,6 @@ if __name__ == '__main__':
         # 요청이 올때마다 쓰레드 하나 보내고, 또들어오면 또보내고 또보내고.....While True (무한 루트)
         client = threading.Thread(target=to_client, args=(conn, addr, params))   # to_client로 저변수들이 넘어간다~
         client.start()     # 쓰레드 시작
-
 
 
 

@@ -57,6 +57,7 @@ function send_message(){
         crossDomain: true,
         success: function(response){
             // response.Answer 에 챗봇 응답메세지가 담겨 있음
+            console.log(response.AnswerContents)
             $chatbody = $("#chatbody");
             let answercontents = response.AnswerContents
 
@@ -71,6 +72,7 @@ function send_message(){
             //     botcontents += "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents[i] + "</span></div>";
             // } 
             // console.log("bottext" + bottext)
+            botcontents += "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents[i] + "</span></div>";
             console.log("여기까지 왔소33")
 
 

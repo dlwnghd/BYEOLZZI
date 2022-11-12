@@ -29,9 +29,9 @@ class FindAnswer:
         print(result, '개 row update 성공!')
 
     # 답변 검색
-    def search(self, intent_name=None, ner_tags=None):
+    def search(self, intent_name, ner_tags=None):
         # 의도명, 개체명으로 답변 검색
-        sql = self._make_query(intent_1 = intent_name, ner_tags=ner_tags)
+        sql = self._make_query(intent_name, ner_tags)
         answer = self.db.select_one(sql)
 
         print("sql:", sql)
@@ -42,7 +42,7 @@ class FindAnswer:
             sql = self._make_query(intent_name, None)
             answer = self.db.select_one(sql)
 
-        return (answer['answer'], answer['answer_contents'])
+        return (answer['answer'], answer['answer_image'])
 
     # 답변 검색
     def reco_search(self, intent_1=None, intent_2=None, ner_tags=None):
@@ -122,17 +122,11 @@ class FindAnswer:
             sql = sql + where
             print("_make_query sql:", sql)
 
-        
-
-
-        # elif intent_1 != None and intent_2==None and ner_tags
-
         # 동일한 답변이 2개 이상인 경우, 랜덤으로 선택
         sql = sql + " order by rand() limit 1"
 
 
-
-
+        
         return sql        
     
     def _make_location(self, q):
