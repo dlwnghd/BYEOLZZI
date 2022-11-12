@@ -31,7 +31,7 @@ class FindAnswer:
     # 답변 검색
     def search(self, intent_name, ner_tags):
         # 의도명, 개체명으로 답변 검색
-        sql = self._make_query(intent_name, ner_tags)
+        sql = self._make_query(intent_1=intent_name, ner_tags=ner_tags)
         answer = self.db.select_one(sql)
 
         print("sql:", sql)
@@ -42,7 +42,7 @@ class FindAnswer:
             sql = self._make_query(intent_name, None)
             answer = self.db.select_one(sql)
 
-        return (answer['answer'], answer['answer_image'])
+        return (answer['answer'], answer['answer_contents'])
 
     # 답변 검색
     def reco_search(self, intent_1=None, intent_2=None, ner_tags=None):
