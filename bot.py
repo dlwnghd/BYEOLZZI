@@ -24,6 +24,9 @@ from models.ner.NerModel import NerModel
 from utils.Findanswer import FindAnswer
 from config.weather_crawling_LJH import weather_crawl
 
+from module.Around import Around
+
+
 # 전처리 객체 생성
 p_full = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_full.bin',
                userdic='utils/user_dic.tsv')
@@ -145,37 +148,56 @@ def to_client(conn, addr, params):
             print("intent_reco_name:", intent_reco_name)
             print("State.state:", State.state)
             print("ner_list:",ner_list)
+
             f = FindAnswer(db)
             if State.state != None:
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
-            elif intent_name == "날씨" or intent_name == "주변검색":
-                answer_text, answer_contents = f.search(intent_name)
             else:
                 answer_text, answer_contents = f.search(intent_name, ner_tags)
-                
 
-            if intent_name == "날씨":
-                answer_contents = weather_crawl.weather(ner_list[0])
-                print("answer_contents:",answer_contents)
+                # 의도별 answer contents
+                if intent_name == "주변검색":
+                    around = Around(db)
+                    answer_contents = around.search_around(ner_list[0])
+                elif intent_name == "날씨":
+                    answer_contents = weather_crawl.weather(ner_list[0])
+                    print("answer_contents:",answer_contents)
+                elif intent_name == "교통상황":
+                    pass
+                elif intent_name == "축제정보":
+                    pass
+                elif intent_name == "여행지정보":
+                    pass
+                elif intent_name == "길찾기":
+                    pass
+                elif intent_name == "도움말":
+                    pass
+
+            # 최종 결과 확인
             print("END_Answer_text :", answer_text)
             print("END_Answer_contents :", answer_contents)
+
+            # BIO 태그 개체명으로 변경
             if ner_predicts != None:
                 answer = f.tag_to_word(ner_predicts, answer_text)
             else:
                 answer = answer_text
             print(type(answer))
 
+            # 추천 State 작업
             if State.state != None and State.state != 4:
                 State.state += 1
             elif State.state == 4:
                 State.state = None
                 State.q = None
+
+        # 의도분류 인식 오류
         except Exception as e:
             print(e)
             answer = "죄송해요 무슨 말인지 모르겠어요. 조금 더 공부 할게요."
             answer_contents = None
 
-
+        # WEB client 전송 데이터 (JSON)
         sent_json_data_str = {    # response 할 JSON 데이터를 준비할 겁니다~
             "Query" : query,
             "Answer": answer,
@@ -186,11 +208,14 @@ def to_client(conn, addr, params):
             "NerList" : ner_list
         }
 
+        # JSON 변환 및 출력 확인
         message = json.dumps(sent_json_data_str)
         print("=++++++++++++++++++")
         print("message type:",type(message))
         print(message)
         print("=++++++++++++++++++")
+
+        # 데이터 전송
         conn.send(message.encode())    # resoponse 
 
 
