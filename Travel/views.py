@@ -1,7 +1,7 @@
 # 모듈 불러오기
 from django.shortcuts import render
 from django.http import HttpRequest, JsonResponse
-from config.weather_crawling_LJH import weather_crawl
+from module.Weather import Weather_crawl
 from BYEOLZZI.models import Answer
 
 # Create your views here.
@@ -41,8 +41,8 @@ def weathers(request):
     weather =  request.GET.get('data')
     print("weather:",weather)
 
-    weather_info = weather_crawl.weather(weather)
-    weather_etc = weather_crawl.weather_info(weather)
+    weather_info = Weather_crawl.weather(weather)
+    weather_etc = Weather_crawl.weather_info(weather)
 
     context={
         "data" : weather_info,

@@ -111,12 +111,7 @@ class FindAnswer:
 
         # intent_name 만 주어진 경우
         elif intent_1 != None and intent_2 != None and ner_tags == None:
-            if intent_1 == "날씨":
-                print("💙intent_1:",intent_1)
-                print("💜intent_2:",intent_2)
-                sql = sql + " where intent_1='{}' ".format(intent_2)
-                print("_make_query sql:", sql)
-                print("ner_tags:", ner_tags)
+            pass
 
         # 도움말, 리스트뽑기, 리스트 삭제
         elif intent_1 != None and intent_2 == None and ner_tags == None:
@@ -125,6 +120,8 @@ class FindAnswer:
 
         # intent_name 과 개체명도 주어진 경우
         elif intent_1 != None and ner_tags != None:
+            print("💙intent_1:",intent_1)
+            print("💜ner_tags:",ner_tags)
             where = ' where intent_1="%s" ' % intent_1
             if (len(ner_tags) > 0):
                 where += 'and ('
@@ -132,7 +129,9 @@ class FindAnswer:
                     where += " ner like '%{}%' or ".format(ne)
                 where = where[:-3] + ')'
             sql = sql + where
+            
             print("_make_query sql:", sql)
+            print("ner_tags:", ner_tags)
 
         # 동일한 답변이 2개 이상인 경우, 랜덤으로 선택
         sql = sql + " order by rand() limit 1"

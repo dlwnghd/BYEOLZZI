@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-class weather_crawl:
+class Weather_crawl:
     def weather(location):
 
         # url 지정
