@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-class weather_crawl:
+class Weather_crawl:
 
     def __init__(self) -> None:
         pass
@@ -41,6 +41,7 @@ class weather_crawl:
 
         # 현재 온도
         elements = dom.find("div",{"class" : "temperature_text"}).find_all(text = True)
+        # elements.text.strip()
         temp_li = elements[2] + elements[3]
         
         weather_info['temp'] = elements[1]

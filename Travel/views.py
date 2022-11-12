@@ -42,12 +42,14 @@ def weather(request:HttpRequest):
 
     return JsonResponse(context)
 
-def weathers(request):
+def weathers(request:HttpRequest):
     weather =  request.GET.get('data')
     print("weather:",weather)
 
-    weather_info = Weather_crawl.weather(weather)
-    weather_etc = Weather_crawl.weather_info(weather)
+    wc = Weather_crawl()
+
+    weather_info = wc.weather(weather)
+    weather_etc = wc.weather_info(weather)
 
     context={
         "data" : weather_info,
