@@ -95,9 +95,9 @@ function send_message(){
 
                 })
 
-                        }
+            }
             
-            if (response.Intent == '길찾기'){
+            else if (response.Intent == '길찾기'){
                 let findway_list = JSON.stringify(response.NerList)
                 console.log("findway_list : ", findway_list)
                 

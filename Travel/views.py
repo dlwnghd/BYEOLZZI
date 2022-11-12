@@ -1,10 +1,9 @@
 import json
 
-
 from django.shortcuts import render
 from django.http import HttpRequest, JsonResponse
 
-from utils.Findway import Findway
+from module.Findway import Findway
 
 
 # Create your views here.

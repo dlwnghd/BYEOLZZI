@@ -114,11 +114,17 @@ class FindAnswer:
         # intent_name 과 개체명도 주어진 경우
         elif intent_1 != None and ner_tags != None:
             where = ' where intent_1="%s" ' % intent_1
-            if (len(ner_tags) > 0):
+
+            if intent_1 == '길찾기':
+                where += " ner like '%{}%' or ".format(ner_tags[1])
+                where = where[:-3] + ')'
+
+            elif (len(ner_tags) > 0):
                 where += 'and ('
                 for ne in ner_tags:
                     where += " ner like '%{}%' or ".format(ne)
                 where = where[:-3] + ')'
+
             sql = sql + where
             print("_make_query sql:", sql)
 
@@ -134,13 +140,25 @@ class FindAnswer:
 
     # NER 태그를 실제 입력된 단어로 변환
     def tag_to_word(self, ner_predicts, answer):
+        print("================")
+        print(ner_predicts)
+        print(ner_predicts[1][0])
+        print(answer)
+        print("================")
+        loc_list=[]
+
         for word, tag in ner_predicts:
-            
+            if "길 안내" in answer:
+                loc_list.append(word)
             # 변환해야하는 태그가 있는 경우 추가
-            if tag == 'B_location' or tag == 'B_highway':
+            elif tag == 'B_location' or tag == 'B_highway':
                 answer = answer.replace(tag, word)  # 태그를 입력된 단어로 변환
-                
+        
+        if "길 안내" in answer:
+            answer = answer.replace("B_location", loc_list[1])
         answer = answer.replace('{', '')
         answer = answer.replace('}', '')
+        
+        print("tag_to_word answer : ", answer)
 
         return answer

@@ -22,7 +22,9 @@ from models.intent.IntentModel_city import IntentModel_City
 from models.intent.IntentModel_activity import IntentModel_Activity
 from models.ner.NerModel import NerModel
 from utils.Findanswer import FindAnswer
-from utils.FindanswerHong import FindAnswerHong
+
+from module.Around import Around
+
 
 # 전처리 객체 생성
 p_full = Preprocess(
@@ -153,11 +155,13 @@ def to_client(conn, addr, params):
             print("intent_reco:", intent_reco)
             print("intent_reco_name:", intent_reco_name)
             print("State.state:", State.state)
-            f = FindAnswerHong(db)
+            f = FindAnswer(db)
             if State.state != None:
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
             else:
                 answer_text, answer_contents = f.search(intent_name, ner_tags)
+                if intent_name == "주변검색":
+                    answer_contents = Around(db).search_around(ner_list[0])
 
             print("END_Answer_text :", answer_text)
             print("END_Answer_contents :", answer_contents)
@@ -172,6 +176,7 @@ def to_client(conn, addr, params):
             elif State.state == 4:
                 State.state = None
                 State.q = None
+
         except Exception as e:
             print(e)
             answer = "죄송해요 무슨 말인지 모르겠어요. 조금 더 공부 할게요."
