@@ -22,6 +22,7 @@ from models.intent.IntentModel_city import IntentModel_City
 from models.intent.IntentModel_activity import IntentModel_Activity
 from models.ner.NerModel import NerModel
 from utils.Findanswer import FindAnswer
+from utils.FindanswerHong import FindAnswerHong
 
 from module.Weather import Weather_crawl
 from module.Around import Around
