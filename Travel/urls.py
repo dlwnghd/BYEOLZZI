@@ -7,4 +7,7 @@ urlpatterns = [
     path('aroundshow/', views.aroundShow),
     path('weather/', views.weather),
     path('weathers/', views.weathers),
+    path('navi/', views.showNavi),
+    path('movenavi/', views.movenavi),
+    path('applynavi/', views.applynavi),
 ]

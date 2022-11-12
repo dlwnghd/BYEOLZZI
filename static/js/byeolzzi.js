@@ -54,11 +54,16 @@ function send_message(){
         contentType: "application/json; charset=utf-8", //postman 에서 header 지정해준 그것
         crossDomain: true,
         success: function(response){
-            console.log("Intent:" + response.Intent)
-            // response.Answer 에 챗봇 응답메세지가 담겨 있음
-            $chatbody = $("#chatbody");
             let answercontents = response.AnswerContents
             let intentname = response.Intent
+
+            console.log("answercontents:" + answercontents)
+            console.log("NER:" + response.NER)
+            console.log("NerList : ", response.NerList)
+            console.log("Intent:" + response.Intent)
+
+            // response.Answer 에 챗봇 응답메세지가 담겨 있음
+            $chatbody = $("#chatbody");
 
             // 답변 출력
             bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + response.Answer + "</span></div>";
@@ -79,7 +84,6 @@ function send_message(){
                     }
                 });
             }
-
             else if (intentname == '주변검색'){
                 let choicecontents = null
                 let botcontents = null
@@ -109,13 +113,68 @@ function send_message(){
 
                 })
 
+            }
+            else if (intentname == '길찾기'){
+                let findway_list = JSON.stringify(response.NerList)
+                console.log("findway_list : ", findway_list)
+                
+                // 좌표값을 requests 를 통해서 받아오기
+                $.ajax({
+                    url: 'navi',
+                    type: 'get',
+                    data: {
+                        'findway_list': findway_list
+                    },
+                    dataType: 'json',
+                    success: function(data){
+                        
+                        // 이건 B_location이 2개 잡힐 때,
+                        if(data.endlong){
+
+                            //받아온 데이터
+                            let startlat = data.startlat
+                            let startlong = data.startlong
+                            let endlat = data.endlat
+                            let endlong = data.endlong
+                            console.log("받아온 startlat : ", startlat)
+                            // test = {
+                            //     "a": {"b": "받아옴"}
+                            // }
+                            // test = JSON.stringify(test,)
+                            //src를 통해서 urls -> views 를 거쳐 데이터 전송하는 메소드
+                            goToIframe(startlat, startlong, endlat, endlong)
+                            // $.ajax({
+                            //     url: "movenavi?startlat="+startlat+"&startlong="+startlong+"&endlat="+endlat+"&endlong="+endlong,
+                            //     type: 'get',
+                            //     dataType: 'json',
+                            //     // data: {
+                            //     //     "startlat" : startlat,
+                            //     //     "startlong" : startlong,
+                            //     //     "endlat" : endlat,
+                            //     //     "endlong" : endlong
+                            //     // },
+                            //     success: function(response,data){
+                            //         console.log(data.startlat)
+                            //         console.log(response.startlat)
+                            //         goToIframe(startlat, startlong, endlat, endlong)
+                            //     }
+                            // });
+                        }
+                    }
+                })
+            }
+            
             // 스크롤 조정하기
             $chatbody.animate({scrollTop: $chatbody.prop('scrollHeight')});
             // 먼저 입력했던 내용은 지워줘야 함
             $("#chattext").val("");
             $("#chattext").focus();
 
-            }
         }
-    })
+    });
 } // end
+
+function goToIframe(startlat, startlong, endlat, endlong){
+    // document.getElementById("iframe").src = "movenavi?startlat=",startlat,"&startlong=",startlong,"&endlat=", endlat, "&endlong=", endlong;
+    $("#iframe").attr("src", "applynavi?startlat="+startlat+"&startlong="+startlong+"&endlat="+endlat+"&endlong="+endlong);
+}
