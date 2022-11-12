@@ -56,26 +56,46 @@ function send_message(){
         contentType: "application/json; charset=utf-8", //postman 에서 header 지정해준 그것
         crossDomain: true,
         success: function(response){
+            console.log("Intent:" + response.Intent)
             // response.Answer 에 챗봇 응답메세지가 담겨 있음
             $chatbody = $("#chatbody");
             let answercontents = response.AnswerContents
+            let choicecontents = null
+            let botcontents = null
 
             // 답변 출력
             bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + response.Answer + "</span></div>";
             $chatbody.append(bottext);
             console.log("answercontents:" + answercontents)
             console.log("NER:" + response.NER)
-            console.log("NerList[0]:" + response.NerList[0])
-            console.log("NerList[1]:" + response.NerList[1])
-            // for (var i = 0; i > answercontents.length(); i++){
-            //     botcontents += "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents[i] + "</span></div>";
-            // } 
-            // console.log("bottext" + bottext)
-            console.log("여기까지 왔소33")
-            
-            // 지울 내용
             console.log("NerList : ", response.NerList)
             
+            if (response.Intent == '주변검색'){
+                for (var i = 0; i < answercontents.length; i++){
+                    botcontents = "<div style='margin:15px 0;text-align:left;'><span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents[i].title + "</span></div>";
+                    $chatbody.append(botcontents);
+                }
+                
+                $(".around_contents").click(function(){
+                    let area_choice = $(this).text();
+                    for (var i = 0; i < answercontents.length; i++){
+                        if (answercontents[i].title == area_choice){
+                            choicecontents = answercontents[i];
+                        }
+                    }
+                    let localname = response.NerList[0];
+                    let areachoice = choicecontents.title;
+                    let addr = choicecontents.addr;
+                    let mapx = choicecontents.mapx;
+                    let mapy = choicecontents.mapy;
+
+                    console.log("localname:", localname)
+
+                    $("#iframe").attr("src", "aroundshow?localname=" + localname + "&areachoice=" + areachoice + "&addr=" + addr + "&mapx=" + mapx + "&mapy=" + mapy);
+
+                })
+
+                        }
             
             if (response.Intent == '길찾기'){
                 let findway_list = JSON.stringify(response.NerList)
@@ -100,30 +120,9 @@ function send_message(){
                             let endlat = data.endlat
                             let endlong = data.endlong
                             console.log("받아온 startlat : ", startlat)
-                            // test = {
-                            //     "a": {"b": "받아옴"}
-                            // }
-                            // test = JSON.stringify(test,)
+
                             //src를 통해서 urls -> views 를 거쳐 데이터 전송하는 메소드
                             goToIframe(startlat, startlong, endlat, endlong)
-                            // $.ajax({
-                            //     url: "movenavi?startlat="+startlat+"&startlong="+startlong+"&endlat="+endlat+"&endlong="+endlong,
-                            //     type: 'get',
-                            //     dataType: 'json',
-                            //     // data: {
-                            //     //     "startlat" : startlat,
-                            //     //     "startlong" : startlong,
-                            //     //     "endlat" : endlat,
-                            //     //     "endlong" : endlong
-                            //     // },
-                            //     success: function(response,data){
-                            //         console.log(data.startlat)
-                            //         console.log(response.startlat)
-                            //         goToIframe(startlat, startlong, endlat, endlong)
-                            //     }
-                            // });
-
-
                         }
                     }
                 });
@@ -136,11 +135,9 @@ function send_message(){
             $("#chattext").val("");
             $("#chattext").focus();
 
-        },
-
-    })
-
-} // end 
+            }
+        })
+    } // end 
 
 function goToIframe(startlat, startlong, endlat, endlong){
     // document.getElementById("iframe").src = "movenavi?startlat=",startlat,"&startlong=",startlong,"&endlat=", endlat, "&endlong=", endlong;

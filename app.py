@@ -30,10 +30,10 @@ def get_answer_from_engine(bottype, query):
     mySocket.send(message.encode())
  
     # 챗봇 엔진 답변 출력
-    data = mySocket.recv(2048).decode()
+    data = mySocket.recv(40560).decode()
     ret_data = json.loads(data)
     print("ret_data :", ret_data)
- 
+
     # 챗봇 엔진 서버 연결 소켓 닫기
     mySocket.close()
  
@@ -73,6 +73,3 @@ def query(bot_type):
 
 if __name__ == "__main__":
     app.run(host='127.0.0.10', port=5000, debug=True)
-
-
-# api 서버가 이런 역할을 해야한다~! 이런 마인드로 여길 봐라~!!~!~!~!~!~!~!

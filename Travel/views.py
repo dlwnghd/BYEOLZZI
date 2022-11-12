@@ -1,13 +1,18 @@
+import json
+
+
 from django.shortcuts import render
 from django.http import HttpRequest, JsonResponse
-import json
+
 from utils.Findway import Findway
+
 
 # Create your views here.
 def index(request):
     return render(request, 'daemon.html')
 
 
+# 길찾기
 def showNavi(request):
     print("Ajax 들어옴 showNavi")
     nerlist = json.loads(request.GET.get("findway_list"))
@@ -33,8 +38,6 @@ def showNavi(request):
         }
     
     return JsonResponse(context)
-    
-
 
 def movenavi(request):
     startlat = request.GET.get('startlat')
@@ -77,3 +80,24 @@ def applynavi(request):
         # "test": test
     }
     return render(request, 'tmapnavi.html', {'data': context})
+
+
+# 주변검색
+def aroundShow(request:HttpRequest):
+    localname = request.GET.get("localname")
+    areachoice = request.GET.get("areachoice")
+    addr = request.GET.get("addr")
+    mapx = request.GET.get("mapx")
+    mapy = request.GET.get("mapy")
+
+    print("localname :", localname)
+
+    context = {
+        "LocalName" : localname,
+        "AreaChoice" : areachoice,
+        "Addr" : addr,
+        "MapX" : mapx,
+        "MapY" : mapy,
+    }
+
+    return render(request, 'aroundshow.html', {'data' : context})
