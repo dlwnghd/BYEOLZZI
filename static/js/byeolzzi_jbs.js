@@ -69,8 +69,8 @@ function send_message(){
             console.log("NerList[0]:" + response.NerList[0])
             console.log("NerList[1]:" + response.NerList[1])
             // <span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>
-            li_full=""
             if(response.Intent=="축제"){
+                li_full=""
                 for(i = 0; i<answercontents.length ; i++){
                     let table = `
                         <tr>

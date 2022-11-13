@@ -5,7 +5,7 @@ from django.http import HttpRequest, JsonResponse
 
 from module.Findway import Findway
 from module.highway_heeji import Highway
-from config.festival import fes_info
+from module.festival import fes_info
 
 # Create your views here.
 def index(request):

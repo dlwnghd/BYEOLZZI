@@ -177,6 +177,73 @@ function send_message(){
                 });
             }
             
+            if(response.Intent=="축제"){
+                li_full=""
+                for(i = 0; i<answercontents.length ; i++){
+                    let table = `
+                        <tr>
+                            <td colspan="2">
+                                <img src=`+answercontents[i]["image_small"]+` style="width:100px; height:100px;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                축제명 : 
+                            </td>
+                            <td>
+                                `+answercontents[i]["title"]+`
+                            </td>
+                        </tr>
+                        <tr>
+                        <td>
+                            시작일 : 
+                        </td>
+                        <td>
+                            `+answercontents[i]["startDate"]+`
+                        </td>
+                    </tr>
+                    `
+                    li_full=li_full+table
+                    }
+        
+                    fes_add="<table align='center' style='background-color:#DDD;border-radius:3px; font-size:12px;'><tr></tr>"+li_full+"</table>"
+                    botcontents = "<div style='margin:15px 0;text-align:left;'>" + fes_add + "</div>";
+                    $chatbody.append(botcontents);
+                    console.log("여기까지 왔소33")
+                    // for (var i = 0; i > answercontents.length(); i++){
+                    //     botcontents += "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents[i] + "</span></div>";
+                    // } 
+                    // console.log("bottext" + bottext)
+        
+                    // botcontents = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents + "</span></div>";
+                    // $chatbody.append(botcontents);
+                    // console.log("여기까지 왔소33"
+                    
+                    $.ajax({
+                        url:'festival',
+                        type:'get',
+                        data: {
+                            'ner' : response.NerList[0],
+                            'met_code' : response.met_code,
+                            'loc_code' : response.loc_code
+                        },
+                        dataType: 'json',
+                        success: function(context){
+                        ner = context.ner
+                        met_code = context.met_code
+                        loc_code = context.loc_code
+                        console.log("드디어 여기까지")
+                        let $iframe = $('#iframe')
+        
+                        console.log('$iframe.src 전: ',$iframe.attr('src'))
+        
+                        $iframe.attr('src','festivals/?ner='+ner+'&met_code='+met_code+'&loc_code='+loc_code)
+        
+                        console.log('$iframe.src 후: ', $iframe.attr('src'))
+                        console.log('여기까지 왔소희지희지')
+                    }});
+            }
+            
             // 스크롤 조정하기
             $chatbody.animate({scrollTop: $chatbody.prop('scrollHeight')});
 

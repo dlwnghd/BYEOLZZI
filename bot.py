@@ -25,6 +25,8 @@ from utils.Findanswer import FindAnswer
 
 from module.Around import Around
 from module.highway_heeji import Highway
+from module.festival import festival
+
 
 # 전처리 객체 생성
 p_full = Preprocess(
@@ -76,8 +78,10 @@ def to_client(conn, addr, params):
         intent_reco = None
         intent_reco_name = None
         ner_predicts = None
-        print("Start_State.state:", State.state)
+        met_code=None
+        loc_code=None
         ner_list = []
+        print("Start_State.state:", State.state)
 
         # 데이터 수신
         read = conn.recv(2048)   # 수신 데이터가 있을 때까지 블로킹(대기) / 최대 2048 버퍼에 담음
@@ -165,7 +169,9 @@ def to_client(conn, addr, params):
                 #     answer_text, answer_contents = f.search(intent_name)
                 # elif intent_name =='인사':
                 #     answer_text, answer_contents = f.search(intent_name)
-                
+                # if intent_name== "축제":
+                #     answer_text, answer_contents = f.search(intent_name)
+
                 if intent_name == '교통현황':
                     if len(ner_list) ==1:
                         way = Highway(ner_list[0])
@@ -173,8 +179,25 @@ def to_client(conn, addr, params):
                         print('ner_list: ',ner_list)
                         answer_contents = way.bot_sum()
                         print('answer_contents: ',answer_contents)
+
                 elif intent_name == "주변검색":
                     answer_contents = Around(db).search_around(ner_list[0])
+
+                elif intent_name=="축제":       
+                    print("전범수 :",ner_list[0])
+                    answer_contents=festival(db).fes_sum(ner_list[0])
+                    print('크롤링 :', answer_contents)
+                    try:
+                        met_code=answer_contents[0]['met_code']
+                        loc_code=answer_contents[0]['loc_code']
+
+                    except:
+                        met_code=None
+                        loc_code=None
+                        answer = answer_contents
+                        print("에러 답변이요 :",answer)
+                        answer_contents = ""
+                        print("열리는 축제 없음")
 
             print("END_Answer_text :", answer_text)
             print("END_Answer_contents :", answer_contents)
@@ -203,7 +226,9 @@ def to_client(conn, addr, params):
             "Intent": intent_name,
             "IntentReco" : intent_reco_name,
             "NER": str(ner_predicts),
-            "NerList" : ner_list
+            "NerList" : ner_list,
+            "met_code" : met_code,
+            "loc_code" : loc_code
         }
 
         message = json.dumps(sent_json_data_str)
