@@ -7,6 +7,8 @@ from module.Findway import Findway
 from module.highway_heeji import Highway
 from module.festival import fes_info
 from module.Weather import Weather_crawl
+from module.Location_info import LocationInfo
+
 
 # Create your views here.
 def index(request):
@@ -199,3 +201,14 @@ def weathers(request:HttpRequest):
     }
     
     return render(request, 'weather.html', context)
+
+
+# 여행지 정보
+def location_info(request):         # 여행지정보용 함수
+    
+    url = request.GET.get("url")            # 크롤링 url 받음.
+
+    location = LocationInfo()               # 크롤링할 클레스 가져옴
+    context = location.crawlingNaver(url)   # 크롤링 하는애   
+
+    return render(request, 'location_info.html', context)   # iframe 으로 context에 담아서 보냄

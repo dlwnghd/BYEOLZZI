@@ -257,7 +257,8 @@ function send_message(){
                     }
                 });
             }
-            
+            else if(response.Intent == '여행지정보') location_info_ajax(response.NerList[0]);   // 여행지 함수
+
             // 스크롤 조정하기
             $chatbody.animate({scrollTop: $chatbody.prop('scrollHeight')});
 
