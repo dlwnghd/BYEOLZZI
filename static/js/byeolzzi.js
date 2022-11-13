@@ -81,6 +81,8 @@ function send_message(){
             $("#chattext").val("");
             $("#chattext").focus();
 
+            console.log('★★여행지정보 : ', response.Intent)
+            if(response.Intent == '여행지정보') location_info_ajax(response.NerList[0]);   // 여행지 ajax 함수 호출
         },
 
     })
