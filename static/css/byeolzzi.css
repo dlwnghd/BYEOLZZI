@@ -1,0 +1,17 @@
+:root {
+    --good_color: #34a0ff;
+    --good_background-color: #d8e9f5;
+    --good_border-color: #ebf7ff;
+
+    --normal_color: #00c73c;
+    --normal_background-color: #d6efd0;
+    --normal_border-color: #ebfae8;
+    
+    --bad_color: #ff7700;
+    --bad_background-color: #f6f2dd;
+    --bad_border-color: #fdfbef;
+    
+    --worst_color: #e64746;
+    --worst_background-color: #f1e8e7;
+    --worst_border-color: #fbf5f4;
+}  
