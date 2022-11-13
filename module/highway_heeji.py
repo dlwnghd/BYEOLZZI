@@ -45,10 +45,7 @@ class Highway:
             # dic['up'].append({'section' : up[0], 'distance': up[2], 'speed' :'희지ㅡㅡ', 'conditions':up[-1]})
             dic['up'].append({'section' : up[0], 'distance': up[2], 'speed' : up[3].replace(',',''), 'conditions':up[-1]})
             
-         
         return dic
-        
-        
     
     def web_full(self):
         h_up = self.h[0]
@@ -81,7 +78,6 @@ class Highway:
         for up in li_h_up:
             dic['up'].append({'section' : up[0], 'distance': up[2], 'speed' : up[3].replace(',',''), 'conditions':up[-1]})
             
-         
         return dic
         
     

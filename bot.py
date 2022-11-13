@@ -24,7 +24,7 @@ from models.ner.NerModel import NerModel
 from utils.Findanswer import FindAnswer
 
 from module.Around import Around
-
+from module.highway_heeji import Highway
 
 # 전처리 객체 생성
 p_full = Preprocess(
@@ -160,7 +160,20 @@ def to_client(conn, addr, params):
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
             else:
                 answer_text, answer_contents = f.search(intent_name, ner_tags)
-                if intent_name == "주변검색":
+                
+                # if intent_name =='교통현황':
+                #     answer_text, answer_contents = f.search(intent_name)
+                # elif intent_name =='인사':
+                #     answer_text, answer_contents = f.search(intent_name)
+                
+                if intent_name == '교통현황':
+                    if len(ner_list) ==1:
+                        way = Highway(ner_list[0])
+                        print('희지 교통현황 들어옴')
+                        print('ner_list: ',ner_list)
+                        answer_contents = way.bot_sum()
+                        print('answer_contents: ',answer_contents)
+                elif intent_name == "주변검색":
                     answer_contents = Around(db).search_around(ner_list[0])
 
             print("END_Answer_text :", answer_text)
