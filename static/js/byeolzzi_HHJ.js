@@ -56,80 +56,31 @@ function send_message(){
         contentType: "application/json; charset=utf-8", //postman 에서 header 지정해준 그것
         crossDomain: true,
         success: function(response){
-            console.log("Intent:" + response.Intent)
             // response.Answer 에 챗봇 응답메세지가 담겨 있음
             console.log(response.AnswerContents)
             $chatbody = $("#chatbody");
             let answercontents = response.AnswerContents
-            let choicecontents = null
-            let botcontents = null
 
             // 답변 출력
             bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + response.Answer + "</span></div>";
             $chatbody.append(bottext);
             console.log("answercontents:" + answercontents)
             console.log("NER:" + response.NER)
-            console.log("NerList : ", response.NerList)
+            console.log("NerList[0]:" + response.NerList[0])
+            // console.log("NerList[1]:" + response.NerList[1])
+            console.log('여기까지 왔는데 왜 안뽑힐까요?')
+            // for (var i = 0; i > answercontents.length(); i++){
+            //     botcontents += "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents[i] + "</span></div>";
+            // } 
+            // console.log("bottext" + bottext)
+
+            // console.log("answercontents['up'] " , answercontents['up'])
+            // console.log("answercontents['up'][0] : " , answercontents['up'][0])
+            // console.log("answercontents['up'].length() : " , answercontents['up'].length)
+
+            contents = "<br><table style='background-color:#DDD;border-radius:3px;font-size:12px;'><tr><td colspan='4'>[상행]</td></tr><tr><th>구간</th><th>거리</th><th>시속</th><th>상태</th></tr>"
             
-            if (response.Intent == '주변검색'){
-                for (var i = 0; i < answercontents.length; i++){
-                    botcontents = "<div style='margin:15px 0;text-align:left;'><span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents[i].title + "</span></div>";
-                    $chatbody.append(botcontents);
-                }
-                
-                $(".around_contents").click(function(){
-                    let area_choice = $(this).text();
-                    for (var i = 0; i < answercontents.length; i++){
-                        if (answercontents[i].title == area_choice){
-                            choicecontents = answercontents[i];
-                        }
-                    }
-                    let localname = response.NerList[0];
-                    let areachoice = choicecontents.title;
-                    let addr = choicecontents.addr;
-                    let mapx = choicecontents.mapx;
-                    let mapy = choicecontents.mapy;
-
-                    console.log("localname:", localname)
-
-                    $("#iframe").attr("src", "aroundshow?localname=" + localname + "&areachoice=" + areachoice + "&addr=" + addr + "&mapx=" + mapx + "&mapy=" + mapy);
-
-                })
-
-            }
-            
-            else if (response.Intent == '길찾기'){
-                let findway_list = JSON.stringify(response.NerList)
-                console.log("findway_list : ", findway_list)
-                
-                // 좌표값을 requests 를 통해서 받아오기
-                $.ajax({
-                    url: 'navi',
-                    type: 'get',
-                    data: {
-                        'findway_list': findway_list
-                    },
-                    dataType: 'json',
-                    success: function(data){
-                        
-                        // 이건 B_location이 2개 잡힐 때,
-                        if(data.endlong){
-
-                            //받아온 데이터
-                            let startlat = data.startlat
-                            let startlong = data.startlong
-                            let endlat = data.endlat
-                            let endlong = data.endlong
-                            console.log("받아온 startlat : ", startlat)
-
-                            //src를 통해서 urls -> views 를 거쳐 데이터 전송하는 메소드
-                            goToIframe(startlat, startlong, endlat, endlong)
-                        }
-                    }
-                });
-            }
-            else if (response.Intent == '교통현황'){
-                contents = "<br><table style='background-color:#DDD;border-radius:3px;font-size:12px;'><tr><td colspan='4'>[상행]</td></tr><tr><th>구간</th><th>거리</th><th>시속</th><th>상태</th></tr>"
+            if (response.Intent == '교통현황'){
                 for (i = 0; i < answercontents['up'].length; i++){
                     // console.log("잘 뽑히니??",answercontents['up'][i]['section'], answercontents['up'][i]['distance'], 
                     // answercontents['up'][i]['speed'], answercontents['up'][i]['conditions'])
@@ -156,9 +107,17 @@ function send_message(){
                 }
     
                 answercontents = contents + "</table>"
-                botcontents = "<div style='margin:15px 0;text-align:left;'>" + answercontents + "</div>";
-                $chatbody.append(botcontents);
+            }
+            
 
+            // console.log('content!!!!!!!!!!!: ', contents)
+
+            // botcontents = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + contents + "</span></div>";
+            botcontents = "<div style='margin:15px 0;text-align:left;'>" + answercontents + "</div>";
+            $chatbody.append(botcontents);
+            console.log("여기까지 왔소33")
+            
+            if (response.Intent == '교통현황'){
                 $.ajax({
                     url:'highway',
                     type:'get',
@@ -173,10 +132,14 @@ function send_message(){
                         let $iframe = $('#iframe')
                         $iframe.attr('src','heeji?data='+response.data)
                         console.log('여기까지왔어어어어ㅓ엉ㅇ')
-                    }
+                    
+                    
+                }
+            
                 });
             }
-            
+
+
             // 스크롤 조정하기
             $chatbody.animate({scrollTop: $chatbody.prop('scrollHeight')});
 
@@ -184,11 +147,13 @@ function send_message(){
             $("#chattext").val("");
             $("#chattext").focus();
 
-            }
-        })
-    } // end 
+        },
 
-function goToIframe(startlat, startlong, endlat, endlong){
-    // document.getElementById("iframe").src = "movenavi?startlat=",startlat,"&startlong=",startlong,"&endlat=", endlat, "&endlong=", endlong;
-    $("#iframe").attr("src", "applynavi?startlat="+startlat+"&startlong="+startlong+"&endlat="+endlat+"&endlong="+endlong);
-}
+    })
+
+} // end 
+
+
+
+
+// ================================================

@@ -29,9 +29,9 @@ class FindAnswer:
         print(result, '개 row update 성공!')
 
     # 답변 검색
-    def search(self, intent_name=None, ner_tags=None):
+    def search(self, intent_name, ner_tags=None):
         # 의도명, 개체명으로 답변 검색
-        sql = self._make_query(intent_1=intent_name, ner_tags=ner_tags)
+        sql = self._make_query(intent_name, ner_tags)
         answer = self.db.select_one(sql)
 
         print("sql:", sql)
@@ -42,7 +42,7 @@ class FindAnswer:
             sql = self._make_query(intent_name, None)
             answer = self.db.select_one(sql)
 
-        return (answer['answer'], answer['answer_contents'])
+        return (answer['answer'], answer['answer_image'])
 
     # 답변 검색
     def reco_search(self, intent_1=None, intent_2=None, ner_tags=None):
@@ -114,25 +114,19 @@ class FindAnswer:
         # intent_name 과 개체명도 주어진 경우
         elif intent_1 != None and ner_tags != None:
             where = ' where intent_1="%s" ' % intent_1
-
-            if intent_1 == '길찾기':
-                where += " ner like '%{}%' or ".format(ner_tags[1])
-                where = where[:-3] + ')'
-
-            elif (len(ner_tags) > 0):
+            if (len(ner_tags) > 0):
                 where += 'and ('
                 for ne in ner_tags:
                     where += " ner like '%{}%' or ".format(ne)
                 where = where[:-3] + ')'
-
             sql = sql + where
             print("_make_query sql:", sql)
-
-        # elif intent_1 != None and intent_2==None and ner_tags
 
         # 동일한 답변이 2개 이상인 경우, 랜덤으로 선택
         sql = sql + " order by rand() limit 1"
 
+
+        
         return sql        
     
     def _make_location(self, q):
@@ -143,25 +137,13 @@ class FindAnswer:
 
     # NER 태그를 실제 입력된 단어로 변환
     def tag_to_word(self, ner_predicts, answer):
-        print("================")
-        print(ner_predicts)
-        print(ner_predicts[1][0])
-        print(answer)
-        print("================")
-        loc_list=[]
-
         for word, tag in ner_predicts:
-            if "길 안내" in answer:
-                loc_list.append(word)
+            
             # 변환해야하는 태그가 있는 경우 추가
-            elif tag == 'B_location' or tag == 'B_highway':
+            if tag == 'B_location' or tag == 'B_highway':
                 answer = answer.replace(tag, word)  # 태그를 입력된 단어로 변환
-        
-        if "길 안내" in answer:
-            answer = answer.replace("B_location", loc_list[1])
+                
         answer = answer.replace('{', '')
         answer = answer.replace('}', '')
-        
-        print("tag_to_word answer : ", answer)
 
         return answer
