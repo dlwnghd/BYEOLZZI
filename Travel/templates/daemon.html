@@ -24,8 +24,13 @@
 
 				<!-- Menubar -->
 				<div id="menubar">
+					{% if request.session.login != None %}
+					<a href="member/logout" style="font-size: 1.2em; border-bottom: none;">| 로그아웃 |</a>
+					<a href="member/mypage" style="font-size: 1.2em; border-bottom: none;">마이페이지 |</a>
+					{%else%}
 					<a href="member/join" style="font-size: 1.2em; border-bottom: none;">| 회원가입 |</a>
 					<a href="member/login" style="font-size: 1.2em; border-bottom: none;">로그인 |</a>
+					{%endif%}
 				</div>
 
 				<!-- Header -->
