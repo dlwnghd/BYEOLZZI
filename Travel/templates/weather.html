@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="/static/css/byeolzzi.css" />
+<body id="weather_body" style="background-color: skyblue;color: white;margin-top: 15vh;">
+    <div>
+        <h1 style="text-align: center;">{{etc.location_weather}}</h1>
+        <div style="display: flex;">
+            <div class="{{data}}" id="weather" style="width: 62vh;height: fit-content;text-align: center;">
+                <img id="weather_img" src="/static/images/weather/ico_animation_{{data}}.svg" style="width: 30vh;" alt="">
+                <div style="text-align: center;">
+                    <p style="font-size: 10vh; margin: 0;">{{etc.temp_num}}C</p>
+                    <p>어제보다 {{etc.yester_temp}}</p>
+                </div>
+            </div>
+            <div style="width: 25vh;height: fit-content;">
+                <div style="margin-top: 4vh;">
+                    <div style="margin: 5vh 0;">
+                        <p>체감</p>
+                        <h3 style="margin: 0;">{{etc.bodytemp_num}}</h3>
+                    </div>
+                </div>
+                <div style="margin-top: 4vh;">
+                    <div style="margin: 5vh 0;">
+                        <p>습도</p>
+                        <h3 style="margin: 0;">{{etc.moisture_num}}</h3>
+                    </div>
+                </div>
+                <div style="margin-top: 4vh">
+                    <div style="margin: 5vh 0;">
+                        <p>{{etc.wind}}</p>
+                        <h3 style="margin: 0;">{{etc.wind_num}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 34vh;height: fit-content;text-align: center;font-size: 2.5vh;">
+                <div style="display: flex; justify-content: space-between;">
+                    <div id="dust" style="width: 15vh;border-radius: 10%;border: 0.2rem solid white; box-shadow: 0px 0px 10px 0px white;">
+                        <div style="margin: 5vh 0;">
+                            <img id="weather_img" src="/static/images/weather/미세먼지.png" style="width: 5vh;" alt="">
+                            <p>미세먼지</p>
+                            <p id="dust_stat">{{etc.dust_stat}}</p>
+                        </div>
+                    </div>
+                    <div id="micro_dust" style="width: 15vh;border-radius: 10%;border: 0.2rem solid white; box-shadow: 0px 0px 10px 0px white;">
+                        <div style="margin: 5vh 0;">
+                            <img id="weather_img" src="/static/images/weather/초미세먼지.png" style="width: 5vh;" alt="">
+                            <p>초미세먼지</p>
+                            <p id="micro_dust_stat">{{etc.micro_dust_stat}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <div id="sun" style="margin-top: 4vh;width: 15vh;height: fit-content;border-radius: 10%;border: 0.2rem solid white; box-shadow: 0px 0px 10px 0px white;">
+                        <div style="margin: 5vh 0;">
+                            <img id="weather_img" src="/static/images/weather/자외선.png" style="width: 5vh;" alt="">
+                            <p>자외선</p>
+                            <p id="sun_stat">{{etc.sun_stat}}</p>
+                        </div>
+                    </div>
+                    <div  id="sunrise" style="margin-top: 4vh;width: 15vh;height: fit-content;border-radius: 10%;border: 0.2rem solid white; box-shadow: 0px 0px 10px 0px white; background-color: #fefcda;">
+                        <div style="margin: 5vh 0;color: #fda60e;">
+                            <img id="weather_img" src="/static/images/weather/일몰.png" style="width: 5vh;" alt="">
+                            <p>일출</p>
+                            <p id="sunrise_time">{{etc.sunrise_time}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    p {
+        margin: 0;
+    }
+</style>
+<script src="/static/js/weather.js" defer></script>
