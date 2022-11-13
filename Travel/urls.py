@@ -9,4 +9,6 @@ urlpatterns = [
     path('aroundshow/', views.aroundShow),
     path('highway/', views.highway),
     path('heeji/', views.heeji_iframe), # heeji iframe 띄우기
+    path('festival/', views.festival),
+    path('festivals/', views.festivals),
 ]
