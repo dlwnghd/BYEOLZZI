@@ -60,10 +60,10 @@ function send_message(){
             // response.Answer 에 챗봇 응답메세지가 담겨 있음
             console.log(response.AnswerContents)
             $chatbody = $("#chatbody");
+            let intentname = response.Intent
             let answercontents = response.AnswerContents
-            let choicecontents = null
             let botcontents = null
-
+            
             // 답변 출력
             bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + response.Answer + "</span></div>";
             $chatbody.append(bottext);
@@ -71,7 +71,8 @@ function send_message(){
             console.log("NER:" + response.NER)
             console.log("NerList : ", response.NerList)
             
-            if (response.Intent == '주변검색'){
+            if (intentname == '주변검색'){
+                let choicecontents = null
                 for (var i = 0; i < answercontents.length; i++){
                     botcontents = "<div style='margin:15px 0;text-align:left;'><span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents[i].title + "</span></div>";
                     $chatbody.append(botcontents);
@@ -97,8 +98,7 @@ function send_message(){
                 })
 
             }
-            
-            else if (response.Intent == '길찾기'){
+            else if (intentname == '길찾기'){
                 let findway_list = JSON.stringify(response.NerList)
                 console.log("findway_list : ", findway_list)
                 
@@ -128,7 +128,7 @@ function send_message(){
                     }
                 });
             }
-            else if (response.Intent == '교통현황'){
+            else if (intentname == '교통현황'){
                 contents = "<br><table style='background-color:#DDD;border-radius:3px;font-size:12px;'><tr><td colspan='4'>[상행]</td></tr><tr><th>구간</th><th>거리</th><th>시속</th><th>상태</th></tr>"
                 for (i = 0; i < answercontents['up'].length; i++){
                     // console.log("잘 뽑히니??",answercontents['up'][i]['section'], answercontents['up'][i]['distance'], 
@@ -176,8 +176,7 @@ function send_message(){
                     }
                 });
             }
-            
-            if(response.Intent=="축제"){
+            else if(intentname =="축제"){
                 li_full=""
                 for(i = 0; i<answercontents.length ; i++){
                     let table = `
@@ -242,6 +241,21 @@ function send_message(){
                         console.log('$iframe.src 후: ', $iframe.attr('src'))
                         console.log('여기까지 왔소희지희지')
                     }});
+            }
+            else if (intentname == '날씨'){
+                $.ajax({
+                    url: "weather", // url 수정
+                    type: "GET",
+                    data: {"Ner":response.NerList[0]},
+                    dataType: "JSON", // 응답받을 데이터 타입
+                    contentType: "application/json; charset=utf-8", //postman 에서 header 지정해준 그것
+                    crossDomain: true,
+                    success: function(response){
+                        console.log(response.weather); // 가져온 지역 정보
+                        let $iframe = $("#iframe"); // iframe 지정
+                        $iframe.attr("src", "/weathers?data=" + response.weather); // iframe의 src를 변경
+                    }
+                });
             }
             
             // 스크롤 조정하기

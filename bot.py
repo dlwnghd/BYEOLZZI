@@ -1,12 +1,3 @@
-'''
-thread : 쓰레드
-리퀘스트가 들어오면 별도의 쓰레드를 활용한다
-
-# 파이썬은 원래 기본적으로 한번에 하나의 쓰레드밖에 실행 못한다
-# 'threading 모듈'을 통해 (내부적으로) 코드를 interleaving 방식으로 분할 실행함으로
-# 멀티 쓰레딩 비슷(?)하게 동작시킨다.
-
-'''
 import threading
 import json
 
@@ -26,6 +17,7 @@ from utils.Findanswer import FindAnswer
 from module.Around import Around
 from module.highway_heeji import Highway
 from module.festival import festival
+from module.Weather import Weather_crawl
 
 
 # 전처리 객체 생성
@@ -190,7 +182,6 @@ def to_client(conn, addr, params):
                     try:
                         met_code=answer_contents[0]['met_code']
                         loc_code=answer_contents[0]['loc_code']
-
                     except:
                         met_code=None
                         loc_code=None
@@ -199,26 +190,34 @@ def to_client(conn, addr, params):
                         answer_contents = ""
                         print("열리는 축제 없음")
 
+                elif intent_name=="날씨":
+                    answer_contents = Weather_crawl().weather(ner_list[0])
+
+            # 최종 결과 확인
             print("END_Answer_text :", answer_text)
             print("END_Answer_contents :", answer_contents)
+
+            # BIO 태그 개체명으로 변경
             if ner_predicts != None:
                 answer = f.tag_to_word(ner_predicts, answer_text)
             else:
                 answer = answer_text
             print(type(answer))
 
+            # 추천 State 작업
             if State.state != None and State.state != 4:
                 State.state += 1
             elif State.state == 4:
                 State.state = None
                 State.q = None
 
+        # 의도분류 인식 오류
         except Exception as e:
             print(e)
             answer = "죄송해요 무슨 말인지 모르겠어요. 조금 더 공부 할게요."
             answer_contents = None
 
-
+        # WEB Client 전송 데이터 (JSON)
         sent_json_data_str = {    # response 할 JSON 데이터를 준비할 겁니다~
             "Query" : query,
             "Answer": answer,
@@ -231,11 +230,14 @@ def to_client(conn, addr, params):
             "loc_code" : loc_code
         }
 
+        # JSON 변환 및 출력 확인
         message = json.dumps(sent_json_data_str)
         print("=++++++++++++++++++")
         print("message type:",type(message))
         print(message)
         print("=++++++++++++++++++")
+        
+        # 데이터 전송
         conn.send(message.encode())    # resoponse 
 
 

@@ -6,6 +6,7 @@ from django.http import HttpRequest, JsonResponse
 from module.Findway import Findway
 from module.highway_heeji import Highway
 from module.festival import fes_info
+from module.Weather import Weather_crawl
 
 # Create your views here.
 def index(request):
@@ -52,10 +53,6 @@ def movenavi(request):
     }
 
     return JsonResponse(context)
-    # return render(request, 'tmapnavi.html', {'data': context})
-
-    # return render(request, 'tmapnavi.html')
-
 
 def applynavi(request):
     startlat = request.GET.get('startlat')
@@ -101,6 +98,8 @@ def aroundShow(request:HttpRequest):
 
     return render(request, 'aroundshow.html', {'data' : context})
 
+
+# 교통현황
 def highway(request):
     print('ajax views에 들어옴!!!!!!!!')
     data = request.GET.get('data')
@@ -117,8 +116,6 @@ def highway(request):
     }
 
     return JsonResponse(context)
-    # return render(request, 'heeji/highway_info.html')
-
 
 def heeji_iframe(request):
     print('ajax views에 들어옴!!!!!!!!2222222222')
@@ -139,6 +136,8 @@ def heeji_iframe(request):
 
     return render(request, 'heeji/highway_info.html', context)
 
+
+# 축제
 def festival(request):
     print('너 들어왔니??? 좀 들어와라')
     data =  request.GET.get('ner')
@@ -154,7 +153,6 @@ def festival(request):
         "loc_code" : loc_code
     }
     return JsonResponse(context)
-
 
 def festivals(request):
     print('두 번째꺼 들어옴')
@@ -173,3 +171,31 @@ def festivals(request):
     }
     
     return render(request, 'festival_jbs.html', context)
+
+
+# 날씨
+def weather(request:HttpRequest):
+    weather_loc =  request.GET.get('Ner')
+    print("weather:",weather_loc)
+
+    context = {
+        'weather' : weather_loc
+    }
+
+    return JsonResponse(context)
+
+def weathers(request:HttpRequest):
+    weather =  request.GET.get('data')
+    print("weather:",weather)
+
+    wc = Weather_crawl()
+
+    weather_info = wc.weather(weather)
+    weather_etc = wc.weather_info(weather)
+
+    context={
+        "data" : weather_info,
+        "etc" : weather_etc
+    }
+    
+    return render(request, 'weather.html', context)
