@@ -2,7 +2,7 @@ from utils.Database import Database
 from config.State import State
 
 
-class FindAnswerHong:
+class FindAnswer:
     
     # Database 인스턴스 객체로 생성
     def __init__(self, db):
@@ -42,13 +42,13 @@ class FindAnswerHong:
             sql = self._make_query(intent_name, None)
             answer = self.db.select_one(sql)
 
-        return (answer['answer'], answer['answer_contents'])
+        return (answer['answer'], answer['answer_image'])
 
     # 답변 검색
     def reco_search(self, intent_1=None, intent_2=None, ner_tags=None):
 
         # 추천 2번문제 ~ 4번 문제
-        if intent_1 == None:
+        if intent_1 == None: 
             # locations 담을 리스트 변수 선언
             location_li = []
             sql = self._make_query(intent_1=None, intent_2=intent_2)
@@ -68,7 +68,7 @@ class FindAnswerHong:
 
             return (answer['answer'], location_li)
 
-        # 1번 문제
+        # 1번 문제  # 의도분류가 None 가 아닐때.
         sql = self._make_query(intent_1, intent_2)
         answer = self.db.select_one(sql)
     
@@ -114,12 +114,7 @@ class FindAnswerHong:
         # intent_name 과 개체명도 주어진 경우
         elif intent_1 != None and ner_tags != None:
             where = ' where intent_1="%s" ' % intent_1
-
-            if intent_1 == '길찾기':
-                where += " ner like '%{}%' or ".format(ner_tags[1])
-                where = where[:-3] + ')'
-            
-            if (len(ner_tags) > 0) and intent_1 != "길찾기":
+            if (len(ner_tags) > 0):
                 where += 'and ('
                 for ne in ner_tags:
                     where += " ner like '%{}%' or ".format(ne)
@@ -139,24 +134,13 @@ class FindAnswerHong:
 
     # NER 태그를 실제 입력된 단어로 변환
     def tag_to_word(self, ner_predicts, answer):
-        print("================")
-        print(ner_predicts)
-        print(ner_predicts[1][0])
-        print(answer)
-        print("================")
-        loc_list=[]
-        print("함수 안의 loc_list : ", loc_list)
         for word, tag in ner_predicts:
-            if tag == 'B_location' and "길 안내" in answer:
-                loc_list.append(word)
-
+            
+            # 변환해야하는 태그가 있는 경우 추가
             if tag == 'B_location' or tag == 'B_highway':
-                if "길 안내" not in answer:
-                    answer = answer.replace(tag, word)  # 태그를 입력된 단어로 변환
-
-        
-
+                answer = answer.replace(tag, word)  # 태그를 입력된 단어로 변환
+                
         answer = answer.replace('{', '')
         answer = answer.replace('}', '')
-        print("tag_to_word answer : ", answer)
+
         return answer

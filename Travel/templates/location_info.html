@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>                 <!-- 자바스크립 -->
+    <link rel="stylesheet" href="/static/css/location_info/location_info.css" />    <!-- 여향지정보 css -->
+    <title>location_info</title>
+</head>
+<body>
+    <div class="slide slide_wrap" id="location_info_slide">
+        {% for img in img_url %}    <div class="slide_item"><img src="{{ img }}"></div>     {% endfor %}
+    </div>
+    <div class="slide_prev_button slide_button">◁</div>
+    <div class="slide_next_button slide_button">▷</div>
+    <ul class="slide_pagination"></ul>
+    </div>
+    
+    <h2>{{ title }}</h2>
+    <h4>{{ text }}</h4>
+
+    <script src="/static/js/location_info/location_info.js"></script>  <!-- 여행지정보 js -->   <!-- js 스크립트를 하단에다 놔야 body 실행이 끝날무렵 실행함. -->
+    <script>
+        location_info_js("{{ img_url|length }}");       // 이미지 슬라이드 효과를 주기위한 함수 실행
+    </script>
+</body>
+</html>

@@ -1,12 +1,3 @@
-'''
-thread : 쓰레드
-리퀘스트가 들어오면 별도의 쓰레드를 활용한다
-
-# 파이썬은 원래 기본적으로 한번에 하나의 쓰레드밖에 실행 못한다
-# 'threading 모듈'을 통해 (내부적으로) 코드를 interleaving 방식으로 분할 실행함으로
-# 멀티 쓰레딩 비슷(?)하게 동작시킨다.
-
-'''
 import threading
 import json
 
@@ -22,10 +13,11 @@ from models.intent.IntentModel_city import IntentModel_City
 from models.intent.IntentModel_activity import IntentModel_Activity
 from models.ner.NerModel import NerModel
 from utils.Findanswer import FindAnswer
-from utils.FindanswerHong import FindAnswerHong
 
-from module.Weather import Weather_crawl
 from module.Around import Around
+from module.highway_heeji import Highway
+from module.festival import festival
+from module.Weather import Weather_crawl
 
 
 # 전처리 객체 생성
@@ -78,6 +70,9 @@ def to_client(conn, addr, params):
         intent_reco = None
         intent_reco_name = None
         ner_predicts = None
+        met_code=None
+        loc_code=None
+        ner_list = []
         print("Start_State.state:", State.state)
 
         # 데이터 수신
@@ -141,8 +136,7 @@ def to_client(conn, addr, params):
 
 
         # 개체명 파악
-        if State.state == None:
-            ner_list = []
+        if State.state == None:            
             ner_predicts = ner.predict(query)
             ner_tags = ner.predict_tags(query)
             for ne in ner_predicts:
@@ -154,35 +148,50 @@ def to_client(conn, addr, params):
         try:
             print("FindAnswer 시작")
             print("intent_name:", intent_name)
-            print("intent_name:", ner_tags)
             print("intent_reco:", intent_reco)
             print("intent_reco_name:", intent_reco_name)
             print("State.state:", State.state)
-            print("ner_list:",ner_list)
-
             f = FindAnswer(db)
             if State.state != None:
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
             else:
                 answer_text, answer_contents = f.search(intent_name, ner_tags)
+                
+                # if intent_name =='교통현황':
+                #     answer_text, answer_contents = f.search(intent_name)
+                # elif intent_name =='인사':
+                #     answer_text, answer_contents = f.search(intent_name)
+                # if intent_name== "축제":
+                #     answer_text, answer_contents = f.search(intent_name)
 
-                # 의도별 answer contents
-                if intent_name == "주변검색":
-                    around = Around(db)
-                    answer_contents = around.search_around(ner_list[0])
-                elif intent_name == "날씨":
-                    answer_contents = Weather_crawl.weather(ner_list[0])
-                    print("answer_contents:",answer_contents)
-                elif intent_name == "교통상황":
-                    pass
-                elif intent_name == "축제정보":
-                    pass
-                elif intent_name == "여행지정보":
-                    pass
-                elif intent_name == "길찾기":
-                    pass
-                elif intent_name == "도움말":
-                    pass
+                if intent_name == '교통현황':
+                    if len(ner_list) ==1:
+                        way = Highway(ner_list[0])
+                        print('희지 교통현황 들어옴')
+                        print('ner_list: ',ner_list)
+                        answer_contents = way.bot_sum()
+                        print('answer_contents: ',answer_contents)
+
+                elif intent_name == "주변검색":
+                    answer_contents = Around(db).search_around(ner_list[0])
+
+                elif intent_name=="축제":       
+                    print("전범수 :",ner_list[0])
+                    answer_contents=festival(db).fes_sum(ner_list[0])
+                    print('크롤링 :', answer_contents)
+                    try:
+                        met_code=answer_contents[0]['met_code']
+                        loc_code=answer_contents[0]['loc_code']
+                    except:
+                        met_code=None
+                        loc_code=None
+                        answer = answer_contents
+                        print("에러 답변이요 :",answer)
+                        answer_contents = ""
+                        print("열리는 축제 없음")
+
+                elif intent_name=="날씨":
+                    answer_contents = Weather_crawl().weather(ner_list[0])
 
             # 최종 결과 확인
             print("END_Answer_text :", answer_text)
@@ -208,7 +217,7 @@ def to_client(conn, addr, params):
             answer = "죄송해요 무슨 말인지 모르겠어요. 조금 더 공부 할게요."
             answer_contents = None
 
-        # WEB client 전송 데이터 (JSON)
+        # WEB Client 전송 데이터 (JSON)
         sent_json_data_str = {    # response 할 JSON 데이터를 준비할 겁니다~
             "Query" : query,
             "Answer": answer,
@@ -216,7 +225,9 @@ def to_client(conn, addr, params):
             "Intent": intent_name,
             "IntentReco" : intent_reco_name,
             "NER": str(ner_predicts),
-            "NerList" : ner_list
+            "NerList" : ner_list,
+            "met_code" : met_code,
+            "loc_code" : loc_code
         }
 
         # JSON 변환 및 출력 확인
@@ -225,7 +236,7 @@ def to_client(conn, addr, params):
         print("message type:",type(message))
         print(message)
         print("=++++++++++++++++++")
-
+        
         # 데이터 전송
         conn.send(message.encode())    # resoponse 
 
@@ -268,7 +279,6 @@ if __name__ == '__main__':
         # 요청이 올때마다 쓰레드 하나 보내고, 또들어오면 또보내고 또보내고.....While True (무한 루트)
         client = threading.Thread(target=to_client, args=(conn, addr, params))   # to_client로 저변수들이 넘어간다~
         client.start()     # 쓰레드 시작
-
 
 
 
