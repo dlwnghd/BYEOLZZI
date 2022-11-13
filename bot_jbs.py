@@ -22,6 +22,7 @@ from models.intent.IntentModel_city import IntentModel_City
 from models.intent.IntentModel_activity import IntentModel_Activity
 from models.ner.NerModel import NerModel
 from utils.Findanswer import FindAnswer
+from config.festival import festival
 
 # 전처리 객체 생성
 p_full = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_full.bin',
@@ -63,6 +64,8 @@ def to_client(conn, addr, params):
         intent_reco = None
         intent_reco_name = None
         ner_predicts = None
+        met_code=None
+        loc_code=None
         print("Start_State.state:", State.state)
         ner_list = []
         # 데이터 수신
@@ -100,7 +103,9 @@ def to_client(conn, addr, params):
             if intent_name == '추천':
                 print("추천 의도 들어옴")
                 State.state = 0
-
+            if intent_name == '축제':
+                print("축제 의도 들어옴")
+                pass
         if State.state == 0:
             pass
 
@@ -146,7 +151,14 @@ def to_client(conn, addr, params):
             if State.state != None:
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
             else:
-                answer_text, answer_contents = f.search(intent_name, ner_tags)
+                if intent_name== "축제":
+                    answer_text, answer_contents = f.search(intent_name)
+                if intent_name== "인사":
+                    answer_text, answer_contents = f.search(intent_name)
+                else:
+                    answer_text, answer_contents = f.search(intent_name, ner_tags)
+                
+                
 
             print("END_Answer_text :", answer_text)
             print("END_Answer_contents :", answer_contents)
@@ -154,7 +166,7 @@ def to_client(conn, addr, params):
                 answer = f.tag_to_word(ner_predicts, answer_text)
             else:
                 answer = answer_text
-            print(type(answer))
+            print("답변 ",type(answer))
 
             if State.state != None and State.state != 4:
                 State.state += 1
@@ -166,7 +178,21 @@ def to_client(conn, addr, params):
             answer = "죄송해요 무슨 말인지 모르겠어요. 조금 더 공부 할게요."
             answer_contents = None
 
+        if State.state == None and intent_name=="축제":       
+            print("전범수 :",ner_list[0])
+            answer_contents=festival(db).fes_sum(ner_list[0])
+            print('크롤링 :', answer_contents)
+            try:
+                met_code=answer_contents[0]['met_code']
+                loc_code=answer_contents[0]['loc_code']
 
+            except:
+                met_code=None
+                loc_code=None
+                answer = answer_contents
+                print("에러 답변이요 :",answer)
+                answer_contents = ""
+                print("열리는 축제 없음")
         sent_json_data_str = {    # response 할 JSON 데이터를 준비할 겁니다~
             "Query" : query,
             "Answer": answer,
@@ -174,7 +200,9 @@ def to_client(conn, addr, params):
             "Intent": intent_name,
             "IntentReco" : intent_reco_name,
             "NER": str(ner_predicts),
-            "NerList" : ner_list
+            "NerList" : ner_list,
+            "met_code" : met_code,
+            "loc_code" : loc_code
         }
 
         message = json.dumps(sent_json_data_str)
