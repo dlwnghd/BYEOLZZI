@@ -111,7 +111,7 @@ def logout(request:HttpRequest):
     return redirect('/')
 
 
-def mypage_sellProducts (request:HttpRequest):
+def mypage (request:HttpRequest):
     user_idx = request.session['login']
 
     member = Members.objects.get(members_idx=user_idx)

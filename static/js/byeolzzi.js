@@ -70,7 +70,20 @@ function send_message(){
             console.log("answercontents:" + answercontents)
             console.log("NER:" + response.NER)
             console.log("NerList : ", response.NerList)
-            
+            // console.log("answercontents.length > 0 : ", answercontents.length > 0)
+
+            if (intentname == null){
+                console.log("여행지 추천 결과값 출력 들어옴")
+                for (var i = 0; i < answercontents.length; i++){
+                    botcontents = `<div style='margin:15px 0;text-align:left;'>
+                    <span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>`
+                    + answercontents[i][0] + ' ' + answercontents[i][1] + `</span>
+                    <button>담기</button>
+                    </div>`;
+                    $chatbody.append(botcontents);
+                }
+            }
+
             if (intentname == '주변검색'){
                 let choicecontents = null
                 for (var i = 0; i < answercontents.length; i++){
@@ -143,10 +156,7 @@ function send_message(){
                 }
                 contents = contents + "</table><br><br><table style='background-color:#DDD;border-radius:3px;font-size:12px;'><tr><td colspan='4'>[하행]</td></tr><tr><th>구간</th><th>거리</th><th>시속</th><th>상태</th></tr>"
     
-                for (i = 0; i < answercontents['down'].length; i++){
-                    // console.log("잘 뽑히니??",answercontents['down'][i]['section'], answercontents['down'][i]['distance'], 
-                    // answercontents['down'][i]['speed'], answercontents['down'][i]['conditions'])
-    
+                for (i = 0; i < answercontents['down'].length; i++){    
                     contents = contents + "<tr>"+
                     "<td>"+ answercontents['down'][i]['section']+"</td>"+
                     "<td>"+ answercontents['down'][i]['distance']+"</td>"+
