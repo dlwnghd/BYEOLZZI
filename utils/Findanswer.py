@@ -155,3 +155,20 @@ class FindAnswer:
         print("tag_to_word answer : ", answer)
 
         return answer
+
+    # 추천 태그 없애기
+    def reco_to_word(self, reconame, answer):
+
+        if reconame == '차' or reconame == '뚜벅이':
+            answer = answer.replace('way', reconame)
+        elif reconame == '봄' or reconame == '여름' or reconame == '가을' or reconame == '겨울':
+            answer = answer.replace('season', reconame)
+        if reconame == '도시' or reconame == '시골':
+            answer = answer.replace('city_nature', reconame)
+        
+        answer = answer.replace('{', '')
+        answer = answer.replace('}', '')
+        
+        print("reco_to_word answer : ", answer)
+
+        return answer

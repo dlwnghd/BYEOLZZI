@@ -156,13 +156,6 @@ def to_client(conn, addr, params):
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
             else:
                 answer_text, answer_contents = f.search(intent_name, ner_tags)
-                
-                # if intent_name =='교통현황':
-                #     answer_text, answer_contents = f.search(intent_name)
-                # elif intent_name =='인사':
-                #     answer_text, answer_contents = f.search(intent_name)
-                # if intent_name== "축제":
-                #     answer_text, answer_contents = f.search(intent_name)
 
                 if intent_name == '교통현황':
                     if len(ner_list) ==1:
@@ -197,6 +190,7 @@ def to_client(conn, addr, params):
             print("END_Answer_text :", answer_text)
             print("END_Answer_contents :", answer_contents)
 
+
             # BIO 태그 개체명으로 변경
             if ner_predicts != None:
                 answer = f.tag_to_word(ner_predicts, answer_text)
@@ -206,6 +200,7 @@ def to_client(conn, addr, params):
 
             # 추천 State 작업
             if State.state != None and State.state != 4:
+                answer = f.reco_to_word(intent_reco_name, answer)
                 State.state += 1
             elif State.state == 4:
                 State.state = None
