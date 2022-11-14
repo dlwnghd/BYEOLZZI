@@ -84,7 +84,9 @@ function send_message(){
                 }
             }
 
-            if (intentname == '주변검색'){
+            if (response.Answer.includes('죄송')){
+                $("#iframe").attr('src', 'basepage?query='+response.Query)
+            }else if (intentname == '주변검색'){
                 let choicecontents = null
                 for (var i = 0; i < answercontents.length; i++){
                     botcontents = "<div style='margin:15px 0;text-align:left;'><span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents[i].title + "</span></div>";

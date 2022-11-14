@@ -18,6 +18,7 @@ from module.Around import Around
 from module.highway_heeji import Highway
 from module.festival import festival
 from module.Weather import Weather_crawl
+from module.FindTag import FindTag
 
 
 # 전처리 객체 생성
@@ -157,34 +158,85 @@ def to_client(conn, addr, params):
             else:
                 answer_text, answer_contents = f.search(intent_name, ner_tags)
 
+
                 if intent_name == '교통현황':
-                    if len(ner_list) ==1:
-                        way = Highway(ner_list[0])
-                        print('희지 교통현황 들어옴')
-                        print('ner_list: ',ner_list)
-                        answer_contents = way.bot_sum()
-                        print('answer_contents: ',answer_contents)
+                    # if len(ner_list) ==1:
+                    if len(ner_list):
+                        if ner_list[0] in FindTag().highway:
+                            way = Highway(ner_list[0])
+                            print('희지 교통현황 들어옴')
+                            print('ner_list: ',ner_list)
+                            answer_contents = way.bot_sum()
+                            print('answer_contents: ',answer_contents)
 
+                        else:
+                            raise Exception('희지오류났어용!!!!!!!!!!!!!!!')
+                    else:
+                        raise Exception('희지오류났어용!!!!!!!!!!!!!!!---1')
+                    
                 elif intent_name == "주변검색":
-                    answer_contents = Around(db).search_around(ner_list[0])
+                    print('ㅠㅠㅠㅠㅠㅠㅠ')
+                    if len(ner_list):
+                        if ner_list[0] in FindTag().location:
+                            print('여기인가요??')
+                            answer_contents = Around(db).search_around(ner_list[0])
+                        else:
+                            raise Exception('희지오류났어용!!!!!!!!!!!!!!!22222222222')
+                    else:
+                        raise Exception('희지오류났어용!!!!!!!!!!!!!!!22222222222-1')
 
-                elif intent_name=="축제":       
-                    print("전범수 :",ner_list[0])
-                    answer_contents=festival(db).fes_sum(ner_list[0])
-                    print('크롤링 :', answer_contents)
-                    try:
-                        met_code=answer_contents[0]['met_code']
-                        loc_code=answer_contents[0]['loc_code']
-                    except:
-                        met_code=None
-                        loc_code=None
-                        answer = answer_contents
-                        print("에러 답변이요 :",answer)
-                        answer_contents = ""
-                        print("열리는 축제 없음")
+                elif intent_name=="축제":     
+                    if len(ner_list):
+                        if ner_list[0] in FindTag().location:  
+                            print("전범수 :",ner_list[0])
+                            answer_contents=festival(db).fes_sum(ner_list[0])
+                            print('크롤링 :', answer_contents)
+                            try:
+                                met_code=answer_contents[0]['met_code']
+                                loc_code=answer_contents[0]['loc_code']
+                            except:
+                                met_code=None
+                                loc_code=None
+                                answer = answer_contents
+                                print("에러 답변이요 :",answer)
+                                answer_contents = ""
+                                print("열리는 축제 없음")
+                        else:
+                            raise Exception('희지오류났어용!!!!!!!!!!!!!!!3333333333')
+                    else:
+                        raise Exception('희지오류났어용!!!!!!!!!!!!!!!3333333333-1')
 
                 elif intent_name=="날씨":
-                    answer_contents = Weather_crawl().weather(ner_list[0])
+                    if len(ner_list):
+                        if ner_list[0] in FindTag().location:
+                            answer_contents = Weather_crawl().weather(ner_list[0])
+                        else:
+                            raise Exception('희지오류났어용!!!!!!!!!!!!!!!4444444444')
+                    else:
+                        raise Exception('희지오류났어용!!!!!!!!!!!!!!!4444444444----1')
+
+                elif intent_name== "여행지정보":
+                    if len(ner_list):
+                        if ner_list[0] in FindTag().location:
+                            pass
+                        else:
+                            raise Exception('희지오류났어용!!!!!!!!!!!!!!!555555555555')
+                    else:
+                        raise Exception('희지오류났어용!!!!!!!!!!!!!!!55555555555----1')
+                
+                elif intent_name=="길찾기":
+                    if 1 <= len(ner_list) and  len(ner_list) <=2 :
+                        if len(ner_list) <=2:
+                            for ner_name in ner_list:
+                                if ner_name in FindTag().location:
+                                    pass
+                                else:
+                                    raise Exception('희지오류났어용!!!!!!!!!!!!!!66666666')
+                    else:
+                        raise Exception('희지오류났어용!!!!!!!!!!!!!!66666666 ----1')
+
+
+
 
                 elif intent_name=="리스트 불러오기":
                     answer_contents = "경기도일듯"

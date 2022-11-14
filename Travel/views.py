@@ -233,3 +233,12 @@ def mylist(request:HttpRequest):
         'my_loca_list' : my_loca_list
     }
     return JsonResponse(context)
+
+def basepage(request):
+    query = request.GET.get("query")
+    
+    context = {
+        "query" : query,
+    }
+
+    return render(request, 'basepage.html', context)

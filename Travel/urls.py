@@ -15,4 +15,5 @@ urlpatterns = [
     path('weathers/', views.weathers),
     path('location_info/', views.location_info),
     path('mylist/', views.mylist),
+    path('basepage/', views.basepage),
 ]
