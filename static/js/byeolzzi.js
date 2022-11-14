@@ -72,18 +72,15 @@ function send_message(){
             console.log("NerList : ", response.NerList)
             // console.log("answercontents.length > 0 : ", answercontents.length > 0)
 
-            if (!(answercontents == null)){
-                console.log("null인데 여기 들어오면 진짜 화낼거임");
-                if (intentname == null){
-                    console.log("여행지 추천 결과값 출력 들어옴")
-                    for (var i = 0; i < answercontents.length; i++){
-                        botcontents = `<div style='margin:15px 0;text-align:left;'>
-                        <span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>`
-                        + answercontents[i][0] + ' ' + answercontents[i][1] + `</span>
-                        <button>담기</button>
-                        </div>`;
-                        $chatbody.append(botcontents);
-                    }
+            if (intentname == null){
+                console.log("여행지 추천 결과값 출력 들어옴")
+                for (var i = 0; i < answercontents.length; i++){
+                    botcontents = `<div style='margin:15px 0;text-align:left;'>
+                    <span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>`
+                    + answercontents[i][0] + ' ' + answercontents[i][1] + `</span>
+                    <button>담기</button>
+                    </div>`;
+                    $chatbody.append(botcontents);
                 }
             }
 
