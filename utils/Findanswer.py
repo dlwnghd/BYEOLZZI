@@ -30,10 +30,11 @@ class FindAnswer:
 
     # 답변 검색
     def search(self, intent_name=None, ner_tags=None):
+        print("search까지 들어왔따")
         # 의도명, 개체명으로 답변 검색
         sql = self._make_query(intent_1=intent_name, ner_tags=ner_tags)
         answer = self.db.select_one(sql)
-
+        print("답변 테이블 :", answer)
         print("❤intent_name:", intent_name)
         print("🧡ner_tags:", ner_tags)
         print("💛sql:", sql)
@@ -100,6 +101,7 @@ class FindAnswer:
 
         # 도움말, 리스트뽑기, 리스트 삭제
         elif intent_1 != None and intent_2 == None and ner_tags == None:
+            print('make_query:', intent_1)
             sql = sql + " where intent_1='{}' ".format(intent_1)
             print("_make_query sql:", sql)
 

@@ -256,6 +256,9 @@ function send_message(){
                         $iframe.attr("src", "/weathers?data=" + response.weather); // iframe의 src를 변경
                     }
                 });
+            }else if(intentname =="도움말" || intentname=='기타'){
+                botcontents = "<div style='margin:15px 0;text-align:left; font-size: 12px;'><div class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents + "</div></div>";
+                $chatbody.append(botcontents);
             }
             else if(response.Intent == '여행지정보') location_info_ajax(response.NerList[0]);   // 여행지 함수
 
