@@ -257,7 +257,53 @@ function send_message(){
                     }
                 });
             }
-            else if(response.Intent == '여행지정보') location_info_ajax(response.NerList[0]);   // 여행지 함수
+            else if(response.Intent == '여행지정보'){location_info_ajax(response.NerList[0]);   // 여행지 함수
+            }
+            else if (response.Intent == '리스트 불러오기'){
+                
+                $.ajax({
+                    url:'mylist',
+                    type:'get',
+                    success: function(response, data){
+                        console.log("💙response : ",response)
+                        console.log("💜data : ",data)
+                        console.log("드디어 여기까지")
+                        
+                        li_full=""
+                        test = response.my_loca_list;
+
+                        // var obj = {
+                        //   a: 1,
+                        //   b: 2,
+                        //   c: 3,
+                        // };
+
+                        // for (var prop in obj) {
+                        //   console.log(prop, obj[prop]); // a 1, b 2, c 3
+                        // }
+
+                        for(var prop in test){
+                            console.log(test[prop].location_list);
+                            let table = `
+                                <tr>
+                                    <td>
+                                        여행지명 : 
+                                    </td>
+                                    <td>
+                                        `+test[prop].location_list+`
+                                    </td>
+                                </tr>
+                            `
+                            li_full=li_full+table
+                            }
+                
+                            fes_add="<table align='center' style='background-color:#DDD;border-radius:3px; font-size:12px;'><tr></tr>"+li_full+"</table>"
+                            botcontents = "<div style='margin:15px 0;text-align:left;'>" + fes_add + "</div>";
+                            $chatbody.append(botcontents);
+                            console.log("여기까지 왔소33")
+                            console.log('여기까지 왔소주홍주홍')
+                    }});
+            }
 
             // 스크롤 조정하기
             $chatbody.animate({scrollTop: $chatbody.prop('scrollHeight')});

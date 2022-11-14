@@ -193,6 +193,9 @@ def to_client(conn, addr, params):
                 elif intent_name=="날씨":
                     answer_contents = Weather_crawl().weather(ner_list[0])
 
+                elif intent_name=="리스트 불러오기":
+                    answer_contents = "경기도일듯"
+
             # 최종 결과 확인
             print("END_Answer_text :", answer_text)
             print("END_Answer_contents :", answer_contents)
