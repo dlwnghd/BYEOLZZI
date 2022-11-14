@@ -165,8 +165,3 @@ class FindAnswer:
     def call_list(self, intent_1=None, intent_2=None, ner_tags=None):
         sql = "select * from member_location where m_idx = 1;"
         return sql
-
-    # 리스트 삭제하기 쿼리문 생성
-    def call_delete(self, intent_1=None, intent_2=None, ner_tags=None):
-        sql = "DELETE FROM member_location WHERE m_idx = 1 AND location_list = '경기도';"
-        return sql

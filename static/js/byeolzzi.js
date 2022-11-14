@@ -305,6 +305,19 @@ function send_message(){
                     }});
             }
 
+            else if (response.Intent == '리스트 항목 삭제'){
+                
+                $.ajax({
+                    url:'delete_list',
+                    type:'get',
+                    data: {"Ner":response.NerList[0]},
+                    dataType: "json",
+                    success: function(response, data){
+
+
+                    }});
+            }
+
             // 스크롤 조정하기
             $chatbody.animate({scrollTop: $chatbody.prop('scrollHeight')});
 
