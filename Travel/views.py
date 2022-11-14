@@ -9,6 +9,8 @@ from module.festival import fes_info
 from module.Weather import Weather_crawl
 from module.Location_info import LocationInfo
 
+from BYEOLZZI.models import MemberLocation
+
 
 # Create your views here.
 def index(request):
@@ -212,3 +214,22 @@ def location_info(request):         # 여행지정보용 함수
     context = location.crawlingNaver(url)   # 크롤링 하는애   
 
     return render(request, 'location_info.html', context)   # iframe 으로 context에 담아서 보냄
+
+# 리스트 불러오기
+def mylist(request:HttpRequest):
+    user_idx = request.session['login']
+
+    my_loca_list = {}
+
+    ml_list = MemberLocation.objects.filter(m_idx = user_idx).values("ml_idx","m_idx","location_list")
+
+    print("💚💚ml_list : ",ml_list)
+
+    for i, dic in enumerate(ml_list):
+        my_loca_list[i] = dic
+    print(my_loca_list)
+
+    context = {
+        'my_loca_list' : my_loca_list
+    }
+    return JsonResponse(context)
