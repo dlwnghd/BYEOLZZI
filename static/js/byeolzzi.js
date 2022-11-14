@@ -282,20 +282,9 @@ function send_message(){
                     success: function(response, data){
                         console.log("💙response : ",response)
                         console.log("💜data : ",data)
-                        console.log("드디어 여기까지")
                         
                         li_full=""
                         test = response.my_loca_list;
-
-                        // var obj = {
-                        //   a: 1,
-                        //   b: 2,
-                        //   c: 3,
-                        // };
-
-                        // for (var prop in obj) {
-                        //   console.log(prop, obj[prop]); // a 1, b 2, c 3
-                        // }
 
                         for(var prop in test){
                             console.log(test[prop].location_list);
