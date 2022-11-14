@@ -8,6 +8,7 @@ from module.highway_heeji import Highway
 from module.festival import fes_info
 from module.Weather import Weather_crawl
 from module.Location_info import LocationInfo
+from Member.views import join
 
 from BYEOLZZI.models import MemberLocation
 
@@ -217,7 +218,13 @@ def location_info(request):         # 여행지정보용 함수
 
 # 리스트 불러오기
 def mylist(request:HttpRequest):
-    user_idx = request.session['login']
+
+    try:
+        user_idx = request.session['login']
+        print("💚💚💚login:",user_idx)
+    except:
+        print("로그인이 안되어있어!")
+        return render(request,'join.html')
 
     my_loca_list = {}
 
