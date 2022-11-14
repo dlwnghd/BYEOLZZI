@@ -72,19 +72,23 @@ function send_message(){
             console.log("NerList : ", response.NerList)
             // console.log("answercontents.length > 0 : ", answercontents.length > 0)
 
-            if (intentname == null){
-                console.log("여행지 추천 결과값 출력 들어옴")
-                for (var i = 0; i < answercontents.length; i++){
-                    botcontents = `<div style='margin:15px 0;text-align:left;'>
-                    <span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>`
-                    + answercontents[i][0] + ' ' + answercontents[i][1] + `</span>
-                    <button>담기</button>
-                    </div>`;
-                    $chatbody.append(botcontents);
+            if (!(answercontents == null) && answercontents != "") {
+                if (intentname == null){
+                    console.log("여행지 추천 결과값 출력 들어옴")
+                    for (var i = 0; i < answercontents.length; i++){
+                        botcontents = `<div style='margin:15px 0;text-align:left;'>
+                        <span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>`
+                        + answercontents[i][0] + ' ' + answercontents[i][1] + `</span>
+                        <button>담기</button>
+                        </div>`;
+                        $chatbody.append(botcontents);
+                    }
                 }
             }
 
-            if (intentname == '주변검색'){
+            if (response.Answer.includes('죄송')){
+                $("#iframe").attr('src', 'basepage?query='+response.Query)
+            }else if (intentname == '주변검색'){
                 let choicecontents = null
                 for (var i = 0; i < answercontents.length; i++){
                     botcontents = "<div style='margin:15px 0;text-align:left;'><span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents[i].title + "</span></div>";
@@ -267,7 +271,58 @@ function send_message(){
                     }
                 });
             }
-            else if(response.Intent == '여행지정보') location_info_ajax(response.NerList[0]);   // 여행지 함수
+            else if(response.Intent == '여행지정보'){
+                location_info_ajax(response.NerList[0]);   // 여행지 함수
+            }
+            else if(intentname =="도움말" || intentname=='기타'){
+                botcontents = "<div style='margin:15px 0;text-align:left; font-size: 12px;'><div class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents + "</div></div>";
+                $chatbody.append(botcontents);
+            }
+            else if (response.Intent == '리스트 불러오기'){
+                
+                $.ajax({
+                    url:'mylist',
+                    type:'get',
+                    success: function(response, data){
+                        console.log("💙response : ",response)
+                        console.log("💜data : ",data)
+                        console.log("드디어 여기까지")
+                        
+                        li_full=""
+                        test = response.my_loca_list;
+
+                        // var obj = {
+                        //   a: 1,
+                        //   b: 2,
+                        //   c: 3,
+                        // };
+
+                        // for (var prop in obj) {
+                        //   console.log(prop, obj[prop]); // a 1, b 2, c 3
+                        // }
+
+                        for(var prop in test){
+                            console.log(test[prop].location_list);
+                            let table = `
+                                <tr>
+                                    <td>
+                                        여행지명 : 
+                                    </td>
+                                    <td>
+                                        `+test[prop].location_list+`
+                                    </td>
+                                </tr>
+                            `
+                            li_full=li_full+table
+                            }
+                
+                            fes_add="<table align='center' style='background-color:#DDD;border-radius:3px; font-size:12px;'><tr></tr>"+li_full+"</table>"
+                            botcontents = "<div style='margin:15px 0;text-align:left;'>" + fes_add + "</div>";
+                            $chatbody.append(botcontents);
+                            console.log("여기까지 왔소33")
+                            console.log('여기까지 왔소주홍주홍')
+                    }});
+            }
 
             // 스크롤 조정하기
             $chatbody.animate({scrollTop: $chatbody.prop('scrollHeight')});
