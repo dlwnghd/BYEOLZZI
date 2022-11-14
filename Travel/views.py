@@ -212,3 +212,13 @@ def location_info(request):         # 여행지정보용 함수
     context = location.crawlingNaver(url)   # 크롤링 하는애   
 
     return render(request, 'location_info.html', context)   # iframe 으로 context에 담아서 보냄
+
+
+def basepage(request):
+    query = request.GET.get("query")
+    
+    context = {
+        "query" : query,
+    }
+
+    return render(request, 'basepage.html', context)
