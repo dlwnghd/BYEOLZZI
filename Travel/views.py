@@ -241,6 +241,22 @@ def mylist(request:HttpRequest):
     }
     return JsonResponse(context)
 
+def delete_list(request:HttpRequest):
+    try:
+        ner = request.GET.get('Ner')
+        
+        user_idx = request.session['login']
+        delete_obj = MemberLocation.objects.get(m_idx = user_idx, location_list = ner)
+        delete_obj.delete()
+        context = {
+            'success' : 'ok'
+        }
+    except:
+        context = {
+            'success' : 'no'
+        }
+    return JsonResponse(context)
+
 def basepage(request):
     query = request.GET.get("query")
     
