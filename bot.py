@@ -235,9 +235,6 @@ def to_client(conn, addr, params):
                     else:
                         raise Exception('희지오류났어용!!!!!!!!!!!!!!66666666 ----1')
 
-
-
-
                 elif intent_name=="리스트 불러오기":
                     answer_contents = "경기도일듯"
 
