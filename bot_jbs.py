@@ -1,12 +1,3 @@
-'''
-thread : 쓰레드
-리퀘스트가 들어오면 별도의 쓰레드를 활용한다
-
-# 파이썬은 원래 기본적으로 한번에 하나의 쓰레드밖에 실행 못한다
-# 'threading 모듈'을 통해 (내부적으로) 코드를 interleaving 방식으로 분할 실행함으로
-# 멀티 쓰레딩 비슷(?)하게 동작시킨다.
-
-'''
 import threading
 import json
 
@@ -23,17 +14,34 @@ from models.intent.IntentModel_activity import IntentModel_Activity
 from models.ner.NerModel import NerModel
 from utils.Findanswer import FindAnswer
 
+from module.Around import Around
+from module.highway_heeji import Highway
+from module.festival import festival
+from module.Weather import Weather_crawl
+from module.help import help
+
+
 # 전처리 객체 생성
-p_full = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_full.bin',
-               userdic='utils/user_dic.tsv')    # IntentModel.py 에서 form tensorflow.keras import preprocessing 한애 안에 담아줘야하는 애들인듯.
-p_car_walk = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_car_walk.bin',
-               userdic='utils/user_dic.tsv')
-p_season = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_season.bin',
-               userdic='utils/user_dic.tsv')
-p_city = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_city.bin',
-               userdic='utils/user_dic.tsv')
-p_activity = Preprocess(word2index_dic='train_tools/dict/chatbot_dict_activity.bin',
-               userdic='utils/user_dic.tsv')
+p_full = Preprocess(
+    word2index_dic = 'train_tools/dict/chatbot_dict_full.bin',
+    userdic = 'utils/user_dic.tsv'
+)
+p_car_walk = Preprocess(
+    word2index_dic = 'train_tools/dict/chatbot_dict_car_walk.bin',
+    userdic = 'utils/user_dic.tsv'
+)
+p_season = Preprocess(
+    word2index_dic = 'train_tools/dict/chatbot_dict_season.bin',
+    userdic = 'utils/user_dic.tsv'
+)
+p_city = Preprocess(
+    word2index_dic = 'train_tools/dict/chatbot_dict_city.bin',
+    userdic = 'utils/user_dic.tsv'
+)
+p_activity = Preprocess(
+    word2index_dic = 'train_tools/dict/chatbot_dict_activity.bin',
+    userdic = 'utils/user_dic.tsv'
+)
 
 # 의도 파악 모델 (1)
 intent = IntentModel(model_name='models/intent/intent_model_test_full.h5', preprocess=p_full)
@@ -63,7 +71,11 @@ def to_client(conn, addr, params):
         intent_reco = None
         intent_reco_name = None
         ner_predicts = None
-        print("Start_State.state:", State.state)        # 유저의 질문상태? 등 저장하기위해 만든 클레스
+        ner_tags=None
+        met_code=None
+        loc_code=None
+        ner_list = []
+        print("Start_State.state:", State.state)
 
         # 데이터 수신
         read = conn.recv(2048)   # 수신 데이터가 있을 때까지 블로킹(대기) / 최대 2048 버퍼에 담음
@@ -94,51 +106,46 @@ def to_client(conn, addr, params):
 
         # 의도 파악
         if State.state == None:
-            intent_predict = intent.predict_class(query)    # intent = 의도_1 파악 모델
-                                                            # predict_class = 의도 클래스 예측 함수 // 리턴 : 의도 라벨 번호
-            intent_name = intent.labels[intent_predict]     # intent 안에 있는 labels 딕셔너리에 키값(라벨번호)를 넣으면 벨류값(라벨)이 나옴
+            intent_predict = intent.predict_class(query)
+            intent_name = intent.labels[intent_predict]
+            print("의도분류 이름 :",intent_name)
 
-            if intent_name == '추천':       # 라벨이 추천이면
+            if intent_name == '추천':
                 print("추천 의도 들어옴")
-                State.state = 0             # state 에 현재상태를 0으로 바꿔줌.
+                State.state = 0
 
-        if State.state == 0:                                        # 현재상태가 0이면 어떤질문을 할지.
+        if State.state == 0:
             pass
 
-        elif State.state == 1:                                      # 현재상태가 1이면 어떤질문을 할지.
+        elif State.state == 1:
             intent_reco = intent_car_walk.predict_class(query)
             intent_reco_name = intent_car_walk.labels[intent_reco]
             State.q = str(intent_reco)
 
-        elif State.state == 2:                                      # 현재상태가 2이면 어떤질문을 할지.
+        elif State.state == 2:
             intent_reco = intent_season.predict_class(query)
             intent_reco_name = intent_season.labels[intent_reco]
             State.q += str(intent_reco)
 
-        elif State.state == 3:                                      # 현재상태가 3이면 어떤질문을 할지.
+        elif State.state == 3:
             intent_reco = intent_city.predict_class(query)
             intent_reco_name = intent_city.labels[intent_reco]
             State.q += str(intent_reco)
 
-        elif State.state == 4:                                      # 현재상태가 4이면 어떤질문을 할지.
+        elif State.state == 4:
             intent_reco = intent_activity.predict_class(query)
             intent_reco_name = intent_activity.labels[intent_reco]
             State.q += str(intent_reco)
 
-
         # 개체명 파악
-        if State.state == None:                                     # 현재상태가 None이면 개체명 분류.
-            ner_list = []                       # 결과 담을 리스트
-            ner_predicts = ner.predict(query)   # ner = 개체명 인식 모델 ( NerModel.py )
-                                                # predict 함수 안에는 from tensorflow.keras import preprocessing 를 활용
+        if State.state == None and intent_name!="도움말" and intent_name!="기타":            
+            ner_predicts = ner.predict(query)
             ner_tags = ner.predict_tags(query)
-            for ne in ner_predicts:             # list안에 키,벨류 쌍으로 담겨있는 개체를 꺼냄
-                if ne[1] != 'O':                # [0] = 키, [1] = 밸류 // 밸류 형태가 'O'가 아니면 
-                                                # {1: 'O', 2: 'B_location', 3: 'B_highway', 0: 'PAD'}
-                                                # 이중에 O 말고 다른값이 담겨있으면
-                    ner_list.append(ne[0])      # 그 키값 [0] 을 list 에 순차적으로 담음.
+            for ne in ner_predicts:
+                if ne[1] != 'O':
+                    ner_list.append(ne[0])
 
-
+        
         # 답변 검색
         try:
             print("FindAnswer 시작")
@@ -146,31 +153,76 @@ def to_client(conn, addr, params):
             print("intent_reco:", intent_reco)
             print("intent_reco_name:", intent_reco_name)
             print("State.state:", State.state)
-            f = FindAnswer(db)          # FindAnswer.py 안에서 Botserver.py 저수준 네트워크 소켓 생성가능.
-            if State.state != None:     # 의도분류가 추천이면 state 값이 존재함.
+            f = FindAnswer(db)
+            if State.state != None:
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
-            else:                       # 의도분류가 추천이 아니면 객체분류?
+            else:
                 answer_text, answer_contents = f.search(intent_name, ner_tags)
+                print("답변 :",answer_text)
+                
+                # if intent_name =='교통현황':
+                #     answer_text, answer_contents = f.search(intent_name)
+                # elif intent_name =='인사':
+                #     answer_text, answer_contents = f.search(intent_name)
+                # if intent_name== "축제":
+                #     answer_text, answer_contents = f.search(intent_name)
 
+                if intent_name == '교통현황':
+                    if len(ner_list) ==1:
+                        way = Highway(ner_list[0])
+                        print('희지 교통현황 들어옴')
+                        print('ner_list: ',ner_list)
+                        answer_contents = way.bot_sum()
+                        print('answer_contents: ',answer_contents)
+
+                elif intent_name == "주변검색":
+                    answer_contents = Around(db).search_around(ner_list[0])
+
+                elif intent_name=="축제":       
+                    print("전범수 :",ner_list[0])
+                    answer_contents=festival(db).fes_sum(ner_list[0])
+                    print('크롤링 :', answer_contents)
+                    try:
+                        met_code=answer_contents[0]['met_code']
+                        loc_code=answer_contents[0]['loc_code']
+                    except:
+                        met_code=None
+                        loc_code=None
+                        answer = answer_contents
+                        print("에러 답변이요 :",answer)
+                        answer_contents = ""
+                        print("열리는 축제 없음")
+
+                elif intent_name=="날씨":
+                    answer_contents = Weather_crawl().weather(ner_list[0])
+
+                elif intent_name=="도움말" or intent_name=='기타':
+                    answer_contents = help.help_comment
+            # 최종 결과 확인
             print("END_Answer_text :", answer_text)
             print("END_Answer_contents :", answer_contents)
+
+            # BIO 태그 개체명으로 변경
             if ner_predicts != None:
                 answer = f.tag_to_word(ner_predicts, answer_text)
             else:
                 answer = answer_text
             print(type(answer))
 
-            if State.state != None and State.state != 4:        # 추천 상태를 1씩 올려줌.
+            # 추천 State 작업
+            if State.state != None and State.state != 4:
                 State.state += 1
             elif State.state == 4:
                 State.state = None
                 State.q = None
+
+        # 의도분류 인식 오류
         except Exception as e:
             print(e)
             answer = "죄송해요 무슨 말인지 모르겠어요. 조금 더 공부 할게요."
             answer_contents = None
-
-        # 클라이언트 한테 되돌려줄 데이터들 담음.
+        print("answer_contents(전송전) :", answer_contents)
+        # WEB Client 전송 데이터 (JSON)
         sent_json_data_str = {    # response 할 JSON 데이터를 준비할 겁니다~
             "Query" : query,
             "Answer": answer,
@@ -178,14 +230,19 @@ def to_client(conn, addr, params):
             "Intent": intent_name,
             "IntentReco" : intent_reco_name,
             "NER": str(ner_predicts),
-            "NerList" : ner_list
+            "NerList" : ner_list,
+            "met_code" : met_code,
+            "loc_code" : loc_code
         }
 
+        # JSON 변환 및 출력 확인
         message = json.dumps(sent_json_data_str)
         print("=++++++++++++++++++")
         print("message type:",type(message))
         print(message)
         print("=++++++++++++++++++")
+        
+        # 데이터 전송
         conn.send(message.encode())    # resoponse 
 
 
@@ -212,8 +269,8 @@ if __name__ == '__main__':
     listen = 100    # 최대 클라이언트 연결수
 
     # 봇 서버 동작
-    bot = BotServer(port, listen)   # 저수준 네트워킹 인터페이스 API // 소켓
-    bot.create_sock()               # 소켓 생성
+    bot = BotServer(port, listen)
+    bot.create_sock()
     print('bot start')
 
     while True:
@@ -227,5 +284,8 @@ if __name__ == '__main__':
         # 요청이 올때마다 쓰레드 하나 보내고, 또들어오면 또보내고 또보내고.....While True (무한 루트)
         client = threading.Thread(target=to_client, args=(conn, addr, params))   # to_client로 저변수들이 넘어간다~
         client.start()     # 쓰레드 시작
+
+
+
 
 

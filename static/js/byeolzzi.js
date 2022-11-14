@@ -70,8 +70,23 @@ function send_message(){
             console.log("answercontents:" + answercontents)
             console.log("NER:" + response.NER)
             console.log("NerList : ", response.NerList)
-            
-            if (intentname == '주변검색'){
+            // console.log("answercontents.length > 0 : ", answercontents.length > 0)
+
+            if (intentname == null){
+                console.log("여행지 추천 결과값 출력 들어옴")
+                for (var i = 0; i < answercontents.length; i++){
+                    botcontents = `<div style='margin:15px 0;text-align:left;'>
+                    <span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>`
+                    + answercontents[i][0] + ' ' + answercontents[i][1] + `</span>
+                    <button>담기</button>
+                    </div>`;
+                    $chatbody.append(botcontents);
+                }
+            }
+
+            if (response.Answer.includes('죄송')){
+                $("#iframe").attr('src', 'basepage?query='+response.Query)
+            }else if (intentname == '주변검색'){
                 let choicecontents = null
                 for (var i = 0; i < answercontents.length; i++){
                     botcontents = "<div style='margin:15px 0;text-align:left;'><span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents[i].title + "</span></div>";
@@ -143,10 +158,7 @@ function send_message(){
                 }
                 contents = contents + "</table><br><br><table style='background-color:#DDD;border-radius:3px;font-size:12px;'><tr><td colspan='4'>[하행]</td></tr><tr><th>구간</th><th>거리</th><th>시속</th><th>상태</th></tr>"
     
-                for (i = 0; i < answercontents['down'].length; i++){
-                    // console.log("잘 뽑히니??",answercontents['down'][i]['section'], answercontents['down'][i]['distance'], 
-                    // answercontents['down'][i]['speed'], answercontents['down'][i]['conditions'])
-    
+                for (i = 0; i < answercontents['down'].length; i++){    
                     contents = contents + "<tr>"+
                     "<td>"+ answercontents['down'][i]['section']+"</td>"+
                     "<td>"+ answercontents['down'][i]['distance']+"</td>"+
@@ -256,6 +268,9 @@ function send_message(){
                         $iframe.attr("src", "/weathers?data=" + response.weather); // iframe의 src를 변경
                     }
                 });
+            }else if(intentname =="도움말" || intentname=='기타'){
+                botcontents = "<div style='margin:15px 0;text-align:left; font-size: 12px;'><div class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents + "</div></div>";
+                $chatbody.append(botcontents);
             }
             else if(response.Intent == '여행지정보'){location_info_ajax(response.NerList[0]);   // 여행지 함수
             }
@@ -267,20 +282,9 @@ function send_message(){
                     success: function(response, data){
                         console.log("💙response : ",response)
                         console.log("💜data : ",data)
-                        console.log("드디어 여기까지")
                         
                         li_full=""
                         test = response.my_loca_list;
-
-                        // var obj = {
-                        //   a: 1,
-                        //   b: 2,
-                        //   c: 3,
-                        // };
-
-                        // for (var prop in obj) {
-                        //   console.log(prop, obj[prop]); // a 1, b 2, c 3
-                        // }
 
                         for(var prop in test){
                             console.log(test[prop].location_list);
