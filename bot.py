@@ -13,12 +13,16 @@ from models.intent.IntentModel_city import IntentModel_City
 from models.intent.IntentModel_activity import IntentModel_Activity
 from models.ner.NerModel import NerModel
 from utils.Findanswer import FindAnswer
+from utils.Findlocation import Findlocation
+
+from django.http import HttpRequest
 
 from module.Around import Around
 from module.highway_heeji import Highway
 from module.festival import festival
 from module.Weather import Weather_crawl
 from module.FindTag import FindTag
+from config.help import help
 
 
 # 전처리 객체 생성
@@ -90,6 +94,8 @@ def to_client(conn, addr, params):
         recv_json_data = json.loads(read.decode())   #파이썬객체로만들어주는 작업
         print("데이터 수신 : ", recv_json_data)
         query = recv_json_data['Query']    # 클라이언트로부터 전송된 질의어
+        recv_location = recv_json_data['User_Location']    # 클라이언트로부터 전송된 질의어
+        print("recv_location:", recv_location)
 
 
         #=================================
@@ -100,8 +106,14 @@ def to_client(conn, addr, params):
         # The encoding with which to decode the bytes.
         #=================================
 
+        if recv_location != None:
+            State.user_location = recv_location
+            print("State.user_location:", State.user_location)
+        # user_idx = request.session['login']
 
-        # 파이썬으로 지금 클라이언트의 질의어를 받앗다? 그러면~
+        # # 유저 DB에 저장된 location 불러오기
+        # fl = Findlocation(db)
+        # State.user_location = fl.select_location(user_idx)
 
         # 의도 파악
         if State.state == None:
@@ -137,13 +149,41 @@ def to_client(conn, addr, params):
 
 
         # 개체명 파악
-        if State.state == None:            
+        if State.state == None:
             ner_predicts = ner.predict(query)
+            print("ner_predicts:", ner_predicts)
             ner_tags = ner.predict_tags(query)
             for ne in ner_predicts:
                 if ne[1] != 'O':
                     ner_list.append(ne[0])
 
+            if intent_name == "길찾기":
+                # count = 0
+                fw_list = []
+                for loc in ner_list:
+                    # 몇개 들어왔니?
+                    if loc in FindTag().location:
+                        # count+=1
+                        fw_list.append(loc)
+                if len(fw_list) == 1:       # 여행지 변수가 있다는 얘기
+                    fw_list.append(State.user_location)
+                    ner_list = fw_list
+                    ner_predicts = [ner_predicts[0], (State.user_location, 'B_location')]
+                    ner_tags.append("B_location")
+                    print("ner_predicts : ", ner_predicts)
+                    print("ner_list:" , ner_list)
+
+                    
+            elif len(ner_list) and ner_list[0] in FindTag().location:
+                pass
+            elif intent_name in ["교통현황", "리스트 불러오기", "인사", "도움말", "챗봇종료", "기타"]:
+                pass
+                    
+            else:
+                ner_predicts = [(State.user_location, 'B_location')]
+                ner_tags = ['B_location']
+                ner_list.append(State.user_location)
+                
 
         # 답변 검색
         try:
@@ -152,6 +192,7 @@ def to_client(conn, addr, params):
             print("intent_reco:", intent_reco)
             print("intent_reco_name:", intent_reco_name)
             print("State.state:", State.state)
+
             f = FindAnswer(db)
             if State.state != None:
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
@@ -177,6 +218,8 @@ def to_client(conn, addr, params):
                 elif intent_name == "주변검색":
                     print('ㅠㅠㅠㅠㅠㅠㅠ')
                     if len(ner_list):
+                        print("주변검색_ner_list:", ner_list)
+                        print("주변검색_ner_list[0]:", ner_list[0])
                         if ner_list[0] in FindTag().location:
                             print('여기인가요??')
                             answer_contents = Around(db).search_around(ner_list[0])
@@ -187,6 +230,8 @@ def to_client(conn, addr, params):
 
                 elif intent_name=="축제":     
                     if len(ner_list):
+                        print("축제_ner_list:", ner_list)
+                        print("축제_ner_list[0]:", ner_list[0])
                         if ner_list[0] in FindTag().location:  
                             print("전범수 :",ner_list[0])
                             answer_contents=festival(db).fes_sum(ner_list[0])
@@ -235,6 +280,9 @@ def to_client(conn, addr, params):
                     else:
                         raise Exception('희지오류났어용!!!!!!!!!!!!!!66666666 ----1')
 
+                elif intent_name=="도움말" or intent_name=='기타':
+                    answer_contents = help.help_comment
+
                 elif intent_name=="리스트 불러오기":
                     pass
 
@@ -245,6 +293,7 @@ def to_client(conn, addr, params):
 
             # BIO 태그 개체명으로 변경
             if ner_predicts != None:
+                print("여기임?")
                 answer = f.tag_to_word(ner_predicts, answer_text)
             else:
                 answer = answer_text
@@ -272,6 +321,7 @@ def to_client(conn, addr, params):
             "Intent": intent_name,
             "IntentReco" : intent_reco_name,
             "NER": str(ner_predicts),
+            "NerTags": ner_tags,
             "NerList" : ner_list,
             "met_code" : met_code,
             "loc_code" : loc_code
@@ -295,7 +345,6 @@ def to_client(conn, addr, params):
         if db is not None:
             db.close()
         conn.close()        # 응답이 끝나면 클라이언트와의 연결(클라이언트 소켓) 도 close 해야 한다.
-
 
 if __name__ == '__main__':
 

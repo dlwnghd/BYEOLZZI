@@ -3,15 +3,15 @@ import json
 from django.shortcuts import render
 from django.http import HttpRequest, JsonResponse
 
+from config.State import State
+from BYEOLZZI.models import Members, MemberLocation
+from Member.views import join
+
 from module.Findway import Findway
 from module.highway_heeji import Highway
 from module.festival import fes_info
 from module.Weather import Weather_crawl
 from module.Location_info import LocationInfo
-from Member.views import join
-
-from BYEOLZZI.models import MemberLocation
-
 
 # Create your views here.
 def index(request):
@@ -218,6 +218,7 @@ def location_info(request):         # 여행지정보용 함수
 
 # 리스트 불러오기
 def mylist(request:HttpRequest):
+    print("💚💚💚 여긴 들어오니?")
 
     try:
         user_idx = request.session['login']
@@ -228,7 +229,8 @@ def mylist(request:HttpRequest):
 
     my_loca_list = {}
 
-    ml_list = MemberLocation.objects.filter(m_idx = user_idx).values("ml_idx","m_idx","location_list")
+    member = Members.objects.get(members_idx=user_idx)
+    ml_list = MemberLocation.objects.filter(m_idx = member).values("ml_idx","m_idx","location_list")
 
     print("💚💚ml_list : ",ml_list)
 
@@ -246,7 +248,9 @@ def delete_list(request:HttpRequest):
         ner = request.GET.get('Ner')
         
         user_idx = request.session['login']
-        delete_obj = MemberLocation.objects.get(m_idx = user_idx, location_list = ner)
+
+        member = Members.objects.get(members_idx=user_idx)
+        delete_obj = MemberLocation.objects.get(m_idx = member, location_list = ner)
         delete_obj.delete()
         context = {
             'success' : 'ok'
@@ -263,5 +267,52 @@ def basepage(request):
     context = {
         "query" : query,
     }
-
     return render(request, 'basepage.html', context)
+
+
+def saveLocation (request:HttpRequest):
+    user_idx = request.session['login']
+    save_loca = request.GET.get("data")
+    print("save_loca:", save_loca)
+
+    member = Members.objects.get(members_idx=user_idx)
+
+    member.m_location = save_loca
+
+    Members.save(member)
+
+    context = {
+        "result" : save_loca
+    }
+
+    return JsonResponse(context)
+
+def damgiLocation (request:HttpRequest):
+    user_idx = request.session['login']
+    damgi_loca = request.GET.get("data")
+    print("damgi_loca:", damgi_loca)
+    comment = None
+
+    member = Members.objects.get(members_idx=user_idx)
+    print("member:", member)
+    
+    try:
+        MemberLocation.objects.get(m_idx=member, location_list=damgi_loca)
+        comment = f"{damgi_loca}은(는) 이미 저장된 여행지야! 😥"
+    except Exception as e:
+        print("e:", e)
+        try :
+            MemberLocation.objects.create(
+                m_idx = member,
+                location_list = damgi_loca
+            )
+            comment = f"{damgi_loca} 좋지! 잘 추가됐어 😉"
+        except Exception as ex:
+            print("ex:", ex)
+
+    context = {
+        "result" : damgi_loca,
+        "comment" : comment
+    }
+
+    return JsonResponse(context)

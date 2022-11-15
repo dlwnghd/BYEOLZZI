@@ -57,6 +57,20 @@
 
 			<!-- 왼쪽 결과 창 -->
 			<div id="bg"></div>
+			<div class="result-text">
+				<div class="text-box">
+					<div class="intent"> 의도 : 
+						<span id="intent"></span>
+					</div>
+					<div class="ner-list"> 개체명 :
+						<span id="ner-list"></span>
+					</div>
+					<div class="ner-tag"> 개체명 태그 : 
+						<span id="ner-tag"></span>
+					</div>
+					<!-- <div id="intent"></div> -->
+				</div>
+			</div>
 			<div class="result_container">
 				<iframe class="iframe_area" src="" id='iframe'></iframe>
 			</div>
@@ -65,7 +79,7 @@
 				<div class="chatbot_big_area">
 					<div class="chatheader">
 						<img class="chatbot_img" src="/static/images/byeolzzi_character_img.png"/>
-						<h5 class="chat_bot_titlename">BYEOLZZI BOT</h5>
+						<div class="chat_bot_titlename">별찌봇으로할지 byeolzzibot 으로 할지 이야기해봐야함</div>
 
 					</div>
 					<div id="chatbody"></div>
