@@ -40,8 +40,12 @@ class FindAnswer:
         print("💛sql:", sql)
         print("💚answer:", answer)
 
+        if intent_name == "리스트불러오기":
+            sql = self.call_list(intent_name, None)
+            answer = self.db.select_one(sql)
+
         # 검색되는 답변이 없으면 의도명만 검색
-        if answer is None:
+        elif answer is None:
             sql = self._make_query(intent_name, None)
             answer = self.db.select_one(sql)
 
@@ -104,6 +108,7 @@ class FindAnswer:
             print('make_query:', intent_1)
             sql = sql + " where intent_1='{}' ".format(intent_1)
             print("_make_query sql:", sql)
+            return sql
 
         # intent_name 과 개체명도 주어진 경우
         elif intent_1 != None and ner_tags != None:
@@ -135,11 +140,6 @@ class FindAnswer:
 
     # NER 태그를 실제 입력된 단어로 변환
     def tag_to_word(self, ner_predicts, answer):
-        print("================")
-        print(ner_predicts)
-        print(ner_predicts[1][0])
-        print(answer)
-        print("================")
         loc_list=[]
 
         for word, tag in ner_predicts:
@@ -155,5 +155,33 @@ class FindAnswer:
         answer = answer.replace('}', '')
         
         print("tag_to_word answer : ", answer)
+
+        return answer
+
+    # 리스트 불러오기 쿼리문 생성
+    def call_list(self, intent_1=None, intent_2=None, ner_tags=None):
+        sql = "select * from member_location where m_idx = 1;"
+        return sql
+
+    # 리스트 삭제하기 쿼리문 생성
+    def call_delete(self, intent_1=None, intent_2=None, ner_tags=None):
+        sql = "DELETE FROM member_location WHERE m_idx = 1 AND location_list = '경기도';"
+        return sql
+
+
+    # 추천 태그 없애기
+    def reco_to_word(self, reconame, answer):
+
+        if reconame == '차' or reconame == '뚜벅이':
+            answer = answer.replace('way', reconame)
+        elif reconame == '봄' or reconame == '여름' or reconame == '가을' or reconame == '겨울':
+            answer = answer.replace('season', reconame)
+        if reconame == '도시' or reconame == '시골':
+            answer = answer.replace('city_nature', reconame)
+        
+        answer = answer.replace('{', '')
+        answer = answer.replace('}', '')
+        
+        print("reco_to_word answer : ", answer)
 
         return answer
