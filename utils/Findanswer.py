@@ -30,10 +30,11 @@ class FindAnswer:
 
     # 답변 검색
     def search(self, intent_name=None, ner_tags=None):
+        print("search까지 들어왔따")
         # 의도명, 개체명으로 답변 검색
         sql = self._make_query(intent_1=intent_name, ner_tags=ner_tags)
         answer = self.db.select_one(sql)
-
+        print("답변 테이블 :", answer)
         print("❤intent_name:", intent_name)
         print("🧡ner_tags:", ner_tags)
         print("💛sql:", sql)
@@ -104,6 +105,7 @@ class FindAnswer:
 
         # 도움말, 리스트뽑기, 리스트 삭제
         elif intent_1 != None and intent_2 == None and ner_tags == None:
+            print('make_query:', intent_1)
             sql = sql + " where intent_1='{}' ".format(intent_1)
             print("_make_query sql:", sql)
             return sql
@@ -138,11 +140,6 @@ class FindAnswer:
 
     # NER 태그를 실제 입력된 단어로 변환
     def tag_to_word(self, ner_predicts, answer):
-        print("================")
-        print(ner_predicts)
-        print(ner_predicts[1][0])
-        print(answer)
-        print("================")
         loc_list=[]
 
         for word, tag in ner_predicts:
@@ -170,3 +167,21 @@ class FindAnswer:
     def call_delete(self, intent_1=None, intent_2=None, ner_tags=None):
         sql = "DELETE FROM member_location WHERE m_idx = 1 AND location_list = '경기도';"
         return sql
+
+
+    # 추천 태그 없애기
+    def reco_to_word(self, reconame, answer):
+
+        if reconame == '차' or reconame == '뚜벅이':
+            answer = answer.replace('way', reconame)
+        elif reconame == '봄' or reconame == '여름' or reconame == '가을' or reconame == '겨울':
+            answer = answer.replace('season', reconame)
+        if reconame == '도시' or reconame == '시골':
+            answer = answer.replace('city_nature', reconame)
+        
+        answer = answer.replace('{', '')
+        answer = answer.replace('}', '')
+        
+        print("reco_to_word answer : ", answer)
+
+        return answer
