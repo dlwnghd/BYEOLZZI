@@ -1,6 +1,7 @@
+let user_location = null;
 
 $(document).ready(function(){               // html 화면이 로딩되면 함수 실행
-    
+
     // 챗봇 화면은 처음에 안보이게 해놓는다.
     $("#chatbot").hide();                      // 페이지를 열면 챗봇창 숨기기
 
@@ -45,8 +46,11 @@ function send_message(){
     // API 서버에 보낼 데이터 준비
     const jsonData = {
         query: chattext,
+        user_location : user_location,
         bottype: "WebClient"
     };
+
+    console.log("jsonData:", jsonData)
 
     $.ajax({
         url: 'http://127.0.0.10:5000/query/TEST',
@@ -67,11 +71,82 @@ function send_message(){
             // 답변 출력
             bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + response.Answer + "</span></div>";
             $chatbody.append(bottext);
+
+            $("#intent").text(response.Intent)
+            $("#ner-list").text(response.NerList)
+            $("#ner-tag").text(response.NerTags)
+
             console.log("answercontents:" + answercontents)
             console.log("NER:" + response.NER)
             console.log("NerList : ", response.NerList)
-            
-            if (intentname == '주변검색'){
+            // console.log("answercontents.length > 0 : ", answercontents.length > 0)
+
+            if (answercontents != null && answercontents != ""){
+                if (intentname == null){
+                    console.log("여행지 추천 결과값 출력 들어옴")
+                    for (var i = 0; i < answercontents.length; i++){
+                        botcontents = `<div style='margin:15px 0;text-align:left;'>
+                        <span class='reco_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>`
+                        + answercontents[i][0] + ' ' + answercontents[i][1] + `</span>
+                        <button class='damgi'>담기</button>
+                        </div>`;
+                        $chatbody.append(botcontents);
+                    }
+    
+                    $(".reco_contents").click(function(){
+                        let reco_name = $(this).text();
+                        reco_name = reco_name.split(' ');
+                        console.log("reco_name:", reco_name);
+                        location_info_crawling(reco_name[1]);
+    
+                        $.ajax({
+                            url: 'save_location',
+                            type: "GET",
+                            data: {
+                                'data': reco_name[1]
+                            },
+                            dataType: "JSON",  // 응답받을 데이터 타입
+                            contentType: "application/json; charset=utf-8", //postman 에서 header 지정해준 그것
+                            crossDomain: true,
+                            success: function(response){
+                                user_location = response.result
+                                console.log("여행지 저장 성공했음!")
+                                console.log("user_location:", user_location)
+                            }
+                        });
+                    });
+
+                    $(".damgi").click(function(){
+                        let reco_loca = $(this).siblings("span").text()
+                        console.log(reco_loca)
+                        reco_loca = reco_loca.split(' ');
+                        console.log("reco_loca:", reco_loca);
+                        $.ajax({
+                            url: 'damgi_location',
+                            type: "GET",
+                            data: {
+                                'data': reco_loca[1]
+                            },
+                            dataType: "JSON",  // 응답받을 데이터 타입
+                            contentType: "application/json; charset=utf-8", //postman 에서 header 지정해준 그것
+                            crossDomain: true,
+                            success: function(response){
+                                console.log("DB 저장 성공했음!")
+                                console.log("damgi_location:", response.result)
+                                console.log("comment:", response.comment)
+
+                                bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + response.comment + "</span></div>";
+                                $chatbody.append(bottext);
+                            }
+                        })
+                    })
+                }
+            }
+
+            if (response.Answer.includes('죄송')){
+                $("#iframe").attr('src', 'basepage?query='+response.Query)
+            }
+            else if (intentname == '주변검색'){
                 let choicecontents = null
                 for (var i = 0; i < answercontents.length; i++){
                     botcontents = "<div style='margin:15px 0;text-align:left;'><span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents[i].title + "</span></div>";
@@ -143,10 +218,7 @@ function send_message(){
                 }
                 contents = contents + "</table><br><br><table style='background-color:#DDD;border-radius:3px;font-size:12px;'><tr><td colspan='4'>[하행]</td></tr><tr><th>구간</th><th>거리</th><th>시속</th><th>상태</th></tr>"
     
-                for (i = 0; i < answercontents['down'].length; i++){
-                    // console.log("잘 뽑히니??",answercontents['down'][i]['section'], answercontents['down'][i]['distance'], 
-                    // answercontents['down'][i]['speed'], answercontents['down'][i]['conditions'])
-    
+                for (i = 0; i < answercontents['down'].length; i++){    
                     contents = contents + "<tr>"+
                     "<td>"+ answercontents['down'][i]['section']+"</td>"+
                     "<td>"+ answercontents['down'][i]['distance']+"</td>"+
@@ -257,7 +329,56 @@ function send_message(){
                     }
                 });
             }
-            else if(response.Intent == '여행지정보') location_info_ajax(response.NerList[0]);   // 여행지 함수
+            else if(intentname =="도움말" || intentname=='기타'){
+                botcontents = "<div style='margin:15px 0;text-align:left; font-size: 12px;'><div class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents + "</div></div>";
+                $chatbody.append(botcontents);
+            }
+            else if(intentname == '여행지정보'){location_info_crawling(response.NerList[0]);   // 여행지 함수
+            }
+            else if (intentname == '리스트 불러오기'){
+                console.log("💙 뜨지 않으면 구워서 먹으리")
+                $.ajax({
+                    url:'mylist',
+                    type:'get',
+                    success: function(response, data){
+                        console.log("💙response : ",response)
+                        console.log("💜data : ",data)
+                        
+                        li_full=""
+                        test = response.my_loca_list;
+
+                        for(var prop in test){
+                            console.log(test[prop].location_list);
+                            let table = `
+                                <tr>
+                                    <td>
+                                        여행지명 : 
+                                    </td>
+                                    <td>
+                                        `+test[prop].location_list+`
+                                    </td>
+                                </tr>
+                            `
+                            li_full=li_full+table
+                            }
+                
+                            fes_add="<table align='center' style='background-color:#DDD;border-radius:3px; font-size:12px;'><tr></tr>"+li_full+"</table>"
+                            botcontents = "<div style='margin:15px 0;text-align:left;'>" + fes_add + "</div>";
+                            $chatbody.append(botcontents);
+                            console.log("여기까지 왔소33")
+                            console.log('여기까지 왔소주홍주홍')
+                    }});
+            }
+            else if (intentname == '리스트 항목 삭제'){
+                
+                $.ajax({
+                    url:'delete_list',
+                    type:'get',
+                    data: {"Ner":response.NerList[0]},
+                    dataType: "json",
+                    success: function(response, data){
+                }});
+            }
 
             // 스크롤 조정하기
             $chatbody.animate({scrollTop: $chatbody.prop('scrollHeight')});
