@@ -44,11 +44,12 @@
 }
 
 .text-box {
+    font-family: 'IBM Plex Sans KR', sans-serif;
     width: 100%;
     height: 100%;
-    border: 2px solid white;
+    border: 2px solid #FAFAFA;
     border-radius: 10px;
-    background-color: white;
+    background-color: #FAFAFA;
     color:rgb(26, 26, 26);
     padding-left:5%;
     display: flex;
@@ -71,9 +72,9 @@
 .iframe_area {
     width: 100%;
     height: 100%;
-    border: 2px solid white;
+    border: 2px solid #FAFAFA;
     border-radius: 10px;
-    background-color: white;
+    background-color: #FAFAFA;
 }
 
 /* 오른쪽 챗봇 대화 창 */
@@ -92,9 +93,9 @@
 /* 챗봇 큰 구역 */
 .chatbot_big_area {
     height: 100%;
-    border: 2px solid white;
+    border: 2px solid #FAFAFA;
     border-radius: 10px;
-    background-color: white;
+    background-color: #FAFAFA;
 }
 
 /* 챗봇 header */
@@ -102,7 +103,7 @@
     height: 10%;
     display: flex;
     margin: 0 3%;
-	justify-content: center;
+    padding-left: 3%;
 }
 
 /* 챗봇 이미지 */
@@ -114,8 +115,11 @@
 
 /* 챗봇 타이틀 이름 */
 .chat_bot_titlename{
+    display: flex;
+    align-items: center;
     color:rgb(26, 26, 26);
-    font-size: 1rem;
+    font-family: 'Dongle', sans-serif;
+    font-size: 2rem;
     font-weight: 600;
 }
 
@@ -123,8 +127,8 @@
 #chatbody {
     height: 80%;
     padding: 10px;
-    /* background-color: rgba(255, 139, 119, 0.3); */
     background: linear-gradient(to bottom, #FFFFFF 0%,#F3F3F3 100%);
+    font-family: 'Gowun Dodum', sans-serif;
     overflow-y: scroll;
     overflow-x: hidden;
     max-height: 100vh;
@@ -144,24 +148,30 @@
 
 /* 챗봇 입력 레이아웃*/
 .chat_input{
+    color: rgb(26, 26, 26);
+    font-family: 'Dongle', sans-serif;
+    font-size: 2rem;
 	display: contents;
 }
 
 /* 챗봇 텍스트 입력 구간 */
 #chattext {
-	padding: 7px 6px;
-    letter-spacing: -0.93px;
-    line-height: 25px;
+    padding: 7px 6px;
+    letter-spacing: -1px;
+    line-height: 35px;
     color: rgb(26, 26, 26);
-	outline: none;
+    outline: none;
     margin-top: 10px;
-    width: 88%;
-	min-height: 2.25px;
-	border: none;
+    width: 78%;
+    min-height: 2.25px;
+    border: none;
     overflow: hidden;
     resize: none;
-	word-wrap:break-word;
-	max-height: 10.25em;
+    word-wrap: break-word;
+    max-height: 10.25em;
+    font-family: 'Gowun Dodum', sans-serif;
+    height: 50px;
+
 }
 
 /* 전송 버튼 */

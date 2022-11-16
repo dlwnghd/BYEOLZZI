@@ -75,6 +75,7 @@ def to_client(conn, addr, params):
         intent_reco = None
         intent_reco_name = None
         ner_predicts = None
+        ner_tags = None
         met_code=None
         loc_code=None
         ner_list = []
@@ -172,18 +173,28 @@ def to_client(conn, addr, params):
                     ner_tags.append("B_location")
                     print("ner_predicts : ", ner_predicts)
                     print("ner_list:" , ner_list)
-
-                    
             elif len(ner_list) and ner_list[0] in FindTag().location:
                 pass
             elif intent_name in ["교통현황", "리스트 불러오기", "인사", "도움말", "챗봇종료", "기타"]:
                 pass
                     
             else:
-                ner_predicts = [(State.user_location, 'B_location')]
-                ner_tags = ['B_location']
-                ner_list.append(State.user_location)
-                
+                fw_list = []
+                for loc in ner_list:
+                    # 몇개 들어왔니?
+                    if loc in FindTag().location:
+                        fw_list.append(loc)
+                if len(fw_list) == 0:       # 여행지 변수가 있다는 얘기
+                    fw_list.append(State.user_location)
+                    ner_list = fw_list
+                    
+                    ner_predicts = [(State.user_location, 'B_location')]
+                    
+                    ner_tags = []
+                    ner_tags.append("B_location")
+                    
+                    print("ner_predicts : ", ner_predicts)
+                    print("ner_list:" , ner_list)
 
         # 답변 검색
         try:
@@ -199,7 +210,6 @@ def to_client(conn, addr, params):
             else:
                 answer_text, answer_contents = f.search(intent_name, ner_tags)
 
-
                 if intent_name == '교통현황':
                     # if len(ner_list) ==1:
                     if len(ner_list):
@@ -209,7 +219,6 @@ def to_client(conn, addr, params):
                             print('ner_list: ',ner_list)
                             answer_contents = way.bot_sum()
                             print('answer_contents: ',answer_contents)
-
                         else:
                             raise Exception('희지오류났어용!!!!!!!!!!!!!!!')
                     else:
