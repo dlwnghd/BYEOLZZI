@@ -140,11 +140,6 @@ class FindAnswer:
 
     # NER 태그를 실제 입력된 단어로 변환
     def tag_to_word(self, ner_predicts, answer):
-        print("================")
-        print(ner_predicts)
-        print(ner_predicts[1][0])
-        print(answer)
-        print("================")
         loc_list=[]
 
         for word, tag in ner_predicts:
