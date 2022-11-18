@@ -20,6 +20,18 @@
     <h2>{{ title }}</h2>
     <h4>{{ text }}</h4>
 
+    <div class="pick">
+        {% for pick in result_pick_list %}
+            <a href="{{ pick.1 }}"><img src="{{ pick.0 }}">{{ pick.2 }}</a>
+        {% endfor %}
+    </div>
+    <div class="hotel">
+        {% for hotel in result_hotel_list %}
+            <a href="{{ hotel.1 }}"><img src="{{ hotel.0 }}">{{ hotel.2 }}</a>
+            {{ hotel.3 }}{{ hotel.4 }}{{ hotel.5 }}
+        {% endfor %}
+    </div>
+
     <script src="/static/js/location_info/location_info.js"></script>  <!-- 여행지정보 js -->   <!-- js 스크립트를 하단에다 놔야 body 실행이 끝날무렵 실행함. -->
     <script>
         location_info_js("{{ img_url|length }}");       // 이미지 슬라이드 효과를 주기위한 함수 실행
