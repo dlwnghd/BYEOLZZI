@@ -9,26 +9,34 @@
     <title>location_info</title>
 </head>
 <body>
+    <h2>{{ title }}</h2>
     <div class="slide slide_wrap" id="location_info_slide">
-        {% for img in img_url %}    <div class="slide_item"><img src="{{ img }}"></div>     {% endfor %}
+        {% for img in img_url %}    <div class="slide_item"><img style="width: 60%;" src="{{ img }}"></div>     {% endfor %}
     </div>
-    <div class="slide_prev_button slide_button">◁</div>
-    <div class="slide_next_button slide_button">▷</div>
+    <div class="slide_prev_button slide_button">◀</div>
+    <div class="slide_next_button slide_button">▶</div>
     <ul class="slide_pagination"></ul>
     </div>
     
-    <h2>{{ title }}</h2>
-    <h4>{{ text }}</h4>
+    <div class="text">{{ text }}</div>
 
     <div class="pick">
         {% for pick in result_pick_list %}
-            <a href="{{ pick.1 }}"><img src="{{ pick.0 }}">{{ pick.2 }}</a>
+            <div class="pick-div">
+                <img class="info-img" src="{{ pick.0 }}">
+                <a class="info-link" href="{{ pick.1 }}">{{ pick.2 }}</a>
+            </div>
         {% endfor %}
     </div>
     <div class="hotel">
         {% for hotel in result_hotel_list %}
-            <a href="{{ hotel.1 }}"><img src="{{ hotel.0 }}">{{ hotel.2 }}</a>
-            {{ hotel.3 }}{{ hotel.4 }}{{ hotel.5 }}
+            <div class="hotel-div">
+                <img class="hotel-img" src="{{ hotel.0 }}">
+                <a class="hotel-link" href="{{ hotel.1 }}">{{ hotel.2 }}</a>
+                <div class="hotel-price">
+                    {{ hotel.3 }}{{ hotel.4 }}{{ hotel.5 }}
+                </div>
+            </div>
         {% endfor %}
     </div>
 
