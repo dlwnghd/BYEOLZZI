@@ -131,7 +131,7 @@
 
 /* 왼쪽 결과 출력 */
 .intent {
-    width: 26%;
+    width: 27%;
 }
 
 #intent {
@@ -140,7 +140,7 @@
 }
 
 .ner-list {
-    width: 27.5%;
+    width: 28%;
 }
 
 #ner-list {

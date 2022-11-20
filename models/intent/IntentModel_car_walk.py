@@ -28,7 +28,7 @@ class IntentModel_Car_Walk:
 
         # 단어 시퀀스 벡터 크기
 #         from config.GlobalParams import MAX_SEQ_LEN
-        MAX_SEQ_LEN = 85
+        MAX_SEQ_LEN = 78
 
         # 패딩처리
         padded_seqs = preprocessing.sequence.pad_sequences(sequences, maxlen=MAX_SEQ_LEN, padding='post')

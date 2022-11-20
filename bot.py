@@ -31,36 +31,37 @@ p_full = Preprocess(
     userdic = 'utils/user_dic.tsv'
 )
 p_car_walk = Preprocess(
-    word2index_dic = 'train_tools/dict/chatbot_dict_car_walk.bin',
+    word2index_dic = 'train_tools/dict/chatbot_dict_car.bin',
     userdic = 'utils/user_dic.tsv'
 )
 p_season = Preprocess(
-    word2index_dic = 'train_tools/dict/chatbot_dict_season.bin',
+    word2index_dic = 'train_tools/dict/season_dict_20221119.bin',
     userdic = 'utils/user_dic.tsv'
 )
 p_city = Preprocess(
-    word2index_dic = 'train_tools/dict/chatbot_dict_city.bin',
+    word2index_dic = 'train_tools/dict/citynature_dict_221120.bin',
     userdic = 'utils/user_dic.tsv'
 )
 p_activity = Preprocess(
-    word2index_dic = 'train_tools/dict/chatbot_dict_activity.bin',
+    word2index_dic = 'train_tools/dict/activity_dict.bin',
     userdic = 'utils/user_dic.tsv'
 )
 
 # 의도 파악 모델 (1)
+# intent = IntentModel(model_name='models/intent/intent_model_cnn_bilstm_221120.h5', preprocess=p_full)
 intent = IntentModel(model_name='models/intent/intent_model_test_full.h5', preprocess=p_full)
 
 # 의도 파악 모델 (2) : car/walk
-intent_car_walk = IntentModel_Car_Walk(model_name='models/intent/intent_model_car_walk.h5', preprocess=p_car_walk)
+intent_car_walk = IntentModel_Car_Walk(model_name='models/intent/intent_car_walk_model.h5', preprocess=p_car_walk)
 
 # 의도 파악 모델 (2) : season
-intent_season = IntentModel_Season(model_name='models/intent/intent_model_season.h5', preprocess=p_season)
+intent_season = IntentModel_Season(model_name='models/intent/intent_model_season_221120.h5', preprocess=p_season)
 
 # 의도 파악 모델 (2) : city/nature
-intent_city = IntentModel_City(model_name='models/intent/intent_model_city.h5', preprocess=p_city)
+intent_city = IntentModel_City(model_name='models/intent/intent_model_citynature_cnn_221120.h5', preprocess=p_city)
 
 # 의도 파악 모델 (2) : activity
-intent_activity = IntentModel_Activity(model_name='models/intent/intent_model_activity.h5', preprocess=p_activity)
+intent_activity = IntentModel_Activity(model_name='models/intent/intent_model_activity_cnn.h5', preprocess=p_activity)
 
 # 개체명 인식 모델
 ner = NerModel(model_name='models/ner/ner_model.h5', preprocess=p_full)
