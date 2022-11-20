@@ -7,8 +7,6 @@ $(document).ready(function(){               // html 화면이 로딩되면 함�
 
     // '짐 꾸리는 중..' 버튼을 누르면 챗봇 화면이 열린다
     $("#chatbotbtn").click(function(){      // 클릭 이벤트 등록
-        
-
         $("#wrapper").fadeOut(500);                // 대문 숨기고
         $("#chatbot").delay(500).fadeIn(1000);         // 챗봇창 화면에 표시
     });
@@ -24,6 +22,7 @@ $(document).ready(function(){               // html 화면이 로딩되면 함�
             send_message();
         }
     });
+
 });
 
 function send_message(){
@@ -38,7 +37,7 @@ function send_message(){
     }
     
     // 입력한 채팅 출력
-    let addtext = "<div style='margin:15px 0;text-align:right;'> <span style='padding:3px 10px;background-color:#3388cc;border-radius:3px;font-size:12px;'>" + chattext + "</span></div>";
+    let addtext = "<div class='addtext-box'><div class='addtext'>" + chattext + "</div></div>";
     $("#chatbody").append(addtext); 
     console.log("addtext" + addtext)
     console.log("여기까지 왔소22")
@@ -69,7 +68,7 @@ function send_message(){
             let botcontents = null
             
             // 답변 출력
-            bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + response.Answer + "</span></div>";
+            bottext = "<div class='bottext-box'><div class='bottext'>" + response.Answer + "</div></div>";
             $chatbody.append(bottext);
 
             $("#intent").text(response.Intent)
@@ -85,10 +84,9 @@ function send_message(){
                 if (intentname == null){
                     console.log("여행지 추천 결과값 출력 들어옴")
                     for (var i = 0; i < answercontents.length; i++){
-                        botcontents = `<div style='margin:15px 0;text-align:left;'>
-                        <span class='reco_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>`
-                        + answercontents[i][0] + ' ' + answercontents[i][1] + `</span>
-                        <button class='damgi'>담기</button>
+                        botcontents = `<div class='botcontents-box'><div class='reco_contents'>`
+                        + answercontents[i][0] + ' ' + answercontents[i][1] + `</div>
+                        <div class='damgi'>담기</div>
                         </div>`;
                         $chatbody.append(botcontents);
                     }
@@ -117,7 +115,7 @@ function send_message(){
                     });
 
                     $(".damgi").click(function(){
-                        let reco_loca = $(this).siblings("span").text()
+                        let reco_loca = $(this).siblings("div").text()
                         console.log(reco_loca)
                         reco_loca = reco_loca.split(' ');
                         console.log("reco_loca:", reco_loca);
@@ -135,7 +133,7 @@ function send_message(){
                                 console.log("damgi_location:", response.result)
                                 console.log("comment:", response.comment)
 
-                                bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + response.comment + "</span></div>";
+                                bottext = "<div class='bottext-box'><div class='bottext'>" + response.comment + "</div></div>";
                                 $chatbody.append(bottext);
                             }
                         })
@@ -149,7 +147,7 @@ function send_message(){
             else if (intentname == '주변검색'){
                 let choicecontents = null
                 for (var i = 0; i < answercontents.length; i++){
-                    botcontents = "<div style='margin:15px 0;text-align:left;'><span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents[i].title + "</span></div>";
+                    botcontents = "<div class='botcontents-box'><div class='around_contents'>" + answercontents[i].title + "</div></div>";
                     $chatbody.append(botcontents);
                 }
                 
@@ -204,31 +202,26 @@ function send_message(){
                 });
             }
             else if (intentname == '교통현황'){
-                contents = "<br><table style='background-color:#DDD;border-radius:3px;font-size:12px;'><tr><td colspan='4'>[상행]</td></tr><tr><th>구간</th><th>거리</th><th>시속</th><th>상태</th></tr>"
+                contents = "<table class='highway-table'><tr><td colspan='4'>[상행]</td></tr><tr class='highway-head'><th class='highway-section'>구간</th><th class='highway-distance'>거리</th><th class='highway-speed'>시속</th><th class='highway-conditions'>상태</th></tr>"
                 for (i = 0; i < answercontents['up'].length; i++){
-                    // console.log("잘 뽑히니??",answercontents['up'][i]['section'], answercontents['up'][i]['distance'], 
-                    // answercontents['up'][i]['speed'], answercontents['up'][i]['conditions'])
-    
-                    contents = contents + "<tr>"+
-                    "<td>"+ answercontents['up'][i]['section']+"</td>"+
-                    "<td>"+ answercontents['up'][i]['distance']+"</td>"+
-                    "<td>"+ answercontents['up'][i]['speed']+"</td>"+
-                    "<td>"+ answercontents['up'][i]['conditions']+"</td>" + "</tr>"
-                    
+                    contents = contents +
+                    "<tr class='highway-line'><td class='highway-data'>"+ answercontents['up'][i]['section']+"</td>"+
+                    "<td class='highway-data'>"+ answercontents['up'][i]['distance']+"</td>"+
+                    "<td class='highway-data'>"+ answercontents['up'][i]['speed']+"</td>"+
+                    "<td class='highway-data'>"+ answercontents['up'][i]['conditions']+"</td></tr>"
                 }
-                contents = contents + "</table><br><br><table style='background-color:#DDD;border-radius:3px;font-size:12px;'><tr><td colspan='4'>[하행]</td></tr><tr><th>구간</th><th>거리</th><th>시속</th><th>상태</th></tr>"
-    
+                botcontents = "<div class='botcontents-box'><div class='highway_contents'>" + contents + "</table></div></div>";
+                $chatbody.append(botcontents);
+
+                contents = "<table class='highway-table'><tr><td colspan='4'>[하행]</td></tr><tr class='highway-head'><th class='highway-section'>구간</th><th class='highway-distance'>거리</th><th class='highway-speed'>시속</th><th class='highway-conditions'>상태</th></tr>"
                 for (i = 0; i < answercontents['down'].length; i++){    
-                    contents = contents + "<tr>"+
-                    "<td>"+ answercontents['down'][i]['section']+"</td>"+
-                    "<td>"+ answercontents['down'][i]['distance']+"</td>"+
-                    "<td>"+ answercontents['down'][i]['speed']+"</td>"+
-                    "<td>"+ answercontents['down'][i]['conditions']+"</td>" + "</tr>"
-                    
+                    contents = contents + "<tr class='highway-line'>"+
+                    "<td class='highway-data'>"+ answercontents['down'][i]['section']+"</td>"+
+                    "<td class='highway-data'>"+ answercontents['down'][i]['distance']+"</td>"+
+                    "<td class='highway-data'>"+ answercontents['down'][i]['speed']+"</td>"+
+                    "<td class='highway-data'>"+ answercontents['down'][i]['conditions']+"</td></tr>"                    
                 }
-    
-                answercontents = contents + "</table>"
-                botcontents = "<div style='margin:15px 0;text-align:left;'>" + answercontents + "</div>";
+                botcontents = "<div class='botcontents-box'><div class='highway_contents'>" + contents + "</table></div></div>";
                 $chatbody.append(botcontents);
 
                 $.ajax({
@@ -249,47 +242,20 @@ function send_message(){
                 });
             }
             else if(intentname =="축제"){
-                li_full=""
                 for(i = 0; i<answercontents.length ; i++){
-                    let table = `
-                        <tr>
-                            <td colspan="2">
-                                <img src=`+answercontents[i]["image_small"]+` style="width:100px; height:100px;">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                축제명 : 
-                            </td>
-                            <td>
-                                `+answercontents[i]["title"]+`
-                            </td>
-                        </tr>
-                        <tr>
-                        <td>
-                            시작일 : 
-                        </td>
-                        <td>
-                            `+answercontents[i]["startDate"]+`
-                        </td>
-                    </tr>
-                    `
-                    li_full=li_full+table
+                    let fes_add = `<div class='festival_contents'>
+                        <div class="festival-imgframe">
+                            <img class="festival-img" src=`+answercontents[i]["image_small"]+`>
+                        </div>
+                        <div class="festival-data"><div class="festival-title">`
+                            + answercontents[i]["title"] +
+                        `</div><div class="festival-date">(`
+                            + answercontents[i]["startDate"] +
+                        `)</div></div>`
+                        botcontents = "<div class='botcontents-box'>" + fes_add + "</div>";
+                        $chatbody.append(botcontents);
                     }
         
-                    fes_add="<table align='center' style='background-color:#DDD;border-radius:3px; font-size:12px;'><tr></tr>"+li_full+"</table>"
-                    botcontents = "<div style='margin:15px 0;text-align:left;'>" + fes_add + "</div>";
-                    $chatbody.append(botcontents);
-                    console.log("여기까지 왔소33")
-                    // for (var i = 0; i > answercontents.length(); i++){
-                    //     botcontents += "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents[i] + "</span></div>";
-                    // } 
-                    // console.log("bottext" + bottext)
-        
-                    // botcontents = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents + "</span></div>";
-                    // $chatbody.append(botcontents);
-                    // console.log("여기까지 왔소33"
-                    
                     $.ajax({
                         url:'festival',
                         type:'get',
@@ -333,7 +299,7 @@ function send_message(){
                 location_info_crawling(response.NerList[0]);   // 여행지 함수
             }
             else if(intentname =="도움말" || intentname=='기타'){
-                botcontents = "<div style='margin:15px 0;text-align:left; font-size: 12px;'><div class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents + "</div></div>";
+                botcontents = "<div class='botcontents-box'><div class='botcontents'>" + answercontents + "</div></div>";
                 $chatbody.append(botcontents);
             }
             else if (intentname == '리스트 불러오기'){
@@ -364,7 +330,7 @@ function send_message(){
                             }
                 
                             fes_add="<table align='center' style='background-color:#DDD;border-radius:3px; font-size:12px;'><tr></tr>"+li_full+"</table>"
-                            botcontents = "<div style='margin:15px 0;text-align:left;'>" + fes_add + "</div>";
+                            botcontents = "<div class='botcontents-box'>" + fes_add + "</div>";
                             $chatbody.append(botcontents);
                             console.log("여기까지 왔소33")
                             console.log('여기까지 왔소주홍주홍')

@@ -5,12 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+	<link rel="stylesheet" href="/static/assets/css/module/around.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Dongle:wght@700&family=Gowun+Dodum&family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="https://apis.openapi.sk.com/tmap/vectorjs?version=1&appKey=l7xxcf6e13b0223c4de0a69bc872035f69b3"></script>
 </head>
+<style>
+	.area-name {
+		font-family: 'IBM Plex Sans KR', sans-serif;
+		display: flex;
+		align-items: center;
+		margin: 2% 0.5% 2%;
+	}
+
+	.load_aroundData {
+		font-size: 2rem;
+		font-weight: 600;
+		margin-left: 1%;
+	}
+
+	.load_aroundData_addr {
+		font-family: 'IBM Plex Sans KR', sans-serif;
+		font-size: 1.25rem;
+		margin: 0 0 3% 8%;
+	}
+	
+	.position {
+		display: none;
+	}
+</style>
 <body onload="initTmap()"><!-- 맵 생성 실행 -->
-    <div class="load_aroundData">{{data.LocalName}} : {{data.AreaChoice}}</div>
-	<span class="load_aroundData" id="addr">{{data.Addr}}</span>
+	<div class="area-name">
+		<img src="/static/images/marker/pin.png">
+		<div class="load_aroundData">{{data.AreaChoice}}</div>
+	</div>
+	<div class="load_aroundData_addr" id="addr">주소 : {{data.Addr}}</div>
 	<span class="load_aroundData position" id="mapx">{{data.MapX}}</span>
 	<span class="load_aroundData position" id="mapy">{{data.MapY}}</span>
     <div id="map_div"></div>
@@ -29,7 +58,7 @@
 		map = new Tmapv3.Map("map_div", {
 			center : new Tmapv3.LatLng(mapy, mapx),
 			width : "100%",	// 지도의 넓이
-			height : "400px",	// 지도의 높이
+			height : "545px",	// 지도의 높이
 			zoom : 14	// 지도 줌레벨
 		});
 		//Marker 객체 생성.

@@ -26,12 +26,13 @@ class festival:
             print(data)
             data_need=data['response']['body']['items']['item']
             print("data_need :",data_need[0]['title'])
-            festival=[
+            festival=[ 
             {"title" : data_need[i]['title'],
-            "startDate" : data_need[i]['eventstartdate'],
+            "startDate" : f"{data_need[i]['eventstartdate'][:4]}/{data_need[i]['eventstartdate'][4:6]}/{data_need[i]['eventstartdate'][6:8]}",
             "endDate" : data_need[i]["eventenddate"],
             "addr1" : data_need[i]['addr1'],
-            "image_small" : data_need[i]['firstimage2'],
+            "image_small" : data_need[i]['firstimage'],
+            # "image_small" : data_need[i]['firstimage2'],
             "met_code" : met_code,
             "loc_code" : loc_code
             }

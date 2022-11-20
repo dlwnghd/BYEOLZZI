@@ -9,16 +9,84 @@
         <script
             src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=l7xxc4fab6222ca54f719ee6a518568d8856"></script>
         <style>
+            .ft_select {
+                margin-bottom: 2%;
+            }
+
+            select {
+                width: 18%;
+                font-family: 'IBM Plex Sans KR', sans-serif;
+                font-size: 1rem;
+                padding: 1%;
+                border-radius: 0.55rem;
+            }
+            
+            select:focus {
+                outline: none;
+            }
+
+            button#btn_select {
+                color: white;
+                background-color: #65a0f0;
+                border: 0;
+                border-radius: 0.55rem;
+                font-family: 'IBM Plex Sans KR', sans-serif;
+                font-size: 1.05rem;
+                font-weight: 600;
+                padding: 1% 1.75%;
+            }
+
+            #result {
+                position: relative;
+                left: 52%;
+                top: -587px;
+                width: 50%;
+            }
+
+            #test {
+                position: relative;
+                left: 51%;
+                top: -563px;
+                overflow: scroll;
+                height: 510px;
+                width: 50%;
+            }
+
+            #test::-webkit-scrollbar {
+                display: none;
+            }
+            
             table#roadtable {
                 border-top: 2px solid #444444;
+                border-bottom: 2px solid #444444;
                 border-collapse: collapse;
 
             }
 
-            td {
+            th {
+                background-color: #65a0f0;
+                color: #ffffff;
+                font-size: 1.25rem;
+                text-align: left;
+                padding: 2%;
+            }
+
+            tr {
                 border-bottom: 1px solid #444444;
+            }
+
+            tr:nth-child(2n) {
+                background-color: #FAFAFA;
+                color: #031027;
+            }
+            
+            tr:nth-child(2n+1) {
+                background-color: #e4eefc;
+                color: #031027;
+            }
+
+            td {
                 padding: 10px;
-                background: #f0f6f9;
             }
             /* 지도상의 점 처리하는 css */
             /* div#map_div>div>div>img{
@@ -47,7 +115,7 @@
                 map = new Tmapv2.Map("map_div", {
                     center: new Tmapv2.LatLng((Number(startlat)+Number(endlat))/2, (Number(startlong)+Number(endlong))/2),
                     width: "50%",
-                    height: "600px",
+                    height: "590px",
                     zoom: 10,
                     zoomControl: true,
                     scrollwheel: true
@@ -124,6 +192,10 @@
                                 roadlist.push(resultData[i].properties.description);
                             }
                             
+                            console.log('$("#roadtable"):', $("#roadtable"))
+
+                            // $("#roadtable").text() = "";
+
                             // $("#result").text(tDistance + tTime + tFare + taxiFare);
                             $("#arrival_time").text(tTime+"분 | ");
                             $("#arrival_distance").text(tDistance+"km");
@@ -132,10 +204,51 @@
                             // <p id="arrival_time"></p> | <p id="arrival_distance"></p><br>
                             // <p>택시비</p><p id="texi"></p> | <p>통행료</p><p id="tolgate"></p>
                             // $("#result").append(roadlist)
-                            $("#roadtable").append("<tr><td>출발</td></tr>");
+                            $("#roadtable").append("<tr><th colspan=2>출발</th></tr>");
+                            let road_script = "";
+                            let road_street = "";
+                            let cnt = 0;
                             for(var i = 0; i < roadlist.length; i++){
-                                if (roadlist[i] != undefined)
-                                    $("#roadtable").append("<tr><td>"+roadlist[i]+"</td></tr>");
+                                if (roadlist[i] != undefined){
+                                    if (roadlist[i].search(', ') != -1){
+                                        console.log("☆☆☆roadlist[i]:", roadlist[i])
+                                        console.log("☆☆☆cnt:", cnt)
+                                        console.log("☆☆☆road_script:", road_script)
+                                        if (cnt == 1 && road_street != "" && road_script == null){
+                                            road_script = "";
+                                            $("#roadtable").append("<tr><td>"+road_street+"</td><td>"+road_script+"</td></tr>");
+                                            cnt = 0;
+                                            road_street = roadlist[i]
+                                            console.log("road_street:", road_street)
+                                        }
+                                        else{
+                                            road_street = roadlist[i]
+                                        }
+                                    }
+                                    else {
+                                        console.log("★★★roadlist[i]:", roadlist[i])
+                                        console.log("★★★cnt:", cnt)
+                                        console.log("★★★road_street:", road_street)
+                                        if (road_street != ""){
+                                            $("#roadtable").append("<tr><td>"+road_street+"</td><td>"+road_script+"</td></tr>");
+                                            cnt = 0;
+                                            road_script = roadlist[i]
+                                        }
+                                        if (roadlist[i]=="도착"){
+                                            $("#roadtable").append("<tr><th colspan=2>도착</th></tr>");
+                                        }
+                                        else{
+                                            road_script = roadlist[i]
+                                        }
+                                    }
+                                    cnt ++;
+                                    if (cnt == 2) {
+                                        $("#roadtable").append("<tr><td>"+road_street+"</td><td>"+road_script+"</td></tr>");
+                                        cnt = 0;
+                                        road_script = "";
+                                        road_street = "";
+                                    }
+                                }
                             }
 
                             //교통정보 표출 옵션값을 체크
@@ -482,13 +595,13 @@
             <div id="map_div"></div>
         </div>
         <div class="map_act_btn_wrap clear_box"></div>
-        <div id="result" style="position: relative; left: 52%; top: -600px; width: 50%;">
+        <div id="result">
             <span id="arrival_time" style="font-size: 1.5em; font-weight: bold;"></span>
             <span id="arrival_distance" style="font-size: 1.5em; font-weight: bold;"></span><br>
             <span id="texi"></span>
             <span id="tolgate"></span>
         </div>
-        <div id="test" style="position: relative; left:51%; top: -585px; overflow:scroll; height: 550px; width: 50%;" >
+        <div id="test">
             <table id="roadtable">
                 
             </table>
