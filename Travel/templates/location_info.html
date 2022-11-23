@@ -18,16 +18,17 @@
     <ul class="slide_pagination"></ul>
     </div>
     
-    <div class="text">{{ text }}</div>
-
+    <div class="text">  {{ text }}</div>
+    <div class="titles">여행콘텐츠</div>
     <div class="pick">
         {% for pick in result_pick_list %}
-            <div class="pick-div">
-                <img class="info-img" src="{{ pick.0 }}">
-                <a class="info-link" href="{{ pick.1 }}">{{ pick.2 }}</a>
-            </div>
+        <div class="pick-div">
+            <img class="info-img" src="{{ pick.0 }}">
+            <a class="info-link" href="{{ pick.1 }}">{{ pick.2 }}</a>
+        </div>
         {% endfor %}
     </div>
+    <div class="titles">숙박정보</div>
     <div class="hotel">
         {% for hotel in result_hotel_list %}
             <div class="hotel-div">

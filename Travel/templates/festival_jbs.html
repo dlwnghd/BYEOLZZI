@@ -32,16 +32,16 @@
         color: #031027;
         border: 2px solid #E2E2E2;
         border-radius: 1rem;
-        font-size: 1.15rem;
+        font-size: 1rem;
         margin: 1% 2%;
-        min-height: 27vh;
-        max-height: 27vh;
+        min-height: 30vh;
+        max-height: 30vh;
         align-items: center;
     }
 
     .fes-img {
         width: 37%;
-        height: 27vh;
+        height: 30vh;
         text-align: center;
         float: left;
         display: flex;
@@ -56,7 +56,7 @@
     .fes-content {
         display: flex;
         width: 58%;
-        height: 27vh;
+        height: 30vh;
         float: left;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -66,7 +66,7 @@
     .title {
         font-size: 1.2rem;
         font-weight: 600;
-        margin: 6% 0;
+        margin: 6% 0 2%;
     }
 
     .fes-column {
@@ -81,7 +81,7 @@
     }
 
     .fes-content-detail {
-        width: 80%;
+        width: 85%;
     }
 
     #content_marker0 {
@@ -169,7 +169,7 @@ function initTmap(){
     if (xmap[0].innerHTML){
     var marker0 = new Tmapv3.Marker({
         position: new Tmapv3.LatLng(parseFloat(ymap[0].innerHTML),parseFloat(xmap[0].innerHTML)),	//Marker의 중심좌표 설정.
-        icon :"/static/images/marker/pin.png",
+        icon :"/static/images/marker/marker1_edit.gif",
         map: map,	//Marker가 표시될 Map 설정..
     });
 
@@ -199,7 +199,7 @@ function initTmap(){
     if (xmap[1].innerHTML){
     var marker1 = new Tmapv3.Marker({
         position: new Tmapv3.LatLng(parseFloat(ymap[1].innerHTML),parseFloat(xmap[1].innerHTML)),
-        icon :"/static/images/marker/pin.png",	//Marker의 중심좌표 설정.
+        icon :"/static/images/marker/marker1_edit.gif",	//Marker의 중심좌표 설정.
         map: map	//Marker가 표시될 Map 설정..
     });
 
@@ -227,7 +227,7 @@ function initTmap(){
     if (xmap[2].innerHTML){
     var marker2 = new Tmapv3.Marker({
         position: new Tmapv3.LatLng(parseFloat(ymap[2].innerHTML-0.0006),parseFloat(xmap[2].innerHTML)),	//Marker의 중심좌표 설정.
-        icon :"/static/images/marker/pin.png",
+        icon :"/static/images/marker/marker1_edit.gif",
         map: map	//Marker가 표시될 Map 설정..
     });
     marker2.on("Click", function(evt) {
@@ -249,7 +249,7 @@ function initTmap(){
     if (xmap[3].innerHTML){
     var marker3 = new Tmapv3.Marker({
         position: new Tmapv3.LatLng(parseFloat(ymap[3].innerHTML-0.0006),parseFloat(xmap[3].innerHTML)),	//Marker의 중심좌표 설정.
-        icon :"/static/images/marker/pin.png",
+        icon :"/static/images/marker/marker1_edit.gif",
         map: map	//Marker가 표시될 Map 설정..
     });
     marker3.on("Click", function(evt) {
@@ -271,7 +271,7 @@ function initTmap(){
     if (xmap[4].innerHTML){
     var marker4 = new Tmapv3.Marker({
         position: new Tmapv3.LatLng(parseFloat(ymap[4].innerHTML-0.0006),parseFloat(xmap[4].innerHTML)),	//Marker의 중심좌표 설정.
-        icon :"/static/images/marker/pin.png",
+        icon :"/static/images/marker/marker1_edit.gif",
         map: map	//Marker가 표시될 Map 설정..
     });
     marker4.on("Click", function(evt) {

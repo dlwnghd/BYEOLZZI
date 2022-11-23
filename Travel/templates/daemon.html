@@ -19,20 +19,19 @@
 		<link rel="stylesheet" href="/static/css/location_info/location_info.css" />  <!-- 여행지정보 css -->
 	</head>
 	<body>
+		<!-- Menubar -->
+		<div id="menubar">
+			<div id="login-check">{{ request.session.login }}</div>
+			{% if request.session.login != None %}
+			<a href="member/logout" style="font-size: 1.2em; border-bottom: none;">| 로그아웃 |</a>
+			<a href="member/mypage" style="font-size: 1.2em; border-bottom: none;">마이페이지 |</a>
+			{%else%}
+			<a href="member/join" style="font-size: 1.2em; border-bottom: none;">| 회원가입 |</a>
+			<a href="member/login" style="font-size: 1.2em; border-bottom: none;">로그인 |</a>
+			{%endif%}
+		</div>
 		<div id="wrapper">
 			<div id="main">
-
-				<!-- Menubar -->
-				<div id="menubar">
-					{% if request.session.login != None %}
-					<a href="member/logout" style="font-size: 1.2em; border-bottom: none;">| 로그아웃 |</a>
-					<a href="member/mypage" style="font-size: 1.2em; border-bottom: none;">마이페이지 |</a>
-					{%else%}
-					<a href="member/join" style="font-size: 1.2em; border-bottom: none;">| 회원가입 |</a>
-					<a href="member/login" style="font-size: 1.2em; border-bottom: none;">로그인 |</a>
-					{%endif%}
-				</div>
-
 				<!-- Header -->
 				<header id="header">
 					<div class="title">

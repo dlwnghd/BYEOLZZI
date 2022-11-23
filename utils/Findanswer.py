@@ -178,7 +178,7 @@ class FindAnswer:
             answer = "걷는 거 좋지! 어느 계절에 여행갈 계획이야?"
         elif reconame == '봄' or reconame == '여름' or reconame == '가을' or reconame == '겨울':
             answer = answer.replace('season', reconame)
-        if reconame == '도시' or reconame == '시골':
+        if reconame == '도시' or reconame == '자연':
             answer = answer.replace('city_nature', reconame)
         
         answer = answer.replace('{', '')

@@ -43,6 +43,9 @@
 #menubar {
     font-family: 'Gowun Dodum', sans-serif;
 }
+#login-check {
+    display: none;
+}
 
 #chatbotbtn {
     border: 0.15rem solid;
@@ -375,6 +378,20 @@
     border-radius:1rem;
     font-size: 1.5rem;
     margin-left: 4%;
+}
+
+.myloca {
+    display: inline-block;
+    width: fit-content;
+    font-size: 1.5rem;
+    color: #031027;
+    background-color:#EBEBEB;
+    border-radius:1rem;
+    padding: 8px 15px;
+    margin: 0 3% 1% 0;
+}
+.myloca-div {
+    width: 80%;
 }
 
 /* 챗봇 footer */

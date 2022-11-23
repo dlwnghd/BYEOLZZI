@@ -882,60 +882,61 @@
                 console.log('$bb: ', $bb)
                 $updown.text(highway + ' 하행선')
 
-                if (highway == '영동고속도로') { // 하행
-                    startlat = "37.437851838"
-                    startlong = "126.739665474"
-                    endlat = "37.774738152"
-                    endlong = "128.834468958"
-                    passList = "126.8188108, 37.3511891"
-                    zoom = 9
-                } else if (highway == '서해안고속도로') { // 하행
-                    startlat = "34.841436342"
-                    startlong = "126.421413517"
-                    endlat = "37.464100435"
-                    endlong = "126.887447036"
-                    passList = ""
-                    zoom = 7
-                } else if (highway == '경부고속도로') { // 하행
-                    startlat = "37.5213948532"
-                    startlong = "127.017779528"
-                    endlat = "35.24657831"
-                    endlong = "129.09320677"
-                    passList = "127.4184375,36.4268125_128.005, 36.199_129.007, 35.917"
-                    zoom = 7
-                }
-                heeji();
-            } else if ($bb.text() == '상행보기') {
-                $bb.text('하행보기');
-                $updown.text(highway + ' 상행선')
-
-                console.log('$updown: ', $updown)
-                console.log('$bb: ', $bb)
-
-                if (highway == '영동고속도로') { // 상행
-                    startlat = "37.774738152"
-                    startlong = "128.834468958"
-                    endlat = "37.437851838"
-                    endlong = "126.739665474"
-                    passList = "126.8188108, 37.3511891"
-                    zoom = 9
-                } else if (highway == '서해안고속도로') { // 상행
-                    startlat = "34.841436342"
-                    startlong = "126.421413517"
-                    endlat = "37.464100435"
-                    endlong = "126.887447036"
-                    passList = ""
-                    zoom = 7
-                } else if (highway == '경부고속도로') { //
-                    startlat = "35.24657831"
-                    startlong = "129.09320677"
-                    endlat = "37.5213948532"
-                    endlong = "127.017779528"
-                    passList = "129.007, 35.917_128.005, 36.199_127.4184375,36.4268125"
-                    zoom = 7
-                }
-                heeji();
+            if (highway == '영동고속도로'){  // 하행
+                startlat = "37.437851838"
+                startlong = "126.739665474"
+                endlat = "37.774738152"
+                endlong = "128.834468958"
+                passList = "126.8188108, 37.3511891"
+                zoom = 9
+            }else if (highway == '서해안고속도로'){  // 하행
+                startlat = "34.841436342"
+                startlong = "126.421413517"
+                endlat = "37.464100435"
+                endlong = "126.887447036"
+                passList = "126.557092873, 36.372822817_126.557591873, 36.370149055"
+                zoom = 7
+            } else if (highway == '경부고속도로'){  // 하행
+                startlat = "37.5213948532"
+                startlong = "127.017779528"
+                endlat = "35.24657831"
+                endlong = "129.09320677"
+                passList = "127.4184375,36.4268125_128.005, 36.199_129.007, 35.917"
+                zoom = 7
             }
+            heeji();
+        } else if ($bb.text() =='상행보기'){
+            $bb.text('하행보기');
+            $updown.text(highway + ' 상행선')
+
+            console.log('$updown: ',$updown)
+            console.log('$bb: ',$bb)
+
+            if (highway == '영동고속도로'){  // 상행
+                startlat = "37.774738152"
+                startlong = "128.834468958"
+                endlat = "37.437851838"
+                endlong = "126.739665474"
+                passList = "127.752575481, 37.242094492_127.653960819 , 37.252908152_126.989801096, 37.318999128_126.804138117, 37.350962228"
+                // passList = "126.8188108, 37.3511891"
+                zoom = 9
+            }else if (highway == '서해안고속도로'){  // 상행
+                startlat = "34.841436342"
+                startlong = "126.421413517"
+                endlat = "37.464100435"
+                endlong = "126.887447036"
+                passList = "126.557092873, 36.372822817"
+                zoom = 7
+            } else if (highway == '경부고속도로'){  // 
+                startlat = "35.24657831"
+                startlong = "129.09320677"
+                endlat = "37.5213948532"
+                endlong = "127.017779528"
+                passList = "129.007, 35.917_128.005, 36.199_127.4184375,36.4268125"
+                zoom = 7
+            }
+            heeji();
+        } 
 
         });
     </script>
