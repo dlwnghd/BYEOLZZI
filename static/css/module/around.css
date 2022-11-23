@@ -1,0 +1,15 @@
+.area-name {
+    display: flex;
+    align-items: center;
+    margin: 1% 0.5% 2%;
+}
+
+.load_aroundData {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 1%;
+}
+
+.load_aroundData_addr {
+    margin: 0 0 3% 8%;
+}
