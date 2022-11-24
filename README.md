@@ -217,7 +217,7 @@
     </td>
     <td align="center" width="96">
       <a href="#macropower-tech">
-        <img src=".\READEME\image\matplotlib.png" width="48" height="48" alt="Matplotlib" style="background-color:white;"/>
+        <img src=".\READEME\image\matplotlib.png" width="200" height="48" alt="Matplotlib" style="background-color:white;"/>
       </a>
       <br>Matplotlib
     </td>
