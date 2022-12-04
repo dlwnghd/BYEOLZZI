@@ -143,14 +143,17 @@ class FindAnswer:
         loc_list=[]
 
         for word, tag in ner_predicts:
-            if "길 안내" in answer:
+            if "가는 길" in answer:
                 loc_list.append(word)
             # 변환해야하는 태그가 있는 경우 추가
             elif tag == 'B_location' or tag == 'B_highway':
                 answer = answer.replace(tag, word)  # 태그를 입력된 단어로 변환
         
-        if "길 안내" in answer:
+        if "가는 길" in answer:
             answer = answer.replace("B_location", loc_list[1])
+            print('loc_list: ',loc_list)
+            print('loc_list[1]: ',loc_list[1])
+            print('answer: 희지희즈히지흐지희짖 ',answer)
         answer = answer.replace('{', '')
         answer = answer.replace('}', '')
         
