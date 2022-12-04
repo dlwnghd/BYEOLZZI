@@ -178,7 +178,9 @@ def to_client(conn, addr, params):
                 if len(fw_list) == 1:       # 여행지 변수가 있다는 얘기
                     fw_list.append(State.user_location)
                     ner_list = fw_list
+                    print('ner_list 개수 : ', ner_list)
                     ner_predicts = [ner_predicts[0], (State.user_location, 'B_location')]
+
                     ner_tags.append("B_location")
                     print("ner_predicts : ", ner_predicts)
                     print("ner_list:" , ner_list)
@@ -217,7 +219,9 @@ def to_client(conn, addr, params):
             if State.state != None:
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
             else:
+                print('ner_tags 너 몇개양? ', ner_tags)
                 answer_text, answer_contents = f.search(intent_name, ner_tags)
+                
 
                 if intent_name == '교통현황':
                     # if len(ner_list) ==1:
