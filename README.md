@@ -1,14 +1,20 @@
 # ONE2TEN
 -------
+## 주의사항
+
 🚫 다른 사람이 수정 중인 파일 혹은 수정할 것 같은 파일은 
+
 🚫 수정한다고 말하기 전까지 건드리지 않습니다!
 
-⭐Push⭐
+-------
 
-🟥[GitHub Windows]
+## ⭐Push⭐
+
+### 🟥[GitHub Windows]
+
 1. 작업 전에 내 Branch에서 작업을 하는지 확인 후 작업을 한다!
 
-작업중...
+- 작업중...
 
 2. 커밋의 규칙에 맞게 커밋명을 작성한다.
 
@@ -27,7 +33,7 @@
 
 7. 이주홍으로 부터 확인 혹은 "오케이" 확인 받기(확인 받기 전까지 추가 작업 가능)
 
-🟥[GitHub 홈페이지]
+### 🟥[GitHub 홈페이지]
 8. 확인을 받았다면 깃허브의 BYEOLZZI repository로 접속
 
 9. 'Pull requests' 페이지로 이동
@@ -58,9 +64,9 @@
 
 
 
-⭐Pull⭐
+## ⭐Pull⭐
 
-🟩[GitHub 홈페이지]
+### 🟩[GitHub 홈페이지]
 1. [GitHub 홈페이지]의 BYEOLZZI repository로 접속
 
 2. 'Pull requests' 페이지로 이동
@@ -80,7 +86,7 @@
 
 8. Confirm merge를 클릭
 
-🟩[GitHub Windows]
+### 🟩[GitHub Windows]
 9. Fetch origin 버튼 클릭
 
 10. Pull origin 버튼 클릭
@@ -89,7 +95,9 @@
 	- ⚠️만약 오류나 Conflict가 발생했다면 손을 들고 "Conflict"를 외칩니다!
 
 🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫
+
 11. 🚫 Create Pull Request  🚫이 버튼 누르지 말기
+
 🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫🚫
 
 12. GitHub를 종료시키고 작업을 시작합니다.
@@ -131,6 +139,18 @@
         <img src=".\READEME\image\javascript.svg" width="48" height="48" alt="JavaScript" />
       </a>
       <br>JavaScript
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\jquery.svg" width="48" height="48" alt="Jquery" />
+      </a>
+      <br>Jquery
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\ajax.png" width="100" height="48" alt="Ajax" />
+      </a>
+      <br>Ajax
     </td>
   </tr>
 </table>
@@ -188,6 +208,18 @@
         <img src=".\READEME\image\python.svg" width="48" height="48" alt="Python" style="background-color:white;"/>
       </a>
       <br>Python
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\sklearn.svg" width="100" height="48" alt="Sklearn" style="background-color:white;"/>
+      </a>
+      <br>Sklearn
+    </td>
+    <td align="center" width="96">
+      <a href="#macropower-tech">
+        <img src=".\READEME\image\matplotlib.png" width="200" height="48" alt="Matplotlib" style="background-color:white;"/>
+      </a>
+      <br>Matplotlib
     </td>
     
   </tr>

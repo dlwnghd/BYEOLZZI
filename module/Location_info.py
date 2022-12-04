@@ -25,8 +25,6 @@ class LocationInfo:
         hotel_img_list = dom.select('div.lodge_HotelItem__3duZP > a > figure > img')                            # 숙박업소 이미지
         hotel_name_list = dom.select('div.lodge_HotelItem__3duZP > a > div > span')                             # 숙박업소 상업명
         hotel_score_list = dom.select('div.lodge_HotelItem__3duZP > a > div > div > span.lodge_rating__WQkRT')  # 숙박업소 별점
-        hotel_money_list = dom.select('div.lodge_HotelItem__3duZP > a > div > b > span.lodge_value__1qSM0 ')    # 숙박업소 가격
-        hotel_monetary_list = dom.select('div.lodge_HotelItem__3duZP > a > div > b > span.lodge_unit__FW4QJ ')  # 숙박업소 통화 (원)
 
         # 지역 정보 html에서 표현하기 쉽게 가공하기
         img_url = self.for_list(img_list, "src")    # 지역 이미지 주소
@@ -42,9 +40,7 @@ class LocationInfo:
         hotel_img_url = self.for_list(hotel_img_list, "src")            # 숙박업소 이미지 주소
         hotel_name_text = self.for_text_list(hotel_name_list)           # 숙박업소 업소명 텍스트 정보
         hotel_score = self.for_text_list(hotel_score_list)              # 숙박업소 별점
-        hotel_money = self.for_text_list(hotel_money_list)              # 숙박업소 가격
-        hotel_monetary = self.for_text_list(hotel_monetary_list)        # 숙박업소 통화
-        result_hotel_list = self.hotel_list(hotel_img_url, hotel_link_url, hotel_name_text, hotel_score, hotel_money, hotel_monetary)   # 호텔 6가지 정보를 하나의 리스트로 담아주는애
+        result_hotel_list = self.hotel_list(hotel_img_url, hotel_link_url, hotel_name_text, hotel_score)   # 호텔 6가지 정보를 하나의 리스트로 담아주는애
 
         # html로 가공한 리스트들 리턴해주기.
         content = {
@@ -68,7 +64,7 @@ class LocationInfo:
             li.append(l)
         return li
 
-    def hotel_list(self, img, link, text, score, money, monetary):
+    def hotel_list(self, img, link, text, score):
         li = []
 
         for i in range(len(img)):
@@ -77,8 +73,6 @@ class LocationInfo:
             l.append(link[i])
             l.append(text[i])
             l.append(score[i])
-            l.append(money[i])
-            l.append(monetary[i])
             li.append(l)
         return li
 

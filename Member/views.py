@@ -115,13 +115,14 @@ def mypage (request:HttpRequest):
     user_idx = request.session['login']
 
     member = Members.objects.get(members_idx=user_idx)
-    memberLocation = MemberLocation.objects.get(m_idx=user_idx)
-    m_list = memberLocation.location_list
+    memberLocation = MemberLocation.objects.filter(m_idx=user_idx)
+    m_list = []
 
-    print("m_list:", m_list)
+    for i in range(len(memberLocation)):
+        m_list.append(memberLocation[i].location_list)
 
     context = {
         'member' : member,
         'm_list' : m_list
     }
-    return render(request,'mypage/mypage.html', context);
+    return render(request,'mypage.html', context);
