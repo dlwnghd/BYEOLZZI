@@ -8,7 +8,7 @@ class IntentModel_Season:
     def __init__(self, model_name, preprocess):
 
         # 의도 클래스 별 레이블
-        self.labels = {0: "봄", 1: "여름", 2: "가을", 3: "겨울", 4: "기타"}
+        self.labels = {0: "봄", 1: "여름", 2: "가을", 3: "겨울"}
 
         # 의도 분류 모델 불러오기
         self.model = load_model(model_name)
@@ -29,7 +29,7 @@ class IntentModel_Season:
 
         # 단어 시퀀스 벡터 크기
 #         from config.GlobalParams import MAX_SEQ_LEN
-        MAX_SEQ_LEN = 30
+        MAX_SEQ_LEN = 20
 
         # 패딩처리
         padded_seqs = preprocessing.sequence.pad_sequences(sequences, maxlen=MAX_SEQ_LEN, padding='post')

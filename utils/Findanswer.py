@@ -143,14 +143,17 @@ class FindAnswer:
         loc_list=[]
 
         for word, tag in ner_predicts:
-            if "길 안내" in answer:
+            if "가는 길" in answer:
                 loc_list.append(word)
             # 변환해야하는 태그가 있는 경우 추가
             elif tag == 'B_location' or tag == 'B_highway':
                 answer = answer.replace(tag, word)  # 태그를 입력된 단어로 변환
         
-        if "길 안내" in answer:
+        if "가는 길" in answer:
             answer = answer.replace("B_location", loc_list[1])
+            print('loc_list: ',loc_list)
+            print('loc_list[1]: ',loc_list[1])
+            print('answer: 희지희즈히지흐지희짖 ',answer)
         answer = answer.replace('{', '')
         answer = answer.replace('}', '')
         
@@ -172,11 +175,13 @@ class FindAnswer:
     # 추천 태그 없애기
     def reco_to_word(self, reconame, answer):
 
-        if reconame == '차' or reconame == '뚜벅이':
+        if reconame == '차':
             answer = answer.replace('way', reconame)
+        if reconame=='뚜벅이':
+            answer = "걷는 거 좋지! 어느 계절에 여행갈 계획이야?"
         elif reconame == '봄' or reconame == '여름' or reconame == '가을' or reconame == '겨울':
             answer = answer.replace('season', reconame)
-        if reconame == '도시' or reconame == '시골':
+        if reconame == '도시' or reconame == '자연':
             answer = answer.replace('city_nature', reconame)
         
         answer = answer.replace('{', '')

@@ -14,10 +14,14 @@ from module.Weather import Weather_crawl
 from module.Location_info import LocationInfo
 
 # Create your views here.
+
+
 def index(request):
     return render(request, 'daemon.html')
 
 # 길찾기
+
+
 def showNavi(request):
     print("Ajax 들어옴 showNavi")
     nerlist = json.loads(request.GET.get("findway_list"))
@@ -29,20 +33,21 @@ def showNavi(request):
         loc_dict = fw.findTwoloc(nerlist[0], nerlist[1])
 
         context = {
-            'startlat' : loc_dict['start'][0],
-            'startlong' : loc_dict['start'][1],
-            'endlat' : loc_dict['end'][0],
-            'endlong' : loc_dict['end'][1],
+            'startlat': loc_dict['start'][0],
+            'startlong': loc_dict['start'][1],
+            'endlat': loc_dict['end'][0],
+            'endlong': loc_dict['end'][1],
         }
     else:
         fw = Findway()
         loc_tuple = fw.findOneloc(nerlist[0])
         context = {
-            'startlat' : loc_tuple[0],
-            'startlong' : loc_tuple[1],
+            'startlat': loc_tuple[0],
+            'startlong': loc_tuple[1],
         }
-    
+
     return JsonResponse(context)
+
 
 def movenavi(request):
     startlat = request.GET.get('startlat')
@@ -51,13 +56,14 @@ def movenavi(request):
     endlong = request.GET.get('endlong')
     print("startlat: ", startlat, "type: ", type(startlat))
     context = {
-        "startlat" : startlat,
-        "startlong" : startlong,
-        "endlat" : endlat,
-        "endlong" : endlong,
+        "startlat": startlat,
+        "startlong": startlong,
+        "endlat": endlat,
+        "endlong": endlong,
     }
 
     return JsonResponse(context)
+
 
 def applynavi(request):
     startlat = request.GET.get('startlat')
@@ -71,20 +77,19 @@ def applynavi(request):
 
     # print(test['a']['b'])
 
-
     print("startlat: ", startlat, "type: ", type(startlat))
     context = {
-        "startlat" : startlat,
-        "startlong" : startlong,
-        "endlat" : endlat,
-        "endlong" : endlong,
+        "startlat": startlat,
+        "startlong": startlong,
+        "endlat": endlat,
+        "endlong": endlong,
         # "test": test
     }
     return render(request, 'tmapnavi.html', {'data': context})
 
 
 # 주변검색
-def aroundShow(request:HttpRequest):
+def aroundShow(request: HttpRequest):
     localname = request.GET.get("localname")
     areachoice = request.GET.get("areachoice")
     addr = request.GET.get("addr")
@@ -94,14 +99,14 @@ def aroundShow(request:HttpRequest):
     print("localname :", localname)
 
     context = {
-        "LocalName" : localname,
-        "AreaChoice" : areachoice,
-        "Addr" : addr,
-        "MapX" : mapx,
-        "MapY" : mapy,
+        "LocalName": localname,
+        "AreaChoice": areachoice,
+        "Addr": addr,
+        "MapX": mapx,
+        "MapY": mapy,
     }
 
-    return render(request, 'aroundshow.html', {'data' : context})
+    return render(request, 'aroundshow.html', {'data': context})
 
 
 # 교통현황
@@ -115,12 +120,12 @@ def highway(request):
     # real_data = highway.web_full()
     # print(real_data)
 
-
     context = {
-        'data' : data
+        'data': data
     }
 
     return JsonResponse(context)
+
 
 def heeji_iframe(request):
     print('ajax views에 들어옴!!!!!!!!2222222222')
@@ -128,14 +133,14 @@ def heeji_iframe(request):
     print('data:',  data)
     print('data type: ', type(data))
 
-    highway =Highway(data)
+    highway = Highway(data)
     real_data = highway.web_full()
-    print('real_data: ',real_data)
+    print('real_data: ', real_data)
 
     context = {
         # 'data' : '하이?'
-        'data' : data,
-        'real_data' : real_data
+        'data': data,
+        'real_data': real_data
 
     }
 
@@ -145,132 +150,135 @@ def heeji_iframe(request):
 # 축제
 def festival(request):
     print('너 들어왔니??? 좀 들어와라')
-    data =  request.GET.get('ner')
-    met_code =  request.GET.get('met_code')
+    data = request.GET.get('ner')
+    met_code = request.GET.get('met_code')
     loc_code = request.GET.get('loc_code')
-    print("이게 뭐야 :",data)
-    print("메트로 :",met_code)
-    print("지역 :",loc_code)
+    print("이게 뭐야 :", data)
+    print("메트로 :", met_code)
+    print("지역 :", loc_code)
 
-    context={
-        "ner" : data,
-        "met_code" : met_code,
-        "loc_code" : loc_code
+    context = {
+        "ner": data,
+        "met_code": met_code,
+        "loc_code": loc_code
     }
     return JsonResponse(context)
 
+
 def festivals(request):
     print('두 번째꺼 들어옴')
-    ner =  request.GET.get('ner')
-    met_code =  request.GET.get('met_code')
+    ner = request.GET.get('ner')
+    met_code = request.GET.get('met_code')
     loc_code = request.GET.get('loc_code')
     print('data : ', ner)
     print("met :", met_code)
     print("loc_code :", loc_code)
-    festi = fes_info.fes_full(ner,met_code,loc_code)
+    festi = fes_info.fes_full(ner, met_code, loc_code)
     print(festi)
 
-    context={
-        "ner" : ner,
-        "data" : festi
+    context = {
+        "ner": ner,
+        "data": festi
     }
-    
+
     return render(request, 'festival_jbs.html', context)
 
 
 # 날씨
-def weather(request:HttpRequest):
-    weather_loc =  request.GET.get('Ner')
-    print("weather:",weather_loc)
+def weather(request: HttpRequest):
+    weather_loc = request.GET.get('Ner')
+    print("weather:", weather_loc)
 
     context = {
-        'weather' : weather_loc
+        'weather': weather_loc
     }
 
     return JsonResponse(context)
 
-def weathers(request:HttpRequest):
-    weather =  request.GET.get('data')
-    print("weather:",weather)
+
+def weathers(request: HttpRequest):
+    weather = request.GET.get('data')
+    print("weather:", weather)
 
     wc = Weather_crawl()
 
     weather_info = wc.weather(weather)
     weather_etc = wc.weather_info(weather)
 
-    context={
-        "data" : weather_info,
-        "etc" : weather_etc
+    context = {
+        "data": weather_info,
+        "etc": weather_etc
     }
-    
+
     return render(request, 'weather.html', context)
 
 
 # 여행지 정보
 def location_info(request):         # 여행지정보용 함수
-    
+
     url = request.GET.get("url")            # 크롤링 url 받음.
 
     location = LocationInfo()               # 크롤링할 클레스 가져옴
-    context = location.crawlingNaver(url)   # 크롤링 하는애   
+    context = location.crawlingNaver(url)   # 크롤링 하는애
 
-    return render(request, 'location_info.html', context)   # iframe 으로 context에 담아서 보냄
+    # iframe 으로 context에 담아서 보냄
+    return render(request, 'location_info.html', context)
 
 # 리스트 불러오기
-def mylist(request:HttpRequest):
-    print("💚💚💚 여긴 들어오니?")
 
+
+def mylist(request: HttpRequest):
     try:
         user_idx = request.session['login']
-        print("💚💚💚login:",user_idx)
     except:
         print("로그인이 안되어있어!")
-        return render(request,'join.html')
+        return render(request, 'join.html')
 
     my_loca_list = {}
 
     member = Members.objects.get(members_idx=user_idx)
-    ml_list = MemberLocation.objects.filter(m_idx = member).values("ml_idx","m_idx","location_list")
-
-    print("💚💚ml_list : ",ml_list)
+    ml_list = MemberLocation.objects.filter(m_idx=member).values("ml_idx", "m_idx", "location_list")
 
     for i, dic in enumerate(ml_list):
         my_loca_list[i] = dic
     print(my_loca_list)
 
     context = {
-        'my_loca_list' : my_loca_list
+        'my_loca_list': my_loca_list
     }
     return JsonResponse(context)
 
-def delete_list(request:HttpRequest):
+
+def delete_list(request: HttpRequest):
     try:
         ner = request.GET.get('Ner')
-        
+
         user_idx = request.session['login']
 
         member = Members.objects.get(members_idx=user_idx)
-        delete_obj = MemberLocation.objects.get(m_idx = member, location_list = ner)
+        delete_obj = MemberLocation.objects.get(
+            m_idx=member, location_list=ner)
         delete_obj.delete()
         context = {
-            'success' : 'ok'
+            'success': 'ok'
         }
     except:
         context = {
-            'success' : 'no'
+            'success': 'no'
         }
     return JsonResponse(context)
 
+
 def basepage(request):
     query = request.GET.get("query")
-    
+
     context = {
-        "query" : query,
+        "query": query,
     }
     return render(request, 'basepage.html', context)
 
 
-def saveLocation (request:HttpRequest):
+def saveLocation(request: HttpRequest):
     user_idx = request.session['login']
     save_loca = request.GET.get("data")
     print("save_loca:", save_loca)
@@ -282,12 +290,13 @@ def saveLocation (request:HttpRequest):
     Members.save(member)
 
     context = {
-        "result" : save_loca
+        "result": save_loca
     }
 
     return JsonResponse(context)
 
-def damgiLocation (request:HttpRequest):
+
+def damgiLocation(request: HttpRequest):
     user_idx = request.session['login']
     damgi_loca = request.GET.get("data")
     print("damgi_loca:", damgi_loca)
@@ -295,24 +304,24 @@ def damgiLocation (request:HttpRequest):
 
     member = Members.objects.get(members_idx=user_idx)
     print("member:", member)
-    
+
     try:
         MemberLocation.objects.get(m_idx=member, location_list=damgi_loca)
         comment = f"{damgi_loca}은(는) 이미 저장된 여행지야! 😥"
     except Exception as e:
         print("e:", e)
-        try :
+        try:
             MemberLocation.objects.create(
-                m_idx = member,
-                location_list = damgi_loca
+                m_idx=member,
+                location_list=damgi_loca
             )
             comment = f"{damgi_loca} 좋지! 잘 추가됐어 😉"
         except Exception as ex:
             print("ex:", ex)
 
     context = {
-        "result" : damgi_loca,
-        "comment" : comment
+        "result": damgi_loca,
+        "comment": comment
     }
 
     return JsonResponse(context)
