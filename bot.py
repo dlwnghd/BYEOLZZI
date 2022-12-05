@@ -27,43 +27,47 @@ from config.help import help
 
 # 전처리 객체 생성
 p_full = Preprocess(
-    word2index_dic = 'train_tools/dict/chatbot_dict_full.bin',
+    word2index_dic = 'train_tools/dict/intent1_dict_20221120.bin',
     userdic = 'utils/user_dic.tsv'
 )
 p_car_walk = Preprocess(
-    word2index_dic = 'train_tools/dict/chatbot_dict_car_walk.bin',
+    word2index_dic = 'train_tools/dict/chatbot_dict_car.bin',
     userdic = 'utils/user_dic.tsv'
 )
 p_season = Preprocess(
-    word2index_dic = 'train_tools/dict/chatbot_dict_season.bin',
+    word2index_dic = 'train_tools/dict/season_dict_20221119.bin',
     userdic = 'utils/user_dic.tsv'
 )
 p_city = Preprocess(
-    word2index_dic = 'train_tools/dict/chatbot_dict_city.bin',
+    word2index_dic = 'train_tools/dict/citynature_dict_221120.bin',
     userdic = 'utils/user_dic.tsv'
 )
 p_activity = Preprocess(
-    word2index_dic = 'train_tools/dict/chatbot_dict_activity.bin',
+    word2index_dic = 'train_tools/dict/activity_dict_bilstm_221119.bin',
+    userdic = 'utils/user_dic.tsv'
+)
+p_null = Preprocess(
+    word2index_dic = 'train_tools/dict/chatbot_dict_full.bin',
     userdic = 'utils/user_dic.tsv'
 )
 
 # 의도 파악 모델 (1)
-intent = IntentModel(model_name='models/intent/intent_model_test_full.h5', preprocess=p_full)
+intent = IntentModel(model_name='models/intent/Epoch_046_Val_0.010.h5', preprocess=p_full)
 
 # 의도 파악 모델 (2) : car/walk
-intent_car_walk = IntentModel_Car_Walk(model_name='models/intent/intent_model_car_walk.h5', preprocess=p_car_walk)
+intent_car_walk = IntentModel_Car_Walk(model_name='models/intent/221122_intent_car_walk_model.h5', preprocess=p_car_walk)
 
 # 의도 파악 모델 (2) : season
-intent_season = IntentModel_Season(model_name='models/intent/intent_model_season.h5', preprocess=p_season)
+intent_season = IntentModel_Season(model_name='models/intent/intent_model_season_221120.h5', preprocess=p_season)
 
 # 의도 파악 모델 (2) : city/nature
-intent_city = IntentModel_City(model_name='models/intent/intent_model_city.h5', preprocess=p_city)
+intent_city = IntentModel_City(model_name='models/intent/intent_model_citynature_cnn_221120.h5', preprocess=p_city)
 
 # 의도 파악 모델 (2) : activity
-intent_activity = IntentModel_Activity(model_name='models/intent/intent_model_activity.h5', preprocess=p_activity)
+intent_activity = IntentModel_Activity(model_name='models/intent/intent_model_activity_bilstm_221120.h5', preprocess=p_activity)
 
 # 개체명 인식 모델
-ner = NerModel(model_name='models/ner/ner_model.h5', preprocess=p_full)
+ner = NerModel(model_name='models/ner/ner_model.h5', preprocess=p_null)
 
 # 클라이언트 요청을 수행하는 쓰레드(에 담을) 함수
 def to_client(conn, addr, params):
@@ -75,6 +79,7 @@ def to_client(conn, addr, params):
         intent_reco = None
         intent_reco_name = None
         ner_predicts = None
+        ner_tags = None
         met_code=None
         loc_code=None
         ner_list = []
@@ -156,6 +161,11 @@ def to_client(conn, addr, params):
             for ne in ner_predicts:
                 if ne[1] != 'O':
                     ner_list.append(ne[0])
+        
+            print("😢😢State.user_location:", State.user_location)
+            print("😢😢ner_predicts:", ner_predicts)
+            print("😢😢ner_tags:", ner_tags)
+            print("😢😢ner_list:", ner_list)
 
             if intent_name == "길찾기":
                 # count = 0
@@ -168,22 +178,34 @@ def to_client(conn, addr, params):
                 if len(fw_list) == 1:       # 여행지 변수가 있다는 얘기
                     fw_list.append(State.user_location)
                     ner_list = fw_list
+                    print('ner_list 개수 : ', ner_list)
                     ner_predicts = [ner_predicts[0], (State.user_location, 'B_location')]
+
                     ner_tags.append("B_location")
                     print("ner_predicts : ", ner_predicts)
                     print("ner_list:" , ner_list)
-
-                    
             elif len(ner_list) and ner_list[0] in FindTag().location:
                 pass
             elif intent_name in ["교통현황", "리스트 불러오기", "인사", "도움말", "챗봇종료", "기타"]:
                 pass
                     
             else:
-                ner_predicts = [(State.user_location, 'B_location')]
-                ner_tags = ['B_location']
-                ner_list.append(State.user_location)
-                
+                fw_list = []
+                for loc in ner_list:
+                    # 몇개 들어왔니?
+                    if loc in FindTag().location:
+                        fw_list.append(loc)
+                if len(fw_list) == 0:       # 여행지 변수가 있다는 얘기
+                    fw_list.append(State.user_location)
+                    ner_list = fw_list
+                    
+                    ner_predicts = [(State.user_location, 'B_location')]
+                    
+                    ner_tags = []
+                    ner_tags.append("B_location")
+                    
+                    print("ner_predicts : ", ner_predicts)
+                    print("ner_list:" , ner_list)
 
         # 답변 검색
         try:
@@ -197,8 +219,9 @@ def to_client(conn, addr, params):
             if State.state != None:
                 answer_text, answer_contents = f.reco_search(intent_name, State.state)
             else:
+                print('ner_tags 너 몇개양? ', ner_tags)
                 answer_text, answer_contents = f.search(intent_name, ner_tags)
-
+                
 
                 if intent_name == '교통현황':
                     # if len(ner_list) ==1:
@@ -209,7 +232,6 @@ def to_client(conn, addr, params):
                             print('ner_list: ',ner_list)
                             answer_contents = way.bot_sum()
                             print('answer_contents: ',answer_contents)
-
                         else:
                             raise Exception('희지오류났어용!!!!!!!!!!!!!!!')
                     else:

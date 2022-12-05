@@ -1,16 +1,20 @@
 let user_location = null;
 
 $(document).ready(function(){               // html 화면이 로딩되면 함수 실행
-
+    let $logincheck = $("#login-check").text()
+    
     // 챗봇 화면은 처음에 안보이게 해놓는다.
     $("#chatbot").hide();                      // 페이지를 열면 챗봇창 숨기기
 
     // '짐 꾸리는 중..' 버튼을 누르면 챗봇 화면이 열린다
     $("#chatbotbtn").click(function(){      // 클릭 이벤트 등록
-        
-
-        $("#wrapper").fadeOut(500);                // 대문 숨기고
-        $("#chatbot").delay(500).fadeIn(1000);         // 챗봇창 화면에 표시
+        if ($logincheck == "") {
+            location.href = "member/login"
+        }
+        else {
+            $("#wrapper").fadeOut(500);                // 대문 숨기고
+            $("#chatbot").delay(500).fadeIn(1000);         // 챗봇창 화면에 표시
+        }
     });
 
     // SEND 버튼을 누르거나
@@ -24,6 +28,7 @@ $(document).ready(function(){               // html 화면이 로딩되면 함�
             send_message();
         }
     });
+
 });
 
 function send_message(){
@@ -38,7 +43,7 @@ function send_message(){
     }
     
     // 입력한 채팅 출력
-    let addtext = "<div style='margin:15px 0;text-align:right;'> <span style='padding:3px 10px;background-color:#3388cc;border-radius:3px;font-size:12px;'>" + chattext + "</span></div>";
+    let addtext = "<div class='addtext-box'><div class='addtext'>" + chattext + "</div></div>";
     $("#chatbody").append(addtext); 
     console.log("addtext" + addtext)
     console.log("여기까지 왔소22")
@@ -60,35 +65,26 @@ function send_message(){
         contentType: "application/json; charset=utf-8", //postman 에서 header 지정해준 그것
         crossDomain: true,
         success: function(response){
-            console.log("Intent:" + response.Intent)
             // response.Answer 에 챗봇 응답메세지가 담겨 있음
-            console.log(response.AnswerContents)
             $chatbody = $("#chatbody");
             let intentname = response.Intent
             let answercontents = response.AnswerContents
             let botcontents = null
             
             // 답변 출력
-            bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + response.Answer + "</span></div>";
+            bottext = "<div class='bottext-box'><div class='bottext'>" + response.Answer + "</div></div>";
             $chatbody.append(bottext);
 
             $("#intent").text(response.Intent)
             $("#ner-list").text(response.NerList)
             $("#ner-tag").text(response.NerTags)
 
-            console.log("answercontents:" + answercontents)
-            console.log("NER:" + response.NER)
-            console.log("NerList : ", response.NerList)
-            // console.log("answercontents.length > 0 : ", answercontents.length > 0)
-
             if (answercontents != null && answercontents != ""){
                 if (intentname == null){
-                    console.log("여행지 추천 결과값 출력 들어옴")
                     for (var i = 0; i < answercontents.length; i++){
-                        botcontents = `<div style='margin:15px 0;text-align:left;'>
-                        <span class='reco_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>`
-                        + answercontents[i][0] + ' ' + answercontents[i][1] + `</span>
-                        <button class='damgi'>담기</button>
+                        botcontents = `<div class='botcontents-box'><div class='reco_contents'>`
+                        + answercontents[i][0] + ' ' + answercontents[i][1] + `</div>
+                        <div class='damgi'>담기</div>
                         </div>`;
                         $chatbody.append(botcontents);
                     }
@@ -96,7 +92,6 @@ function send_message(){
                     $(".reco_contents").click(function(){
                         let reco_name = $(this).text();
                         reco_name = reco_name.split(' ');
-                        console.log("reco_name:", reco_name);
                         location_info_crawling(reco_name[1]);
     
                         $.ajax({
@@ -110,17 +105,13 @@ function send_message(){
                             crossDomain: true,
                             success: function(response){
                                 user_location = response.result
-                                console.log("여행지 저장 성공했음!")
-                                console.log("user_location:", user_location)
                             }
                         });
                     });
 
                     $(".damgi").click(function(){
-                        let reco_loca = $(this).siblings("span").text()
-                        console.log(reco_loca)
+                        let reco_loca = $(this).siblings("div").text()
                         reco_loca = reco_loca.split(' ');
-                        console.log("reco_loca:", reco_loca);
                         $.ajax({
                             url: 'damgi_location',
                             type: "GET",
@@ -131,15 +122,15 @@ function send_message(){
                             contentType: "application/json; charset=utf-8", //postman 에서 header 지정해준 그것
                             crossDomain: true,
                             success: function(response){
-                                console.log("DB 저장 성공했음!")
-                                console.log("damgi_location:", response.result)
-                                console.log("comment:", response.comment)
-
-                                bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + response.comment + "</span></div>";
+                                bottext = "<div class='bottext-box'><div class='bottext'>" + response.comment + "</div></div>";
                                 $chatbody.append(bottext);
+                                $chatbody.animate({scrollTop: $chatbody.prop('scrollHeight')});
                             }
                         })
                     })
+                    // 먼저 입력했던 내용은 지워줘야 함
+                    $("#chattext").val("");
+                    $("#chattext").focus();
                 }
             }
 
@@ -149,10 +140,9 @@ function send_message(){
             else if (intentname == '주변검색'){
                 let choicecontents = null
                 for (var i = 0; i < answercontents.length; i++){
-                    botcontents = "<div style='margin:15px 0;text-align:left;'><span class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents[i].title + "</span></div>";
+                    botcontents = "<div class='botcontents-box'><div class='around_contents'>" + answercontents[i].title + "</div></div>";
                     $chatbody.append(botcontents);
                 }
-                
                 $(".around_contents").click(function(){
                     let area_choice = $(this).text();
                     for (var i = 0; i < answercontents.length; i++){
@@ -165,17 +155,12 @@ function send_message(){
                     let addr = choicecontents.addr;
                     let mapx = choicecontents.mapx;
                     let mapy = choicecontents.mapy;
-
-                    console.log("localname:", localname)
-
                     $("#iframe").attr("src", "aroundshow?localname=" + localname + "&areachoice=" + areachoice + "&addr=" + addr + "&mapx=" + mapx + "&mapy=" + mapy);
 
                 })
-
             }
             else if (intentname == '길찾기'){
                 let findway_list = JSON.stringify(response.NerList)
-                console.log("findway_list : ", findway_list)
                 
                 // 좌표값을 requests 를 통해서 받아오기
                 $.ajax({
@@ -186,16 +171,13 @@ function send_message(){
                     },
                     dataType: 'json',
                     success: function(data){
-                        
                         // 이건 B_location이 2개 잡힐 때,
                         if(data.endlong){
-
                             //받아온 데이터
                             let startlat = data.startlat
                             let startlong = data.startlong
                             let endlat = data.endlat
                             let endlong = data.endlong
-                            console.log("받아온 startlat : ", startlat)
 
                             //src를 통해서 urls -> views 를 거쳐 데이터 전송하는 메소드
                             goToIframe(startlat, startlong, endlat, endlong)
@@ -204,31 +186,26 @@ function send_message(){
                 });
             }
             else if (intentname == '교통현황'){
-                contents = "<br><table style='background-color:#DDD;border-radius:3px;font-size:12px;'><tr><td colspan='4'>[상행]</td></tr><tr><th>구간</th><th>거리</th><th>시속</th><th>상태</th></tr>"
+                contents = "<table class='highway-table'><tr><td colspan='4'>[상행]</td></tr><tr class='highway-head'><th class='highway-section'>구간</th><th class='highway-distance'>거리</th><th class='highway-speed'>시속</th><th class='highway-conditions'>상태</th></tr>"
                 for (i = 0; i < answercontents['up'].length; i++){
-                    // console.log("잘 뽑히니??",answercontents['up'][i]['section'], answercontents['up'][i]['distance'], 
-                    // answercontents['up'][i]['speed'], answercontents['up'][i]['conditions'])
-    
-                    contents = contents + "<tr>"+
-                    "<td>"+ answercontents['up'][i]['section']+"</td>"+
-                    "<td>"+ answercontents['up'][i]['distance']+"</td>"+
-                    "<td>"+ answercontents['up'][i]['speed']+"</td>"+
-                    "<td>"+ answercontents['up'][i]['conditions']+"</td>" + "</tr>"
-                    
+                    contents = contents +
+                    "<tr class='highway-line'><td class='highway-data'>"+ answercontents['up'][i]['section']+"</td>"+
+                    "<td class='highway-data'>"+ answercontents['up'][i]['distance']+"</td>"+
+                    "<td class='highway-data'>"+ answercontents['up'][i]['speed']+"</td>"+
+                    "<td class='highway-data'>"+ answercontents['up'][i]['conditions']+"</td></tr>"
                 }
-                contents = contents + "</table><br><br><table style='background-color:#DDD;border-radius:3px;font-size:12px;'><tr><td colspan='4'>[하행]</td></tr><tr><th>구간</th><th>거리</th><th>시속</th><th>상태</th></tr>"
-    
+                botcontents = "<div class='botcontents-box'><div class='highway_contents'>" + contents + "</table></div></div>";
+                $chatbody.append(botcontents);
+
+                contents = "<table class='highway-table'><tr><td colspan='4'>[하행]</td></tr><tr class='highway-head'><th class='highway-section'>구간</th><th class='highway-distance'>거리</th><th class='highway-speed'>시속</th><th class='highway-conditions'>상태</th></tr>"
                 for (i = 0; i < answercontents['down'].length; i++){    
-                    contents = contents + "<tr>"+
-                    "<td>"+ answercontents['down'][i]['section']+"</td>"+
-                    "<td>"+ answercontents['down'][i]['distance']+"</td>"+
-                    "<td>"+ answercontents['down'][i]['speed']+"</td>"+
-                    "<td>"+ answercontents['down'][i]['conditions']+"</td>" + "</tr>"
-                    
+                    contents = contents + "<tr class='highway-line'>"+
+                    "<td class='highway-data'>"+ answercontents['down'][i]['section']+"</td>"+
+                    "<td class='highway-data'>"+ answercontents['down'][i]['distance']+"</td>"+
+                    "<td class='highway-data'>"+ answercontents['down'][i]['speed']+"</td>"+
+                    "<td class='highway-data'>"+ answercontents['down'][i]['conditions']+"</td></tr>"                    
                 }
-    
-                answercontents = contents + "</table>"
-                botcontents = "<div style='margin:15px 0;text-align:left;'>" + answercontents + "</div>";
+                botcontents = "<div class='botcontents-box'><div class='highway_contents'>" + contents + "</table></div></div>";
                 $chatbody.append(botcontents);
 
                 $.ajax({
@@ -238,58 +215,28 @@ function send_message(){
                         'data' : response.NerList[0]
                     },
                     dataType: 'json',
-                    
                     success: function(response){
-                        console.log('허거허거허걱거헉1111111111')
                         console.log(response.data)
                         let $iframe = $('#iframe')
                         $iframe.attr('src','heeji?data='+response.data)
-                        console.log('여기까지왔어어어어ㅓ엉ㅇ')
                     }
                 });
             }
             else if(intentname =="축제"){
-                li_full=""
                 for(i = 0; i<answercontents.length ; i++){
-                    let table = `
-                        <tr>
-                            <td colspan="2">
-                                <img src=`+answercontents[i]["image_small"]+` style="width:100px; height:100px;">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                축제명 : 
-                            </td>
-                            <td>
-                                `+answercontents[i]["title"]+`
-                            </td>
-                        </tr>
-                        <tr>
-                        <td>
-                            시작일 : 
-                        </td>
-                        <td>
-                            `+answercontents[i]["startDate"]+`
-                        </td>
-                    </tr>
-                    `
-                    li_full=li_full+table
+                    let fes_add = `<div class='festival_contents'>
+                        <div class="festival-imgframe">
+                            <img class="festival-img" src=`+answercontents[i]["image_small"]+`>
+                        </div>
+                        <div class="festival-data"><div class="festival-title">`
+                            + answercontents[i]["title"] +
+                        `</div><div class="festival-date">(`
+                            + answercontents[i]["startDate"] +
+                        `)</div></div>`
+                        botcontents = "<div class='botcontents-box'>" + fes_add + "</div>";
+                        $chatbody.append(botcontents);
                     }
         
-                    fes_add="<table align='center' style='background-color:#DDD;border-radius:3px; font-size:12px;'><tr></tr>"+li_full+"</table>"
-                    botcontents = "<div style='margin:15px 0;text-align:left;'>" + fes_add + "</div>";
-                    $chatbody.append(botcontents);
-                    console.log("여기까지 왔소33")
-                    // for (var i = 0; i > answercontents.length(); i++){
-                    //     botcontents += "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents[i] + "</span></div>";
-                    // } 
-                    // console.log("bottext" + bottext)
-        
-                    // botcontents = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + answercontents + "</span></div>";
-                    // $chatbody.append(botcontents);
-                    // console.log("여기까지 왔소33"
-                    
                     $.ajax({
                         url:'festival',
                         type:'get',
@@ -303,15 +250,8 @@ function send_message(){
                         ner = context.ner
                         met_code = context.met_code
                         loc_code = context.loc_code
-                        console.log("드디어 여기까지")
                         let $iframe = $('#iframe')
-        
-                        console.log('$iframe.src 전: ',$iframe.attr('src'))
-        
                         $iframe.attr('src','festivals/?ner='+ner+'&met_code='+met_code+'&loc_code='+loc_code)
-        
-                        console.log('$iframe.src 후: ', $iframe.attr('src'))
-                        console.log('여기까지 왔소희지희지')
                     }});
             }
             else if (intentname == '날씨'){
@@ -323,54 +263,58 @@ function send_message(){
                     contentType: "application/json; charset=utf-8", //postman 에서 header 지정해준 그것
                     crossDomain: true,
                     success: function(response){
-                        console.log(response.weather); // 가져온 지역 정보
                         let $iframe = $("#iframe"); // iframe 지정
                         $iframe.attr("src", "/weathers?data=" + response.weather); // iframe의 src를 변경
                     }
                 });
             }
+            else if(response.Intent == '여행지정보'){
+                location_info_crawling(response.NerList[0]);   // 여행지 함수
+            }
             else if(intentname =="도움말" || intentname=='기타'){
-                botcontents = "<div style='margin:15px 0;text-align:left; font-size: 12px;'><div class='around_contents' style='padding:3px 10px;background-color:#DDD;border-radius:3px;font-size:12px;'>" + answercontents + "</div></div>";
+                botcontents = "<div class='botcontents-box'><div class='botcontents'>" + answercontents + "</div></div>";
                 $chatbody.append(botcontents);
             }
-            else if(intentname == '여행지정보'){location_info_crawling(response.NerList[0]);   // 여행지 함수
-            }
             else if (intentname == '리스트 불러오기'){
-                console.log("💙 뜨지 않으면 구워서 먹으리")
                 $.ajax({
                     url:'mylist',
                     type:'get',
                     success: function(response, data){
-                        console.log("💙response : ",response)
-                        console.log("💜data : ",data)
+                        let mylist="<div class='botcontents-box'><div class='myloca-div'>"
+                        myloca = response.my_loca_list;
+                        for(var prop in myloca){
+                            console.log("myloca[prop]:", myloca[prop].location_list);
+                            let laca_div = "<div class='myloca'>" + myloca[prop].location_list + "</div>"
+                            mylist += laca_div;
+                        }
+                        botcontents = mylist + "</div></div>";
+                        $chatbody.append(botcontents);
                         
-                        li_full=""
-                        test = response.my_loca_list;
-
-                        for(var prop in test){
-                            console.log(test[prop].location_list);
-                            let table = `
-                                <tr>
-                                    <td>
-                                        여행지명 : 
-                                    </td>
-                                    <td>
-                                        `+test[prop].location_list+`
-                                    </td>
-                                </tr>
-                            `
-                            li_full=li_full+table
-                            }
-                
-                            fes_add="<table align='center' style='background-color:#DDD;border-radius:3px; font-size:12px;'><tr></tr>"+li_full+"</table>"
-                            botcontents = "<div style='margin:15px 0;text-align:left;'>" + fes_add + "</div>";
-                            $chatbody.append(botcontents);
-                            console.log("여기까지 왔소33")
-                            console.log('여기까지 왔소주홍주홍')
-                    }});
+                        $(".myloca").click(function(){
+                            let reco_name = $(this).text();
+                            console.log("reco_name:", reco_name)
+                            reco_name = reco_name.split(' ');
+                            location_info_crawling(reco_name);
+                            $.ajax({
+                                url: 'save_location',
+                                type: "GET",
+                                data: {
+                                    'data': reco_name
+                                },
+                                dataType: "JSON",
+                                contentType: "application/json; charset=utf-8",
+                                crossDomain: true,
+                                success: function(response){
+                                    user_location = response.result
+                                    console.log("user_location:", user_location)
+                                }
+                            });
+                        });
+                    }
+                });
             }
             else if (intentname == '리스트 항목 삭제'){
-                
+                console.log("response.NerList[0]:", response.NerList[0])
                 $.ajax({
                     url:'delete_list',
                     type:'get',
@@ -386,10 +330,9 @@ function send_message(){
             // 먼저 입력했던 내용은 지워줘야 함
             $("#chattext").val("");
             $("#chattext").focus();
-
-            }
-        })
-    } // end 
+        }
+    })
+} // end 
 
 function goToIframe(startlat, startlong, endlat, endlong){
     // document.getElementById("iframe").src = "movenavi?startlat=",startlat,"&startlong=",startlong,"&endlat=", endlat, "&endlong=", endlong;

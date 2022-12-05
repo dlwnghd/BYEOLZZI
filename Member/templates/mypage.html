@@ -1,4 +1,4 @@
-{% extends 'layout/member_layout.html' %}
+{% extends 'layout/join_layout.html' %}
 
 {% block title %}
 마이페이지
@@ -9,7 +9,19 @@
 {% endblock %}
 
 {% block content %}
+    <div class="title">
+        <div class="title byeol">별</div>
+        <div class="title zzi">찌</div>
+    </div>
     <div class="mp main">
-        
+        <div class="mypage-title">
+            <div>{{member.m_name}}</div>
+            <div>{{member.id}}</div>
+        </div>
+        <div>{{member.addr}}</div>
+        <div>{{member.m_loaction}}</div>
+        {%for loca in m_list%}
+            <div>{{ loca }}</div>
+        {% endfor%}
     </div>
 {% endblock %}
