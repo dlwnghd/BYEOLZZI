@@ -228,34 +228,31 @@ def to_client(conn, addr, params):
                     if len(ner_list):
                         if ner_list[0] in FindTag().highway:
                             way = Highway(ner_list[0])
-                            print('희지 교통현황 들어옴')
                             print('ner_list: ',ner_list)
                             answer_contents = way.bot_sum()
                             print('answer_contents: ',answer_contents)
                         else:
-                            raise Exception('희지오류났어용!!!!!!!!!!!!!!!')
+                            raise Exception('교통현황 : 태그 못 찾음')
                     else:
-                        raise Exception('희지오류났어용!!!!!!!!!!!!!!!---1')
+                        raise Exception('교통현황 : ner_list empty')
                     
                 elif intent_name == "주변검색":
-                    print('ㅠㅠㅠㅠㅠㅠㅠ')
                     if len(ner_list):
                         print("주변검색_ner_list:", ner_list)
                         print("주변검색_ner_list[0]:", ner_list[0])
                         if ner_list[0] in FindTag().location:
-                            print('여기인가요??')
                             answer_contents = Around(db).search_around(ner_list[0])
                         else:
-                            raise Exception('희지오류났어용!!!!!!!!!!!!!!!22222222222')
+                            raise Exception('주변검색 : 태그 못 찾음')
                     else:
-                        raise Exception('희지오류났어용!!!!!!!!!!!!!!!22222222222-1')
+                        raise Exception('주변검색 : ner_list empty')
 
                 elif intent_name=="축제":     
                     if len(ner_list):
                         print("축제_ner_list:", ner_list)
                         print("축제_ner_list[0]:", ner_list[0])
                         if ner_list[0] in FindTag().location:  
-                            print("전범수 :",ner_list[0])
+                            print("축제 ner_list[0] :",ner_list[0])
                             answer_contents=festival(db).fes_sum(ner_list[0])
                             print('크롤링 :', answer_contents)
                             try:
@@ -265,13 +262,13 @@ def to_client(conn, addr, params):
                                 met_code=None
                                 loc_code=None
                                 answer = answer_contents
-                                print("에러 답변이요 :",answer)
+                                print("에러 답변 :", answer)
                                 answer_contents = ""
                                 print("열리는 축제 없음")
                         else:
-                            raise Exception('희지오류났어용!!!!!!!!!!!!!!!3333333333')
+                            raise Exception('축제 : 태그 못 찾음')
                     else:
-                        raise Exception('희지오류났어용!!!!!!!!!!!!!!!3333333333-1')
+                        raise Exception('축제 : ner_list empty')
 
                 elif intent_name=="날씨":
                     if len(ner_list):
