@@ -1,3 +1,9 @@
+|     |
+| --- |
+| [BYEOLZZI - (여행지 추천 챗봇)] |
+ [<img src="https://i.ytimg.com/vi/-vqjrGk9fWk/hqdefault.jpg" alt="BYEOLZZI" width="100%">](https://www.youtube.com/watch?v=-vqjrGk9fWk&list=PLedGoSru7948D6s7qYmLzQT1uUJJTuKEA) |
+[별찌 포트폴리오(Python Web 개발).pdf](https://github.com/dlwnghd/dlwnghd/files/11477355/Python.Web.pdf) |
+
 # ONE2TEN
 -------
 ## 주의사항
@@ -43,7 +49,8 @@
 11. base: master ⬅️ compare: {나의 브랜치명} 으로 수정
 
 12. Create pull request 버튼 클릭
-	- ⚠️만약 오류나 Conflict가 발생했다면 손을 들고 "Conflict"를 외칩니다!
+	- ⚠️만약 오류나 Conflict가 발생했다면 손을 들고 "Conflict"를 외칩니다!(대면 기준)
+	- ⚠️만약 오류나 Conflict가 발생했다면 메신저로 알려줍니다.(비대면 기준)
 
 13. 페이지가 바뀌었다면 Create pull request 버튼을 다시 클릭
 
